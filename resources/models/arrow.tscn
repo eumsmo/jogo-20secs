@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://c2r1o6tdvi2f5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aekex"]
+resource_name = "Black"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mbu1w"]
+_surfaces = [{
+"aabb": AABB(-0.09638661, 0, -1, 0.66990036, 1e-05, 2),
+"format": 34359742465,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAAAAMAAwAFAAQABgAFAAMAAwAHAAYABwADAAIAAgAIAAcA"),
+"name": "Black",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("q5QKPwAAAAAAAIC/zNESPwAAAAAAAIC/hCimPQAAAAAAAAAAgO75uwAAAAAAAAAAilcCPwAAAAAAAIC/WGbFvQAAAAAAAAAAilcCPwAAAAAAAIA/q5QKPwAAAAAAAIA/zNESPwAAAAAAAIA/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_otd0u"]
+resource_name = "Arrow"
+_surfaces = [{
+"aabb": AABB(-0.09638661, 0, -1, 0.66990036, 1e-05, 2),
+"attribute_data": PackedByteArray("AAAAPwAAAAAAAIA/AAAAAAAAgD8AAAA/AAAAPwAAAD8AAAA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAA/AAAAAAAAAD8AAAA/AAAAAAAAAD8AAAAAAACAPwAAAD8AAIA/"),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAADAAIAAgAFAAQABgAHAAgACAAJAAYACgAJAAgACAALAAoA"),
+"material": SubResource("StandardMaterial3D_aekex"),
+"name": "Black",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("q5QKPwAAAAAAAIC/zNESPwAAAAAAAIC/hCimPQAAAAAAAAAAgO75uwAAAAAAAAAAq5QKPwAAAAAAAIA/zNESPwAAAAAAAIA/ilcCPwAAAAAAAIC/q5QKPwAAAAAAAIC/gO75uwAAAAAAAAAAWGbFvQAAAAAAAAAAilcCPwAAAAAAAIA/q5QKPwAAAAAAAIA//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_mbu1w")
+
+[node name="Arrow" type="Node3D" unique_id=1551828677]
+
+[node name="Arrow" type="MeshInstance3D" parent="." unique_id=1210424325]
+mesh = SubResource("ArrayMesh_otd0u")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bkahuymasj6c0"]
+
+[ext_resource type="PackedScene" uid="uid://w8waonlm212p" path="res://resources/models/fbx/gate.fbx" id="1_svuop"]
+
+[node name="Gate" type="Node3D" unique_id=462562098]
+
+[node name="gate" parent="." unique_id=1605280492 instance=ExtResource("1_svuop")]
+
+[node name="Skeleton3D" parent="gate/Gate" parent_id_path=PackedInt32Array(1605280492, 2008915509) index="0" unique_id=1509647614]
+bones/1/rotation = Quaternion(0.7071068, -1.1520235e-07, -1.1520233e-07, 0.7071067)
+bones/3/rotation = Quaternion(-0.50000006, -0.50000006, 0.49999997, 0.49999994)
+
+[editable path="gate"]

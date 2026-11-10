@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cqkwdjnbncivf"]
+
+[ext_resource type="Shader" uid="uid://dy0q67k5a6bms" path="res://outside_resources/dither_shader.gdshader" id="1_4g7mc"]
+[ext_resource type="Texture2D" uid="uid://c71n7wde5gocs" path="res://outside_resources/palette_hollow.png" id="2_85gap"]
+[ext_resource type="Texture2D" uid="uid://becgqs5mth1c4" path="res://outside_resources/blue_noise.png" id="3_noukt"]
+
+[resource]
+shader = ExtResource("1_4g7mc")
+shader_parameter/u_dither_tex = ExtResource("3_noukt")
+shader_parameter/u_color_tex = ExtResource("2_85gap")
+shader_parameter/u_bit_depth = 32
+shader_parameter/u_contrast = 1.5
+shader_parameter/u_offset = 0.0
+shader_parameter/u_dither_size = 3

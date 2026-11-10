@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dybkw4ji7oj7w"]
+
+[ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/change_scene_interactable.gd" id="1_ssqhk"]
+[ext_resource type="PackedScene" uid="uid://c2r1o6tdvi2f5" path="res://resources/models/arrow.tscn" id="2_dg3qf"]
+
+[sub_resource type="Environment" id="Environment_yf5fn"]
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.97
+fog_depth_begin = 0.0
+fog_depth_end = 15.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.6, 0.1, 0.19)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g4v7s"]
+radius = 0.4
+height = 1.76
+
+[node name="CameraStand" type="Node3D" unique_id=72479423]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1331824599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3768747, 0)
+environment = SubResource("Environment_yf5fn")
+
+[node name="ChangeSceneInteractable" type="Area3D" parent="Camera3D" unique_id=452113428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3408578e-08, -0.3768747, -0.53552586)
+script = ExtResource("1_ssqhk")
+metadata/_custom_type_script = "uid://bnjfxriyseeds"
+
+[node name="Arrow" parent="Camera3D/ChangeSceneInteractable" unique_id=1551828677 instance=ExtResource("2_dg3qf")]
+transform = Transform3D(-5.4639235e-09, 0, 0.15, 0, 0.25, 0, -0.125, 0, -6.5567085e-09, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/ChangeSceneInteractable" unique_id=1340848736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1054274e-15, 0, -0.048503876)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1075611605]
+visible = false
+mesh = SubResource("CapsuleMesh_g4v7s")
