@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bf3yaus42rxcw"]
+
+[ext_resource type="Texture2D" uid="uid://bgyywk6y58kt3" path="res://resources/sprites/arrow.png" id="1_a86es"]
+[ext_resource type="Material" uid="uid://c1g2lku6sdquj" path="res://scenes/components/arrows/arrow_mat.tres" id="1_msnvp"]
+
+[node name="LeftArrow" type="TextureRect" unique_id=1791497467]
+texture_filter = 1
+material = ExtResource("1_msnvp")
+custom_minimum_size = Vector2(64, 64)
+offset_transform_enabled = true
+offset_transform_rotation = 3.1415927
+texture = ExtResource("1_a86es")
+expand_mode = 1
+stretch_mode = 5

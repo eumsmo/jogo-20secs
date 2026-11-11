@@ -10,13 +10,35 @@
 [ext_resource type="PackedScene" uid="uid://dakb4ontcxv2u" path="res://resources/models/lock.tscn" id="6_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://dybkw4ji7oj7w" path="res://scenes/components/camera_stand.tscn" id="8_0tnpc"]
 [ext_resource type="Script" uid="uid://ypfbu7sipw7r" path="res://scripts/scene.gd" id="9_ir15t"]
-[ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/change_scene_interactable.gd" id="9_trtic"]
+[ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/interactables/change_scene_interactable.gd" id="9_trtic"]
 [ext_resource type="PackedScene" uid="uid://c2r1o6tdvi2f5" path="res://resources/models/arrow.tscn" id="12_kvuet"]
+[ext_resource type="Material" uid="uid://dcp258ghdupuw" path="res://resources/materials/Brown.tres" id="13_02fa5"]
+[ext_resource type="Script" uid="uid://ccup386pslxg0" path="res://scripts/counter.gd" id="13_7025r"]
 [ext_resource type="PackedScene" uid="uid://ctjk83r6mhda5" path="res://resources/models/key.tscn" id="13_ir15t"]
+[ext_resource type="Script" uid="uid://dbinv34xc0tpr" path="res://scripts/interact/interactables/patterned.gd" id="14_264po"]
+[ext_resource type="Material" uid="uid://kb2catetgn4p" path="res://resources/materials/vfx/locked.tres" id="14_bhx41"]
 [ext_resource type="PackedScene" uid="uid://bbxd2px1e2tfj" path="res://resources/models/rock.tscn" id="14_ca42v"]
+[ext_resource type="Material" uid="uid://cdj1opmtoccxq" path="res://resources/materials/Grey.tres" id="14_nepv3"]
+[ext_resource type="Material" uid="uid://dlgx6v3h2xhf0" path="res://resources/materials/vfx/highlighted.tres" id="14_pl11u"]
 [ext_resource type="Script" uid="uid://b25o0snifepw3" path="res://scripts/scenes_controller.gd" id="14_trtic"]
 [ext_resource type="PackedScene" uid="uid://ce86the00e4o6" path="res://resources/models/rock_001.tscn" id="15_rysoc"]
 [ext_resource type="PackedScene" uid="uid://wyai1bnir2iv" path="res://resources/models/rock_002.tscn" id="16_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://bgyywk6y58kt3" path="res://resources/sprites/arrow.png" id="17_qnb83"]
+[ext_resource type="Script" uid="uid://ccaortlgdlf85" path="res://scripts/pattern_listener.gd" id="18_ssvqc"]
+[ext_resource type="Script" uid="uid://c3g0o3cunkyuj" path="res://scripts/interact/interactables/use_item_interactable.gd" id="18_v2yb1"]
+[ext_resource type="Script" uid="uid://gdx1msx8ssyi" path="res://scripts/interact/interactables/pickup_item.gd" id="19_qouja"]
+[ext_resource type="PackedScene" uid="uid://bjaygeelrd8t0" path="res://scenes/components/arrows/right_arrow.tscn" id="20_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://bf1hydheni8a5" path="res://resources/models/chest.tscn" id="20_js0lu"]
+[ext_resource type="Script" uid="uid://dcpv0k67dldig" path="res://scripts/ui/pattern_visualizer.gd" id="20_pl11u"]
+[ext_resource type="Resource" uid="uid://c7q66k03g4ree" path="res://resources/itens/key.tres" id="20_wljb1"]
+[ext_resource type="PackedScene" uid="uid://cvf8jfwsd6m4t" path="res://resources/models/hammer.tscn" id="21_gxtfn"]
+[ext_resource type="PackedScene" uid="uid://durwe6vmptojo" path="res://scenes/components/arrows/down_arrow.tscn" id="21_pl11u"]
+[ext_resource type="PackedScene" uid="uid://bf3yaus42rxcw" path="res://scenes/components/arrows/left_arrow.tscn" id="22_bhx41"]
+[ext_resource type="PackedScene" uid="uid://dpcb80nty0wh5" path="res://scenes/components/arrows/up_arrow.tscn" id="23_qnb83"]
+[ext_resource type="Script" uid="uid://d1wrce0jmw64" path="res://scripts/inventory/inventory.gd" id="23_sgl2t"]
+[ext_resource type="Resource" uid="uid://dc8c2m2dwvehx" path="res://resources/itens/hammer.tres" id="23_twgab"]
+[ext_resource type="Script" uid="uid://dfypdbfyuueh6" path="res://scripts/ui/inventory_visualizer.gd" id="28_suyxu"]
+[ext_resource type="PackedScene" uid="uid://bhqxoqgpw50xc" path="res://scenes/components/item_visualizer.tscn" id="28_sww3w"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_57qmd"]
 size = Vector2(100, 100)
@@ -158,15 +180,58 @@ size = Vector3(0.6, 0.1, 0.19)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ir15t"]
 size = Vector3(2, 5, 0.1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_twgab"]
+size = Vector3(0.25, 3, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(0.1, 0.5, 4)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g4v7s"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.1
+radial_segments = 8
+rings = 1
+cap_top = false
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fcnqv"]
+size = Vector3(0.1, 0.5, 4)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_rysoc"]
 size = Vector3(5, 5, 0.1)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
-radius = 0.94819456
+[sub_resource type="BoxShape3D" id="BoxShape3D_qnb83"]
+size = Vector3(1.2966156, 0.62231445, 1.4014893)
 
-[node name="Game" type="Node3D" unique_id=736994712 node_paths=PackedStringArray("scenes")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhx41"]
+size = Vector3(1.4562683, 0.62231445, 1.2297363)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sww3w"]
+size = Vector3(6, 6, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_57qmd"]
+size = Vector3(0.225, 0.674, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3gngh"]
+size = Vector3(0.2, 1.0332031, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxtfn"]
+size = Vector3(0.2, 0.16259766, 0.47224122)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d0u6y"]
+size = Vector3(1.3232422, 1.3123779, 2.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_twgab"]
+size = Vector3(1.2885742, 0.89782715, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(0.5, 0.1, 0.3)
+
+[node name="Game" type="Node3D" unique_id=736994712 node_paths=PackedStringArray("scenes", "pattern", "inventory")]
 script = ExtResource("1_kvuet")
 scenes = NodePath("Controllers/ScenesController")
+pattern = NodePath("Controllers/PatternListener")
+inventory = NodePath("Controllers/Inventory")
 
 [node name="Scenario" type="Node3D" parent="." unique_id=94932498]
 
@@ -202,6 +267,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
 
 [node name="Gate" parent="Scenario/House" unique_id=462562098 instance=ExtResource("5_p57ef")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35007334, 0.014947891, -0.0078115463)
+
+[node name="Skeleton3D" parent="Scenario/House/Gate/gate/Gate" parent_id_path=PackedInt32Array(462562098, 1605280492, 2008915509) index="0" unique_id=1509647614]
+bones/1/rotation = Quaternion(0.70710677, -1.15202326e-07, -1.15202326e-07, 0.70710677)
+bones/1/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(-0.5, -0.5, 0.5, 0.5)
 
 [node name="Gate2" parent="Scenario/House" unique_id=75180315 instance=ExtResource("5_p57ef")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -17.22124, 0.014947891, -17.22033)
@@ -456,6 +526,7 @@ shape = SubResource("BoxShape3D_trtic")
 
 [node name="NextArea" type="Area3D" parent="Scenario/Scene5" unique_id=1029735163 node_paths=PackedStringArray("scene")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.499192, 2, 1.6883166)
+input_ray_pickable = false
 script = ExtResource("9_trtic")
 scene = NodePath("../../Scene6")
 
@@ -522,6 +593,166 @@ scene = NodePath("../../Scene15")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene5/NextArea3" unique_id=67253119]
 shape = SubResource("BoxShape3D_ir15t")
+
+[node name="Block" type="Node3D" parent="Scenario/Scene5" unique_id=301910320]
+transform = Transform3D(0.9486251, 0, -0.31640178, 0, 1, 0, 0.31640178, 0, 0.9486251, -3.821948, 2.3841858e-07, 2.1016083)
+
+[node name="Counter" type="Node" parent="Scenario/Scene5/Block" unique_id=753404377]
+script = ExtResource("13_7025r")
+target = 3
+remove_item_on_target = ExtResource("23_twgab")
+metadata/_custom_type_script = "uid://ccup386pslxg0"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Scenario/Scene5/Block" unique_id=189695254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.435688, -2.029172)
+material_override = ExtResource("13_02fa5")
+mesh = SubResource("BoxMesh_twgab")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario/Scene5/Block" unique_id=207567032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.435688, 1.970828)
+material_override = ExtResource("13_02fa5")
+mesh = SubResource("BoxMesh_twgab")
+
+[node name="Wood" type="Node3D" parent="Scenario/Scene5/Block" unique_id=1513956828]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99770206, 0.06775404, 0, -0.06775402, 0.99770194, 0.01381588, 0.41870356, 0.009554356)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood" unique_id=1645398536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("13_02fa5")
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood" unique_id=1641388772]
+transform = Transform3D(-4.4703484e-08, -1.0000001, 1.4901161e-08, 1.0000001, -4.284084e-08, 7.450581e-09, 0, 0, 1.0000001, 0.19001733, 0.15493777, -1.912849)
+material_override = ExtResource("14_nepv3")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood" unique_id=1101249009]
+transform = Transform3D(-4.4703484e-08, -1.0000001, 1.4901161e-08, 1.0000001, -4.284084e-08, 7.450581e-09, 0, 0, 1.0000001, 0.19001739, -0.124355346, -1.9313936)
+material_override = ExtResource("14_nepv3")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood" unique_id=1143034699]
+transform = Transform3D(-4.4703484e-08, -1.0000001, 1.4901161e-08, 1.0000001, -4.284084e-08, 7.450581e-09, 0, 0, 1.0000001, 0.19001678, 0.13810486, 1.9072564)
+material_override = ExtResource("14_nepv3")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood" unique_id=1799871533]
+transform = Transform3D(-4.4703484e-08, -1.0000001, 1.4901161e-08, 1.0000001, -4.284084e-08, 7.450581e-09, 0, 0, 1.0000001, 0.19001685, -0.12597343, 1.9107062)
+material_override = ExtResource("14_nepv3")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="HammerUse" type="Area3D" parent="Scenario/Scene5/Block/Wood" unique_id=1420369479 node_paths=PackedStringArray("delete_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+script = ExtResource("18_v2yb1")
+item = ExtResource("23_twgab")
+remove_item = false
+delete_nodes = [NodePath("..")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene5/Block/Wood/HammerUse" unique_id=605705255]
+shape = SubResource("BoxShape3D_fcnqv")
+
+[node name="Wood2" type="Node3D" parent="Scenario/Scene5/Block" unique_id=204449149]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9952734, -0.097112924, 0, 0.09711287, 0.9952731, 0.01381588, 1.2655015, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood2" unique_id=791498764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("13_02fa5")
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood2" unique_id=920114303]
+transform = Transform3D(-4.4703484e-08, -1.0000001, 1.4901161e-08, 1.0000001, -4.284084e-08, 7.450581e-09, 0, 0, 1.0000001, 0.19001773, 0.1340817, -1.8405699)
+material_override = ExtResource("14_nepv3")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood2" unique_id=1319634495]
+transform = Transform3D(-4.4703484e-08, -0.94883764, 0.31576478, 1.0000001, -4.0553697e-08, 2.1566365e-08, -2.220446e-16, 0.31576476, 0.94883764, 0.19001687, -0.14051887, -1.9155654)
+material_override = ExtResource("14_nepv3")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood2" unique_id=1464850434]
+transform = Transform3D(-4.4703484e-08, -0.98827505, -0.1526847, 1.0000001, -4.2316685e-08, 6.2504224e-10, 0, -0.15268472, 0.98827505, 0.23125504, 0.13810486, 1.9072564)
+material_override = ExtResource("14_nepv3")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood2" unique_id=1558188848]
+transform = Transform3D(-4.4703484e-08, -1.0000001, 1.4901161e-08, 1.0000001, -4.284084e-08, 7.450581e-09, 0, 0, 1.0000001, 0.190017, -0.09892945, 1.8744389)
+material_override = ExtResource("14_nepv3")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="HammerUse" type="Area3D" parent="Scenario/Scene5/Block/Wood2" unique_id=321208315 node_paths=PackedStringArray("delete_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+script = ExtResource("18_v2yb1")
+item = ExtResource("23_twgab")
+remove_item = false
+delete_nodes = [NodePath("..")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene5/Block/Wood2/HammerUse" unique_id=469421810]
+shape = SubResource("BoxShape3D_fcnqv")
+
+[node name="Wood3" type="Node3D" parent="Scenario/Scene5/Block" unique_id=2084721814]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9955256, 0.094492145, 0, -0.09449214, 0.99552524, 0.01381588, 2.0868497, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood3" unique_id=1460617959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("13_02fa5")
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood3" unique_id=2084281879]
+transform = Transform3D(-4.4703484e-08, -0.92144346, -0.3885128, 1.0000001, -3.932908e-08, -9.917292e-09, 0, -0.3885128, 0.92144346, 0.231695, 0.16523613, -1.9126197)
+material_override = ExtResource("14_nepv3")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood3" unique_id=1220322552]
+transform = Transform3D(-4.4703484e-08, -0.9956765, 0.09288955, 1.0000001, -4.2647557e-08, 1.1603066e-08, 0, 0.09288953, 0.9956765, 0.19246608, -0.08269899, -1.9051443)
+material_override = ExtResource("14_nepv3")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood3" unique_id=147910799]
+transform = Transform3D(0.12510802, -0.9921432, 1.4901161e-08, 0.9921432, 0.12510802, 7.450581e-09, -1.8057167e-09, -1.0492045e-09, 1.0000001, 0.19001727, 0.17022768, 1.9100268)
+material_override = ExtResource("14_nepv3")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood3" unique_id=2139182649]
+transform = Transform3D(-0.110740155, -0.98910147, 0.09703215, 0.99379086, -0.11126519, 1.3038516e-08, 0.010796293, 0.09642963, 0.9952814, 0.19001755, -0.11598582, 1.8801465)
+material_override = ExtResource("14_nepv3")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="HammerUse" type="Area3D" parent="Scenario/Scene5/Block/Wood3" unique_id=1338309847 node_paths=PackedStringArray("delete_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+script = ExtResource("18_v2yb1")
+item = ExtResource("23_twgab")
+remove_item = false
+delete_nodes = [NodePath("..")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene5/Block/Wood3/HammerUse" unique_id=1413133599]
+shape = SubResource("BoxShape3D_fcnqv")
+
+[node name="Wood_Fallen" type="Node3D" parent="Scenario/Scene5/Block" unique_id=728737465]
+transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.9999999, -4.3711385e-08, 0, 0, 0, 0.9999999, 0.7480053, -0.049577415, -0.1337975)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood_Fallen" unique_id=92945497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("13_02fa5")
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="Wood_Fallen2" type="Node3D" parent="Scenario/Scene5/Block" unique_id=1390028197]
+transform = Transform3D(-0.026331149, -0.83129066, 0.55521375, 0.99763227, 0.013446324, 0.06744539, -0.063532315, 0.5556751, 0.82896835, -0.71190417, -0.04957789, -0.29978535)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood_Fallen2" unique_id=1119003987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("13_02fa5")
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="Wood_Fallen3" type="Node3D" parent="Scenario/Scene5/Block" unique_id=1731303622]
+transform = Transform3D(0.0057081636, -0.99399203, -0.109302945, 0.99863905, -4.377216e-08, 0.052152656, -0.05183933, -0.10945191, 0.99263924, -0.29181826, 0.023676474, 0.15740275)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario/Scene5/Block/Wood_Fallen3" unique_id=1519317405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("13_02fa5")
+mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="Scene7" type="Node3D" parent="Scenario" unique_id=203436911 node_paths=PackedStringArray("camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.93402, 0, -16.761272)
@@ -598,12 +829,12 @@ transform = Transform3D(0.7071067, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.707
 
 [node name="Camera3D" parent="Scenario/Scene8/CameraStand" index="0" unique_id=1331824599]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022750854, 0.3768747, -2.6610708)
-current = true
 
 [node name="ChangeSceneInteractable" parent="Scenario/Scene8/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
 scene = NodePath("../../../../Scene7")
 
 [node name="Lights" type="Node3D" parent="Scenario/Scene8" unique_id=1189374213]
+visible = false
 
 [node name="AreaLight3D" type="AreaLight3D" parent="Scenario/Scene8/Lights" unique_id=421132656]
 transform = Transform3D(0.5505169, -0.834824, -3.6491315e-08, 0, -4.371139e-08, 1, -0.834824, -0.5505169, -2.4063858e-08, -21.15305, 7.460917, -14.113209)
@@ -650,26 +881,113 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4175, -0.753008, -7.35831
 
 [node name="Rock3" parent="Scenario/Scene8/Path/Rock3" unique_id=585447171 instance=ExtResource("14_ca42v")]
 transform = Transform3D(0.94099545, 0.30617896, -0.14416021, 0.31135905, -0.9501847, 0.014295846, -0.13260174, -0.058337986, -0.98945117, 0, 0, 0)
+visible = false
+
+[node name="Rock4" parent="Scenario/Scene8/Path/Rock3" unique_id=2041314870 instance=ExtResource("14_ca42v")]
+transform = Transform3D(0.94099545, 0.30617896, -0.14416021, 0.31135905, -0.9501847, 0.014295846, -0.13260174, -0.058337986, -0.98945117, -3.3104105, 0, 2.563305)
+
+[node name="Area3D" type="Area3D" parent="Scenario/Scene8/Path/Rock3/Rock4" unique_id=1574329533 node_paths=PackedStringArray("mesh", "active_on_selected")]
+script = ExtResource("14_264po")
+pattern = Array[int]([3])
+mesh = NodePath("../Rock")
+selected_material = ExtResource("14_pl11u")
+locked_material = ExtResource("14_bhx41")
+active_on_selected = [NodePath("../Sprite3D")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene8/Path/Rock3/Rock4/Area3D" unique_id=1523196927]
+transform = Transform3D(0.8729318, -0.46430233, -0.14970815, 0.45063797, 0.88499516, -0.11708571, 0.1868541, 0.034743693, 0.98177344, 0.18897486, -0.5095937, -0.050727844)
+shape = SubResource("BoxShape3D_qnb83")
+
+[node name="Sprite3D" type="Sprite3D" parent="Scenario/Scene8/Path/Rock3/Rock4" unique_id=187073600]
+transform = Transform3D(0.72075886, -0.36739868, 2.8888624, 0.27414614, -2.9542527, -0.44411308, 2.8991985, 0.37068954, -0.6761948, 0.71866214, -0.35702312, -0.28454503)
+visible = false
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("17_qnb83")
 
 [node name="Rock2" type="Node3D" parent="Scenario/Scene8/Path" unique_id=128064962]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.507656, -0.6720575, -5.434803)
 
 [node name="Rock2" parent="Scenario/Scene8/Path/Rock2" unique_id=1645129430 instance=ExtResource("14_ca42v")]
 transform = Transform3D(0.05880217, 0.058802187, 0.99653643, 0.3143737, -0.94856143, 0.037421238, 0.9474764, 0.31108436, -0.07426333, 0, 0, 0)
+visible = false
+
+[node name="Rock3" parent="Scenario/Scene8/Path/Rock2" unique_id=501375000 instance=ExtResource("14_ca42v")]
+transform = Transform3D(0.05880217, 0.058802187, 0.99653643, 0.3143737, -0.94856143, 0.037421238, 0.9474764, 0.31108436, -0.07426333, 5.397311, 0, -4.7821274)
+
+[node name="Area3D" type="Area3D" parent="Scenario/Scene8/Path/Rock2/Rock3" unique_id=483010639 node_paths=PackedStringArray("mesh", "active_on_selected")]
+script = ExtResource("14_264po")
+pattern = Array[int]([1])
+mesh = NodePath("../Rock")
+selected_material = ExtResource("14_pl11u")
+locked_material = ExtResource("14_bhx41")
+active_on_selected = [NodePath("../Sprite3D")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene8/Path/Rock2/Rock3/Area3D" unique_id=964205822]
+transform = Transform3D(0.9710877, -0.23820028, 0.015761372, 0.23840082, 0.9710881, -0.01236123, -0.012361202, 0.015761364, 0.9997994, 0.22634506, -0.4949417, 0.109187126)
+shape = SubResource("BoxShape3D_qnb83")
+
+[node name="Sprite3D" type="Sprite3D" parent="Scenario/Scene8/Path/Rock2/Rock3" unique_id=1374612964]
+transform = Transform3D(0.25957024, -1.1716994, -2.7494988, 0.32569647, -2.7323236, 1.1951278, -2.9709504, -0.40190715, -0.109203406, 0.7701734, -0.31578922, 0.0403897)
+visible = false
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("17_qnb83")
 
 [node name="Rock1" type="Node3D" parent="Scenario/Scene8/Path" unique_id=410556421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9974036, -0.67205775, -3.9878159)
 
-[node name="Rock" parent="Scenario/Scene8/Path/Rock1" unique_id=2041314870 instance=ExtResource("14_ca42v")]
+[node name="Rock" parent="Scenario/Scene8/Path/Rock1" unique_id=1939246749 instance=ExtResource("14_ca42v")]
 transform = Transform3D(-0.7071067, -0.7071068, 0, 0.7071068, -0.7071067, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 
 [node name="Rock2" parent="Scenario/Scene8/Path/Rock1" unique_id=904418425 instance=ExtResource("14_ca42v")]
-transform = Transform3D(-0.7071067, -0.7071068, 0, 0.7071068, -0.7071067, 0, 0, 0, 1, -4.6705103, 0, 2.0466156)
+transform = Transform3D(-0.7071067, -0.7071068, 0, 0.7071068, -0.7071067, 0, 0, 0, 1, -5.765081, 0, 2.6545048)
 
-[node name="Area3D" type="Area3D" parent="Scenario/Scene8/Path/Rock1/Rock2" unique_id=521126435]
+[node name="Area3D" type="Area3D" parent="Scenario/Scene8/Path/Rock1/Rock2" unique_id=521126435 node_paths=PackedStringArray("mesh", "active_on_selected")]
+script = ExtResource("14_264po")
+pattern = Array[int]([3])
+mesh = NodePath("../Rock")
+selected_material = ExtResource("14_pl11u")
+locked_material = ExtResource("14_bhx41")
+active_on_selected = [NodePath("../Sprite3D")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene8/Path/Rock1/Rock2/Area3D" unique_id=1320522564]
-shape = SubResource("SphereShape3D_g4v7s")
+transform = Transform3D(0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, 0, 0, 0, 1, 0.30251455, -0.4748515, 0.022338867)
+shape = SubResource("BoxShape3D_bhx41")
+
+[node name="Sprite3D" type="Sprite3D" parent="Scenario/Scene8/Path/Rock1/Rock2" unique_id=988533171]
+transform = Transform3D(-0.51463354, 2.826671, -0.86318314, -0.5818461, -0.9559217, -2.7834635, -2.89769, -0.31007457, 0.7122123, -0.07749956, -0.83539385, 0.1348007)
+visible = false
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("17_qnb83")
+
+[node name="TravelBlock" type="Node3D" parent="Scenario/Scene8" unique_id=1361065446]
+
+[node name="Rock1" type="StaticBody3D" parent="Scenario/Scene8/TravelBlock" unique_id=1227643290]
+transform = Transform3D(0.5577086, 0, 0.83003676, 0, 1, 0, -0.83003676, 0, 0.5577086, -12.57733, 2, -9.157148)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene8/TravelBlock/Rock1" unique_id=1027827423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3840166, 0, -0.3866158)
+shape = SubResource("BoxShape3D_sww3w")
+
+[node name="Rock2" type="StaticBody3D" parent="Scenario/Scene8/TravelBlock" unique_id=2008228055]
+transform = Transform3D(0.5577086, 0, 0.83003676, 0, 1, 0, -0.83003676, 0, 0.5577086, -12.532641, 2, -9.127123)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene8/TravelBlock/Rock2" unique_id=106335266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3840166, 0, -0.3866158)
+shape = SubResource("BoxShape3D_sww3w")
+
+[node name="Rock3" type="StaticBody3D" parent="Scenario/Scene8/TravelBlock" unique_id=1516826899]
+transform = Transform3D(0.5577086, 0, 0.83003676, 0, 1, 0, -0.83003676, 0, 0.5577086, -12.443409, 2, -9.067165)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene8/TravelBlock/Rock3" unique_id=1007606246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3840166, 0, -0.3866158)
+shape = SubResource("BoxShape3D_sww3w")
 
 [node name="Scene6" type="Node3D" parent="Scenario" unique_id=1991588791 node_paths=PackedStringArray("camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.744192, 0, -1.6647215)
@@ -707,6 +1025,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9246807, -9.536743e-07, 5.
 
 [node name="Tree8" parent="Scenario/Scene6/Scenario" unique_id=1737254265 instance=ExtResource("3_gee14")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.167051, -9.536743e-07, 4.6724486)
+
+[node name="LockUse" type="Area3D" parent="Scenario/Scene6" unique_id=855215247 node_paths=PackedStringArray("delete_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.313214, 1.7045269, 1.6507423)
+script = ExtResource("18_v2yb1")
+item = ExtResource("20_wljb1")
+delete_nodes = [NodePath("../../House/Lock")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene6/LockUse" unique_id=265236237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0871582, 0)
+shape = SubResource("BoxShape3D_57qmd")
 
 [node name="Scene9" type="Node3D" parent="Scenario" unique_id=1262753714 node_paths=PackedStringArray("camera")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.10382, 0, 13.81772)
@@ -969,6 +1297,102 @@ transform = Transform3D(0.8369532, 0, 0.5472742, 0, 1, 0, -0.5472742, 0, 0.83695
 [node name="Tree21" parent="Scenario/Scene13/Scenario" unique_id=474857253 instance=ExtResource("3_gee14")]
 transform = Transform3D(0.5744555, 0, 0.81853557, 0, 1, 0, -0.81853557, 0, 0.5744555, 0.9239578, -1.9073486e-06, -2.4628143)
 
+[node name="ChestScene" type="Node3D" parent="Scenario/Scene13" unique_id=882076736 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2456012, -0.231004, -2.6869907)
+script = ExtResource("9_ir15t")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="CameraStand" parent="Scenario/Scene13/ChestScene" unique_id=1169982697 instance=ExtResource("8_0tnpc")]
+transform = Transform3D(0.70710665, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.70710665, 0.24434662, 0.9999995, 1.7990799)
+
+[node name="Camera3D" parent="Scenario/Scene13/ChestScene/CameraStand" index="0" unique_id=1331824599]
+transform = Transform3D(0.99583983, -0.04915829, 0.07672447, -3.7252899e-09, 0.84199905, 0.5394791, -0.09112179, -0.5372347, 0.83849627, 1.3723011, 0.51077855, -0.21507645)
+
+[node name="ChangeSceneInteractable" parent="Scenario/Scene13/ChestScene/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9105348, 0.22303817, -0.34810972, -0.22303812, 0.9739623, 0.040638745, 0.3481097, 0.040638745, 0.9365726, -0.5340624, -0.3410473, -0.5914421)
+scene = NodePath("../../../..")
+
+[node name="Chest" parent="Scenario/Scene13/ChestScene" unique_id=1430990470 instance=ExtResource("20_js0lu")]
+transform = Transform3D(0.0352208, 0, -0.4987579, 0, 0.5, 0, 0.4987579, 0, 0.0352208, 0, 0, 0)
+
+[node name="Lock" parent="Scenario/Scene13/ChestScene/Chest" unique_id=2035358194 instance=ExtResource("6_u5sy4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.9272212, 1.5130141, 2.6550929e-08)
+
+[node name="Hammer" parent="Scenario/Scene13/ChestScene/Chest" unique_id=1051621178 instance=ExtResource("21_gxtfn")]
+transform = Transform3D(0.4364419, -0.1476434, 0.88753605, 0.46600398, 0.8809173, -0.08261306, -0.76964843, 0.449651, 0.4532717, -0.07618332, 0.6092377, 0.564415)
+
+[node name="PickItem" type="Area3D" parent="Scenario/Scene13/ChestScene/Chest/Hammer" unique_id=773695128 node_paths=PackedStringArray("remove_node")]
+input_ray_pickable = false
+script = ExtResource("19_qouja")
+item = ExtResource("23_twgab")
+remove_node = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene13/ChestScene/Chest/Hammer/PickItem" unique_id=1559702547]
+transform = Transform3D(1, -1.4901161e-08, -1.1920929e-07, 0, 0.9999999, -2.9802322e-08, 0, 1.4901161e-08, 1, 0, 0.45507813, 1.9073486e-06)
+shape = SubResource("BoxShape3D_3gngh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Scenario/Scene13/ChestScene/Chest/Hammer/PickItem" unique_id=1390220868]
+transform = Transform3D(1, -1.4901161e-08, -1.1920929e-07, 0, 0.9999999, -2.9802322e-08, 0, 1.4901161e-08, 1, -7.6293945e-06, 0.92944336, 0.010528564)
+shape = SubResource("BoxShape3D_gxtfn")
+
+[node name="Pattern" type="Node3D" parent="Scenario/Scene13/ChestScene/Chest" unique_id=1097690007]
+transform = Transform3D(1, 0, 0, 0, 0.49999994, -0.8660254, 0, 0.8660254, 0.49999994, -0.36615473, 1.596944, -0.8496432)
+
+[node name="Sprite3D" type="Sprite3D" parent="Scenario/Scene13/ChestScene/Chest/Pattern" unique_id=1319922767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85213447, -0.08591878, -0.28454503)
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("17_qnb83")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Scenario/Scene13/ChestScene/Chest/Pattern" unique_id=1663875002]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.62268704, -0.085918784, -0.28454503)
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("17_qnb83")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Scenario/Scene13/ChestScene/Chest/Pattern" unique_id=1769204117]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.43501058, -0.08591878, -0.28454503)
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("17_qnb83")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Scenario/Scene13/ChestScene/Chest/Pattern" unique_id=1617761721]
+transform = Transform3D(-1, -1.509958e-07, 0, 1.509958e-07, -1, 0, 0, 0, 1, 0.21120647, -0.08591878, -0.28454503)
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("17_qnb83")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Scenario/Scene13/ChestScene/Chest/Pattern" unique_id=1154364469]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.0023370832, -0.08591881, -0.28454503)
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("17_qnb83")
+
+[node name="Patterned" type="Area3D" parent="Scenario/Scene13/ChestScene/Chest" unique_id=1792852781 node_paths=PackedStringArray("mesh")]
+script = ExtResource("14_264po")
+pattern = Array[int]([1, 0, 2, 3, 0])
+mesh = NodePath("../chest/Chest/Skeleton3D/ChestMesh")
+selected_material = ExtResource("14_pl11u")
+locked_material = ExtResource("14_bhx41")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene13/ChestScene/Chest/Patterned" unique_id=1985095263]
+transform = Transform3D(1.0000001, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, 1.0000001, 0.088378906, 1.1042056, 0)
+shape = SubResource("BoxShape3D_d0u6y")
+
+[node name="NextArea" type="Area3D" parent="Scenario/Scene13" unique_id=1134732388 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9202961, 0, 0.39122242, 0, 1, 0, -0.39122242, 0, 0.9202961, -1.2024238, 0, -1.1180158)
+script = ExtResource("9_trtic")
+scene = NodePath("../ChestScene")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene13/NextArea" unique_id=1201434499]
+transform = Transform3D(1.0000259, 0, 4.954636e-07, 0, 1, 0, -4.954636e-07, 0, 1.0000259, -0.012435913, 0.7942505, 0)
+shape = SubResource("BoxShape3D_twgab")
+
 [node name="Scene14" type="Node3D" parent="Scenario" unique_id=592409877 node_paths=PackedStringArray("camera", "on_scene_only")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.114592, 0, -36.129333)
 script = ExtResource("9_ir15t")
@@ -1098,6 +1522,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3802433, -2.861023e-06, -4
 [node name="Key" parent="Scenario/Scene16/Scenario" unique_id=1887049370 instance=ExtResource("13_ir15t")]
 transform = Transform3D(-0.43301275, 0.3224846, -0.8417266, -0.25000006, 0.8542113, 0.4558763, 0.8660254, 0.40783194, -0.28926316, -6.303914, 0.65094143, -3.9462557)
 
+[node name="Area3D" type="Area3D" parent="Scenario/Scene16/Scenario/Key" unique_id=1424612009 node_paths=PackedStringArray("remove_node")]
+script = ExtResource("19_qouja")
+item = ExtResource("20_wljb1")
+remove_node = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Scene16/Scenario/Key/Area3D" unique_id=310674744]
+shape = SubResource("BoxShape3D_yf5fn")
+
 [node name="Rock" parent="Scenario/Scene16/Scenario" unique_id=837155074 instance=ExtResource("14_ca42v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.652157, 0, -4.1249237)
 
@@ -1123,19 +1555,105 @@ transform = Transform3D(0.7592584, -0.38800454, 0.52247405, -0.65078926, -0.4526
 [node name="ScenesController" type="Node" parent="Controllers" unique_id=347412977]
 script = ExtResource("14_trtic")
 
+[node name="PatternListener" type="Node" parent="Controllers" unique_id=1923408020 node_paths=PackedStringArray("clear_timer")]
+script = ExtResource("18_ssvqc")
+clear_timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="Controllers/PatternListener" unique_id=832686968]
+wait_time = 0.5
+
+[node name="Inventory" type="Node" parent="Controllers" unique_id=118133313]
+script = ExtResource("23_sgl2t")
+
+[node name="InGameUI" type="Control" parent="." unique_id=1657561095]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PatternVisualizer" type="HFlowContainer" parent="InGameUI" unique_id=542838781]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 64.0
+offset_right = -64.0
+offset_bottom = 78.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0)
+alignment = 1
+script = ExtResource("20_pl11u")
+up_arrow = ExtResource("23_qnb83")
+left_arrow = ExtResource("22_bhx41")
+down_arrow = ExtResource("21_pl11u")
+right_arrow = ExtResource("20_e1j6l")
+
+[node name="InventoryVisualizer" type="HBoxContainer" parent="InGameUI" unique_id=75468528]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -45.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 1)
+alignment = 2
+script = ExtResource("28_suyxu")
+image_scene = ExtResource("28_sww3w")
+
+[connection signal="on_target" from="Scenario/Scene5/Block/Counter" to="Scenario/Scene5/NextArea" method="set_ray_pickable" binds= [true]]
+[connection signal="item_used" from="Scenario/Scene5/Block/Wood/HammerUse" to="Scenario/Scene5/Block/Counter" method="increment_one"]
+[connection signal="item_used" from="Scenario/Scene5/Block/Wood/HammerUse" to="Scenario/Scene5/Block/Wood_Fallen" method="set_visible" binds= [true]]
+[connection signal="item_used" from="Scenario/Scene5/Block/Wood2/HammerUse" to="Scenario/Scene5/Block/Counter" method="increment_one"]
+[connection signal="item_used" from="Scenario/Scene5/Block/Wood2/HammerUse" to="Scenario/Scene5/Block/Wood_Fallen2" method="set_visible" binds= [true]]
+[connection signal="item_used" from="Scenario/Scene5/Block/Wood3/HammerUse" to="Scenario/Scene5/Block/Counter" method="increment_one"]
+[connection signal="item_used" from="Scenario/Scene5/Block/Wood3/HammerUse" to="Scenario/Scene5/Block/Wood_Fallen3" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Scenario/Scene8/Path/Rock3/Rock4/Area3D" to="Scenario/Scene8/Path/Rock3/Rock3" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Scenario/Scene8/Path/Rock3/Rock4/Area3D" to="Scenario/Scene8/Path/Rock3/Rock4" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Scenario/Scene8/Path/Rock3/Rock4/Area3D" to="Scenario/Scene8/Path/Rock3/Rock4" method="set_physics_process" binds= [false]]
+[connection signal="on_pattern_made" from="Scenario/Scene8/Path/Rock3/Rock4/Area3D" to="Scenario/Scene8/TravelBlock/Rock3" method="set_ray_pickable" binds= [false]]
+[connection signal="on_pattern_made" from="Scenario/Scene8/Path/Rock2/Rock3/Area3D" to="Scenario/Scene8/Path/Rock2/Rock2" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Scenario/Scene8/Path/Rock2/Rock3/Area3D" to="Scenario/Scene8/Path/Rock2/Rock3" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Scenario/Scene8/Path/Rock2/Rock3/Area3D" to="Scenario/Scene8/Path/Rock2/Rock3" method="set_physics_process" binds= [false]]
+[connection signal="on_pattern_made" from="Scenario/Scene8/Path/Rock2/Rock3/Area3D" to="Scenario/Scene8/TravelBlock/Rock2" method="set_ray_pickable" binds= [false]]
+[connection signal="on_pattern_made" from="Scenario/Scene8/Path/Rock1/Rock2/Area3D" to="Scenario/Scene8/Path/Rock1/Rock" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Scenario/Scene8/Path/Rock1/Rock2/Area3D" to="Scenario/Scene8/Path/Rock1/Rock2" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Scenario/Scene8/Path/Rock1/Rock2/Area3D" to="Scenario/Scene8/Path/Rock1/Rock2" method="set_physics_process" binds= [false]]
+[connection signal="on_pattern_made" from="Scenario/Scene8/Path/Rock1/Rock2/Area3D" to="Scenario/Scene8/TravelBlock/Rock1" method="set_ray_pickable" binds= [false]]
+[connection signal="item_used" from="Scenario/Scene6/LockUse" to="Scenario/House/Gate/gate/AnimationPlayer" method="play" binds= ["Gate|Open"]]
+[connection signal="on_pattern_made" from="Scenario/Scene13/ChestScene/Chest/Patterned" to="Scenario/Scene13/ChestScene/Chest/chest/AnimationPlayer" method="play" binds= ["OpenLid_001"]]
+[connection signal="on_pattern_made" from="Scenario/Scene13/ChestScene/Chest/Patterned" to="Scenario/Scene13/ChestScene/Chest/Lock" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Scenario/Scene13/ChestScene/Chest/Patterned" to="Scenario/Scene13/ChestScene/Chest/Hammer/PickItem" method="set_ray_pickable" binds= [true]]
+[connection signal="on_pattern_made" from="Scenario/Scene13/ChestScene/Chest/Patterned" to="Scenario/Scene13/ChestScene/Chest/Pattern" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Scenario/Scene13/ChestScene/Chest/Patterned" to="Scenario/Scene13/ChestScene/Chest/Patterned" method="set_ray_pickable" binds= [false]]
+
 [editable path="Scenario/Ambient/Trees/Tree"]
+[editable path="Scenario/House/Gate"]
+[editable path="Scenario/House/Gate/gate"]
 [editable path="Scenario/Scene2/CameraStand"]
 [editable path="Scenario/Scene3/CameraStand"]
 [editable path="Scenario/Scene4/CameraStand"]
 [editable path="Scenario/Scene5/CameraStand"]
 [editable path="Scenario/Scene7/CameraStand"]
 [editable path="Scenario/Scene8/CameraStand"]
+[editable path="Scenario/Scene8/Path/Rock3/Rock4"]
+[editable path="Scenario/Scene8/Path/Rock2/Rock3"]
+[editable path="Scenario/Scene8/Path/Rock1/Rock2"]
 [editable path="Scenario/Scene6/CameraStand"]
 [editable path="Scenario/Scene9/CameraStand"]
 [editable path="Scenario/Scene10/CameraStand"]
 [editable path="Scenario/Scene11/CameraStand"]
 [editable path="Scenario/Scene12/CameraStand"]
 [editable path="Scenario/Scene13/CameraStand"]
+[editable path="Scenario/Scene13/ChestScene/CameraStand"]
+[editable path="Scenario/Scene13/ChestScene/Chest"]
+[editable path="Scenario/Scene13/ChestScene/Chest/chest"]
 [editable path="Scenario/Scene14/CameraStand"]
 [editable path="Scenario/Scene15/CameraStand"]
 [editable path="Scenario/Scene16/CameraStand"]

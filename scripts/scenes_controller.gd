@@ -15,6 +15,4 @@ func change_scene(scene: Scene):
 	current_scene = scene
 	current_scene.activate()
 	
-	print(scene.name)
-	
 	await UIManager.instance.shader.fade_to_default()

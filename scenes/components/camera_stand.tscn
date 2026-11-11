@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dybkw4ji7oj7w"]
 
-[ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/change_scene_interactable.gd" id="1_ssqhk"]
+[ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/interactables/change_scene_interactable.gd" id="1_ssqhk"]
 [ext_resource type="PackedScene" uid="uid://c2r1o6tdvi2f5" path="res://resources/models/arrow.tscn" id="2_dg3qf"]
 
 [sub_resource type="Environment" id="Environment_yf5fn"]
@@ -12,7 +12,7 @@ fog_depth_begin = 0.0
 fog_depth_end = 15.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
-size = Vector3(0.6, 0.1, 0.19)
+size = Vector3(0.305, 0.1, 0.120878905)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g4v7s"]
 radius = 0.4
@@ -34,7 +34,7 @@ metadata/_custom_type_script = "uid://bnjfxriyseeds"
 transform = Transform3D(-5.4639235e-09, 0, 0.15, 0, 0.25, 0, -0.125, 0, -6.5567085e-09, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/ChangeSceneInteractable" unique_id=1340848736]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1054274e-15, 0, -0.048503876)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1054274e-15, 0, -0.013943315)
 shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1075611605]

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c1g2lku6sdquj"]
+
+[ext_resource type="Shader" uid="uid://bk7q5jo3fdt05" path="res://scenes/components/arrows/canvas_outline.gdshader" id="1_xyikl"]
+
+[resource]
+shader = ExtResource("1_xyikl")
+shader_parameter/modulate_color = Color(0.61339027, 0.61339027, 0.61339027, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 1.0

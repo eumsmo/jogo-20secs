@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bf1hydheni8a5"]
+
+[ext_resource type="PackedScene" uid="uid://cm4x4tdggd7ui" path="res://resources/models/fbx/chest.fbx" id="1_hq8cl"]
+
+[node name="Chest" type="Node3D" unique_id=1430990470]
+
+[node name="chest" parent="." unique_id=546841921 instance=ExtResource("1_hq8cl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3599777, 0, 0)
+
+[node name="Skeleton3D" parent="chest/Chest" parent_id_path=PackedInt32Array(546841921, 2133845557) index="0" unique_id=507044364]
+bones/1/position = Vector3(-0.0058918516, 0.012552833, 3.6477446e-05)
+bones/1/rotation = Quaternion(8.514717e-08, 8.7490825e-08, -0.6974432, 0.7166401)
+bones/1/scale = Vector3(1, 1, 1)
+
+[editable path="chest"]
