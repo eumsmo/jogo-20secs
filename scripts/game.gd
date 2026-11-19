@@ -14,7 +14,7 @@ static var current_level: LevelInfo
 @export var pattern: InGamePatternListener
 @export var inventory: Inventory
 
-enum Direction { UP, LEFT, DOWN, RIGHT }
+enum Direction { UP, LEFT, DOWN, RIGHT, UP_LEFT, UP_RIGHT, DOWN_LEFT, DOWN_RIGHT }
 
 func _init() -> void:
 	instance = self

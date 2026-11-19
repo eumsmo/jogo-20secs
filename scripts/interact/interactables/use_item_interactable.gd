@@ -7,13 +7,9 @@ extends Interactable
 @export var delete_nodes: Array[Node3D]
 signal item_used
 
-func _ready() -> void:
-	super()
-	auto_change_cursor = false
-
-func clicked():
+func clicked() -> bool:
 	if not Game.instance.inventory.has(item):
-		return
+		return false
 	
 	if remove_item:
 		Game.instance.inventory.remove(item)
@@ -23,14 +19,7 @@ func clicked():
 	
 	item_used.emit()
 
-	super()
+	return super()
 
-
-func hovered():
-	if Game.instance.inventory.has(item):
-		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
-	super()
-
-func unhovered():
-	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
-	super()
+func can_interact() -> bool:
+	return Game.instance.inventory.has(item)

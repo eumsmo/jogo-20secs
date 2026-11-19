@@ -58,6 +58,15 @@
 [ext_resource type="PackedScene" uid="uid://d4k1ns34qfr44" path="res://resources/models/phase2/outdoor_chair.tscn" id="40_pf7vy"]
 [ext_resource type="PackedScene" uid="uid://dycehj0df2fdw" path="res://resources/models/phase2/outdoor_table.tscn" id="41_o8ni1"]
 [ext_resource type="PackedScene" uid="uid://bof6f6q6tfq7g" path="res://resources/models/phase2/grand_clock.tscn" id="42_o8ni1"]
+[ext_resource type="Script" uid="uid://irap3h13rsfh" path="res://scripts/pattern/scene_pattern.gd" id="45_n8ral"]
+[ext_resource type="Script" uid="uid://1hpvwn6n1g6h" path="res://scripts/interact/interactables/multiple_interactables.gd" id="49_yd4ix"]
+[ext_resource type="Resource" uid="uid://f2shrknh5bpl" path="res://resources/itens/small_pointer.tres" id="50_0rmfi"]
+[ext_resource type="Resource" uid="uid://bo0ogvlnrqf3d" path="res://resources/itens/pointer.tres" id="50_bnuda"]
+[ext_resource type="Resource" uid="uid://cxxf2pau1r4ug" path="res://resources/itens/big_pointer.tres" id="51_0rmfi"]
+[ext_resource type="Material" uid="uid://cs62pcgda5eor" path="res://resources/materials/vfx/sprite_mesh_mats/base_sprite_mesh_mat.tres" id="53_3x28f"]
+[ext_resource type="Material" uid="uid://1iri3ypfxyxh" path="res://resources/materials/vfx/sprite_mesh_mats/highlight_sprite_mesh_mat.tres" id="53_l6q63"]
+[ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="53_xbak0"]
+[ext_resource type="Material" uid="uid://brcgsmls5gnle" path="res://resources/materials/vfx/sprite_mesh_mats/locked_sprite_mesh_mat.tres" id="55_mmvbu"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_57qmd"]
 size = Vector2(100, 100)
@@ -258,14 +267,14 @@ size = Vector3(0.5, 0.1, 0.3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_rm0al"]
 size = Vector3(2, 2, 2)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_33x8s"]
+size = Vector3(0.1, 4.554, 4)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8ni1"]
 size = Vector3(2, 3.5, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pf7vy"]
 size = Vector3(6.9456663, 5, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_i4re6"]
-size = Vector3(0.81555176, 0.9442749, 0.100292966)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_yf5fn"]
 top_radius = 0.15
@@ -273,6 +282,9 @@ bottom_radius = 0.15
 height = 4.254883
 radial_segments = 8
 rings = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5s0fj"]
+size = Vector3(0.8, 2.2091308, 0.8)
 
 [sub_resource type="BoxMesh" id="BoxMesh_o8ni1"]
 size = Vector3(0.1, 0.4, 1.8)
@@ -308,6 +320,19 @@ shading_mode = 0
 material = SubResource("StandardMaterial3D_yf5fn")
 size = Vector2(5, 5)
 
+[sub_resource type="BoxMesh" id="BoxMesh_57qmd"]
+material = ExtResource("13_02fa5")
+size = Vector3(0.3, 0.6, 3)
+
+[sub_resource type="QuadMesh" id="QuadMesh_d0u6y"]
+material = ExtResource("53_3x28f")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2j2di"]
+size = Vector3(0.9, 0.9, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mmvbu"]
+size = Vector3(4, 5, 0.1)
+
 [sub_resource type="GDScript" id="GDScript_m4url"]
 script/source = "extends TextureProgressBar
 
@@ -318,7 +343,7 @@ func _ready() -> void:
 
 [node name="Game" type="Node3D" unique_id=736994712 node_paths=PackedStringArray("level_scene_relation", "scenes", "pattern", "inventory")]
 script = ExtResource("1_kvuet")
-first_level = ExtResource("3_ms3bu")
+first_level = ExtResource("2_q8j3a")
 level_scene_relation = {
 ExtResource("3_ms3bu"): NodePath("Scenario/Phase1/Scene1"),
 ExtResource("2_q8j3a"): NodePath("Scenario/Phase2/Scene1")
@@ -1540,7 +1565,7 @@ scene = NodePath("../../../..")
 transform = Transform3D(0.0352208, 0, -0.4987579, 0, 0.5, 0, 0.4987579, 0, 0.0352208, 0, 0, 0)
 
 [node name="ChestMesh" parent="Scenario/Phase1/Scene13/ChestScene/Chest/chest/Chest/Skeleton3D" parent_id_path=PackedInt32Array(1430990470, 546841921, 507044364) index="0" unique_id=2144824632]
-transform = Transform3D(1, 0, 0, 2.9802322e-08, 1, -1.9539925e-14, 3.5527137e-15, 1.7763568e-15, 1.0000001, -0.0004425645, -0.0003682971, 0.0025534634)
+transform = Transform3D(1, 0, 0, 5.9604645e-08, 1, -4.2632564e-14, 7.1054274e-15, 1.7763568e-15, 1.0000002, -0.0004425645, -0.0003682971, 0.0025534637)
 
 [node name="Lock" parent="Scenario/Phase1/Scene13/ChestScene/Chest" unique_id=2035358194 instance=ExtResource("6_u5sy4")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.9272212, 1.5130141, 2.6550929e-08)
@@ -1825,20 +1850,12 @@ transform = Transform3D(0.5416646, 0, -0.8405947, 0, 1, 0, 0.8405947, 0, 0.54166
 transform = Transform3D(-0.35406104, 0, 0.93522245, 0, 1, 0, -0.93522245, 0, -0.35406104, -9.185517, 0, 15.090654)
 script = ExtResource("9_ir15t")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("NextArea"), NodePath("NextArea2")]
-
-[node name="NextArea" type="Area3D" parent="Scenario/Phase2/Scene3" unique_id=1169789378 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.99026275, 0, 0.13921118, 0, 1, 0, -0.13921118, 0, 0.99026275, 2.3395574, 2, -5.7111783)
-script = ExtResource("9_trtic")
-scene = NodePath("../../Scene4")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Phase2/Scene3/NextArea" unique_id=1846421353]
-shape = SubResource("BoxShape3D_g4v7s")
+on_scene_only = [NodePath("NextChapter"), NodePath("NextArea2")]
 
 [node name="NextArea2" type="Area3D" parent="Scenario/Phase2/Scene3" unique_id=1739094753 node_paths=PackedStringArray("scene")]
 transform = Transform3D(0.9378889, 0, -0.34693566, 0, 1, 0, 0.34693566, 0, 0.9378889, -0.9486001, 0.6485361, -0.12754585)
 script = ExtResource("9_trtic")
-scene = NodePath("../../ElectricBoxLooking")
+scene = NodePath("../../ElectricBoxLooking/ElectricBoxInspection")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Phase2/Scene3/NextArea2" unique_id=1400717170]
 shape = SubResource("BoxShape3D_rm0al")
@@ -1846,11 +1863,35 @@ shape = SubResource("BoxShape3D_rm0al")
 [node name="CameraStand" parent="Scenario/Phase2/Scene3" unique_id=1886585254 instance=ExtResource("8_0tnpc")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.235787, 0.9999995, -1.4201452)
 
-[node name="ChangeSceneInteractable" parent="Scenario/Phase2/Scene3/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1886585254, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.47351184, 0, -0.88078743, 0, 1, 0, 0.88078743, 0, 0.47351184, -0.74672425, -0.37687445, -0.6474692)
+[node name="Camera3D" parent="Scenario/Phase2/Scene3/CameraStand" index="0" unique_id=1331824599]
+transform = Transform3D(0.68085945, 0, -0.73241407, 0, 1, 0, 0.73241407, 0, 0.68085945, -2.184113, 0.3768747, -1.5733371)
+
+[node name="ChangeSceneInteractable" parent="Scenario/Phase2/Scene3/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9993346, 0, 0.036474764, 0, 1, 0, -0.036474764, 0, 0.9993346, -0.011195868, -0.37687445, -0.5328083)
 scene = NodePath("../../../../Scene1")
 
 [node name="Scenario" type="Node3D" parent="Scenario/Phase2/Scene3" unique_id=805622221]
+
+[node name="NextChapter" type="Area3D" parent="Scenario/Phase2/Scene3" unique_id=211015815]
+transform = Transform3D(0.3540609, 0, 0.9352224, 0, 1, 0, -0.9352224, 0, 0.3540609, -0.26040268, 2.0000005, -8.754093)
+input_ray_pickable = false
+script = ExtResource("37_bk1p3")
+level = ExtResource("3_ms3bu")
+metadata/_custom_type_script = "uid://dacaijey35bqu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Phase2/Scene3/NextChapter" unique_id=900051596]
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="Gate" type="Area3D" parent="Scenario/Phase2/Scene3" unique_id=1525591164 node_paths=PackedStringArray("delete_nodes")]
+transform = Transform3D(0.93991417, 0, -0.3414108, 0, 1, 0, 0.3414108, 0, 0.93991417, 1.2306614, 0, -8.133516)
+script = ExtResource("18_v2yb1")
+item = ExtResource("20_wljb1")
+delete_nodes = [NodePath("."), NodePath("../../../House/Outdoors/Lock2")]
+metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Phase2/Scene3/Gate" unique_id=1769689841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2511559, 0)
+shape = SubResource("BoxShape3D_33x8s")
 
 [node name="Scene1" type="Node3D" parent="Scenario/Phase2" unique_id=862397179 node_paths=PackedStringArray("camera", "on_scene_only")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.33335, 0, 1.3304815)
@@ -1860,6 +1901,7 @@ on_scene_only = [NodePath("ElectricIndicator"), NodePath("../Scene5/Scenario/Ext
 
 [node name="NextArea" type="Area3D" parent="Scenario/Phase2/Scene1" unique_id=2090083915 node_paths=PackedStringArray("scene")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5019636, 2.6065593, -1.2005485)
+input_ray_pickable = false
 script = ExtResource("9_trtic")
 scene = NodePath("../../Scene5")
 
@@ -1878,10 +1920,7 @@ shape = SubResource("BoxShape3D_pf7vy")
 [node name="CameraStand" parent="Scenario/Phase2/Scene1" unique_id=1495183417 instance=ExtResource("8_0tnpc")]
 transform = Transform3D(-0.2709652, 0, 0.96258914, 0, 1, 0, -0.96258914, 0, -0.2709652, 5.45215, 0.9999995, 0.17943203)
 
-[node name="Camera3D" parent="Scenario/Phase2/Scene1/CameraStand" index="0" unique_id=1331824599]
-current = true
-
-[node name="ChangeSceneInteractable" parent="Scenario/Phase2/Scene1/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+[node name="ChangeSceneInteractable" parent="Scenario/Phase2/Scene1/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1495183417, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
 process_mode = 4
 visible = false
 scene = NodePath("../../../../../Phase1/Scene1")
@@ -1890,84 +1929,56 @@ scene = NodePath("../../../../../Phase1/Scene1")
 
 [node name="ElectricIndicator" type="OmniLight3D" parent="Scenario/Phase2/Scene1" unique_id=1312747899]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5483122, 0.8850508, 14.688536)
+visible = false
 light_energy = 25.0
 omni_range = 2.2480767
 
-[node name="ElectricBoxLooking" type="Node3D" parent="Scenario/Phase2" unique_id=771258975 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="ElectricBoxLooking" type="Node3D" parent="Scenario/Phase2" unique_id=771258975]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.435136, 0.10956609, 16.958433)
-script = ExtResource("9_ir15t")
-camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("Scenario/NextArea")]
 
-[node name="CameraStand" parent="Scenario/Phase2/ElectricBoxLooking" unique_id=217862557 instance=ExtResource("8_0tnpc")]
-transform = Transform3D(-4.371139e-08, -0.14619763, 0.9892554, 0, 0.9892554, 0.14619763, -1, 6.3905015e-09, -4.3241727e-08, 1.9494464, 0.62401867, 0.546911)
-
-[node name="ChangeSceneInteractable" parent="Scenario/Phase2/ElectricBoxLooking/CameraStand/Camera3D" parent_id_path=PackedInt32Array(217862557, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.88193524, 0, 0.47137064, 0, 1, 0, -0.47137064, 0, 0.88193524, 0.6639366, -0.3768742, -0.5773705)
-scene = NodePath("../../../../Scene3")
-
-[node name="Scenario" type="Node3D" parent="Scenario/Phase2/ElectricBoxLooking" unique_id=109153799]
-
-[node name="NextArea" type="Area3D" parent="Scenario/Phase2/ElectricBoxLooking/Scenario" unique_id=894827479 node_paths=PackedStringArray("scene")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.6541271, 0.70500076, 0.6644964)
-script = ExtResource("9_trtic")
-scene = NodePath("../ElectricBoxInspection")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Phase2/ElectricBoxLooking/Scenario/NextArea" unique_id=1106514913]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09222412, -0.0874939, 0.00014686584)
-shape = SubResource("BoxShape3D_i4re6")
-
-[node name="ElectricPanel" parent="Scenario/Phase2/ElectricBoxLooking/Scenario" unique_id=20725248 instance=ExtResource("39_rm0al")]
+[node name="ElectricPanel" parent="Scenario/Phase2/ElectricBoxLooking" unique_id=20725248 instance=ExtResource("39_rm0al")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.019277573, -0.10956609, 0.59527016)
 
-[node name="LightPattern" parent="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel" index="6" unique_id=1354160189 node_paths=PackedStringArray("lights")]
-lights = [NodePath("../MeshInstance3D/MeshInstance3D/OmniLight3D"), NodePath("../../../../Scene1/ElectricIndicator")]
+[node name="LightPattern" parent="Scenario/Phase2/ElectricBoxLooking/ElectricPanel" index="6" unique_id=1354160189 node_paths=PackedStringArray("lights")]
+lights = [NodePath("../MeshInstance3D/MeshInstance3D/OmniLight3D"), NodePath("../../../Scene1/ElectricIndicator")]
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel" unique_id=1353298993]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Scenario/Phase2/ElectricBoxLooking/ElectricPanel" unique_id=1353298993]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95491934, 1.9715956, -0.45960426)
 material_override = ExtResource("17_8qswn")
 mesh = SubResource("CylinderMesh_yf5fn")
 
-[node name="ElectricBoxInspection" type="Node3D" parent="Scenario/Phase2/ElectricBoxLooking/Scenario" unique_id=139781674 node_paths=PackedStringArray("camera", "on_scene_only")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48474506, 2.3841858e-07, 0.619421)
+[node name="ElectricBoxInspection" type="Node3D" parent="Scenario/Phase2/ElectricBoxLooking" unique_id=139781674 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48474503, 2.3841858e-07, 0.619421)
 script = ExtResource("9_ir15t")
 camera = NodePath("CameraStand/Camera3D")
 on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+scene_patterns = [NodePath("ScenePattern"), NodePath("ScenePattern2"), NodePath("ScenePattern3")]
 
-[node name="CameraStand" parent="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricBoxInspection" unique_id=1557410238 instance=ExtResource("8_0tnpc")]
+[node name="CameraStand" parent="Scenario/Phase2/ElectricBoxLooking/ElectricBoxInspection" unique_id=1557410238 instance=ExtResource("8_0tnpc")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.92636585, 0.21955061, -4.0492736e-08)
 
-[node name="ChangeSceneInteractable" parent="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricBoxInspection/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1557410238, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+[node name="ChangeSceneInteractable" parent="Scenario/Phase2/ElectricBoxLooking/ElectricBoxInspection/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1557410238, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
 transform = Transform3D(0.88193524, 0, 0.47137064, 0, 1, 0, -0.47137064, 0, 0.88193524, 0.6639366, -0.3768742, -0.5773705)
 visible = false
-scene = NodePath("../../../../..")
+scene = NodePath("../../../../../Scene3")
 
-[node name="Scenario" type="Node3D" parent="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricBoxInspection" unique_id=554499230]
+[node name="Scenario" type="Node3D" parent="Scenario/Phase2/ElectricBoxLooking/ElectricBoxInspection" unique_id=554499230]
 
-[node name="Scene4" type="Node3D" parent="Scenario/Phase2" unique_id=769982974 node_paths=PackedStringArray("camera", "on_scene_only")]
-transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, -17.008528, 4.7683716e-07, 17.13543)
-script = ExtResource("9_ir15t")
-camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("NextArea")]
+[node name="ScenePattern" type="Node" parent="Scenario/Phase2/ElectricBoxLooking/ElectricBoxInspection" unique_id=2102225578]
+script = ExtResource("45_n8ral")
+pattern = Array[int]([3, 7, 6, 2, 3, 5, 3])
+metadata/_custom_type_script = "uid://irap3h13rsfh"
 
-[node name="NextArea" type="Area3D" parent="Scenario/Phase2/Scene4" unique_id=1786215064]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.2982421, 2, -0.27181578)
-script = ExtResource("9_trtic")
+[node name="ScenePattern2" type="Node" parent="Scenario/Phase2/ElectricBoxLooking/ElectricBoxInspection" unique_id=156709236]
+script = ExtResource("45_n8ral")
+pattern = Array[int]([0, 2, 2, 1, 1])
+only_in_order = false
+metadata/_custom_type_script = "uid://irap3h13rsfh"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Phase2/Scene4/NextArea" unique_id=900051596]
-shape = SubResource("BoxShape3D_g4v7s")
-
-[node name="CameraStand" parent="Scenario/Phase2/Scene4" unique_id=791982940 instance=ExtResource("8_0tnpc")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.0499597, 0.9999995, -0.24631137)
-
-[node name="Camera3D" parent="Scenario/Phase2/Scene4/CameraStand" index="0" unique_id=1331824599]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0.3768747, 0)
-
-[node name="ChangeSceneInteractable" parent="Scenario/Phase2/Scene4/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.9118781, 0, -0.41046098, 0, 1, 0, 0.41046098, 0, 0.9118781, -0.6618233, -0.37687397, -0.5437504)
-scene = NodePath("../../../../Scene3")
-
-[node name="Scenario" type="Node3D" parent="Scenario/Phase2/Scene4" unique_id=1382063750]
+[node name="ScenePattern3" type="Node" parent="Scenario/Phase2/ElectricBoxLooking/ElectricBoxInspection" unique_id=261404849]
+script = ExtResource("45_n8ral")
+pattern = Array[int]([3, 3, 2, 2, 1, 3])
+metadata/_custom_type_script = "uid://irap3h13rsfh"
 
 [node name="Scene5" type="Node3D" parent="Scenario/Phase2" unique_id=1881554123 node_paths=PackedStringArray("camera", "on_scene_only")]
 transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, -10.983891, 0.7942779, 0.20884255)
@@ -2004,6 +2015,61 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7808392, 0.04399669, -0.52
 
 [node name="GrandClock" parent="Scenario/Phase2/Scene5/Scenario" unique_id=1593380876 instance=ExtResource("42_o8ni1")]
 transform = Transform3D(0.8427161, 0, -0.5383584, 0, 1, 0, 0.5383584, 0, 0.8427161, -6.315114, 0, -0.64686775)
+
+[node name="BigPointer" parent="Scenario/Phase2/Scene5/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="0" unique_id=177566143]
+visible = false
+
+[node name="Pointer" parent="Scenario/Phase2/Scene5/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="1" unique_id=1519642052]
+visible = false
+
+[node name="SmallPointer" parent="Scenario/Phase2/Scene5/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="2" unique_id=1442474372]
+visible = false
+
+[node name="UseItem" type="Area3D" parent="Scenario/Phase2/Scene5/Scenario/GrandClock" unique_id=1751351378 node_paths=PackedStringArray("interactables")]
+script = ExtResource("49_yd4ix")
+interactables = [NodePath("UseSmall"), NodePath("UseNormal"), NodePath("UseBig")]
+metadata/_custom_type_script = "uid://1hpvwn6n1g6h"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Phase2/Scene5/Scenario/GrandClock/UseItem" unique_id=1736913259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1060791, 0)
+shape = SubResource("BoxShape3D_5s0fj")
+
+[node name="UseSmall" type="Area3D" parent="Scenario/Phase2/Scene5/Scenario/GrandClock/UseItem" unique_id=2004008924]
+script = ExtResource("18_v2yb1")
+item = ExtResource("50_0rmfi")
+metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
+
+[node name="UseNormal" type="Area3D" parent="Scenario/Phase2/Scene5/Scenario/GrandClock/UseItem" unique_id=517918687]
+script = ExtResource("18_v2yb1")
+item = ExtResource("50_bnuda")
+metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
+
+[node name="UseBig" type="Area3D" parent="Scenario/Phase2/Scene5/Scenario/GrandClock/UseItem" unique_id=322187709]
+script = ExtResource("18_v2yb1")
+item = ExtResource("51_0rmfi")
+metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
+
+[node name="Counter" type="Node" parent="Scenario/Phase2/Scene5/Scenario/GrandClock" unique_id=1092390831]
+script = ExtResource("13_7025r")
+target = 3
+metadata/_custom_type_script = "uid://ccup386pslxg0"
+
+[node name="Key" type="Node3D" parent="Scenario/Phase2/Scene5/Scenario/GrandClock" unique_id=1929110772]
+transform = Transform3D(-0.4219772, 0.88567775, -0.1936759, 0.7998402, 0.46426675, 0.38041037, 0.42683825, 0.0056147343, -0.9043106, 0.37169415, 0.2504435, -0.10631332)
+visible = false
+
+[node name="Key" parent="Scenario/Phase2/Scene5/Scenario/GrandClock/Key" unique_id=1855052530 instance=ExtResource("13_ir15t")]
+
+[node name="PickupItem" type="Area3D" parent="Scenario/Phase2/Scene5/Scenario/GrandClock/Key" unique_id=539677495 node_paths=PackedStringArray("remove_node")]
+input_ray_pickable = false
+script = ExtResource("19_qouja")
+item = ExtResource("20_wljb1")
+remove_node = NodePath("..")
+metadata/_custom_type_script = "uid://gdx1msx8ssyi"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Phase2/Scene5/Scenario/GrandClock/Key/PickupItem" unique_id=1635919753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02941085, -9.313226e-10, 0.022182465)
+shape = SubResource("BoxShape3D_yf5fn")
 
 [node name="DoorWoods" type="Node3D" parent="Scenario/Phase2/Scene5/Scenario" unique_id=365300365]
 transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0.15676962, 0, 0)
@@ -2373,7 +2439,6 @@ transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 2.63
 transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 1.6779537, 0.9907553, -3.865944)
 
 [node name="Light" type="Node3D" parent="Scenario/Phase2/Scene7/Scenario" unique_id=421994730]
-visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Scenario/Phase2/Scene7/Scenario/Light" unique_id=810164183]
 transform = Transform3D(0.9999999, 0, 3.1974423e-14, 0, 1, 0, -3.1974423e-14, 0, 0.9999999, -1.7370939, 2.1464405, 1.3813801)
@@ -2384,6 +2449,65 @@ omni_range = 7.0
 transform = Transform3D(0.9999999, 0, 3.1974423e-14, 0, 1, 0, -3.1974423e-14, 0, 0.9999999, 1.0043888, 5.212511, 0.7816334)
 light_energy = 3.0
 omni_range = 10.0
+
+[node name="Gate" type="Node3D" parent="Scenario/Phase2/Scene7" unique_id=2076641568]
+transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 5.3770094, 0.19750136, 0.304924)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario/Phase2/Scene7/Gate" unique_id=92651739]
+transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 0, 1.7424662, 0)
+mesh = SubResource("BoxMesh_57qmd")
+
+[node name="Label3D" type="Label3D" parent="Scenario/Phase2/Scene7/Gate" unique_id=518330153]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, -0.16012955, 1.7239916, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Out of Order"
+font = ExtResource("53_xbak0")
+font_size = 82
+
+[node name="PatternIdentificator" type="Node3D" parent="Scenario/Phase2/Scene7" unique_id=1078359827]
+transform = Transform3D(-3.2783536e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.2783536e-08, 4.9965525, 1.6023905, 2.7266874)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario/Phase2/Scene7/PatternIdentificator" unique_id=1064825267]
+transform = Transform3D(1, 0, 4.2351647e-22, 0, 0.99999994, 0, -4.2351647e-22, 0, 1, -3.8146973e-06, 0, 0)
+material_override = ExtResource("53_3x28f")
+mesh = SubResource("QuadMesh_d0u6y")
+
+[node name="Patterned" type="Area3D" parent="Scenario/Phase2/Scene7/PatternIdentificator" unique_id=1732335570 node_paths=PackedStringArray("mesh")]
+transform = Transform3D(1, 0, 8.4703295e-22, 0, 0.9999999, 0, -8.4703295e-22, 0, 1, -3.8146973e-06, 0, 0)
+script = ExtResource("14_264po")
+pattern = Array[int]([0, 0, 2, 0, 0])
+mesh = NodePath("../MeshInstance3D")
+selected_material = ExtResource("53_l6q63")
+locked_material = ExtResource("55_mmvbu")
+metadata/_custom_type_script = "uid://dbinv34xc0tpr"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Phase2/Scene7/PatternIdentificator/Patterned" unique_id=1437071314]
+shape = SubResource("BoxShape3D_2j2di")
+
+[node name="GateFallen" type="Node3D" parent="Scenario/Phase2/Scene7" unique_id=884567715]
+transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 5.3770094, 0.19750136, 0.304924)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario/Phase2/Scene7/GateFallen" unique_id=1856489992]
+transform = Transform3D(0.17213315, 0.8613235, 0.4780084, -0.9806095, 0.19597216, -4.4703484e-08, -0.09367639, -0.46873957, 0.87835526, -0.08052635, -0.008546412, 0.00024986267)
+mesh = SubResource("BoxMesh_57qmd")
+
+[node name="Label3D" type="Label3D" parent="Scenario/Phase2/Scene7/GateFallen" unique_id=593494881]
+transform = Transform3D(0.47800842, 0.86481047, -0.153658, 0, 0.17493832, 0.9845794, 0.87835526, -0.47063723, 0.08362198, -0.079603195, 0.15264195, -0.00024986267)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Out of Order"
+font = ExtResource("53_xbak0")
+font_size = 82
+
+[node name="NextChapter" type="Area3D" parent="Scenario/Phase2/Scene7" unique_id=958047316]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.6509314, 2.0000005, 0.31374562)
+input_ray_pickable = false
+script = ExtResource("37_bk1p3")
+level = ExtResource("3_ms3bu")
+metadata/_custom_type_script = "uid://dacaijey35bqu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Phase2/Scene7/NextChapter" unique_id=263942998]
+shape = SubResource("BoxShape3D_mmvbu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1671971559]
 transform = Transform3D(0.7592584, -0.38800454, 0.52247405, -0.65078926, -0.4526745, 0.6095565, 0, -0.8028314, -0.5962061, 0, 22.562386, 0)
@@ -2400,7 +2524,7 @@ script = ExtResource("31_m4url")
 clear_timer = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="Controllers/PatternListener" unique_id=832686968]
-wait_time = 0.5
+wait_time = 0.75
 
 [node name="Inventory" type="Node" parent="Controllers" unique_id=118133313]
 script = ExtResource("23_sgl2t")
@@ -2491,10 +2615,35 @@ script = SubResource("GDScript_m4url")
 [connection signal="on_pattern_made" from="Scenario/Phase1/Scene13/ChestScene/Chest/Patterned" to="Scenario/Phase1/Scene13/ChestScene/Chest/Hammer/PickItem" method="set_ray_pickable" binds= [true]]
 [connection signal="on_pattern_made" from="Scenario/Phase1/Scene13/ChestScene/Chest/Patterned" to="Scenario/Phase1/Scene13/ChestScene/Chest/Pattern" method="set_visible" binds= [false]]
 [connection signal="on_pattern_made" from="Scenario/Phase1/Scene13/ChestScene/Chest/Patterned" to="Scenario/Phase1/Scene13/ChestScene/Chest/Patterned" method="set_ray_pickable" binds= [false]]
-[connection signal="on_lost_signal" from="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/WireReceiver" to="Scenario/House/House/LightStand" method="set_off"]
-[connection signal="on_lost_signal" from="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/WireReceiver" to="Scenario/Phase2/Scene1/NextArea" method="set_ray_pickable" binds= [false]]
-[connection signal="on_receive" from="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/WireReceiver" to="Scenario/House/House/LightStand" method="set_on"]
-[connection signal="on_receive" from="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/WireReceiver" to="Scenario/Phase2/Scene1/NextArea" method="set_ray_pickable" binds= [true]]
+[connection signal="item_used" from="Scenario/Phase2/Scene3/Gate" to="Scenario/House/Outdoors/Gate3/gate/AnimationPlayer" method="play" binds= ["Gate|Open"]]
+[connection signal="item_used" from="Scenario/Phase2/Scene3/Gate" to="Scenario/Phase2/Scene3/NextChapter" method="set_ray_pickable" binds= [true]]
+[connection signal="on_clicked" from="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder/Cog/CogArea" to="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_clicked" from="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder2/Cog/CogArea" to="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_clicked" from="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder3/Cog/CogArea" to="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_clicked" from="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder4/Cog/CogArea" to="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_clicked" from="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder5/Cog/CogArea" to="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_clicked" from="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder6/Cog/CogArea" to="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_clicked" from="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder7/Cog/CogArea" to="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_lost_signal" from="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/WireReceiver" to="Scenario/House/House/LightStand" method="set_off"]
+[connection signal="on_lost_signal" from="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/WireReceiver" to="Scenario/Phase2/Scene1/NextArea" method="set_ray_pickable" binds= [false]]
+[connection signal="on_receive" from="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/WireReceiver" to="Scenario/House/House/LightStand" method="set_on"]
+[connection signal="on_receive" from="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/WireReceiver" to="Scenario/Phase2/Scene1/NextArea" method="set_ray_pickable" binds= [true]]
+[connection signal="on_pattern_made" from="Scenario/Phase2/ElectricBoxLooking/ElectricBoxInspection/ScenePattern" to="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Secrets/Secret1" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenario/Phase2/ElectricBoxLooking/ElectricBoxInspection/ScenePattern" to="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Secrets/SecretHolder1/PickupItem" method="set_ray_pickable" binds= [true]]
+[connection signal="on_pattern_made" from="Scenario/Phase2/ElectricBoxLooking/ElectricBoxInspection/ScenePattern2" to="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Secrets/Secret2" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenario/Phase2/ElectricBoxLooking/ElectricBoxInspection/ScenePattern2" to="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Secrets/SecretHolder2/PickupItem" method="set_ray_pickable" binds= [true]]
+[connection signal="on_pattern_made" from="Scenario/Phase2/ElectricBoxLooking/ElectricBoxInspection/ScenePattern3" to="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Secrets/Secret3" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenario/Phase2/ElectricBoxLooking/ElectricBoxInspection/ScenePattern3" to="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Secrets/SecretHolder3/PickupItem" method="set_ray_pickable" binds= [true]]
+[connection signal="item_used" from="Scenario/Phase2/Scene5/Scenario/GrandClock/UseItem/UseSmall" to="Scenario/Phase2/Scene5/Scenario/GrandClock/Counter" method="increment_one"]
+[connection signal="item_used" from="Scenario/Phase2/Scene5/Scenario/GrandClock/UseItem/UseSmall" to="Scenario/Phase2/Scene5/Scenario/GrandClock/GrandClockClock/Pointers/SmallPointer" method="set_visible" binds= [true]]
+[connection signal="item_used" from="Scenario/Phase2/Scene5/Scenario/GrandClock/UseItem/UseNormal" to="Scenario/Phase2/Scene5/Scenario/GrandClock/Counter" method="increment_one"]
+[connection signal="item_used" from="Scenario/Phase2/Scene5/Scenario/GrandClock/UseItem/UseNormal" to="Scenario/Phase2/Scene5/Scenario/GrandClock/GrandClockClock/Pointers/Pointer" method="set_visible" binds= [true]]
+[connection signal="item_used" from="Scenario/Phase2/Scene5/Scenario/GrandClock/UseItem/UseBig" to="Scenario/Phase2/Scene5/Scenario/GrandClock/Counter" method="increment_one"]
+[connection signal="item_used" from="Scenario/Phase2/Scene5/Scenario/GrandClock/UseItem/UseBig" to="Scenario/Phase2/Scene5/Scenario/GrandClock/GrandClockClock/Pointers/BigPointer" method="set_visible" binds= [true]]
+[connection signal="on_target" from="Scenario/Phase2/Scene5/Scenario/GrandClock/Counter" to="Scenario/Phase2/Scene5/Scenario/GrandClock/ClosedDoor" method="set_visible" binds= [false]]
+[connection signal="on_target" from="Scenario/Phase2/Scene5/Scenario/GrandClock/Counter" to="Scenario/Phase2/Scene5/Scenario/GrandClock/OpenDoor" method="set_visible" binds= [true]]
+[connection signal="on_target" from="Scenario/Phase2/Scene5/Scenario/GrandClock/Counter" to="Scenario/Phase2/Scene5/Scenario/GrandClock/Key" method="set_visible" binds= [true]]
+[connection signal="on_target" from="Scenario/Phase2/Scene5/Scenario/GrandClock/Counter" to="Scenario/Phase2/Scene5/Scenario/GrandClock/Key/PickupItem" method="set_ray_pickable" binds= [true]]
 [connection signal="on_target" from="Scenario/Phase2/Scene5/Scenario/DoorWoods/Counter" to="Scenario/Phase2/Scene5/Scenario/DoorPattern/Patterned" method="set_ray_pickable" binds= [true]]
 [connection signal="item_used" from="Scenario/Phase2/Scene5/Scenario/DoorWoods/Wood/HammerUse" to="Scenario/Phase2/Scene5/Scenario/DoorWoods/Counter" method="increment_one"]
 [connection signal="item_used" from="Scenario/Phase2/Scene5/Scenario/DoorWoods/Wood/HammerUse" to="Scenario/Phase2/Scene5/Scenario/DoorWoods/WoodFallen" method="set_visible" binds= [true]]
@@ -2503,14 +2652,22 @@ script = SubResource("GDScript_m4url")
 [connection signal="item_used" from="Scenario/Phase2/Scene5/Scenario/DoorWoods/Wood3/HammerUse" to="Scenario/Phase2/Scene5/Scenario/DoorWoods/Counter" method="increment_one"]
 [connection signal="item_used" from="Scenario/Phase2/Scene5/Scenario/DoorWoods/Wood3/HammerUse" to="Scenario/Phase2/Scene5/Scenario/DoorWoods/WoodFallen3" method="set_visible" binds= [true]]
 [connection signal="on_pattern_made" from="Scenario/Phase2/Scene5/Scenario/DoorPattern/Patterned" to="Scenario/House/House/Door/FancyDoor" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Scenario/Phase2/Scene5/Scenario/DoorPattern/Patterned" to="Scenario/House/House/Door/FancyDoorOpened" method="set_visible" binds= [true]]
 [connection signal="on_pattern_made" from="Scenario/Phase2/Scene5/Scenario/DoorPattern/Patterned" to="Scenario/Phase2/Scene5/Scenario/DoorPattern/Patterned" method="set_ray_pickable" binds= [false]]
 [connection signal="on_pattern_made" from="Scenario/Phase2/Scene5/Scenario/DoorPattern/Patterned" to="Scenario/Phase2/Scene5/Scenario/DoorPattern/Patterns" method="set_visible" binds= [false]]
-[connection signal="on_pattern_made" from="Scenario/Phase2/Scene5/Scenario/DoorPattern/Patterned" to="Scenario/House/House/Door/FancyDoorOpened" method="set_visible" binds= [true]]
 [connection signal="on_pattern_made" from="Scenario/Phase2/Scene5/Scenario/DoorPattern/Patterned" to="Scenario/Phase2/Scene5/Scenario/NextChapter" method="set_ray_pickable" binds= [true]]
+[connection signal="on_pattern_made" from="Scenario/Phase2/Scene7/PatternIdentificator/Patterned" to="Scenario/House/Outdoors/Gate2/gate/AnimationPlayer" method="play" binds= ["Gate|Open"]]
+[connection signal="on_pattern_made" from="Scenario/Phase2/Scene7/PatternIdentificator/Patterned" to="Scenario/Phase2/Scene7/Gate" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Scenario/Phase2/Scene7/PatternIdentificator/Patterned" to="Scenario/Phase2/Scene7/GateFallen" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Scenario/Phase2/Scene7/PatternIdentificator/Patterned" to="Scenario/Phase2/Scene7/NextChapter" method="set_ray_pickable" binds= [true]]
 
 [editable path="Scenario/Ambient/Trees/Tree"]
 [editable path="Scenario/House/Outdoors/Gate"]
 [editable path="Scenario/House/Outdoors/Gate/gate"]
+[editable path="Scenario/House/Outdoors/Gate2"]
+[editable path="Scenario/House/Outdoors/Gate2/gate"]
+[editable path="Scenario/House/Outdoors/Gate3"]
+[editable path="Scenario/House/Outdoors/Gate3/gate"]
 [editable path="Scenario/House/House/Door/FancyDoorFrame"]
 [editable path="Scenario/House/House/LightStand"]
 [editable path="Scenario/Phase1/Scene2/CameraStand"]
@@ -2536,25 +2693,27 @@ script = SubResource("GDScript_m4url")
 [editable path="Scenario/Phase1/Scene16/CameraStand"]
 [editable path="Scenario/Phase2/Scene3/CameraStand"]
 [editable path="Scenario/Phase2/Scene1/CameraStand"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/CameraStand"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder/Cog"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder/Cog/SmallPointer"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder2/Cog"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder2/Cog/SmallPointer"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder3/Cog"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder3/Cog/SmallPointer"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder4/Cog"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder4/Cog/SmallPointer"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder5/Cog"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder5/Cog/SmallPointer"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder6/Cog"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder6/Cog/SmallPointer"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder7/Cog"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricPanel/Puzzle/CogHolder7/Cog/SmallPointer"]
-[editable path="Scenario/Phase2/ElectricBoxLooking/Scenario/ElectricBoxInspection/CameraStand"]
-[editable path="Scenario/Phase2/Scene4/CameraStand"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Secrets/SecretHolder1/SmallPointer"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Secrets/SecretHolder2/Pointer"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Secrets/SecretHolder3/BigPointer"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder/Cog"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder/Cog/SmallPointer"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder2/Cog"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder2/Cog/SmallPointer"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder3/Cog"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder3/Cog/SmallPointer"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder4/Cog"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder4/Cog/SmallPointer"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder5/Cog"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder5/Cog/SmallPointer"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder6/Cog"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder6/Cog/SmallPointer"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder7/Cog"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricPanel/Puzzle/CogHolder7/Cog/SmallPointer"]
+[editable path="Scenario/Phase2/ElectricBoxLooking/ElectricBoxInspection/CameraStand"]
 [editable path="Scenario/Phase2/Scene5/CameraStand"]
+[editable path="Scenario/Phase2/Scene5/Scenario/GrandClock"]
 [editable path="Scenario/Phase2/Scene5/Scenario/HammerPick/Hammer"]
 [editable path="Scenario/Phase2/Scene6/CameraStand"]
 [editable path="Scenario/Phase2/Scene7/CameraStand"]

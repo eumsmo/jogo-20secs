@@ -22,10 +22,10 @@ func _ready() -> void:
 	
 	on_untarget()
 
-func clicked():
+func clicked() -> bool:
 	locked = !locked
 	Game.instance.pattern.set_target(self, locked)
-	super()
+	return super()
 
 func hovered():
 	Game.instance.pattern.set_target(self, locked)
@@ -54,14 +54,7 @@ func on_untarget():
 		obj.visible = false
 
 func check_pattern(pattern_to_check: Array[Game.Direction]) -> bool:
-	if len(pattern_to_check) < len(pattern):
-		return false
-	
-	for i in range(0, len(pattern)):
-		if pattern_to_check[i] != pattern[i]:
-			return false
-	
-	return true
+	return PatternListener.compare_pattern(pattern_to_check, pattern)
 
 func activate_pattern():
 	on_pattern_made.emit()

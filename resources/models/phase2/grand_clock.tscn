@@ -1,8 +1,11 @@
 [gd_scene format=4 uid="uid://bof6f6q6tfq7g"]
 
 [ext_resource type="PackedScene" uid="uid://uq8y3p8tjcyu" path="res://resources/models/phase2/grand_clock_clock.tscn" id="1_ed47t"]
+[ext_resource type="PackedScene" uid="uid://dqt7oi1kdmc8o" path="res://resources/models/phase2/big_pointer.tscn" id="2_vfxsp"]
 [ext_resource type="PackedScene" uid="uid://cqyfb6701pi5y" path="res://resources/models/phase2/grand_clock_door.tscn" id="2_vyy5p"]
+[ext_resource type="PackedScene" uid="uid://bn3ssnj765x3e" path="res://resources/models/phase2/pointer.tscn" id="3_pabl3"]
 [ext_resource type="PackedScene" uid="uid://bib8t436q0oae" path="res://resources/models/phase2/clock_thingy.tscn" id="3_vyy5p"]
+[ext_resource type="PackedScene" uid="uid://cw6ivrhaykcuo" path="res://resources/models/phase2/small_pointer.tscn" id="4_boxyn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpcx1"]
 resource_name = "Brown"
@@ -85,7 +88,27 @@ mesh = SubResource("ArrayMesh_1pogw")
 
 [node name="GrandClockClock" parent="." unique_id=776482872 instance=ExtResource("1_ed47t")]
 
-[node name="GrandClockDoor" parent="." unique_id=1273123832 instance=ExtResource("2_vyy5p")]
+[node name="Pointers" type="Node3D" parent="GrandClockClock" unique_id=1920085468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23346466, 1.8330293, 0)
+
+[node name="BigPointer" parent="GrandClockClock/Pointers" unique_id=177566143 instance=ExtResource("2_vfxsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="Pointer" parent="GrandClockClock/Pointers" unique_id=1519642052 instance=ExtResource("3_pabl3")]
+transform = Transform3D(1.25, 0, 0, 0, -0.6249998, -5.4126596, 0, 1.0825319, -3.124999, 0, 0, 0)
+
+[node name="SmallPointer" parent="GrandClockClock/Pointers" unique_id=1442474372 instance=ExtResource("4_boxyn")]
+transform = Transform3D(1.25, 0, 0, 0, -0.62500006, 5.4126587, 0, -1.0825317, -3.1250005, 0, 0, 0)
 
 [node name="ClockThingy" parent="." unique_id=1946228853 instance=ExtResource("3_vyy5p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.334937, 0)
+
+[node name="ClosedDoor" type="Node3D" parent="." unique_id=1282211021]
+
+[node name="GrandClockDoor" parent="ClosedDoor" unique_id=1273123832 instance=ExtResource("2_vyy5p")]
+
+[node name="OpenDoor" type="Node3D" parent="." unique_id=427722076]
+visible = false
+
+[node name="GrandClockDoor" parent="OpenDoor" unique_id=1702272648 instance=ExtResource("2_vyy5p")]
+transform = Transform3D(-0.018559992, 0, -0.99982774, 0, 1, 0, 0.99982774, 0, -0.018559992, 0.48621023, 0, 0.02546265)

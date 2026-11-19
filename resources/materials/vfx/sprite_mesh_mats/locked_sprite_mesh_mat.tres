@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://brcgsmls5gnle"]
+
+[ext_resource type="Texture2D" uid="uid://dxrx8atqe6cl2" path="res://resources/sprites/temp_outoforder.png" id="1_wjhpy"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_wjhpy")
+heightmap_scale = 16.0

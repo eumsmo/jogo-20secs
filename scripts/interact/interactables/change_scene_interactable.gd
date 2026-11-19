@@ -3,9 +3,9 @@ extends Interactable
 
 @export var scene: Scene
 
-func clicked():
+func clicked() -> bool:
 	if scene == null:
-		return
+		return false
 	
 	Game.instance.scenes.change_scene(scene)
-	super()
+	return super()

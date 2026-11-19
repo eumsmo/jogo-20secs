@@ -35,3 +35,6 @@ func check_pattern():
 			current_target.activate_pattern()
 			target_locked = false
 			clear_target(current_target)
+	elif Game.instance.scenes.current_scene != null:
+		if Game.instance.scenes.current_scene.check_pattern(current_pattern):
+			reset_pattern()

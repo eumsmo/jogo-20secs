@@ -4,11 +4,11 @@ extends Interactable
 @export var item: Item
 @export var remove_node: Node3D
 
-func clicked():
+func clicked() -> bool:
 	if item == null:
-		return
+		return false
 	
 	Game.instance.inventory.add(item)
 	remove_node.queue_free()
 	
-	super()
+	return super()

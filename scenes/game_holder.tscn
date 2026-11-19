@@ -222,7 +222,7 @@ clear_timer = NodePath("Timer")
 metadata/_custom_type_script = "uid://bsgq3bdgo1dx8"
 
 [node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/Intro/SimplePatternListener" unique_id=457169656]
-wait_time = 0.5
+wait_time = 0.75
 
 [node name="GrandTimer" type="Node" parent="." unique_id=492224829 node_paths=PackedStringArray("timer")]
 script = ExtResource("5_yatpk")

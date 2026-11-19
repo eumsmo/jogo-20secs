@@ -7,10 +7,17 @@
 [ext_resource type="Material" uid="uid://k0oggbccmtay" path="res://resources/materials/vfx/glow.tres" id="3_175s6"]
 [ext_resource type="Script" uid="uid://do3dbcssvhhaw" path="res://scenes/components/wire/wire_transmitor.gd" id="4_6rrn4"]
 [ext_resource type="PackedScene" uid="uid://cjtjg7bvwa1at" path="res://resources/models/phase2/cog.tscn" id="4_175s6"]
+[ext_resource type="PackedScene" uid="uid://dqt7oi1kdmc8o" path="res://resources/models/phase2/big_pointer.tscn" id="4_je30f"]
+[ext_resource type="PackedScene" uid="uid://bn3ssnj765x3e" path="res://resources/models/phase2/pointer.tscn" id="5_72f44"]
 [ext_resource type="Script" uid="uid://byhr1c763aqwc" path="res://scenes/components/wire/wire_area.gd" id="5_73qu0"]
 [ext_resource type="Material" uid="uid://t4hif544cutp" path="res://resources/materials/vfx/phase2_light_glow.tres" id="5_wbrop"]
+[ext_resource type="Script" uid="uid://gdx1msx8ssyi" path="res://scripts/interact/interactables/pickup_item.gd" id="6_72f44"]
 [ext_resource type="PackedScene" uid="uid://bc7mwk34afhal" path="res://scenes/components/wire/wire.tscn" id="6_81041"]
+[ext_resource type="PackedScene" uid="uid://cw6ivrhaykcuo" path="res://resources/models/phase2/small_pointer.tscn" id="6_ncdi6"]
+[ext_resource type="Resource" uid="uid://f2shrknh5bpl" path="res://resources/itens/small_pointer.tres" id="7_hbkf0"]
 [ext_resource type="Script" uid="uid://bvcd3d0bbmge8" path="res://scenes/components/wire/wire_receiver.gd" id="9_42yg3"]
+[ext_resource type="Resource" uid="uid://bo0ogvlnrqf3d" path="res://resources/itens/pointer.tres" id="9_wanmk"]
+[ext_resource type="Resource" uid="uid://cxxf2pau1r4ug" path="res://resources/itens/big_pointer.tres" id="11_rjk2q"]
 [ext_resource type="Script" uid="uid://cc47stsmi2lmq" path="res://scripts/pattern/light_pattern.gd" id="12_33ti1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpcx1"]
@@ -94,6 +101,9 @@ size = Vector2(0.25, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(0.25, 0.3, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(0.23, 0.275, 0.05)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_81041"]
 top_radius = 0.01
@@ -181,6 +191,66 @@ mesh = SubResource("QuadMesh_yf5fn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Secrets/Secret3/Area3D" unique_id=308340658]
 shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="SecretHolder1" type="Node3D" parent="Secrets" unique_id=1135235738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45418352, 1.0632713, -0.612789)
+
+[node name="SmallPointer" parent="Secrets/SecretHolder1" unique_id=1442474372 instance=ExtResource("6_ncdi6")]
+transform = Transform3D(0.19334966, -0.81538075, -1.244094, -0.43630978, 1.1682893, -0.8335069, 1.4220582, 0.46931258, -0.08658019, 0, -0.12060344, 0.030712426)
+
+[node name="SmallPointer" parent="Secrets/SecretHolder1/SmallPointer" index="0" unique_id=2030118304]
+material_override = ExtResource("3_175s6")
+
+[node name="PickupItem" type="Area3D" parent="Secrets/SecretHolder1" unique_id=1618735474 node_paths=PackedStringArray("remove_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.044)
+input_ray_pickable = false
+script = ExtResource("6_72f44")
+item = ExtResource("7_hbkf0")
+remove_node = NodePath("..")
+metadata/_custom_type_script = "uid://gdx1msx8ssyi"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Secrets/SecretHolder1/PickupItem" unique_id=386284316]
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="SecretHolder2" type="Node3D" parent="Secrets" unique_id=1106089306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45418352, 0.71864444, -0.612789)
+
+[node name="Pointer" parent="Secrets/SecretHolder2" unique_id=1519642052 instance=ExtResource("5_72f44")]
+transform = Transform3D(0.19943109, -0.2551557, -1.4646237, -0.20584175, 1.4587708, -0.28216457, 1.4723642, 0.23850209, 0.15893504, 0, -0.1288861, 0.055089176)
+
+[node name="Pointer" parent="Secrets/SecretHolder2/Pointer" index="0" unique_id=821043829]
+material_override = ExtResource("3_175s6")
+
+[node name="PickupItem" type="Area3D" parent="Secrets/SecretHolder2" unique_id=1656246915 node_paths=PackedStringArray("remove_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.044)
+input_ray_pickable = false
+script = ExtResource("6_72f44")
+item = ExtResource("9_wanmk")
+remove_node = NodePath("..")
+metadata/_custom_type_script = "uid://gdx1msx8ssyi"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Secrets/SecretHolder2/PickupItem" unique_id=591841210]
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="SecretHolder3" type="Node3D" parent="Secrets" unique_id=1828680391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45418352, 0.37055427, -0.612789)
+
+[node name="BigPointer" parent="Secrets/SecretHolder3" unique_id=177566143 instance=ExtResource("4_je30f")]
+transform = Transform3D(0.2826035, 0.1956366, -1.4600897, -0.36421973, 1.4498365, 0.12376726, 1.4274029, 0.3312109, 0.3206557, 0, -0.13324636, 0.03174585)
+
+[node name="BigPointer" parent="Secrets/SecretHolder3/BigPointer" index="0" unique_id=771719836]
+material_override = ExtResource("3_175s6")
+
+[node name="PickupItem" type="Area3D" parent="Secrets/SecretHolder3" unique_id=15327751 node_paths=PackedStringArray("remove_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.044)
+input_ray_pickable = false
+script = ExtResource("6_72f44")
+item = ExtResource("11_rjk2q")
+remove_node = NodePath("..")
+metadata/_custom_type_script = "uid://gdx1msx8ssyi"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Secrets/SecretHolder3/PickupItem" unique_id=1699320986]
+shape = SubResource("BoxShape3D_yf5fn")
 
 [node name="Puzzle" type="Node3D" parent="." unique_id=170489577]
 
@@ -429,6 +499,9 @@ between_time = 0.3
 [connection signal="on_lost_signal" from="Puzzle/WireReceiver" to="LightPattern" method="start_pattern"]
 [connection signal="on_receive" from="Puzzle/WireReceiver" to="LightPattern" method="stop_pattern"]
 
+[editable path="Secrets/SecretHolder1/SmallPointer"]
+[editable path="Secrets/SecretHolder2/Pointer"]
+[editable path="Secrets/SecretHolder3/BigPointer"]
 [editable path="Puzzle/CogHolder/Cog"]
 [editable path="Puzzle/CogHolder/Cog/SmallPointer"]
 [editable path="Puzzle/CogHolder2/Cog"]

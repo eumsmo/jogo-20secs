@@ -17,11 +17,15 @@ func event_handle(camera: Node, event: InputEvent, event_position: Vector3, norm
 		if event.button_index == MouseButton.MOUSE_BUTTON_LEFT and event.is_pressed():
 			clicked()
 
-func clicked():
+func clicked() -> bool:
 	on_clicked.emit()
+	return true
+
+func can_interact() -> bool:
+	return true
 
 func hovered():
-	if auto_change_cursor:
+	if auto_change_cursor and can_interact():
 		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	
 	on_hover.emit()
