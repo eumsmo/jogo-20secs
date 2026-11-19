@@ -4,10 +4,7 @@ extends Control
 static var instance: UIManager
 
 @export var shader: ShaderController
+@export var intro: IntroManager
 
 func _init() -> void:
-	if instance != null:
-		queue_free()
-		return
-	
 	instance = self

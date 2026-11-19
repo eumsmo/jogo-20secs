@@ -4,8 +4,40 @@
 [ext_resource type="Material" uid="uid://cqkwdjnbncivf" path="res://outside_resources/dither_shader_material.tres" id="1_mq26o"]
 [ext_resource type="PackedScene" uid="uid://c5lxcrdvj5ljh" path="res://scenes/game.tscn" id="1_uc32q"]
 [ext_resource type="Script" uid="uid://ck66gicn6p5ul" path="res://scripts/ui/ui_manager.gd" id="1_yatpk"]
+[ext_resource type="Resource" uid="uid://c0dfpalx2y01p" path="res://resources/levels/level1.tres" id="5_0to4s"]
+[ext_resource type="Shader" uid="uid://cjm4vewxf4a1o" path="res://resources/shaders/circle_close.gdshader" id="5_ljqmr"]
+[ext_resource type="Script" uid="uid://h6ugmph3crjx" path="res://scripts/grand_timer.gd" id="5_yatpk"]
+[ext_resource type="Resource" uid="uid://buhgr8f3cvu4b" path="res://resources/levels/level2.tres" id="6_jdsl7"]
+[ext_resource type="Script" uid="uid://q414xr0ekfd7" path="res://scripts/intro_manager.gd" id="6_u2cqw"]
+[ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="6_xj5ry"]
+[ext_resource type="PackedScene" uid="uid://durwe6vmptojo" path="res://scenes/components/arrows/down_arrow.tscn" id="7_wf0ht"]
+[ext_resource type="PackedScene" uid="uid://bf3yaus42rxcw" path="res://scenes/components/arrows/left_arrow.tscn" id="8_u2cqw"]
+[ext_resource type="PackedScene" uid="uid://bjaygeelrd8t0" path="res://scenes/components/arrows/right_arrow.tscn" id="9_517my"]
+[ext_resource type="PackedScene" uid="uid://dpcb80nty0wh5" path="res://scenes/components/arrows/up_arrow.tscn" id="10_8x14w"]
+[ext_resource type="Script" uid="uid://bsgq3bdgo1dx8" path="res://scripts/pattern/simple_pattern_listener.gd" id="13_8x14w"]
 
-[node name="GameHolder" type="Control" unique_id=2064998560 node_paths=PackedStringArray("shader")]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ljqmr"]
+blend_mode = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yatpk"]
+shader = ExtResource("5_ljqmr")
+shader_parameter/dist_limit = 1.0
+shader_parameter/invert_alpha = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("6_xj5ry")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_0to4s"]
+font = ExtResource("6_xj5ry")
+font_size = 48
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jdsl7"]
+shader = ExtResource("5_ljqmr")
+shader_parameter/dist_limit = 0.0
+shader_parameter/invert_alpha = false
+
+[node name="GameHolder" type="Control" unique_id=2064998560 node_paths=PackedStringArray("shader", "intro")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,12 +47,13 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_yatpk")
 shader = NodePath("ShaderController")
+intro = NodePath("SubViewportContainer/SubViewport/Intro")
 
 [node name="ShaderController" type="Node" parent="." unique_id=2001990866 node_paths=PackedStringArray("shaded_canvas")]
 script = ExtResource("1_86aum")
 shaded_canvas = NodePath("../SubViewportContainer")
-fade_black_time = 0.25
-fade_default_time = 0.25
+fade_black_time = 0.15
+fade_default_time = 0.1
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=194136242]
 material = ExtResource("1_mq26o")
@@ -38,4 +71,166 @@ physics_object_picking = true
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Game" parent="SubViewportContainer/SubViewport" unique_id=736994712 instance=ExtResource("1_uc32q")]
+[node name="Game" parent="SubViewportContainer/SubViewport" unique_id=736994712 node_paths=PackedStringArray("level_scene_relation") instance=ExtResource("1_uc32q")]
+level_scene_relation = {
+ExtResource("5_0to4s"): NodePath("Scenario/Phase1/Scene1"),
+ExtResource("6_jdsl7"): NodePath("Scenario/Phase2/Scene1")
+}
+
+[node name="Fade" type="Control" parent="SubViewportContainer/SubViewport" unique_id=1771698977]
+material = SubResource("CanvasItemMaterial_ljqmr")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/Fade" unique_id=218458120]
+material = SubResource("ShaderMaterial_yatpk")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -576.0
+offset_right = 576.0
+offset_bottom = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Intro" type="Control" parent="SubViewportContainer/SubViewport" unique_id=19263796 node_paths=PackedStringArray("label", "chapter_label", "arrows_holder", "intro_blocker", "intro_fade", "game", "timer", "pattern_listener")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_u2cqw")
+label = NodePath("Label")
+chapter_label = NodePath("Label/Label")
+arrows_holder = NodePath("HBoxContainer")
+intro_blocker = NodePath("ColorRect")
+intro_fade = NodePath("../Fade/ColorRect")
+game = NodePath("../Game")
+timer = NodePath("../../../GrandTimer")
+pattern_listener = NodePath("SimplePatternListener")
+arrows_prefabs = Dictionary[int, PackedScene]({
+0: ExtResource("10_8x14w"),
+1: ExtResource("8_u2cqw"),
+2: ExtResource("7_wf0ht"),
+3: ExtResource("9_517my")
+})
+normal_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+active_color = Color(1, 1, 1, 1)
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Intro" unique_id=1543988637]
+modulate = Color(0.39215687, 0.39215687, 0.39215687, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -403.0
+offset_top = -54.5
+offset_right = 403.0
+offset_bottom = 54.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Learning Outside"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Intro/Label" unique_id=1570010805]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -403.0
+offset_top = -115.5
+offset_right = 403.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "~ Chapter 1 ~"
+label_settings = SubResource("LabelSettings_0to4s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/SubViewport/Intro" unique_id=176735225]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -315.0
+offset_right = 7.0
+offset_bottom = -198.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+alignment = 1
+
+[node name="UpArrow" parent="SubViewportContainer/SubViewport/Intro/HBoxContainer" unique_id=1985812853 instance=ExtResource("10_8x14w")]
+material = null
+layout_mode = 2
+
+[node name="DownArrow" parent="SubViewportContainer/SubViewport/Intro/HBoxContainer" unique_id=64286994 instance=ExtResource("7_wf0ht")]
+material = null
+layout_mode = 2
+
+[node name="LeftArrow" parent="SubViewportContainer/SubViewport/Intro/HBoxContainer" unique_id=1791497467 instance=ExtResource("8_u2cqw")]
+material = null
+layout_mode = 2
+
+[node name="RightArrow" parent="SubViewportContainer/SubViewport/Intro/HBoxContainer" unique_id=2026065355 instance=ExtResource("9_517my")]
+material = null
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/Intro" unique_id=1797031567]
+material = SubResource("ShaderMaterial_jdsl7")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -576.0
+offset_right = 576.0
+offset_bottom = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SimplePatternListener" type="Node" parent="SubViewportContainer/SubViewport/Intro" unique_id=1109038905 node_paths=PackedStringArray("clear_timer")]
+process_mode = 3
+script = ExtResource("13_8x14w")
+clear_timer = NodePath("Timer")
+metadata/_custom_type_script = "uid://bsgq3bdgo1dx8"
+
+[node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/Intro/SimplePatternListener" unique_id=457169656]
+wait_time = 0.5
+
+[node name="GrandTimer" type="Node" parent="." unique_id=492224829 node_paths=PackedStringArray("timer")]
+script = ExtResource("5_yatpk")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="GrandTimer" unique_id=638771333]
+wait_time = 20.0
+one_shot = true
+
+[connection signal="gui_input" from="SubViewportContainer/SubViewport/Intro/ColorRect" to="SubViewportContainer/SubViewport/Intro" method="_on_intro_block_input"]
+[connection signal="on_ended" from="GrandTimer" to="SubViewportContainer/SubViewport/Intro" method="timer_ended"]

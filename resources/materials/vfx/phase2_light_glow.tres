@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://t4hif544cutp"]
+
+[resource]
+shading_mode = 0
+disable_fog = true
+refraction_scale = 0.61
+grow_amount = -0.264
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+stencil_outline_thickness = 0.675

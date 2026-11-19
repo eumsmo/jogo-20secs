@@ -1,0 +1,445 @@
+[gd_scene format=4 uid="uid://chrdenauhbkb2"]
+
+[ext_resource type="Material" uid="uid://dcp258ghdupuw" path="res://resources/materials/Brown.tres" id="1_ldeor"]
+[ext_resource type="PackedScene" uid="uid://ube4gxm1bqcv" path="res://resources/models/phase2/electric_panel_door.tscn" id="2_lllrk"]
+[ext_resource type="Script" uid="uid://dacaijey35bqu" path="res://scripts/interact/interactable.gd" id="2_u0xnv"]
+[ext_resource type="PackedScene" uid="uid://dwx6rwlvjkrdw" path="res://resources/models/phase2/cog_holder.tscn" id="3_4xmi7"]
+[ext_resource type="Material" uid="uid://k0oggbccmtay" path="res://resources/materials/vfx/glow.tres" id="3_175s6"]
+[ext_resource type="Script" uid="uid://do3dbcssvhhaw" path="res://scenes/components/wire/wire_transmitor.gd" id="4_6rrn4"]
+[ext_resource type="PackedScene" uid="uid://cjtjg7bvwa1at" path="res://resources/models/phase2/cog.tscn" id="4_175s6"]
+[ext_resource type="Script" uid="uid://byhr1c763aqwc" path="res://scenes/components/wire/wire_area.gd" id="5_73qu0"]
+[ext_resource type="Material" uid="uid://t4hif544cutp" path="res://resources/materials/vfx/phase2_light_glow.tres" id="5_wbrop"]
+[ext_resource type="PackedScene" uid="uid://bc7mwk34afhal" path="res://scenes/components/wire/wire.tscn" id="6_81041"]
+[ext_resource type="Script" uid="uid://bvcd3d0bbmge8" path="res://scenes/components/wire/wire_receiver.gd" id="9_42yg3"]
+[ext_resource type="Script" uid="uid://cc47stsmi2lmq" path="res://scripts/pattern/light_pattern.gd" id="12_33ti1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpcx1"]
+resource_name = "Brown"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.6705884, 0.3215687, 0.21176474, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ff3q"]
+resource_name = "Fence"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.3725491, 0.34117657, 0.30980396, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4olkl"]
+_surfaces = [{
+"aabb": AABB(-0.6737501, -0.03811875, -0.73622215, 1.3474998, 1.3474997, 0.78577733),
+"format": 34359742465,
+"index_count": 318,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAQAEAAMABQACAAMAAgAFAAAABgADAAQAAwAGAAUABwAEAAEABAAHAAYAAQAAAAcACAAFAAYAAAAFAAgACQAGAAcABgAJAAgACgAHAAAABwAKAAkAAAALAAoACAALAAAACQAKAAwADAAKAAsADAANAAkADgALAAgACwAOAAwADwAIAAkACQANAA8ACAAPAA4AEAANABEAEgANABAADwASABMAEQAUABAAFAARABUAFgAQABQAEAAWABcAFAAYABYAFwAZABAAEAAZABIAGQAXABoAGAAUABsAFQAbABQAGwAcABgAHQAbABUAHAAbAB0AFQAMAB0AHQAeABwAHQAMAB8AHgAdACAAHwAgAB0AIAAhAB4AIQAgACIAIgAjACEAIAAfACQAJAAiACAAIwAiACUAJQAiACQAJQAaACMAGgAlABkAGQAlACYAJAAmACUAJgASABkAJAAfACcAJwAfAA4AEwASACYADgAoACcAKAAOACkAKgAnACgAJwAqACsAKAAsACoAKwAtACcAJwAtACQALQArAC4AKQAkAC0ALAAoAC8ALwAuACwALgAvAC0AKQAvACgALQAvACkAMAAkACkAJgAkADAAKQAxADAAMQApADIAMwAwADEAMAAzADQAMQA1ADMANAA2ADAAMAA2ACYANgA0ADcAMgAmADYANQAxADgAOAA3ADUANwA4ADYAMgA4ADEANgA4ADIAOQAmADIAJgA5ABMAOgATADkAEwA6ADsAOQA8ADoAOwA9ABMAEwA9AA8AMgAPAD0APQA7AD4AMgA/ADkAPQA/ADIAPAA5AD8APgA/AD0APwA+ADwA"),
+"name": "Brown",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray("43osv8yZpz8OeTy/43osv8yZpz9g+ko943osv2giHL1g+ko93nosP2giHL1g+ko93nosP8yZpz9g+ko943osv2giHL0OeTy/3nosP2giHL0OeTy/3nosP8yZpz8OeTy/eR4bvzaHSj4OeTy/dB4bPzaHSj4OeTy/dB4bP5frnj8OeTy/eR4bv5frnj8OeTy/cx4bP5brnj8+2R2/cx4bPzyHSj4+2R2/eB4bv5brnj8+2R2/eB4bvzyHSj4+2R2/3s0PP4/Jdz4+2R2/cx4bP5izCz8+2R2/1gOcvjyHSj4+2R2/NTqqvvnzZj4+2R2/3s0PPyB5Dz8+2R2/cx4bP2LFZD8+2R2/3s0PP4/Jdz5LyAy/rWKFvo7Jdz5LyAy/3s0PPyB5Dz9LyAy/rWKFvo7Jdz4+2R2/rGKFviB5Dz9LyAy/3s0PP9z/YD8+2R2/3s0PP9z/YD9LyAy/3s0PP0xDmT8+2R2/3s0PP0xDmT9LyAy/1QOcvpbrnj8+2R2/rGKFvkxDmT8+2R2/rGKFvkxDmT9LyAy/rGKFvtz/YD8+2R2/rGKFvtz/YD9LyAy/1QOcvmLFZD8+2R2/rGKFviB5Dz8+2R2/1gOcvpizCz8+2R2/NDqqvv5dmz8+2R2/SQMUv/5dmz8+2R2/eB4bv2LFZD8+2R2/NDqqvv5dmz+nBgm/NDqqvpHgaz+nBgm/SQMUv/5dmz+nBgm/NDqqvpHgaz8+2R2/SQMUv5Hgaz+nBgm/SQMUv5Hgaz8+2R2/NDqqvjOqXT8+2R2/SQMUvzOqXT8+2R2/eB4bv5izCz8+2R2/NDqqvjOqXT+nBgm/NTqqvsfOEj+nBgm/SQMUvzOqXT+nBgm/NTqqvsfOEj8+2R2/SQMUv8fOEj+nBgm/SQMUv8fOEj8+2R2/NTqqvmmYBD8+2R2/NTqqvvnzZj6nBgm/SQMUv/nzZj6nBgm/NTqqvmmYBD+nBgm/SQMUv/nzZj4+2R2/SQMUv2mYBD+nBgm/SQMUv2mYBD8+2R2/")
+}, {
+"aabb": AABB(-0.5781751, 0.22554006, -0.5499312, 1.1399102, 0.9882659, 0.014673471),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAwACAAQABAAFAAMABgAFAAQABAAHAAYACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAA"),
+"lods": [0.19096622, PackedByteArray("AAABAAIAAgADAAAAAwACAAQABAAFAAMABgAFAAQABAAHAAYA")],
+"name": "Fence",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("3s0PP0xDmT9LyAy/rGKFvkxDmT9LyAy/rGKFvtz/YD9LyAy/3s0PP9z/YD9LyAy/rGKFviB5Dz9LyAy/3s0PPyB5Dz9LyAy/3s0PP4/Jdz5LyAy/rWKFvo7Jdz5LyAy/NDqqvv5dmz+nBgm/SQMUv/5dmz+nBgm/SQMUv5Hgaz+nBgm/NDqqvpHgaz+nBgm/NTqqvmmYBD+nBgm/SQMUv2mYBD+nBgm/SQMUv/nzZj6nBgm/NTqqvvnzZj6nBgm/NTqqvsfOEj+nBgm/NDqqvjOqXT+nBgm/SQMUvzOqXT+nBgm/SQMUv8fOEj+nBgm/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2c13c"]
+resource_name = "ElectricPanel"
+_surfaces = [{
+"aabb": AABB(-0.6737501, -0.03811875, -0.73622215, 1.3474998, 1.3474997, 0.78577733),
+"attribute_data": PackedByteArray("AAAgPwAAQD8AACA/AACAPwAAwD4AAIA/AADAPgAAQD9uxxw/cMc8P27HHD9wxzw/I3HGPm7HPD8jccY+bsc8PwAAID8AAIA+AAAgPwAAAD8AAMA+AAAAPwAAwD4AAIA+AAAgPwAAAAAAACA/AACAPgAAwD4AAIA+AADAPgAAAAAAAMA+AACAPgAAwD4AAAA/AAAAPgAAAD8AAAA+AACAPgAAYD8AAIA+AABgPwAAAD8AACA/AAAAPwAAID8AAIA+AAAgPwAAQD8AAMA+AABAPyNxxj5uxzw/AADAPgAAAD9uxxw/cMc8PyNxxj6QOAM/bsccP5I4Az8AACA/AAAAP27HHD+SOAM/I3HGPpA4Az8jccY+kDgDP27HHD+SOAM/I3HGPm7HPD8jccY+bsc8PyNxxj6QOAM/I3HGPpA4Az9uxxw/kjgDP27HHD+SOAM/bsccP3DHPD9uxxw/cMc8PwRRyz73UQU/BFHLPvdRBT9WcO4++FEFP1Zw7j74UQU/1McIP/hRBT/Uxwg/+FEFP35XGj/4UQU/flcaP/hRBT+pwOk+gcovP6nA6T6Byi8/p8DpPux1Oz+nwOk+7HU7P27HHD//eC4/f1caP5hfLD9+Vxo/+FEFP27HHD+SOAM/z5cJP5I4Az9uxxw/kjgDP35XGj/4UQU/1McIP/hRBT9WcO4++FEFP2DQ7D6ROAM/BFHLPvdRBT8jccY+kDgDPyNxxj7+eC4/I3HGPpA4Az8EUcs+91EFPwRRyz6YXyw/YdDsPv54Lj8jccY+/nguPwRRyz6YXyw/WHDuPphfLD/dgMk+gMovP6nA6T6Byi8/I3HGPm7HPD/cgMk+7HU7P2DQ7D5vxzw/p8DpPux1Oz8X4O8+7HU7P/MPCD/sdTs/z5cJP2/HPD+RPxs/7HU7P27HHD9wxzw/qx8LP+x1Oz9/Vxo/mF8sP39XGj+YXyw/1ccIP5hfLD/Vxwg/mF8sP1hw7j6YXyw/WHDuPphfLD8EUcs+mF8sPwRRyz6YXyw/BFHLPvdRBT8EUcs+91EFP35XGj/4UQU/flcaP/hRBT9/Vxo/mF8sP39XGj+YXyw/WHDuPphfLD9YcO4+mF8sPwRRyz6YXyw/BFHLPphfLD/Plwk/AHkuP9XHCD+YXyw/f1caP5hfLD9uxxw//3guP5E/Gz+Cyi8/rB8LP4LKLz/Plwk/AHkuP2HQ7D7+eC4/WHDuPphfLD/Vxwg/mF8sP6wfCz+Cyi8/rB8LP4LKLz+RPxs/gsovP5E/Gz+Cyi8/GuDvPoHKLz8a4O8+gcovP/IPCD+Cyi8/8g8IP4LKLz+RPxs/gsovP27HHD//eC4/bsccP3DHPD+RPxs/7HU7P6wfCz+Cyi8/qx8LP+x1Oz/Plwk/b8c8P8+XCT8AeS4/8g8IP4LKLz/zDwg/7HU7P6nA6T6Byi8/YdDsPv54Lj9g0Ow+b8c8P6fA6T7sdTs/GuDvPoHKLz8X4O8+7HU7P/IPCD+Cyi8/GuDvPoHKLz9h0Ow+/nguP8+XCT8AeS4/kT8bP+x1Oz+RPxs/7HU7P6sfCz/sdTs/qx8LP+x1Oz+nwOk+7HU7P6fA6T7sdTs/3IDJPux1Oz/cgMk+7HU7P/MPCD/sdTs/8w8IP+x1Oz8X4O8+7HU7Pxfg7z7sdTs/3YDJPoDKLz/dgMk+gMovP6nA6T6Byi8/qcDpPoHKLz8X4O8+7HU7Pxfg7z7sdTs/GuDvPoHKLz8a4O8+gcovP9yAyT7sdTs/3IDJPux1Oz/dgMk+gMovP92AyT6Ayi8/8g8IP4LKLz/yDwg/gsovP/MPCD/sdTs/8w8IP+x1Oz+rHws/7HU7P6sfCz/sdTs/rB8LP4LKLz+sHws/gsovP5E/Gz+Cyi8/kT8bP4LKLz+RPxs/7HU7P5E/Gz/sdTs/"),
+"format": 34359742487,
+"index_count": 318,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAZABsAGgAcABgAGwAdABoAGAAcAB4AHQAbAB8AHgAfABgAHwAeAB0AIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwALwAuADAAMAAxAC8AMQAwADIAMgAzADEANAA1ADYANgA3ADQAOAA5ADoAOgA7ADgAPAA9AD4APgA/ADwAPAA/AEAAQABBADwAQQBAAEIAQgBDAEEARABFAEYARgBHAEQASABJAEoASgBLAEgATABJAEgASABNAEwATgBJAEwATABPAE4AUABOAE8ATwBRAFAAUABSAFMAUwBUAFAAVQBWAFQAVABXAFUAWABZAFoAWgBbAFgAWwBaAFwAXABdAFsAXgBfAGAAYABhAF4AYgBjAGQAZABlAGIAZgBnAGgAaABpAGYAagBrAGwAbABtAGoAagBtAG4AbgBvAGoAcABxAHIAcgBzAHAAdAB1AHYAdgB3AHQAeAB5AHoAegB7AHgAfAB9AH4AfgB/AHwAgACBAIIAggCDAIAAhACDAIIAggCFAIQAhgCHAIgAiACJAIYAiACHAIoAigCLAIgAjACNAI4AjgCPAIwAkACRAJIAkgCTAJAAlACVAJYAlgCXAJQAmACZAJoAmgCbAJgAnACdAJ4AngCfAJwAoAChAKIAogCjAKAApAClAKYApgCnAKQAqACpAKoAqgCrAKgArACtAK4ArgCvAKwAsACxALIAsgCzALAA"),
+"material": SubResource("StandardMaterial3D_jpcx1"),
+"name": "Brown",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 180,
+"vertex_data": PackedByteArray("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SQMUv/nzZj4+2R2/SQMUv/nzZj6nBgm/SQMUvzOqXT+nBgm/SQMUvzOqXT8+2R2/SQMUv8fOEj8+2R2/SQMUv8fOEj+nBgm/NTqqvvnzZj6nBgm/NTqqvvnzZj4+2R2/NTqqvmmYBD8+2R2/NTqqvmmYBD+nBgm/SQMUv8fOEj+nBgm/SQMUv8fOEj8+2R2/NTqqvsfOEj8+2R2/NTqqvsfOEj+nBgm/SQMUv/nzZj6nBgm/SQMUv/nzZj4+2R2/NTqqvvnzZj4+2R2/NTqqvvnzZj6nBgm/NDqqvjOqXT+nBgm/NDqqvjOqXT8+2R2/SQMUvzOqXT8+2R2/SQMUvzOqXT+nBgm/SQMUv5Hgaz+nBgm/SQMUv5Hgaz8+2R2/NDqqvpHgaz8+2R2/NDqqvpHgaz+nBgm/NDqqvv5dmz+nBgm/NDqqvv5dmz8+2R2/SQMUv/5dmz8+2R2/SQMUv/5dmz+nBgm/AAD/f/9///8AAP9//3///wAA/3//f///AAD/f/9///////9/////v////3////+/////f////7////9/////v////3//f///////f/9///////9//3///////3//f////3//f/9/////f/9//3////9//3//f////3//f/9/////fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+///////9//v///////3/+////////f/7///////9//v///////3/+////////f/7///////9//v///////3/+/wAA/3////+/AAD/f////78AAP9/////vwAA/3////+//3///////7//f///////v/9///////+//3///////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/7/AAD/f/7//v8AAP9//v/+/wAA/3/+//7/AAD/f/7///////9//////////3//////////f/////////9//////////3/+////////f/7///////9//v///////3/+//7/////f/7//v////9//v/+/////3/+//7/////f/7///////9//v///////3/+////////f/////////9//////////3/+////////f/7///////9//v///////3/+////////f/////////9//////////3//////////f/////////9//////////3/+////////f/7///////9///////9/////v////3////+/////f////7////9/////v////3////+/////f////7//f///////v/9///////+//3///////7//f///////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+/////f////7////9/////v////3////+/////f////7///////3//////////f/////////9//v///////3/+////////f/7///////9//////////3/+////////f/7///////9//v///////3///wAA/3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7///////3/+////////f/7///////9//v//////AID+////////f/7///////9//v///////3//////////f/////////9//v///////3/+////////f/7///////9//////////3//////////f/7///////9//v///////3/+////////f/7///////9//v///////3/+////////f/7/////f////7////9/////v////3////+/////f////7////9/////v////3////+/////f////7////9/////v////3////+/////f////7////9/////v////3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//f///////v/9///////+//3///////7//f///////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+/")
+}, {
+"aabb": AABB(-0.5781751, 0.22554006, -0.5499312, 1.1399102, 0.9882659, 0.014673471),
+"attribute_data": PackedByteArray("flcaP/hRBT9/Vxo/mF8sP9XHCD+YXyw/1McIP/hRBT9YcO4+mF8sP1Zw7j74UQU/BFHLPvdRBT8EUcs+mF8sP1hw7j6YXyw/VnDuPvhRBT+RPxs/gsovP5E/Gz/sdTs/qx8LP+x1Oz+sHws/gsovP6nA6T6Byi8/p8DpPux1Oz/cgMk+7HU7P92AyT6Ayi8/GuDvPoHKLz/yDwg/gsovP/MPCD/sdTs/F+DvPux1Oz8="),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAwACAAgACAAJAAMABgAFAAQABAAHAAYACgALAAwADAANAAoADgAPABAAEAARAA4AEgATABQAFAAVABIA"),
+"lods": [0.19096622, PackedByteArray("AAABAAIAAgADAAAAAwACAAQABAAFAAMABgAFAAQABAAHAAYA")],
+"material": SubResource("StandardMaterial3D_4ff3q"),
+"name": "Fence",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 22,
+"vertex_data": PackedByteArray("3s0PP0xDmT9LyAy/rGKFvkxDmT9LyAy/rGKFvtz/YD9LyAy/3s0PP9z/YD9LyAy/rGKFviB5Dz9LyAy/3s0PPyB5Dz9LyAy/3s0PP4/Jdz5LyAy/rWKFvo7Jdz5LyAy/rGKFviB5Dz9LyAy/3s0PPyB5Dz9LyAy/NDqqvv5dmz+nBgm/SQMUv/5dmz+nBgm/SQMUv5Hgaz+nBgm/NDqqvpHgaz+nBgm/NTqqvmmYBD+nBgm/SQMUv2mYBD+nBgm/SQMUv/nzZj6nBgm/NTqqvvnzZj6nBgm/NTqqvsfOEj+nBgm/NDqqvjOqXT+nBgm/SQMUvzOqXT+nBgm/SQMUv8fOEj+nBgm///////9//////////3//////////f/////////9////+/wAA/3/+//7/AAD/f/7//v8AAP9//v/+/wAA/3//////////f/////////9//////////3//////////f/////////9//////////3//////////f/7///////9//////////3/+////////f/7///////9//v///////3/+////////f/7///////9///8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4olkl")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wbrop"]
+size = Vector3(0.1, 1, 1.2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_yf5fn"]
+flip_faces = true
+size = Vector2(0.25, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.25, 0.3, 0.01)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_81041"]
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.10390625
+radial_segments = 8
+rings = 0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yf5fn"]
+radius = 0.05
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_73qu0"]
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.04914551
+radial_segments = 8
+rings = 0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g4v7s"]
+top_radius = 0.05
+bottom_radius = 0.1
+height = 0.1
+radial_segments = 12
+
+[node name="ElectricPanel" type="Node3D" unique_id=20725248]
+
+[node name="ElectricPanel" type="MeshInstance3D" parent="." unique_id=1933514494]
+mesh = SubResource("ArrayMesh_2c13c")
+
+[node name="OpenDoor" type="Node3D" parent="." unique_id=1845615384]
+transform = Transform3D(-0.73937047, 0, -0.67329884, 0, 1, 0, 0.67329884, 0, -0.73937047, 0.62893593, 0.71999335, -0.71309316)
+visible = false
+
+[node name="ElectricPanelDoor" parent="OpenDoor" unique_id=700437536 instance=ExtResource("2_lllrk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62893593, -0.71999335, 0.71309316)
+
+[node name="CloseElectricPanel" type="Area3D" parent="OpenDoor" unique_id=1485327300]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -0.6407776, 0.021425843, -0.036542892)
+script = ExtResource("2_u0xnv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OpenDoor/CloseElectricPanel" unique_id=536190793]
+shape = SubResource("BoxShape3D_wbrop")
+
+[node name="ClosedDoor" type="Node3D" parent="." unique_id=1019127319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62893593, 0.71999335, -0.71309316)
+
+[node name="ElectricPanelDoor" parent="ClosedDoor" unique_id=127846064 instance=ExtResource("2_lllrk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62893593, -0.71999335, 0.71309316)
+
+[node name="OpenElectricPanel" type="Area3D" parent="ClosedDoor" unique_id=668388612]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -0.6407776, 0.021425843, -0.036542892)
+script = ExtResource("2_u0xnv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClosedDoor/OpenElectricPanel" unique_id=1702348951]
+shape = SubResource("BoxShape3D_wbrop")
+
+[node name="Secrets" type="Node3D" parent="." unique_id=1471954259]
+
+[node name="Secret1" type="MeshInstance3D" parent="Secrets" unique_id=726103952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45418352, 1.0632713, -0.612789)
+material_override = ExtResource("1_ldeor")
+mesh = SubResource("QuadMesh_yf5fn")
+
+[node name="Area3D" type="Area3D" parent="Secrets/Secret1" unique_id=778089831]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Secrets/Secret1/Area3D" unique_id=337224299]
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="Secret2" type="MeshInstance3D" parent="Secrets" unique_id=784325493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45418352, 0.71864444, -0.612789)
+material_override = ExtResource("1_ldeor")
+mesh = SubResource("QuadMesh_yf5fn")
+
+[node name="Area3D" type="Area3D" parent="Secrets/Secret2" unique_id=1367696570]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Secrets/Secret2/Area3D" unique_id=1726646959]
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="Secret3" type="MeshInstance3D" parent="Secrets" unique_id=1892452202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45418352, 0.37055427, -0.612789)
+material_override = ExtResource("1_ldeor")
+mesh = SubResource("QuadMesh_yf5fn")
+
+[node name="Area3D" type="Area3D" parent="Secrets/Secret3" unique_id=858349873]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Secrets/Secret3/Area3D" unique_id=308340658]
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="Puzzle" type="Node3D" parent="." unique_id=170489577]
+
+[node name="WireTransmitor" type="Node3D" parent="Puzzle" unique_id=472583515 node_paths=PackedStringArray("areas", "mesh")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.5139767, 1.0288322, -0.5655905)
+script = ExtResource("4_6rrn4")
+areas = [NodePath("MeshInstance3D/Transmisor")]
+mesh = NodePath("MeshInstance3D")
+receiving_material = ExtResource("5_wbrop")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Puzzle/WireTransmitor" unique_id=1427938710]
+material_override = ExtResource("5_wbrop")
+mesh = SubResource("CylinderMesh_81041")
+
+[node name="Transmisor" type="Area3D" parent="Puzzle/WireTransmitor/MeshInstance3D" unique_id=1484073892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022826582, 0)
+script = ExtResource("5_73qu0")
+metadata/_custom_type_script = "uid://byhr1c763aqwc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/WireTransmitor/MeshInstance3D/Transmisor" unique_id=1494082144]
+shape = SubResource("SphereShape3D_yf5fn")
+
+[node name="CogHolder" parent="Puzzle" unique_id=220566342 instance=ExtResource("3_4xmi7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3391398, 1.0342247, -0.55391395)
+
+[node name="Cog" parent="Puzzle/CogHolder" unique_id=1772246213 instance=ExtResource("4_175s6")]
+transform = Transform3D(1.3113416e-07, 1, 0, -1, 1.3113416e-07, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="SmallPointer" parent="Puzzle/CogHolder/Cog" index="3" unique_id=1442474372]
+transform = Transform3D(-1.3113416e-08, -0.3, 8.335761e-08, 0, -1.3113417e-08, -1.907, 0.3, -1.3113417e-08, 0, 5.642246e-10, 0, -0.03444718)
+
+[node name="Wire" parent="Puzzle/CogHolder/Cog" unique_id=1749146384 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="Wire2" parent="Puzzle/CogHolder/Cog" unique_id=817238501 instance=ExtResource("6_81041")]
+transform = Transform3D(-0.70710677, -0.70710677, 0, 0.70710677, -0.70710677, 0, 0, 0, 1, -0.044821322, 0.044821262, -0.0146484375)
+
+[node name="Wire3" parent="Puzzle/CogHolder/Cog" unique_id=1797328444 instance=ExtResource("6_81041")]
+transform = Transform3D(-0.70710677, 0.70710677, 0, -0.70710677, -0.70710677, 0, 0, 0, 1, -0.044821322, -0.044821322, -0.0146484375)
+
+[node name="CogHolder2" parent="Puzzle" unique_id=1787386789 instance=ExtResource("3_4xmi7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16281839, 0.8553204, -0.55391395)
+
+[node name="Cog" parent="Puzzle/CogHolder2" unique_id=671518437 instance=ExtResource("4_175s6")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="SmallPointer" parent="Puzzle/CogHolder2/Cog" index="3" unique_id=1442474372]
+transform = Transform3D(-1.3113416e-08, -0.3, 8.335761e-08, 0, -1.3113417e-08, -1.907, 0.3, -1.3113417e-08, 0, 5.642246e-10, 0, -0.03444718)
+
+[node name="WireHolder2" type="Node3D" parent="Puzzle/CogHolder2/Cog" unique_id=2035704455]
+transform = Transform3D(0.70710677, 0.70710677, -2.5605539e-08, -0.70710677, 0.70710677, -6.181724e-08, -2.5605539e-08, 6.181724e-08, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder2/Cog/WireHolder2" unique_id=1904118342 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="WireHolder" type="Node3D" parent="Puzzle/CogHolder2/Cog" unique_id=1712022606]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder2/Cog/WireHolder" unique_id=1414707030 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="WireHolder3" type="Node3D" parent="Puzzle/CogHolder2/Cog" unique_id=627450394]
+transform = Transform3D(-5.960464e-08, -0.99999994, 0, 0.99999994, -5.960464e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder2/Cog/WireHolder3" unique_id=123633991 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="WireHolder4" type="Node3D" parent="Puzzle/CogHolder2/Cog" unique_id=588550003]
+transform = Transform3D(1.4702741e-07, 0.99999994, 0, -0.99999994, 1.4702741e-07, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder2/Cog/WireHolder4" unique_id=1105478499 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="CogHolder3" parent="Puzzle" unique_id=2126192297 instance=ExtResource("3_4xmi7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34010553, 0.6751628, -0.55391395)
+
+[node name="Cog" parent="Puzzle/CogHolder3" unique_id=1961169320 instance=ExtResource("4_175s6")]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="SmallPointer" parent="Puzzle/CogHolder3/Cog" index="3" unique_id=1442474372]
+transform = Transform3D(-1.3113417e-08, -2.6226834e-08, 1.907, 0, -0.3, -1.6671522e-07, 0.3, -1.1464113e-15, 8.335761e-08, 5.642246e-10, 0, -0.03444718)
+
+[node name="WireHolder" type="Node3D" parent="Puzzle/CogHolder3/Cog" unique_id=298662738]
+transform = Transform3D(-0.7071068, -0.7071067, 0, 0.7071067, -0.7071068, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder3/Cog/WireHolder" unique_id=300505754 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="WireHolder2" type="Node3D" parent="Puzzle/CogHolder3/Cog" unique_id=985684084]
+transform = Transform3D(5.9604645e-08, 0.99999994, 0, -0.99999994, 5.9604645e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder3/Cog/WireHolder2" unique_id=1783675668 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="CogHolder4" parent="Puzzle" unique_id=1746517162 instance=ExtResource("3_4xmi7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34010553, 0.4276297, -0.55391395)
+
+[node name="Cog" parent="Puzzle/CogHolder4" unique_id=152098101 instance=ExtResource("4_175s6")]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="SmallPointer" parent="Puzzle/CogHolder4/Cog" index="3" unique_id=1442474372]
+transform = Transform3D(-1.3113417e-08, -2.6226834e-08, 1.907, 0, -0.3, -1.6671522e-07, 0.3, -1.1464113e-15, 8.335761e-08, 5.642246e-10, 0, -0.03444718)
+
+[node name="WireHolder" type="Node3D" parent="Puzzle/CogHolder4/Cog" unique_id=2069262820]
+transform = Transform3D(-5.9604645e-08, -0.99999994, 0, 0.99999994, -5.9604645e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder4/Cog/WireHolder" unique_id=1341917657 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="WireHolder2" type="Node3D" parent="Puzzle/CogHolder4/Cog" unique_id=140720823]
+transform = Transform3D(-0.99999994, 1.03316026e-07, 0, -1.03316026e-07, -0.99999994, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder4/Cog/WireHolder2" unique_id=491769456 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="CogHolder5" parent="Puzzle" unique_id=550194161 instance=ExtResource("3_4xmi7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08795184, 0.4297936, -0.55391395)
+
+[node name="Cog" parent="Puzzle/CogHolder5" unique_id=269123041 instance=ExtResource("4_175s6")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="SmallPointer" parent="Puzzle/CogHolder5/Cog" index="3" unique_id=1442474372]
+transform = Transform3D(-1.3113416e-08, 0.3, 8.335761e-08, 0, -1.3113417e-08, 1.907, 0.3, 1.3113417e-08, 0, 5.642246e-10, 0, -0.03444718)
+
+[node name="WireHolder" type="Node3D" parent="Puzzle/CogHolder5/Cog" unique_id=788592020]
+transform = Transform3D(0.99999994, -1.589326e-08, 0, 1.589326e-08, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder5/Cog/WireHolder" unique_id=518955856 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="WireHolder2" type="Node3D" parent="Puzzle/CogHolder5/Cog" unique_id=125290269]
+transform = Transform3D(-0.70710677, -0.70710665, 0, 0.70710665, -0.70710677, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder5/Cog/WireHolder2" unique_id=544580602 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="CogHolder6" parent="Puzzle" unique_id=598318997 instance=ExtResource("3_4xmi7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.091526985, 0.6042417, -0.55391395)
+
+[node name="Cog" parent="Puzzle/CogHolder6" unique_id=322321685 instance=ExtResource("4_175s6")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="SmallPointer" parent="Puzzle/CogHolder6/Cog" index="3" unique_id=1442474372]
+transform = Transform3D(-1.3113416e-08, -0.3, 8.335761e-08, 0, -1.3113417e-08, -1.907, 0.3, -1.3113417e-08, 0, 5.642246e-10, 0, -0.03444718)
+
+[node name="WireHolder" type="Node3D" parent="Puzzle/CogHolder6/Cog" unique_id=1603467263]
+transform = Transform3D(0.70710677, 0.70710665, 0, -0.70710665, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder6/Cog/WireHolder" unique_id=1578631407 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="WireHolder2" type="Node3D" parent="Puzzle/CogHolder6/Cog" unique_id=907489856]
+transform = Transform3D(-0.99999994, 1.03316026e-07, 0, -1.03316026e-07, -0.99999994, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder6/Cog/WireHolder2" unique_id=831970419 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="CogHolder7" parent="Puzzle" unique_id=767365136 instance=ExtResource("3_4xmi7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.091526985, 0.85569626, -0.55391395)
+
+[node name="Cog" parent="Puzzle/CogHolder7" unique_id=1202714408 instance=ExtResource("4_175s6")]
+
+[node name="WireHolder" type="Node3D" parent="Puzzle/CogHolder7/Cog" unique_id=1175079047]
+transform = Transform3D(0.99999994, -1.589326e-08, 0, 1.589326e-08, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder7/Cog/WireHolder" unique_id=2086506193 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="WireHolder2" type="Node3D" parent="Puzzle/CogHolder7/Cog" unique_id=1335900757]
+transform = Transform3D(-0.70710665, 0.70710677, 0, -0.70710677, -0.70710665, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder7/Cog/WireHolder2" unique_id=980709820 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="WireHolder3" type="Node3D" parent="Puzzle/CogHolder7/Cog" unique_id=275296154]
+transform = Transform3D(-0.70710677, -0.70710665, 0, 0.70710665, -0.70710677, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wire" parent="Puzzle/CogHolder7/Cog/WireHolder3" unique_id=115790079 instance=ExtResource("6_81041")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
+
+[node name="WireReceiver" type="Node3D" parent="Puzzle" unique_id=1906831541 node_paths=PackedStringArray("areas", "mesh")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.27560508, 0.6050032, -0.5655905)
+script = ExtResource("9_42yg3")
+areas = [NodePath("MeshInstance3D/Receiver")]
+mesh = NodePath("MeshInstance3D")
+receiving_material = ExtResource("5_wbrop")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Puzzle/WireReceiver" unique_id=1276530044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.027380377, 0)
+mesh = SubResource("CylinderMesh_73qu0")
+
+[node name="Receiver" type="Area3D" parent="Puzzle/WireReceiver/MeshInstance3D" unique_id=1577247337]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022826582, 0)
+script = ExtResource("5_73qu0")
+metadata/_custom_type_script = "uid://byhr1c763aqwc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/WireReceiver/MeshInstance3D/Receiver" unique_id=1532360866]
+shape = SubResource("SphereShape3D_yf5fn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1560511570]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.16094036, 1.0753193, -0.51588994)
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=155257617]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.049623728, -4.1633363e-17)
+material_override = ExtResource("3_175s6")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D/MeshInstance3D" unique_id=1989351867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13737792, 0.009758472)
+light_energy = 0.25
+
+[node name="LightPattern" type="Node" parent="." unique_id=1354160189 node_paths=PackedStringArray("lights")]
+script = ExtResource("12_33ti1")
+mat = ExtResource("5_wbrop")
+lights = [NodePath("../MeshInstance3D/MeshInstance3D/OmniLight3D")]
+on_color = Color(1, 1, 1, 1)
+off_color = Color(0.73300564, 0.73300534, 0.7330054, 1)
+on_light_attenuation = 1.0
+off_light_attenuation = 0.5
+pattern = Array[int]([0, 2, 2, 1, 1])
+pattern_blinks = Dictionary[int, int]({
+0: 3,
+1: 2,
+2: 1,
+3: 4
+})
+on_time = 0.3
+between_time = 0.3
+
+[connection signal="on_clicked" from="OpenDoor/CloseElectricPanel" to="OpenDoor" method="set_visible" binds= [false]]
+[connection signal="on_clicked" from="OpenDoor/CloseElectricPanel" to="OpenDoor/CloseElectricPanel" method="set_physics_process" binds= [false]]
+[connection signal="on_clicked" from="OpenDoor/CloseElectricPanel" to="ClosedDoor" method="set_visible" binds= [true]]
+[connection signal="on_clicked" from="OpenDoor/CloseElectricPanel" to="ClosedDoor/OpenElectricPanel" method="set_physics_process" binds= [true]]
+[connection signal="on_clicked" from="ClosedDoor/OpenElectricPanel" to="OpenDoor" method="set_visible" binds= [true]]
+[connection signal="on_clicked" from="ClosedDoor/OpenElectricPanel" to="OpenDoor/CloseElectricPanel" method="set_physics_process" binds= [true]]
+[connection signal="on_clicked" from="ClosedDoor/OpenElectricPanel" to="ClosedDoor" method="set_visible" binds= [false]]
+[connection signal="on_clicked" from="ClosedDoor/OpenElectricPanel" to="ClosedDoor/OpenElectricPanel" method="set_physics_process" binds= [false]]
+[connection signal="on_clicked" from="Puzzle/CogHolder/Cog/CogArea" to="Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_clicked" from="Puzzle/CogHolder2/Cog/CogArea" to="Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_clicked" from="Puzzle/CogHolder3/Cog/CogArea" to="Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_clicked" from="Puzzle/CogHolder4/Cog/CogArea" to="Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_clicked" from="Puzzle/CogHolder5/Cog/CogArea" to="Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_clicked" from="Puzzle/CogHolder6/Cog/CogArea" to="Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_clicked" from="Puzzle/CogHolder7/Cog/CogArea" to="Puzzle/WireTransmitor" method="call_to_reset"]
+[connection signal="on_lost_signal" from="Puzzle/WireReceiver" to="LightPattern" method="start_pattern"]
+[connection signal="on_receive" from="Puzzle/WireReceiver" to="LightPattern" method="stop_pattern"]
+
+[editable path="Puzzle/CogHolder/Cog"]
+[editable path="Puzzle/CogHolder/Cog/SmallPointer"]
+[editable path="Puzzle/CogHolder2/Cog"]
+[editable path="Puzzle/CogHolder2/Cog/SmallPointer"]
+[editable path="Puzzle/CogHolder3/Cog"]
+[editable path="Puzzle/CogHolder3/Cog/SmallPointer"]
+[editable path="Puzzle/CogHolder4/Cog"]
+[editable path="Puzzle/CogHolder4/Cog/SmallPointer"]
+[editable path="Puzzle/CogHolder5/Cog"]
+[editable path="Puzzle/CogHolder5/Cog/SmallPointer"]
+[editable path="Puzzle/CogHolder6/Cog"]
+[editable path="Puzzle/CogHolder6/Cog/SmallPointer"]
+[editable path="Puzzle/CogHolder7/Cog"]
+[editable path="Puzzle/CogHolder7/Cog/SmallPointer"]

@@ -8,6 +8,8 @@ shader_type canvas_item;
 
 uniform sampler2D u_dither_tex;
 uniform sampler2D u_color_tex;
+uniform sampler2D u_transition_color_tex;
+uniform float u_transition_color_ratio : hint_range(0.0, 1.0) = 1.0;
 
 uniform int u_bit_depth;
 uniform float u_contrast;
@@ -70,6 +72,13 @@ void fragment()
 	// sample at the lower bound colour if ramp_val is 0.0, upper bound colour if 1.0
 	float col_sample = mix(lum_lower, lum_upper, ramp_val);
 	vec3 final_col = texture(u_color_tex, vec2(col_sample, 0.5)).rgb;
+	
+	if (u_transition_color_ratio < 1.0) {
+		vec3 starter_final_col = texture(u_transition_color_tex, vec2(col_sample, 0.5)).rgb;
+		final_col = mix(starter_final_col, final_col, u_transition_color_ratio);
+	}
+	
+	
 	
 	// return the final colour!
 	COLOR.rgb = final_col;

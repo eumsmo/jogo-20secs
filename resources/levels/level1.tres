@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://c0dfpalx2y01p"]
+
+[ext_resource type="Script" uid="uid://gps7yv5j2dm7" path="res://scripts/level_info.gd" id="1_fvcan"]
+[ext_resource type="Texture2D" uid="uid://c71n7wde5gocs" path="res://resources/sprites/palettes/palette_hollow.png" id="1_nvddv"]
+
+[resource]
+script = ExtResource("1_fvcan")
+chapter = 1
+name = "Learning Outside"
+pattern = Array[int]([1, 0, 2, 3, 0])
+palette = ExtResource("1_nvddv")
+metadata/_custom_type_script = "uid://gps7yv5j2dm7"

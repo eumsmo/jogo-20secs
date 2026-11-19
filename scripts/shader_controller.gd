@@ -41,3 +41,16 @@ func fade_to_default() -> void:
 func fade_inout_black() -> void:
 	await fade_to_black()
 	await fade_to_default()
+
+func set_palette(palette: Texture2D):
+	shaded_material.set_shader_parameter("u_transition_color_tex", palette)
+	shaded_material.set_shader_parameter("u_color_tex", palette)
+	shaded_material.set_shader_parameter("u_transition_color_ratio", 1.0)
+
+func transition_palette(previous: Texture2D, current: Texture2D):
+	shaded_material.set_shader_parameter("u_transition_color_tex", previous)
+	shaded_material.set_shader_parameter("u_color_tex", current)
+	
+	var tween = create_tween();
+	tween.tween_method(func(ratio): shaded_material.set_shader_parameter("u_transition_color_ratio", ratio), 0.0, 1.0, 1.0)
+	tween.play()

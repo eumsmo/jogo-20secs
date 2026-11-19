@@ -9,6 +9,7 @@ material = ExtResource("1_msnvp")
 custom_minimum_size = Vector2(64, 64)
 offset_transform_enabled = true
 offset_transform_rotation = 3.1415927
+mouse_filter = 2
 texture = ExtResource("1_a86es")
 expand_mode = 1
 stretch_mode = 5

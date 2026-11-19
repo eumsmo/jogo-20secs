@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bc7mwk34afhal"]
+
+[ext_resource type="Script" uid="uid://cggyl8txmaalg" path="res://scenes/components/wire/wire.gd" id="1_b8n6r"]
+[ext_resource type="Material" uid="uid://t4hif544cutp" path="res://resources/materials/vfx/phase2_light_glow.tres" id="2_iknfd"]
+[ext_resource type="Script" uid="uid://byhr1c763aqwc" path="res://scenes/components/wire/wire_area.gd" id="3_c5ke1"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g4v7s"]
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.075
+radial_segments = 8
+rings = 0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
+radius = 0.03
+
+[node name="Wire" type="Node3D" unique_id=1749146384 node_paths=PackedStringArray("areas", "mesh")]
+script = ExtResource("1_b8n6r")
+areas = [NodePath("WireArea3D"), NodePath("WireArea3D2")]
+mesh = NodePath("MeshInstance3D")
+receiving_material = ExtResource("2_iknfd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=3209014]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="WireArea3D" type="Area3D" parent="." unique_id=1036331879]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.05, 2.1855695e-09, 0)
+input_ray_pickable = false
+script = ExtResource("3_c5ke1")
+metadata/_custom_type_script = "uid://byhr1c763aqwc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WireArea3D" unique_id=497151953]
+shape = SubResource("SphereShape3D_g4v7s")
+
+[node name="WireArea3D2" type="Area3D" parent="." unique_id=1778390266]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.05, -2.1855695e-09, 0)
+input_ray_pickable = false
+script = ExtResource("3_c5ke1")
+metadata/_custom_type_script = "uid://byhr1c763aqwc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WireArea3D2" unique_id=1625163437]
+shape = SubResource("SphereShape3D_g4v7s")

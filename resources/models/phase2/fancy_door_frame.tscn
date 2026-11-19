@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://by5turrkfnuvq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ff3q"]
+resource_name = "Fence"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.3725491, 0.34117657, 0.30980396, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tu24x"]
+_surfaces = [{
+"aabb": AABB(-0.06792069, 0, -0.7469349, 0.13584138, 2.5657525, 1.4938698),
+"format": 34359742465,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABQADAAIAAgAGAAUABwAEAAUABQAGAAcABAAHAAEACAAGAAIABwAGAAgACQACAAEAAgAJAAgAAQAHAAoACAAKAAcAAQALAAkACgALAAEADAAKAAgACwAKAAwACAANAAwADQAIAAkADAAOAAsACQAPAA0ACwAOAA8ADwAJAAsA"),
+"name": "Fence",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("ARqLPQAAAABjXiw/ARqLPZI+H0A/XCs/ARqLvZI+H0A/XCs/ARqLvQAAAABjXiw/ARqLPQAAAAAgNz8/ARqLvQAAAAAgNz8/ARqLvUo1JEAgNz8/ARqLPUo1JEAgNz8/ARqLvUo1JEAgNz+/ARqLvZI+H0A/XCu/ARqLPUo1JEAgNz+/ARqLPZI+H0A/XCu/ARqLPQAAAAAgNz+/ARqLvQAAAAAgNz+/ARqLPQAAAABjXiy/ARqLvQAAAABjXiy/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jjkgf"]
+resource_name = "FancyDoorFrame"
+_surfaces = [{
+"aabb": AABB(-0.06792069, 0, -0.7469349, 0.13584138, 2.5657525, 1.4938698),
+"attribute_data": PackedByteArray("AADAPqyqqj69EB4/PqWGPr0QHj8+pYY+AADAPqyqqj4AACA/AAAAPwAAwD4AAAA/AADAPgAAAD8AACA/AAAAPwAAwD4AAAA/AADAPlZV1T69EB4/wFr5PgAAID8AAAA/AADAPgAAgD4AACA/AACAPr0QHj8+pYY+AADAPqyqqj4AACA/AAAAP70QHj/AWvk+vRAePz6lhj4AACA/AACAPgAAID8AAIA+AADAPgAAgD4AAMA+AACAPgAAID8AAIA+vRAeP8Ba+T4AAMA+VlXVPgAAwD5WVdU+vRAeP8Ba+T69EB4/PqWGPr0QHj/AWvk+vRAeP8Ba+T69EB4/PqWGPgAAwD4AAAA/AAAgPwAAAD+9EB4/wFr5PgAAwD5WVdU+AADAPgAAgD4AAMA+rKqqPr0QHj8+pYY+AAAgPwAAgD4AACA/AAAAPwAAID8AAIA+vRAePz6lhj69EB4/wFr5PgAAID8AAIA+AAAgPwAAgD4AACA/AAAAPwAAID8AAAA/"),
+"format": 34359742487,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwA"),
+"material": SubResource("StandardMaterial3D_4ff3q"),
+"name": "Fence",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("ARqLPQAAAABjXiw/ARqLPZI+H0A/XCs/ARqLvZI+H0A/XCs/ARqLvQAAAABjXiw/ARqLvUo1JEAgNz+/ARqLvQAAAAAgNz+/ARqLPQAAAAAgNz+/ARqLPUo1JEAgNz+/ARqLPQAAAAAgNz+/ARqLPQAAAABjXiy/ARqLPZI+H0A/XCu/ARqLPUo1JEAgNz+/ARqLPQAAAAAgNz8/ARqLPUo1JEAgNz8/ARqLPZI+H0A/XCs/ARqLPQAAAABjXiw/ARqLPUo1JEAgNz+/ARqLPZI+H0A/XCu/ARqLPZI+H0A/XCs/ARqLPUo1JEAgNz8/ARqLPUo1JEAgNz8/ARqLPQAAAAAgNz8/ARqLvQAAAAAgNz8/ARqLvUo1JEAgNz8/ARqLPZI+H0A/XCu/ARqLPQAAAABjXiy/ARqLvQAAAABjXiy/ARqLvZI+H0A/XCu/ARqLPZI+H0A/XCs/ARqLPZI+H0A/XCu/ARqLvZI+H0A/XCu/ARqLvZI+H0A/XCs/ARqLvQAAAAAgNz+/ARqLvUo1JEAgNz+/ARqLvZI+H0A/XCu/ARqLvQAAAABjXiy/ARqLvQAAAAAgNz8/ARqLvQAAAABjXiw/ARqLvZI+H0A/XCs/ARqLvUo1JEAgNz8/ARqLvUo1JEAgNz+/ARqLvUo1JEAgNz8/ARqLvZI+H0A/XCs/ARqLvZI+H0A/XCu/ARqLPUo1JEAgNz8/ARqLvUo1JEAgNz8/ARqLvUo1JEAgNz+/ARqLPUo1JEAgNz+/y/8AAP///7/L/wAA////v8v/AAD///+/y/8AAP///7//////////v/////////+//////////7//////////v////3//f1/+////f/9/V/7///9//3/5/////3//f////v//fz6D///+//9//3////7//38KgP///v//f0+D//////9//3/+/////3//f/7/////f/9//v////9//3/+//9//3////8//3//f////z//f/9/////P/9//3////8//3/Lf////z//f8t/////P/9/y3////8//3/Lf////z//fwAA////v/9/AAD///+//38AAP///7//fwAA////vwAA/3//f58BAAD/f/9/AAAAAP9//38FAAAA/3//f6cBAAD/f8B8AAAAAP9/r3wAAAAA/3/0fwAAAAD/f/9/AAAAAP9//38AAAAA/3//fwAAAAD/f/9/AAAAAP9//38AAP9///////+//3///////7//f///////v/9///////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_tu24x")
+
+[node name="FancyDoorFrame" type="Node3D" unique_id=465612966]
+
+[node name="FancyDoorFrame" type="MeshInstance3D" parent="." unique_id=1064917078]
+mesh = SubResource("ArrayMesh_jjkgf")
