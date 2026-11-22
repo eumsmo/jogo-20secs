@@ -31,6 +31,7 @@
 [ext_resource type="Material" uid="uid://kb2catetgn4p" path="res://resources/materials/vfx/locked.tres" id="27_tx8fj"]
 [ext_resource type="PackedScene" uid="uid://bacdcel6e0wlt" path="res://resources/models/phase1/tree.tscn" id="28_7hfo6"]
 [ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="29_c8d6m"]
+[ext_resource type="Resource" uid="uid://byg5d7nahtjck" path="res://resources/levels/level3.tres" id="30_hn4vf"]
 [ext_resource type="Material" uid="uid://cs62pcgda5eor" path="res://resources/materials/vfx/sprite_mesh_mats/base_sprite_mesh_mat.tres" id="30_wyqdk"]
 [ext_resource type="Material" uid="uid://1iri3ypfxyxh" path="res://resources/materials/vfx/sprite_mesh_mats/highlight_sprite_mesh_mat.tres" id="31_kgx2a"]
 [ext_resource type="Material" uid="uid://brcgsmls5gnle" path="res://resources/materials/vfx/sprite_mesh_mats/locked_sprite_mesh_mat.tres" id="32_6jnj4"]
@@ -163,7 +164,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.23
 
 [node name="Camera3D" parent="Levels/Scene3/CameraStand" index="0" unique_id=1331824599]
 transform = Transform3D(0.68085945, 0, -0.73241407, 0, 1, 0, 0.73241407, 0, 0.68085945, -2.184113, 0.3768747, -1.5733371)
-current = true
 
 [node name="ChangeSceneInteractable" parent="Levels/Scene3/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
 transform = Transform3D(0.9993346, 0, 0.036474764, 0, 1, 0, -0.036474764, 0, 0.9993346, -0.011195868, -0.37687445, -0.5328083)
@@ -644,7 +644,7 @@ shape = SubResource("BoxShape3D_q8j3a")
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.19472794, 0.61223125, -1.3912219)
 input_ray_pickable = false
 script = ExtResource("4_hn4vf")
-level = ExtResource("5_6mlwq")
+level = ExtResource("30_hn4vf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene5/Scenario/NextChapter" unique_id=1490938368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)

@@ -12,8 +12,10 @@
 [ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="6_xj5ry"]
 [ext_resource type="Resource" uid="uid://byg5d7nahtjck" path="res://resources/levels/level3.tres" id="7_jdsl7"]
 [ext_resource type="PackedScene" uid="uid://durwe6vmptojo" path="res://scenes/components/arrows/down_arrow.tscn" id="7_wf0ht"]
+[ext_resource type="Resource" uid="uid://b2ji5vy7bsh32" path="res://resources/levels/level4.tres" id="8_kfjyq"]
 [ext_resource type="PackedScene" uid="uid://bf3yaus42rxcw" path="res://scenes/components/arrows/left_arrow.tscn" id="8_u2cqw"]
 [ext_resource type="PackedScene" uid="uid://bjaygeelrd8t0" path="res://scenes/components/arrows/right_arrow.tscn" id="9_517my"]
+[ext_resource type="Resource" uid="uid://chx7cb6ef57pc" path="res://resources/levels/man.tres" id="9_yfbtn"]
 [ext_resource type="PackedScene" uid="uid://dpcb80nty0wh5" path="res://scenes/components/arrows/up_arrow.tscn" id="10_8x14w"]
 [ext_resource type="Script" uid="uid://bsgq3bdgo1dx8" path="res://scripts/pattern/simple_pattern_listener.gd" id="13_8x14w"]
 
@@ -76,7 +78,9 @@ render_target_update_mode = 4
 level_scene_relation = {
 ExtResource("5_0to4s"): NodePath("Scenario/PhaseHolder/Phase1"),
 ExtResource("6_jdsl7"): NodePath("Scenario/PhaseHolder/Phase2"),
-ExtResource("7_jdsl7"): NodePath("Scenario/PhaseHolder/Phase3")
+ExtResource("7_jdsl7"): NodePath("Scenario/PhaseHolder/Phase3"),
+ExtResource("8_kfjyq"): NodePath("Scenario/PhaseHolder/Phase4"),
+ExtResource("9_yfbtn"): NodePath("Scenario/PhaseHolder/Man")
 }
 
 [node name="Fade" type="Control" parent="SubViewportContainer/SubViewport" unique_id=1771698977]

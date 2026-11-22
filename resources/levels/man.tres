@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://chx7cb6ef57pc"]
+
+[ext_resource type="Texture2D" uid="uid://w5aom46j1l02" path="res://resources/sprites/palettes/man.png" id="1_ln3t4"]
+[ext_resource type="Script" uid="uid://gps7yv5j2dm7" path="res://scripts/level_info.gd" id="2_trey0"]
+
+[resource]
+script = ExtResource("2_trey0")
+idx = -6
+chapter = "???"
+name = "???"
+pattern = Array[int]([0, 0, 0, 0, 0, 0])
+palette = ExtResource("1_ln3t4")
+metadata/_custom_type_script = "uid://gps7yv5j2dm7"

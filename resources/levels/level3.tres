@@ -5,8 +5,9 @@
 
 [resource]
 script = ExtResource("2_2hrbm")
+idx = 3
 chapter = "3"
 name = "Lessons"
-pattern = Array[int]([3, 0, 2, 1, 2])
+pattern = Array[int]([1, 0, 3])
 palette = ExtResource("1_3t06t")
 metadata/_custom_type_script = "uid://gps7yv5j2dm7"

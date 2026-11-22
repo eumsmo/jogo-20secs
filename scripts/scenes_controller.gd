@@ -4,6 +4,8 @@ extends Node
 @export var current_scene: Scene
 var fade: bool = false
 
+signal scene_changed(scene: Scene)
+
 func change_scene(scene: Scene):
 	if current_scene == scene:
 		return
@@ -20,7 +22,10 @@ func change_scene(scene: Scene):
 	current_scene = scene
 	current_scene.activate()
 	
+	
 	if fade:
 		await UIManager.instance.shader.fade_to_default()
 	else:
 		await get_tree().create_timer(0.1).timeout
+	
+	scene_changed.emit(current_scene)

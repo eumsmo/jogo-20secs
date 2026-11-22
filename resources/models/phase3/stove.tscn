@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dacaijey35bqu" path="res://scripts/interact/interactable.gd" id="3_m1hw4"]
 [ext_resource type="Script" uid="uid://dy7vf0dy6hqde" path="res://scripts/pattern/cog_pattern.gd" id="3_qs5d5"]
 [ext_resource type="Script" uid="uid://gdx1msx8ssyi" path="res://scripts/interact/interactables/pickup_item.gd" id="4_pw8ga"]
-[ext_resource type="Resource" uid="uid://cxxf2pau1r4ug" path="res://resources/itens/big_pointer.tres" id="5_b8ra3"]
+[ext_resource type="Resource" uid="uid://f2shrknh5bpl" path="res://resources/itens/small_pointer.tres" id="5_b8ra3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ghs4e"]
 resource_name = "Ceil"
@@ -131,6 +131,7 @@ metadata/_custom_type_script = "uid://dacaijey35bqu"
 shape = SubResource("BoxShape3D_f56nd")
 
 [node name="PointerPickup" type="Area3D" parent="OpenStoveDoor/SmallBoxOpen" unique_id=1014710540 node_paths=PackedStringArray("remove_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005190849, 0.023582488, -0.029858708)
 input_ray_pickable = false
 script = ExtResource("4_pw8ga")
 item = ExtResource("5_b8ra3")

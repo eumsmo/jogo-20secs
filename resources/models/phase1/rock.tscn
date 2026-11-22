@@ -45,5 +45,5 @@ shadow_mesh = SubResource("ArrayMesh_olwn8")
 [node name="Rock" type="Node3D" unique_id=2041314870]
 
 [node name="Rock" type="MeshInstance3D" parent="." unique_id=640298728]
-material_override = ExtResource("1_tw2nh")
 mesh = SubResource("ArrayMesh_qnwnq")
+surface_material_override/0 = ExtResource("1_tw2nh")

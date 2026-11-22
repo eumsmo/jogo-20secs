@@ -11,42 +11,30 @@
 [ext_resource type="Material" uid="uid://dlgx6v3h2xhf0" path="res://resources/materials/vfx/highlighted.tres" id="6_av7uq"]
 [ext_resource type="PackedScene" uid="uid://msu4onycj1xp" path="res://resources/models/phase3/small_table.tscn" id="6_ly5n8"]
 [ext_resource type="Material" uid="uid://kb2catetgn4p" path="res://resources/materials/vfx/locked.tres" id="7_46pcy"]
-[ext_resource type="PackedScene" uid="uid://k1b1g3dryds2" path="res://resources/models/phase3/balcony.tscn" id="7_fshl6"]
-[ext_resource type="PackedScene" uid="uid://b42pn8878vei0" path="res://resources/models/phase3/rack.tscn" id="8_2o7ai"]
 [ext_resource type="Script" uid="uid://ccup386pslxg0" path="res://scripts/counter.gd" id="9_p103g"]
 [ext_resource type="PackedScene" uid="uid://c7umki4syhlmd" path="res://resources/models/phase2/window.tscn" id="9_wmmqu"]
-[ext_resource type="PackedScene" uid="uid://defjucdfdrn2i" path="res://resources/models/phase3/dinner_table.tscn" id="10_6hhkj"]
-[ext_resource type="PackedScene" uid="uid://c1hg75cxi2kgm" path="res://resources/models/phase3/inside_chair.tscn" id="11_ex26s"]
 [ext_resource type="Material" uid="uid://dcp258ghdupuw" path="res://resources/materials/Brown.tres" id="11_kqo7x"]
 [ext_resource type="Script" uid="uid://ypfbu7sipw7r" path="res://scripts/scene.gd" id="12_av7uq"]
 [ext_resource type="Material" uid="uid://cdj1opmtoccxq" path="res://resources/materials/Grey.tres" id="12_fq1ua"]
 [ext_resource type="Script" uid="uid://c3g0o3cunkyuj" path="res://scripts/interact/interactables/use_item_interactable.gd" id="13_5sliu"]
 [ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/interactables/change_scene_interactable.gd" id="13_46pcy"]
 [ext_resource type="PackedScene" uid="uid://bkcavx5bvtdnb" path="res://resources/models/phase3/bath_tub.tscn" id="13_ly5n8"]
+[ext_resource type="Resource" uid="uid://b2ji5vy7bsh32" path="res://resources/levels/level4.tres" id="13_tulss"]
 [ext_resource type="PackedScene" uid="uid://cf28yci5qmoth" path="res://resources/models/phase3/bath_faucet.tscn" id="14_fshl6"]
 [ext_resource type="PackedScene" uid="uid://dybkw4ji7oj7w" path="res://scenes/components/camera_stand.tscn" id="14_kyx3d"]
-[ext_resource type="Texture2D" uid="uid://bxfjw58nnv1xy" path="res://resources/sprites/flower_indicator.png" id="15_kibnp"]
 [ext_resource type="PackedScene" uid="uid://dol7110otibo0" path="res://resources/models/phase3/small_box_open.tscn" id="15_ld5oi"]
 [ext_resource type="PackedScene" uid="uid://nl55v1swyely" path="res://resources/models/phase3/trash_can.tscn" id="15_ly5n8"]
 [ext_resource type="PackedScene" uid="uid://b1127ab6reggu" path="res://resources/models/phase3/sink.tscn" id="16_fshl6"]
-[ext_resource type="PackedScene" uid="uid://cqi3f8nch3tq5" path="res://resources/models/phase3/stove.tscn" id="16_qr730"]
 [ext_resource type="Script" uid="uid://cahki8kabd553" path="res://scripts/interact/interactables/go_to_chapter.gd" id="17_7v5th"]
-[ext_resource type="PackedScene" uid="uid://5nm55x152v7k" path="res://resources/models/phase3/fridge.tscn" id="17_qiq6q"]
-[ext_resource type="PackedScene" uid="uid://bof6f6q6tfq7g" path="res://resources/models/phase2/grand_clock.tscn" id="18_duo4a"]
-[ext_resource type="Resource" uid="uid://c0dfpalx2y01p" path="res://resources/levels/level1.tres" id="18_hxkjw"]
 [ext_resource type="PackedScene" uid="uid://slxkdyrw3jpa" path="res://resources/models/phase3/path_marker.tscn" id="23_a0ipy"]
-[ext_resource type="PackedScene" uid="uid://dmpck8yhr2f67" path="res://resources/models/phase3/plate.tscn" id="23_yidlo"]
 [ext_resource type="PackedScene" uid="uid://bt8828jobikwb" path="res://resources/models/phase3/bathroom_light_holder.tscn" id="24_2o7ai"]
 [ext_resource type="PackedScene" uid="uid://0r4gvcg0lrb3" path="res://resources/models/phase3/bathroom_mirror.tscn" id="24_fshl6"]
 [ext_resource type="PackedScene" uid="uid://b3pivog53tnpw" path="res://resources/models/phase3/map_marker.tscn" id="24_rf3fd"]
 [ext_resource type="PackedScene" uid="uid://bnhld3f70y5v0" path="res://resources/models/phase3/map_end_marker.tscn" id="25_rf3fd"]
-[ext_resource type="PackedScene" uid="uid://bn3ssnj765x3e" path="res://resources/models/phase2/pointer.tscn" id="26_p1ahy"]
 [ext_resource type="PackedScene" uid="uid://bvf8q1kb4xvxr" path="res://resources/models/phase3/paper_1.tscn" id="26_yk2uw"]
 [ext_resource type="Material" uid="uid://hosl1egdb006" path="res://resources/materials/Grey_Mid.tres" id="27_frsad"]
 [ext_resource type="PackedScene" uid="uid://cc3wngp2a3sod" path="res://resources/models/phase3/paper_2.tscn" id="27_hbuq6"]
-[ext_resource type="Material" uid="uid://iuxm21dlfxvs" path="res://resources/materials/Black.tres" id="27_hwwor"]
 [ext_resource type="Material" uid="uid://bhrslc85heo8s" path="res://resources/materials/vfx/water/DarkBlue_Water_Bath.tres" id="28_2oi3e"]
-[ext_resource type="Resource" uid="uid://bo0ogvlnrqf3d" path="res://resources/itens/pointer.tres" id="28_tulss"]
 [ext_resource type="PackedScene" uid="uid://6hmq62i4ban2" path="res://resources/models/phase3/book.tscn" id="29_1q704"]
 [ext_resource type="Material" uid="uid://dg1jepudiwts7" path="res://resources/materials/vfx/phase3_bath_light_glow.tres" id="29_kyx3d"]
 [ext_resource type="Texture2D" uid="uid://cyvbdnet6e2sm" path="res://resources/sprites/map/start_map.png" id="29_tutd8"]
@@ -62,26 +50,8 @@
 [ext_resource type="Texture2D" uid="uid://3ep5nawta0xm" path="res://resources/sprites/map/v.png" id="34_wiegk"]
 [ext_resource type="Resource" uid="uid://dc8c2m2dwvehx" path="res://resources/itens/hammer.tres" id="35_1q704"]
 [ext_resource type="Script" uid="uid://dacaijey35bqu" path="res://scripts/interact/interactable.gd" id="41_5rpng"]
-[ext_resource type="Resource" uid="uid://f2shrknh5bpl" path="res://resources/itens/small_pointer.tres" id="42_d0vjv"]
-[ext_resource type="PackedScene" uid="uid://dklcs0v142k7s" path="res://resources/models/phase3/vase.tscn" id="47_kqo7x"]
-[ext_resource type="PackedScene" uid="uid://ddgeygsriykj2" path="res://resources/models/phase3/petal.tscn" id="48_5sliu"]
-[ext_resource type="PackedScene" uid="uid://c2r1o6tdvi2f5" path="res://resources/models/phase1/arrow.tscn" id="48_fq1ua"]
-[ext_resource type="PackedScene" uid="uid://llcclrh03si0" path="res://resources/models/phase3/petal_002.tscn" id="49_uawrl"]
-[ext_resource type="PackedScene" uid="uid://dfhctpafdov8f" path="res://resources/models/phase3/petal_001.tscn" id="50_tv733"]
-[ext_resource type="PackedScene" uid="uid://dp321n0as212" path="res://resources/models/phase3/portrait.tscn" id="51_fdwj4"]
-[ext_resource type="Texture2D" uid="uid://cqsgx0ii5wjbs" path="res://resources/sprites/circleish.png" id="54_cl5ek"]
-[ext_resource type="PackedScene" uid="uid://ciimexoue3wo0" path="res://resources/models/phase3/paper_3.tscn" id="55_kmd6w"]
-[ext_resource type="Material" uid="uid://4fiib57bwe0v" path="res://resources/materials/vfx/CompleteBlackish.tres" id="59_f30f1"]
-[ext_resource type="PackedScene" uid="uid://b5djxodymkseb" path="res://resources/models/phase3/wall_portrait.tscn" id="59_njbst"]
-[ext_resource type="Script" uid="uid://1hpvwn6n1g6h" path="res://scripts/interact/interactables/multiple_interactables.gd" id="59_rd0e2"]
-[ext_resource type="Texture2D" uid="uid://d1ceppnseojbe" path="res://resources/sprites/itens/big_pointer.png" id="60_ajucn"]
-[ext_resource type="Resource" uid="uid://cxxf2pau1r4ug" path="res://resources/itens/big_pointer.tres" id="61_7v5th"]
-[ext_resource type="Texture2D" uid="uid://c7hwd03cr1311" path="res://resources/sprites/itens/pointer.png" id="61_g5vhj"]
-[ext_resource type="Texture2D" uid="uid://dvy7id61c7wfe" path="res://resources/sprites/itens/small_pointer.png" id="62_518l1"]
 [ext_resource type="PackedScene" uid="uid://ctjk83r6mhda5" path="res://resources/models/phase1/key.tscn" id="62_hxkjw"]
 [ext_resource type="Resource" uid="uid://c7q66k03g4ree" path="res://resources/itens/key.tres" id="63_fwl16"]
-[ext_resource type="Material" uid="uid://fxtilcw5bsx8" path="res://resources/materials/DarkBlue.tres" id="63_i65mh"]
-[ext_resource type="Texture2D" uid="uid://dxrx8atqe6cl2" path="res://resources/sprites/temp_outoforder.png" id="64_d50wq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_46pcy"]
 size = Vector3(1.5, 2.54, 0.2)
@@ -115,31 +85,7 @@ size = Vector3(2.3, 1.1882629, 1.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_d0u6y"]
 size = Vector3(0.8, 0.3, 0.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3gngh"]
-size = Vector3(0.03, 0.326, 0.06)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_o8ni1"]
-size = Vector3(2.4311218, 1.2194214, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kibnp"]
-size = Vector3(2.2131348, 1.2194214, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fcnqv"]
-size = Vector3(0.19970703, 2.3443604, 1.4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
-size = Vector3(0.305, 0.05, 0.086)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_cl5ek"]
-size = Vector3(1.442627, 0.8704071, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yidlo"]
-size = Vector3(1.2895508, 2.116333, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vga31"]
-size = Vector3(0.8, 2.2091308, 0.8)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_88oub"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_tulss"]
 size = Vector3(0.5, 0.1, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wmmqu"]
@@ -410,14 +356,14 @@ layers = 32
 [node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door2/FancyDoorOpened/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(2022432079, 85017689) index="0" unique_id=1751405653]
 layers = 32
 
-[node name="NextScene" type="Area3D" parent="BaseAmbient/Doors/Door2" unique_id=458127908 node_paths=PackedStringArray("scene")]
+[node name="NextChapter" type="Area3D" parent="BaseAmbient/Doors/Door2" unique_id=904760253]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.29070067, 0.6120987, -0.005661958)
 input_ray_pickable = false
-script = ExtResource("13_46pcy")
-scene = NodePath("../../../../Levels/Kitchen")
-metadata/_custom_type_script = "uid://bnjfxriyseeds"
+script = ExtResource("17_7v5th")
+level = ExtResource("13_tulss")
+metadata/_custom_type_script = "uid://dacaijey35bqu"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door2/NextScene" unique_id=1396000897]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door2/NextChapter" unique_id=1396000897]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
 shape = SubResource("BoxShape3D_qr730")
 
@@ -571,105 +517,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
 material_override = ExtResource("11_kqo7x")
 mesh = SubResource("BoxMesh_uawrl")
 
-[node name="ClickBlock" type="Area3D" parent="BaseAmbient/Doors/Door2" unique_id=1908415017]
+[node name="ClickBlock" type="Area3D" parent="BaseAmbient/Doors/Door2" unique_id=542428573 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.069302574, 0.6120987, -0.0056619677)
-input_ray_pickable = false
-script = ExtResource("41_5rpng")
-metadata/_custom_type_script = "uid://dacaijey35bqu"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door2/ClickBlock" unique_id=1387021410]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
-shape = SubResource("BoxShape3D_qr730")
-
-[node name="Door3" parent="BaseAmbient/Doors" unique_id=1528351947 instance=ExtResource("2_fwj52")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.676056, -0.008296967, 3.488769)
-
-[node name="FancyDoorFrame" parent="BaseAmbient/Doors/Door3/FancyDoorFrame" parent_id_path=PackedInt32Array(1528351947, 465612966) index="0" unique_id=1064917078]
-layers = 32
-material_override = ExtResource("3_l7uou")
-
-[node name="FancyDoor" parent="BaseAmbient/Doors/Door3/FancyDoor" parent_id_path=PackedInt32Array(1528351947, 173200455) index="0" unique_id=196420203]
-layers = 32
-
-[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door3/FancyDoor/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(1528351947, 2100792129) index="0" unique_id=1751405653]
-layers = 32
-
-[node name="Sprite3D" type="Sprite3D" parent="BaseAmbient/Doors/Door3/FancyDoor" parent_id_path=PackedInt32Array(1528351947, 173200455) index="2" unique_id=1802228952]
-transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0.08198309, 1.7556343, -3.5835943e-09)
-visible = false
-texture = ExtResource("15_kibnp")
-
-[node name="FancyDoorOpened" parent="BaseAmbient/Doors/Door3" index="2" unique_id=557807790]
-transform = Transform3D(0.67687595, 0, -0.7360971, 0, 1, 0, 0.7360971, 0, 0.67687595, 0.58584857, -4.7683716e-07, 0.30215144)
-
-[node name="FancyDoor" parent="BaseAmbient/Doors/Door3/FancyDoorOpened" index="0" unique_id=196420203]
-layers = 32
-
-[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door3/FancyDoorOpened/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(1528351947, 85017689) index="0" unique_id=1751405653]
-layers = 32
-
-[node name="Patterned" type="Area3D" parent="BaseAmbient/Doors/Door3" unique_id=787653714 node_paths=PackedStringArray("mesh", "active_on_selected")]
-input_ray_pickable = false
-script = ExtResource("5_6hhkj")
-pattern = Array[int]([2, 3, 2, 1, 0])
-mesh = NodePath("../FancyDoorFrame/FancyDoorFrame")
-selected_material = ExtResource("6_av7uq")
-locked_material = ExtResource("7_46pcy")
-active_on_selected = [NodePath("../FancyDoor/Sprite3D")]
-metadata/_custom_type_script = "uid://dbinv34xc0tpr"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door3/Patterned" unique_id=1407619402]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.3049469, 0)
-shape = SubResource("BoxShape3D_46pcy")
-
-[node name="NextScene" type="Area3D" parent="BaseAmbient/Doors/Door3" unique_id=473244986 node_paths=PackedStringArray("scene")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.29070067, 0.6120987, -0.005661958)
-input_ray_pickable = false
-script = ExtResource("13_46pcy")
-scene = NodePath("../../../../Levels/Pantry")
-metadata/_custom_type_script = "uid://bnjfxriyseeds"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door3/NextScene" unique_id=431806617]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
-shape = SubResource("BoxShape3D_qr730")
-
-[node name="Door4" parent="BaseAmbient/Doors" unique_id=776691643 instance=ExtResource("2_fwj52")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.6308062, -0.008296967, -5.997151)
-
-[node name="FancyDoorFrame" parent="BaseAmbient/Doors/Door4/FancyDoorFrame" parent_id_path=PackedInt32Array(776691643, 465612966) index="0" unique_id=1064917078]
-layers = 32
-material_override = ExtResource("3_l7uou")
-
-[node name="FancyDoor" parent="BaseAmbient/Doors/Door4/FancyDoor" parent_id_path=PackedInt32Array(776691643, 173200455) index="0" unique_id=196420203]
-layers = 32
-
-[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door4/FancyDoor/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(776691643, 2100792129) index="0" unique_id=1751405653]
-layers = 32
-
-[node name="FancyDoor" parent="BaseAmbient/Doors/Door4/FancyDoorOpened" parent_id_path=PackedInt32Array(776691643, 557807790) index="0" unique_id=196420203]
-layers = 32
-
-[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door4/FancyDoorOpened/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(776691643, 85017689) index="0" unique_id=1751405653]
-layers = 32
-
-[node name="OpenWithKey" type="Area3D" parent="BaseAmbient/Doors/Door4" unique_id=268101810]
 input_ray_pickable = false
 script = ExtResource("13_5sliu")
 item = ExtResource("63_fwl16")
+delete_nodes = [NodePath(".")]
 metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door4/OpenWithKey" unique_id=225303750]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.3049469, 0)
-shape = SubResource("BoxShape3D_46pcy")
-
-[node name="NextChapter" type="Area3D" parent="BaseAmbient/Doors/Door4" unique_id=1322198420]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.29070067, 0.6120987, -0.005661958)
-input_ray_pickable = false
-script = ExtResource("17_7v5th")
-level = ExtResource("18_hxkjw")
-metadata/_custom_type_script = "uid://dacaijey35bqu"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door4/NextChapter" unique_id=132204164]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door2/ClickBlock" unique_id=1387021410]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
 shape = SubResource("BoxShape3D_qr730")
 
@@ -768,50 +624,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0076466, 0.15568542, 8.5462
 [node name="SmallTable" parent="BaseAmbient/Static/SmallTable" index="0" unique_id=1178793272]
 material_override = ExtResource("3_l7uou")
 
-[node name="Balcony" parent="BaseAmbient/Static" unique_id=1914068267 instance=ExtResource("7_fshl6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.581854, 0.6069145, 9.17347)
-
 [node name="Window" parent="BaseAmbient/Static" unique_id=369382780 instance=ExtResource("9_wmmqu")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.709072, 2.0689735, 8.342641)
-
-[node name="Window2" parent="BaseAmbient/Static" unique_id=1163198417 instance=ExtResource("9_wmmqu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.204413, 2.2982197, 8.583728)
-
-[node name="DinnerTable" parent="BaseAmbient/Static" unique_id=960412411 instance=ExtResource("10_6hhkj")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.9623117, 0, -1.2571074)
-
-[node name="Plate" parent="BaseAmbient/Static/DinnerTable" unique_id=770521819 instance=ExtResource("23_yidlo")]
-transform = Transform3D(0.66673195, 0, 0.3647857, 0, 0.7600001, 0, -0.3647857, 0, 0.66673195, -0.61642003, 1.2095642, 1.2674575)
-
-[node name="InsideChair" parent="BaseAmbient/Static/DinnerTable" unique_id=569781967 instance=ExtResource("11_ex26s")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.074919, 0, 0)
-
-[node name="InsideChair2" parent="BaseAmbient/Static/DinnerTable" unique_id=1805904658 instance=ExtResource("11_ex26s")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.2353028, 0, 1.3099502)
-
-[node name="InsideChair3" parent="BaseAmbient/Static/DinnerTable" unique_id=1810352916 instance=ExtResource("11_ex26s")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.2353026, 0, -1.3088117)
-
-[node name="InsideChair5" parent="BaseAmbient/Static/DinnerTable" unique_id=1494875846 instance=ExtResource("11_ex26s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2348752, 0, 1.3099505)
-
-[node name="InsideChair6" parent="BaseAmbient/Static/DinnerTable" unique_id=678667184 instance=ExtResource("11_ex26s")]
-transform = Transform3D(0.8353201, 0, -0.54976386, 0, 1, 0, 0.54976386, 0, 0.8353201, -1.2556257, 0, -1.6122725)
-
-[node name="Plate2" parent="BaseAmbient/Static/DinnerTable" unique_id=1835761282 instance=ExtResource("23_yidlo")]
-transform = Transform3D(0.30043378, 0, 0.69809717, 0, 0.7600001, 0, -0.69809717, 0, 0.30043378, 0.617394, 1.2095642, 0.007360935)
-
-[node name="Plate3" parent="BaseAmbient/Static/DinnerTable" unique_id=2117120211 instance=ExtResource("23_yidlo")]
-transform = Transform3D(0.2968929, 0, 0.69961035, 0, 0.7600001, 0, -0.69961035, 0, 0.2968929, -0.5013107, 1.2095642, -1.5255883)
-
-[node name="Plate4" parent="BaseAmbient/Static/DinnerTable" unique_id=893426176 instance=ExtResource("23_yidlo")]
-transform = Transform3D(0.7503705, 0, -0.12059912, 0, 0.7600001, 0, 0.12059912, 0, 0.7503705, 0.5219781, 1.2095642, -1.1945758)
-
-[node name="Plate5" parent="BaseAmbient/Static/DinnerTable" unique_id=266013284 instance=ExtResource("23_yidlo")]
-transform = Transform3D(0.33601478, 0, 0.6816848, 0, 0.7600001, 0, -0.6816848, 0, 0.33601478, 0.59942055, 1.2095642, 1.2369814)
-
-[node name="Window3" parent="BaseAmbient/Static" unique_id=1145960291 instance=ExtResource("9_wmmqu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.204413, 2.2982197, -1.2208457)
 
 [node name="TrashCan" parent="BaseAmbient/Static" unique_id=749459464 instance=ExtResource("15_ly5n8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.541335, 0.08591461, -8.990692)
@@ -851,15 +665,9 @@ shape = SubResource("BoxShape3D_ex26s")
 [node name="CameraStand" parent="Levels/Hallway" unique_id=72479423 instance=ExtResource("14_kyx3d")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4181337, 1.2028122, -6.1988594e-08)
 
-[node name="Camera3D" parent="Levels/Hallway/CameraStand" index="0" unique_id=1331824599]
-current = true
-
-[node name="ChangeSceneInteractable" parent="Levels/Hallway/CameraStand/Camera3D" index="0" unique_id=452113428]
+[node name="ChangeSceneInteractable" parent="Levels/Hallway/CameraStand/Camera3D" parent_id_path=PackedInt32Array(72479423, 1331824599) index="0" unique_id=452113428]
 process_mode = 4
 visible = false
-
-[node name="MeshInstance3D" parent="Levels/Hallway/CameraStand" index="1" unique_id=1075611605]
-visible = true
 
 [node name="Scenario" type="Node3D" parent="Levels/Hallway" unique_id=44889517]
 
@@ -985,25 +793,22 @@ metadata/_custom_type_script = "uid://dbinv34xc0tpr"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" unique_id=1327150922]
 shape = SubResource("BoxShape3D_d0u6y")
 
-[node name="PointerPickup" type="Node3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen" unique_id=333822303]
-transform = Transform3D(-4.6960178e-08, -0.9191376, -0.3939366, 1, -4.371139e-08, -1.721952e-08, -1.392408e-09, -0.3939366, 0.9191376, 0.10590268, -0.090099335, 0.028151512)
+[node name="KeyPickup" type="Node3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen" unique_id=333822303]
+transform = Transform3D(-0.9191376, 8.940697e-08, -0.3939366, -8.742277e-08, -1, -2.9802322e-08, -0.3939366, 0, 0.9191376, 0.024548963, -0.090099335, -0.030326322)
 
-[node name="Pointer" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/PointerPickup" unique_id=1519642052 instance=ExtResource("26_p1ahy")]
-transform = Transform3D(2.5, 3.5527137e-15, 2.842171e-14, 1.0658141e-14, 2.5000002, 4.7683716e-07, -1.4210855e-14, -1.1920929e-07, 6, 0, 0, -9.536743e-07)
+[node name="Key" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/KeyPickup" unique_id=1887049370 instance=ExtResource("62_hxkjw")]
+transform = Transform3D(0.49999997, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="Pointer" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/PointerPickup/Pointer" index="0" unique_id=821043829]
-material_override = ExtResource("27_hwwor")
-
-[node name="PickupItem" type="Area3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/PointerPickup" unique_id=946705346 node_paths=PackedStringArray("remove_node")]
+[node name="PickupItem" type="Area3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/KeyPickup" unique_id=946705346 node_paths=PackedStringArray("remove_node")]
 input_ray_pickable = false
 script = ExtResource("34_2oi3e")
-item = ExtResource("28_tulss")
+item = ExtResource("63_fwl16")
 remove_node = NodePath("..")
 metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/PointerPickup/PickupItem" unique_id=1348199097]
-transform = Transform3D(1, 1.7763568e-15, 2.309264e-13, 1.4210855e-14, 1, 0, -9.769963e-15, 0, 1, 0, 0.14561367, 9.536743e-07)
-shape = SubResource("BoxShape3D_3gngh")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/KeyPickup/PickupItem" unique_id=853287783]
+transform = Transform3D(0.49999997, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_tulss")
 
 [node name="Paper1" parent="Levels/LivingRoom/Scenario" unique_id=884619473 instance=ExtResource("26_yk2uw")]
 transform = Transform3D(0.9398807, 0, -0.3415029, 0, 1, 0, 0.3415029, 0, 0.9398807, -1.9602227, 0.88209915, 0.73378277)
@@ -1291,529 +1096,6 @@ transform = Transform3D(-0.6378622, -0.70564866, 0.30853134, 0.020356346, 0.3850
 transform = Transform3D(0.9913066, 2.9802322e-08, 0.13157219, 0.11995862, 0.41078556, -0.903806, -0.054047972, 0.9117321, 0.4072144, 0.18586215, -0.444936, -0.60863763)
 scene = NodePath("../../../../..")
 
-[node name="Kitchen" type="Node3D" parent="Levels" unique_id=1101520854 node_paths=PackedStringArray("camera", "on_scene_only")]
-transform = Transform3D(0.8824419, 0, -0.47042146, 0, 1, 0, 0.47042146, 0, 0.8824419, -0.50982475, 0, 8.652653)
-script = ExtResource("12_av7uq")
-camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("ExtraSupportingLight")]
-
-[node name="NextArea" type="Area3D" parent="Levels/Kitchen" unique_id=339509453 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.5681572, 0, 0.82292, 0, 1, 0, -0.82292, 0, 0.5681572, -2.1381414, 1.6907516, -1.0389664)
-script = ExtResource("13_46pcy")
-scene = NodePath("../InternalScenes/Vases")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/NextArea" unique_id=1533480783]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21556091, -0.34573364, -1.4305115e-06)
-shape = SubResource("BoxShape3D_o8ni1")
-
-[node name="NextArea2" type="Area3D" parent="Levels/Kitchen" unique_id=768644032 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.4740882, 0, -0.88047737, 0, 1, 0, 0.88047737, 0, 0.4740882, -3.3466985, 1.4274864, 1.0288806)
-script = ExtResource("13_46pcy")
-scene = NodePath("../InternalScenes/Oven")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/NextArea2" unique_id=1174488959]
-transform = Transform3D(0.8649616, 0, -0.50184125, 0, 1, 0, 0.50184125, 0, 0.8649616, 0.23629999, 0, 0.13709974)
-shape = SubResource("BoxShape3D_kibnp")
-
-[node name="CameraStand" parent="Levels/Kitchen" unique_id=2037867561 instance=ExtResource("14_kyx3d")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.12938637, 1.2028122, 0.7687455)
-
-[node name="ChangeSceneInteractable" parent="Levels/Kitchen/CameraStand/Camera3D" parent_id_path=PackedInt32Array(2037867561, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
-scene = NodePath("../../../../LivingRoom")
-
-[node name="Scenario" type="Node3D" parent="Levels/Kitchen" unique_id=369342444]
-
-[node name="Stove" parent="Levels/Kitchen/Scenario" unique_id=79689749 instance=ExtResource("16_qr730")]
-transform = Transform3D(0.88212687, 0, 0.47101188, 0, 1, 0, -0.47101188, 0, 0.88212687, -7.339996, 0.017181396, 1.255549)
-
-[node name="Fridge" parent="Levels/Kitchen/Scenario" unique_id=1779587862 instance=ExtResource("17_qiq6q")]
-transform = Transform3D(0.88212687, 0, 0.47101188, 0, 1, 0, -0.47101188, 0, 0.88212687, -8.176278, 0, 0.04454039)
-
-[node name="Fridge" parent="Levels/Kitchen/Scenario/Fridge" index="0" unique_id=1867149036]
-surface_material_override/0 = null
-
-[node name="InteractableOpen" type="Area3D" parent="Levels/Kitchen/Scenario/Fridge" unique_id=1110793084]
-script = ExtResource("41_5rpng")
-metadata/_custom_type_script = "uid://dacaijey35bqu"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/Scenario/Fridge/InteractableOpen" unique_id=678338648]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5251465, 1.1829224, 0)
-shape = SubResource("BoxShape3D_fcnqv")
-
-[node name="InteractableClose" type="Area3D" parent="Levels/Kitchen/Scenario/Fridge" unique_id=818614218]
-transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 0.7878069, 0, 0.08985889)
-input_ray_pickable = false
-script = ExtResource("41_5rpng")
-metadata/_custom_type_script = "uid://dacaijey35bqu"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/Scenario/Fridge/InteractableClose" unique_id=607764706]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5251465, 1.1829224, 0)
-shape = SubResource("BoxShape3D_fcnqv")
-
-[node name="Rack" parent="Levels/Kitchen/Scenario" unique_id=451151315 instance=ExtResource("8_2o7ai")]
-transform = Transform3D(0.8824419, 0, 0.47042146, 0, 1, 0, -0.47042146, 0, 0.8824419, -4.6069727, 0, -3.1740906)
-
-[node name="Vase" parent="Levels/Kitchen/Scenario/Rack" unique_id=981569761 instance=ExtResource("47_kqo7x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1043882, 1.2110252, 0.46485472)
-
-[node name="Vase" parent="Levels/Kitchen/Scenario/Rack/Vase" index="0" unique_id=1127715418]
-transform = Transform3D(0.99431986, 0, -0.106433466, 0, 1, 0, 0.106433466, 0, 0.99431986, 0, 0, 0)
-
-[node name="Stem_001" parent="Levels/Kitchen/Scenario/Rack/Vase/Stem" parent_id_path=PackedInt32Array(981569761, 1418974435) index="1" unique_id=1722989645]
-visible = false
-
-[node name="Stem_002" parent="Levels/Kitchen/Scenario/Rack/Vase/Stem" parent_id_path=PackedInt32Array(981569761, 1418974435) index="2" unique_id=1706917780]
-visible = false
-
-[node name="Petal" parent="Levels/Kitchen/Scenario/Rack/Vase/Petals/Petal0" parent_id_path=PackedInt32Array(981569761, 1913540289) index="0" unique_id=974585322 instance=ExtResource("48_5sliu")]
-
-[node name="Petal" parent="Levels/Kitchen/Scenario/Rack/Vase/Petals/Petal2" parent_id_path=PackedInt32Array(981569761, 1704322284) index="0" unique_id=317220112 instance=ExtResource("48_5sliu")]
-
-[node name="Petal" parent="Levels/Kitchen/Scenario/Rack/Vase/Petals/Petal4" parent_id_path=PackedInt32Array(981569761, 1623970076) index="0" unique_id=754542251 instance=ExtResource("48_5sliu")]
-
-[node name="Petal" parent="Levels/Kitchen/Scenario/Rack/Vase/Petals/Petal6" parent_id_path=PackedInt32Array(981569761, 658658361) index="0" unique_id=1636062082 instance=ExtResource("48_5sliu")]
-
-[node name="Vase2" parent="Levels/Kitchen/Scenario/Rack" unique_id=1585296928 instance=ExtResource("47_kqo7x")]
-transform = Transform3D(0.99337935, 0, -0.11488042, 0, 1, 0, 0.11488042, 0, 0.99337935, -0.59088564, 1.2110252, 0.10279703)
-
-[node name="Stem" parent="Levels/Kitchen/Scenario/Rack/Vase2/Stem" parent_id_path=PackedInt32Array(1585296928, 1418974435) index="0" unique_id=821859533]
-visible = false
-
-[node name="Stem_002" parent="Levels/Kitchen/Scenario/Rack/Vase2/Stem" parent_id_path=PackedInt32Array(1585296928, 1418974435) index="2" unique_id=1706917780]
-visible = false
-
-[node name="Petal_002" parent="Levels/Kitchen/Scenario/Rack/Vase2/Petals/Petal0" parent_id_path=PackedInt32Array(1585296928, 1913540289) index="0" unique_id=1071909424 instance=ExtResource("49_uawrl")]
-
-[node name="Petal_002" parent="Levels/Kitchen/Scenario/Rack/Vase2/Petals/Petal3" parent_id_path=PackedInt32Array(1585296928, 1097545143) index="0" unique_id=1491959236 instance=ExtResource("49_uawrl")]
-
-[node name="Petal_002" parent="Levels/Kitchen/Scenario/Rack/Vase2/Petals/Petal5" parent_id_path=PackedInt32Array(1585296928, 1623592) index="0" unique_id=1000151913 instance=ExtResource("49_uawrl")]
-
-[node name="Vase3" parent="Levels/Kitchen/Scenario/Rack" unique_id=558564695 instance=ExtResource("47_kqo7x")]
-transform = Transform3D(0.9668119, 0, -0.2554893, 0, 1, 0, 0.2554893, 0, 0.9668119, -0.092321515, 1.2110252, 0.5086808)
-
-[node name="Stem_001" parent="Levels/Kitchen/Scenario/Rack/Vase3/Stem" parent_id_path=PackedInt32Array(558564695, 1418974435) index="1" unique_id=1722989645]
-visible = false
-
-[node name="Stem_002" parent="Levels/Kitchen/Scenario/Rack/Vase3/Stem" parent_id_path=PackedInt32Array(558564695, 1418974435) index="2" unique_id=1706917780]
-visible = false
-
-[node name="Petal_001" parent="Levels/Kitchen/Scenario/Rack/Vase3/Petals/Petal0" parent_id_path=PackedInt32Array(558564695, 1913540289) index="0" unique_id=31733523 instance=ExtResource("50_tv733")]
-
-[node name="Petal_001" parent="Levels/Kitchen/Scenario/Rack/Vase3/Petals/Petal2" parent_id_path=PackedInt32Array(558564695, 1704322284) index="0" unique_id=1658843155 instance=ExtResource("50_tv733")]
-
-[node name="Petal_001" parent="Levels/Kitchen/Scenario/Rack/Vase3/Petals/Petal4" parent_id_path=PackedInt32Array(558564695, 1623970076) index="0" unique_id=269963825 instance=ExtResource("50_tv733")]
-
-[node name="Petal_001" parent="Levels/Kitchen/Scenario/Rack/Vase3/Petals/Petal6" parent_id_path=PackedInt32Array(558564695, 658658361) index="0" unique_id=410724750 instance=ExtResource("50_tv733")]
-
-[node name="Petal_001" parent="Levels/Kitchen/Scenario/Rack/Vase3/Petals/Petal7" parent_id_path=PackedInt32Array(558564695, 2112569297) index="0" unique_id=777923502 instance=ExtResource("50_tv733")]
-
-[node name="Vase4" parent="Levels/Kitchen/Scenario/Rack" unique_id=60185055 instance=ExtResource("47_kqo7x")]
-transform = Transform3D(0.94883, 0, -0.31578726, 0, 1, 0, 0.31578726, 0, 0.94883, 0.55176306, 1.2110252, 0.10970831)
-
-[node name="Stem" parent="Levels/Kitchen/Scenario/Rack/Vase4/Stem" parent_id_path=PackedInt32Array(60185055, 1418974435) index="0" unique_id=821859533]
-visible = false
-
-[node name="Stem_001" parent="Levels/Kitchen/Scenario/Rack/Vase4/Stem" parent_id_path=PackedInt32Array(60185055, 1418974435) index="1" unique_id=1722989645]
-visible = false
-
-[node name="Petal_002" parent="Levels/Kitchen/Scenario/Rack/Vase4/Petals/Petal1" parent_id_path=PackedInt32Array(60185055, 1161815551) index="0" unique_id=2049771108 instance=ExtResource("49_uawrl")]
-
-[node name="Vase5" parent="Levels/Kitchen/Scenario/Rack" unique_id=1633125929 instance=ExtResource("47_kqo7x")]
-transform = Transform3D(0.6944822, 0, -0.7195099, 0, 1, 0, 0.7195099, 0, 0.6944822, 0.9656093, 1.2110252, 0.6102176)
-
-[node name="Stem" parent="Levels/Kitchen/Scenario/Rack/Vase5/Stem" parent_id_path=PackedInt32Array(1633125929, 1418974435) index="0" unique_id=821859533]
-visible = false
-
-[node name="Stem_002" parent="Levels/Kitchen/Scenario/Rack/Vase5/Stem" parent_id_path=PackedInt32Array(1633125929, 1418974435) index="2" unique_id=1706917780]
-visible = false
-
-[node name="Petal" parent="Levels/Kitchen/Scenario/Rack/Vase5/Petals/Petal2" parent_id_path=PackedInt32Array(1633125929, 1704322284) index="0" unique_id=965581054 instance=ExtResource("48_5sliu")]
-
-[node name="Petal" parent="Levels/Kitchen/Scenario/Rack/Vase5/Petals/Petal6" parent_id_path=PackedInt32Array(1633125929, 658658361) index="0" unique_id=1851497157 instance=ExtResource("48_5sliu")]
-
-[node name="Portrait" parent="Levels/Kitchen/Scenario/Rack" unique_id=582164424 instance=ExtResource("51_fdwj4")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.117232084, 0.69812775, 0.7722254)
-
-[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Rack/Portrait" unique_id=1882574399]
-transform = Transform3D(-6.119594e-08, -1.4, 0, 1.3787308, -6.026624e-08, 0.24310745, -0.24310745, 1.0626564e-08, 1.3787308, 0, 0.24988876, 0.03186748)
-modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
-texture = ExtResource("33_2t6pw")
-
-[node name="Portrait2" parent="Levels/Kitchen/Scenario/Rack" unique_id=2140116277 instance=ExtResource("51_fdwj4")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.9946215, 0.69812775, 0.7722254)
-
-[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Rack/Portrait2" unique_id=944060179]
-transform = Transform3D(-1.4, 1.2239188e-07, 0, -1.2053248e-07, -1.3787308, 0.24310745, 2.1253127e-08, 0.24310745, 1.3787308, 0, 0.24988876, 0.03186748)
-modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
-texture = ExtResource("33_2t6pw")
-
-[node name="Portrait3" parent="Levels/Kitchen/Scenario/Rack" unique_id=1524405739 instance=ExtResource("51_fdwj4")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.5626488, 0.21820831, 0.7722254)
-
-[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Rack/Portrait3" unique_id=893676288]
-transform = Transform3D(-6.119594e-08, 1.4, 0, -1.3787308, -6.026624e-08, 0.24310745, 0.24310745, 1.0626564e-08, 1.3787308, 0, 0.24988876, 0.03186748)
-modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
-texture = ExtResource("33_2t6pw")
-
-[node name="Portrait4" parent="Levels/Kitchen/Scenario/Rack" unique_id=95484796 instance=ExtResource("51_fdwj4")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.42514634, 0.21820831, 0.7722254)
-
-[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Rack/Portrait4" unique_id=1950092692]
-transform = Transform3D(-6.119594e-08, 1.4, 0, -1.3787308, -6.026624e-08, 0.24310745, 0.24310745, 1.0626564e-08, 1.3787308, 0, 0.24988876, 0.03186748)
-modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
-texture = ExtResource("33_2t6pw")
-
-[node name="Portrait5" parent="Levels/Kitchen/Scenario/Rack" unique_id=839837664 instance=ExtResource("51_fdwj4")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.9019164, 0.69812775, 0.7722254)
-
-[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Rack/Portrait5" unique_id=1766231415]
-transform = Transform3D(1.4, 0, 0, 0, 1.3787308, 0.24310745, 0, -0.24310745, 1.3787308, 0, 0.24988876, 0.03186748)
-modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
-texture = ExtResource("33_2t6pw")
-
-[node name="Book" parent="Levels/Kitchen/Scenario" unique_id=368589947 instance=ExtResource("29_1q704")]
-transform = Transform3D(0.45506305, 0.7711606, -0.44522977, 7.2930977e-09, 0.49999985, 0.8660253, 0.89045954, -0.394096, 0.22753142, -6.4557133, 1.4401093, 3.3514671)
-
-[node name="Sprite3D" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book" unique_id=11001403]
-transform = Transform3D(0.15, 0, 0, 0, -6.5567085e-09, 0.15, 0, -0.15, -6.5567085e-09, 0.19546328, 0.07533325, 0.09153269)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("15_kibnp")
-
-[node name="Sprite3D" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D" unique_id=1434073351]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.84839964, 1.8929102, 0.091532744)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("54_cl5ek")
-
-[node name="Sprite3D2" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D" unique_id=34301703]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.034172207, 2.0346427, 0.091532744)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("54_cl5ek")
-
-[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D" unique_id=1457525523]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.035445683, 1.754478, 0.09153273)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("54_cl5ek")
-
-[node name="Sprite3D4" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D" unique_id=1892749144]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.992713, 2.0059435, 0.091532744)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("54_cl5ek")
-
-[node name="Sprite3D5" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D" unique_id=1718955883]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.8283219, 1.684331, 0.09153273)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("54_cl5ek")
-
-[node name="Sprite3D6" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D" unique_id=671035950]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.6946217, 2.0059435, 0.091532744)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("54_cl5ek")
-
-[node name="Sprite3D2" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book" unique_id=1526453840]
-transform = Transform3D(-0.15, 1.3113417e-08, 0, 5.7320567e-16, 6.5567085e-09, -0.15, -1.3113417e-08, -0.15, -6.5567085e-09, -0.21349011, 0.07533325, 0.09153269)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("15_kibnp")
-
-[node name="Sprite3D" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D2" unique_id=1303398961]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.84839964, 1.8929102, -0.055773742)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("54_cl5ek")
-
-[node name="Sprite3D2" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D2" unique_id=486194588]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.034172207, 2.0346427, -0.055773742)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("54_cl5ek")
-
-[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D2" unique_id=83668188]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.035445683, 1.754478, -0.055773757)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("54_cl5ek")
-
-[node name="Sprite3D4" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D2" unique_id=840426048]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.992713, 2.0059435, -0.055773742)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("54_cl5ek")
-
-[node name="Sprite3D5" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D2" unique_id=1196469274]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.8283219, 1.684331, -0.055773757)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("54_cl5ek")
-
-[node name="Sprite3D6" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D2" unique_id=1603350801]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.6946217, 2.0059435, -0.055773742)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("54_cl5ek")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Levels/Kitchen" unique_id=1367401999]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3398104, 2.6690464, 0)
-light_energy = 2.0
-omni_range = 11.833762
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="Levels/Kitchen" unique_id=976859331]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5479383, 1.8174686, -0.032151997)
-omni_range = 7.166872
-
-[node name="ExtraSupportingLight" type="OmniLight3D" parent="Levels/Kitchen" unique_id=91849959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.547939, 1.8174667, -0.032152176)
-visible = false
-omni_range = 7.166872
-
-[node name="InternalScenes" type="Node3D" parent="Levels/Kitchen" unique_id=752738016]
-transform = Transform3D(0.88212687, 0, 0.47101188, 0, 1, 0, -0.47101188, 0, 0.88212687, -3.117393, 0, 0.5309087)
-
-[node name="Vases" type="Node3D" parent="Levels/Kitchen/InternalScenes" unique_id=1617229151 node_paths=PackedStringArray("camera", "on_scene_only")]
-script = ExtResource("12_av7uq")
-camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("GoToArea/ChangeSceneInteractable"), NodePath("../../../../BaseAmbient/Doors/Door3/Patterned")]
-metadata/_custom_type_script = "uid://ypfbu7sipw7r"
-
-[node name="GoToArea" type="Node3D" parent="Levels/Kitchen/InternalScenes/Vases" unique_id=169679025]
-
-[node name="ChangeSceneInteractable" type="Area3D" parent="Levels/Kitchen/InternalScenes/Vases/GoToArea" unique_id=1481339678 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.9302751, 0, -0.36686262, 0, 1, 0, 0.36686262, 0, 0.9302751, -1.3083775, 0.97278976, -1.9727857)
-visible = false
-input_ray_pickable = false
-script = ExtResource("13_46pcy")
-scene = NodePath("../../../Oven")
-metadata/_custom_type_script = "uid://bnjfxriyseeds"
-
-[node name="Arrow" parent="Levels/Kitchen/InternalScenes/Vases/GoToArea/ChangeSceneInteractable" unique_id=1551828677 instance=ExtResource("48_fq1ua")]
-transform = Transform3D(-5.4639235e-09, 0, 0.15, 0, 0.25, 0, -0.125, 0, -6.5567085e-09, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/InternalScenes/Vases/GoToArea/ChangeSceneInteractable" unique_id=1013445010]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5527137e-15, 0, -0.031253874)
-shape = SubResource("BoxShape3D_g4v7s")
-
-[node name="CameraStand" parent="Levels/Kitchen/InternalScenes/Vases" unique_id=1557869714 instance=ExtResource("14_kyx3d")]
-transform = Transform3D(0.9814107, 0, -0.19191943, 0, 1, 0, 0.19191943, 0, 0.9814107, -0.9754766, 1.2028122, -1.0606797)
-
-[node name="ChangeSceneInteractable" parent="Levels/Kitchen/InternalScenes/Vases/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1557869714, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.9006981, 0, 0.43444544, 0, 1, 0, -0.43444544, 0, 0.9006981, 0.54233044, -0.3768747, -0.5486967)
-visible = false
-input_ray_pickable = false
-scene = NodePath("../../../../..")
-
-[node name="Oven" type="Node3D" parent="Levels/Kitchen/InternalScenes" unique_id=401744678 node_paths=PackedStringArray("camera", "on_scene_only")]
-script = ExtResource("12_av7uq")
-camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("GoToArea/ChangeSceneInteractable"), NodePath("NextArea")]
-metadata/_custom_type_script = "uid://ypfbu7sipw7r"
-
-[node name="GoToArea" type="Node3D" parent="Levels/Kitchen/InternalScenes/Oven" unique_id=1879056135]
-
-[node name="ChangeSceneInteractable" type="Area3D" parent="Levels/Kitchen/InternalScenes/Oven/GoToArea" unique_id=1291794419 node_paths=PackedStringArray("scene")]
-transform = Transform3D(-0.09777218, 0, 0.9952088, 0, 1, 0, -0.9952088, 0, -0.09777218, -1.5240692, 1.1402779, -1.2405123)
-input_ray_pickable = false
-script = ExtResource("13_46pcy")
-scene = NodePath("../../../Vases")
-metadata/_custom_type_script = "uid://bnjfxriyseeds"
-
-[node name="Arrow" parent="Levels/Kitchen/InternalScenes/Oven/GoToArea/ChangeSceneInteractable" unique_id=683720678 instance=ExtResource("48_fq1ua")]
-transform = Transform3D(-5.4639235e-09, 0, 0.15, 0, 0.25, 0, -0.125, 0, -6.5567085e-09, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/InternalScenes/Oven/GoToArea/ChangeSceneInteractable" unique_id=1061205912]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5527137e-15, 0, -0.031253874)
-shape = SubResource("BoxShape3D_g4v7s")
-
-[node name="CameraStand" parent="Levels/Kitchen/InternalScenes/Oven" unique_id=204791942 instance=ExtResource("14_kyx3d")]
-transform = Transform3D(0.9814107, 0, -0.19191943, 0, 1, 0, 0.19191943, 0, 0.9814107, -0.9754766, 1.2028122, -1.0606797)
-
-[node name="Camera3D" parent="Levels/Kitchen/InternalScenes/Oven/CameraStand" index="0" unique_id=1331824599]
-transform = Transform3D(-0.06699832, 0, 0.9977532, 0, 1, 0, -0.9977532, 0, -0.06699832, 0.09610271, 0.3768747, 0.5444761)
-
-[node name="ChangeSceneInteractable" parent="Levels/Kitchen/InternalScenes/Oven/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.99785066, 0, -0.06552842, 0, 1, 0, 0.06552842, 0, 0.99785066, 0.07166538, -0.5039995, -0.68721473)
-input_ray_pickable = false
-scene = NodePath("../../../../..")
-
-[node name="NextArea" type="Area3D" parent="Levels/Kitchen/InternalScenes/Oven" unique_id=566022010 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.84186, 0, -0.53969586, 0, 1, 0, 0.53969586, 0, 0.84186, -2.8885052, 1.3348427, 0.47292852)
-input_ray_pickable = false
-script = ExtResource("13_46pcy")
-scene = NodePath("../../Book")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/InternalScenes/Oven/NextArea" unique_id=722867833]
-transform = Transform3D(0.8649596, 0, -0.5018412, 0, 1, 0, 0.5018412, 0, 0.8649596, -0.04096651, 0.41371918, -0.023767471)
-shape = SubResource("BoxShape3D_cl5ek")
-
-[node name="Book" type="Node3D" parent="Levels/Kitchen/InternalScenes" unique_id=1396463088 node_paths=PackedStringArray("camera", "on_scene_only")]
-script = ExtResource("12_av7uq")
-camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
-metadata/_custom_type_script = "uid://ypfbu7sipw7r"
-
-[node name="CameraStand" parent="Levels/Kitchen/InternalScenes/Book" unique_id=130495989 instance=ExtResource("14_kyx3d")]
-transform = Transform3D(0.76672, -0.6419811, -0.00015610649, 0.6419811, 0.7667202, 0.00042960196, -0.0001561066, -0.0004296019, 0.99999994, -3.05363, 1.6397781, 0.3645959)
-
-[node name="Camera3D" parent="Levels/Kitchen/InternalScenes/Book/CameraStand" index="0" unique_id=1331824599]
-transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, 0.09610271, 0.3768747, 0.5444761)
-
-[node name="ChangeSceneInteractable" parent="Levels/Kitchen/InternalScenes/Book/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.99520737, -0.00423481, 0.09769768, 0.06308616, 0.7911659, -0.60833955, -0.07471884, 0.6115874, 0.78764135, -0.042513847, -0.4725418, -0.64808464)
-input_ray_pickable = false
-scene = NodePath("../../../../Oven")
-
-[node name="Paper2" parent="Levels/Kitchen/InternalScenes/Book" unique_id=1702852817 instance=ExtResource("27_hbuq6")]
-transform = Transform3D(0.1740935, 0, 0.98472893, 0, 1, 0, -0.98472893, 0, 0.1740935, -3.8285348, 1.1998711, 0.32364464)
-
-[node name="Paper3" parent="Levels/Kitchen/InternalScenes/Book" unique_id=2054346809 instance=ExtResource("55_kmd6w")]
-transform = Transform3D(0.33813837, 0, -0.9410962, 0, 1, 0, 0.9410962, 0, 0.33813837, -3.864712, 1.214962, 1.544806)
-
-[node name="Paper1" parent="Levels/Kitchen/InternalScenes/Book" unique_id=1023382641 instance=ExtResource("26_yk2uw")]
-transform = Transform3D(-0.57296526, 0, -0.81957924, 0, 1, 0, 0.81957924, 0, -0.57296526, -3.7474988, 1.1988907, 0.91693544)
-
-[node name="Pantry" type="Node3D" parent="Levels" unique_id=1622995380 node_paths=PackedStringArray("camera", "on_scene_only")]
-transform = Transform3D(-0.58117485, 0, -0.8137787, 0, 1, 0, 0.8137787, 0, -0.58117485, -5.2545733, 0, 3.3583531)
-script = ExtResource("12_av7uq")
-camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("SupportLight"), NodePath("NextArea"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
-
-[node name="NextArea" type="Area3D" parent="Levels/Pantry" unique_id=1641832192 node_paths=PackedStringArray("scene")]
-transform = Transform3D(-8.940697e-08, 0, 1, 0, 1, 0, -1, 0, -8.940697e-08, -6.6676087, 1.6103554, 1.9204596)
-input_ray_pickable = false
-script = ExtResource("13_46pcy")
-scene = NodePath("../Finally")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Pantry/NextArea" unique_id=256942971]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14477539, 0.058166504, 0)
-shape = SubResource("BoxShape3D_yidlo")
-
-[node name="CameraStand" parent="Levels/Pantry" unique_id=1681632611 instance=ExtResource("14_kyx3d")]
-transform = Transform3D(0.1716325, 0, 0.9851609, 0, 1, 0, -0.9851609, 0, 0.1716325, -0.93862295, 1.2028122, 3.2814636)
-
-[node name="Camera3D" parent="Levels/Pantry/CameraStand" index="0" unique_id=1331824599]
-transform = Transform3D(0.9803542, 0, -0.1972453, 0, 1, 0, 0.1972453, 0, 0.9803542, -0.15615082, 0.37687302, -0.9593768)
-
-[node name="ChangeSceneInteractable" parent="Levels/Pantry/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6285931, -0.3768747, -0.5898186)
-scene = NodePath("../../../../Kitchen/InternalScenes/Vases")
-
-[node name="Scenario" type="Node3D" parent="Levels/Pantry" unique_id=1600828933]
-
-[node name="GrandClock" parent="Levels/Pantry/Scenario" unique_id=1593380876 instance=ExtResource("18_duo4a")]
-transform = Transform3D(0.8141155, 0, 0.5807029, 0, 1, 0, -0.5807029, 0, 0.8141155, -9.3122835, 0, 2.5564125)
-
-[node name="BigPointer" parent="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="0" unique_id=177566143]
-visible = false
-
-[node name="Pointer" parent="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="1" unique_id=1519642052]
-visible = false
-
-[node name="SmallPointer" parent="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="2" unique_id=1442474372]
-visible = false
-
-[node name="UseItem" type="Area3D" parent="Levels/Pantry/Scenario/GrandClock" unique_id=2039464743 node_paths=PackedStringArray("interactables")]
-script = ExtResource("59_rd0e2")
-interactables = [NodePath("UseSmall"), NodePath("UseNormal"), NodePath("UseBig")]
-metadata/_custom_type_script = "uid://1hpvwn6n1g6h"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Pantry/Scenario/GrandClock/UseItem" unique_id=1648089775]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1060791, 0)
-shape = SubResource("BoxShape3D_vga31")
-
-[node name="UseSmall" type="Area3D" parent="Levels/Pantry/Scenario/GrandClock/UseItem" unique_id=1921877302]
-script = ExtResource("13_5sliu")
-item = ExtResource("42_d0vjv")
-metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
-
-[node name="UseNormal" type="Area3D" parent="Levels/Pantry/Scenario/GrandClock/UseItem" unique_id=1166600051]
-script = ExtResource("13_5sliu")
-item = ExtResource("28_tulss")
-metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
-
-[node name="UseBig" type="Area3D" parent="Levels/Pantry/Scenario/GrandClock/UseItem" unique_id=1071104348]
-script = ExtResource("13_5sliu")
-item = ExtResource("61_7v5th")
-metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
-
-[node name="Counter" type="Node" parent="Levels/Pantry/Scenario/GrandClock" unique_id=653725565]
-script = ExtResource("9_p103g")
-target = 3
-metadata/_custom_type_script = "uid://ccup386pslxg0"
-
-[node name="Key" type="Node3D" parent="Levels/Pantry/Scenario/GrandClock" unique_id=63501585]
-transform = Transform3D(-0.011624814, 0.11589613, -0.48624372, 0.016134545, 0.48620877, 0.11550203, 0.49960434, -0.013005267, -0.015044055, 0.07996479, 0.37823945, -0.021914003)
-visible = false
-
-[node name="Key" parent="Levels/Pantry/Scenario/GrandClock/Key" unique_id=1887049370 instance=ExtResource("62_hxkjw")]
-
-[node name="PickupItem" type="Area3D" parent="Levels/Pantry/Scenario/GrandClock/Key" unique_id=188730149 node_paths=PackedStringArray("remove_node")]
-input_ray_pickable = false
-script = ExtResource("34_2oi3e")
-item = ExtResource("63_fwl16")
-remove_node = NodePath("..")
-metadata/_custom_type_script = "uid://gdx1msx8ssyi"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Pantry/Scenario/GrandClock/Key/PickupItem" unique_id=1619571896]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02941085, -9.313226e-10, 0.022182465)
-shape = SubResource("BoxShape3D_88oub")
-
-[node name="WallPortrait" parent="Levels/Pantry/Scenario" unique_id=472917611 instance=ExtResource("59_njbst")]
-transform = Transform3D(-0.7409474, 0, 1.0067258, 0, 1.25, 0, -1.0067258, 0, -0.7409474, -9.024672, 1.988697, 3.5273569)
-
-[node name="Sprite3D" type="Sprite3D" parent="Levels/Pantry/Scenario/WallPortrait" unique_id=703728668]
-transform = Transform3D(-2.8412401e-08, -0.65, 0, 0.65, -2.8412401e-08, 0, 0, 0, 0.65, -2.0251183e-09, 0.046762086, 0.06301085)
-texture = ExtResource("60_ajucn")
-
-[node name="WallPortrait2" parent="Levels/Pantry/Scenario" unique_id=1906273570 instance=ExtResource("59_njbst")]
-transform = Transform3D(-0.7409474, 0, 1.0067258, 0, 1.25, 0, -1.0067258, 0, -0.7409474, -9.024672, 1.2025872, 3.5273569)
-
-[node name="Sprite3D" type="Sprite3D" parent="Levels/Pantry/Scenario/WallPortrait2" unique_id=434576589]
-transform = Transform3D(-2.8412401e-08, -0.65, 0, 0.65, -2.8412401e-08, 0, 0, 0, 0.65, -2.0251183e-09, 0.046762086, 0.06301085)
-texture = ExtResource("61_g5vhj")
-
-[node name="WallPortrait3" parent="Levels/Pantry/Scenario" unique_id=295714834 instance=ExtResource("59_njbst")]
-transform = Transform3D(-0.7409474, 0, 1.0067258, 0, 1.25, 0, -1.0067258, 0, -0.7409474, -9.024672, 0.413994, 3.5273569)
-
-[node name="Sprite3D" type="Sprite3D" parent="Levels/Pantry/Scenario/WallPortrait3" unique_id=1216890726]
-transform = Transform3D(-2.8412401e-08, -0.65, 0, 0.65, -2.8412401e-08, 0, 0, 0, 0.65, -2.0251183e-09, 0.046762086, 0.06301085)
-texture = ExtResource("62_518l1")
-
-[node name="Rack" parent="Levels/Pantry/Scenario" unique_id=774218958 instance=ExtResource("8_2o7ai")]
-transform = Transform3D(0.5715142, 0, -0.59903234, 0, 1, 0, 0.8205922, 0, 0.41720536, -7.2290754, 0, 4.8630776)
-
-[node name="Portrait" parent="Levels/Pantry/Scenario" unique_id=1293701813 instance=ExtResource("51_fdwj4")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -8.055678, 1.2101059, 4.017117)
-
-[node name="Portrait" parent="Levels/Pantry/Scenario/Portrait" index="0" unique_id=995350063]
-surface_material_override/0 = ExtResource("11_kqo7x")
-surface_material_override/1 = ExtResource("63_i65mh")
-
-[node name="Sprite3D" type="Sprite3D" parent="Levels/Pantry/Scenario/Portrait" unique_id=1995891607]
-transform = Transform3D(-1.4687084e-08, -0.35, -3.1293426e-09, 0.3434949, -1.5014638e-08, 0.06716593, -0.06716593, -2.526898e-10, 0.3434949, -0.0026115172, 0.26383314, 0.026108818)
-modulate = Color(0.6789437, 0.6789437, 0.6789437, 1)
-texture = ExtResource("64_d50wq")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Levels/Pantry" unique_id=1352702924]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7924113, 2.6690464, 1.2347227)
-light_energy = 3.0
-omni_range = 11.833762
-
-[node name="SupportLight" type="OmniLight3D" parent="Levels/Pantry" unique_id=1344721750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.580982, 1.8174667, 1.58149)
-visible = false
-light_energy = 2.0
-omni_range = 7.166872
-
-[node name="Finally" type="Node3D" parent="Levels/Pantry" unique_id=488509585 node_paths=PackedStringArray("camera")]
-script = ExtResource("12_av7uq")
-camera = NodePath("CameraStand/Camera3D")
-metadata/_custom_type_script = "uid://ypfbu7sipw7r"
-
-[node name="CameraStand" parent="Levels/Pantry/Finally" unique_id=135273085 instance=ExtResource("14_kyx3d")]
-transform = Transform3D(-0.83698875, 0, 0.54721975, 0, 1, 0, -0.54721975, 0, -0.83698875, -7.781739, 0.8466339, 0.02073957)
-
-[node name="Camera3D" parent="Levels/Pantry/Finally/CameraStand" index="0" unique_id=1331824599]
-transform = Transform3D(0.9803542, 0, -0.1972453, 0, 1, 0, 0.1972453, 0, 0.9803542, -0.15615082, 0.37687302, -0.9593768)
-
-[node name="ChangeSceneInteractable" parent="Levels/Pantry/Finally/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.9054235, 0, -0.42450944, 0, 1, 0, 0.42450944, 0, 0.9054235, -0.5097634, -0.3768747, -0.58396053)
-scene = NodePath("../../../..")
-
-[node name="Arrow" parent="Levels/Pantry/Finally/CameraStand/Camera3D/ChangeSceneInteractable/Arrow" parent_id_path=PackedInt32Array(135273085, 1551828677) index="0" unique_id=1210424325]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29210296, 0, 0.0008314289)
-material_override = ExtResource("59_f30f1")
-
 [node name="Bathroom" type="Node3D" parent="Levels" unique_id=233155056 node_paths=PackedStringArray("camera", "on_scene_only")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.300255, 0, -4.4390073)
 script = ExtResource("12_av7uq")
@@ -2024,26 +1306,6 @@ pattern_blinks = Dictionary[int, int]({
 3: 3
 })
 
-[node name="SmallBoxOpen" parent="Levels/Bathroom/Scenario" unique_id=545474080 instance=ExtResource("15_ld5oi")]
-transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, 2.3597817, -1.2177086, 0.7649107)
-
-[node name="Interactable" type="Area3D" parent="Levels/Bathroom/Scenario/SmallBoxOpen" unique_id=1926902850]
-script = ExtResource("41_5rpng")
-metadata/_custom_type_script = "uid://dacaijey35bqu"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Bathroom/Scenario/SmallBoxOpen/Interactable" unique_id=1492212919]
-shape = SubResource("BoxShape3D_d0u6y")
-
-[node name="PointerPickup" type="Area3D" parent="Levels/Bathroom/Scenario/SmallBoxOpen" unique_id=694973354 node_paths=PackedStringArray("remove_node")]
-input_ray_pickable = false
-script = ExtResource("34_2oi3e")
-item = ExtResource("42_d0vjv")
-remove_node = NodePath(".")
-metadata/_custom_type_script = "uid://gdx1msx8ssyi"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Bathroom/Scenario/SmallBoxOpen/PointerPickup" unique_id=1493457219]
-shape = SubResource("BoxShape3D_d0u6y")
-
 [node name="DeepBathroomLight" type="OmniLight3D" parent="Levels/Bathroom" unique_id=1841255994]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.683092, 2.198124, -3.120265)
 visible = false
@@ -2143,49 +1405,18 @@ mesh = SubResource("BoxMesh_d0u6y")
 [connection signal="item_used" from="BaseAmbient/Doors/Door2/DoorWoods/Wood3/HammerUse" to="BaseAmbient/Doors/Door2/DoorWoods/Counter" method="increment_one"]
 [connection signal="item_used" from="BaseAmbient/Doors/Door2/DoorWoods/Wood3/HammerUse" to="BaseAmbient/Doors/Door2/DoorWoods/WoodFallen3" method="set_visible" binds= [true]]
 [connection signal="on_clicked" from="BaseAmbient/Doors/Door2/ClickBlock" to="BaseAmbient/Doors/Door2/FancyDoor" method="queue_free"]
-[connection signal="on_clicked" from="BaseAmbient/Doors/Door2/ClickBlock" to="BaseAmbient/Doors/Door2/NextScene" method="enable_interactable"]
-[connection signal="on_clicked" from="BaseAmbient/Doors/Door2/ClickBlock" to="BaseAmbient/Doors/Door2/ClickBlock" method="queue_free"]
+[connection signal="on_clicked" from="BaseAmbient/Doors/Door2/ClickBlock" to="BaseAmbient/Doors/Door2/NextChapter" method="enable_interactable"]
 [connection signal="on_clicked" from="BaseAmbient/Doors/Door2/ClickBlock" to="BaseAmbient/Doors/Door2/FancyDoorOpened" method="set_visible" binds= [true]]
-[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/Patterned" method="disable_interactable"]
-[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/Patterned" method="queue_free"]
-[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/NextScene" method="enable_interactable"]
-[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/FancyDoor" method="set_visible" binds= [false]]
-[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/FancyDoorOpened" method="set_visible" binds= [true]]
-[connection signal="item_used" from="BaseAmbient/Doors/Door4/OpenWithKey" to="BaseAmbient/Doors/Door4/NextChapter" method="enable_interactable"]
-[connection signal="item_used" from="BaseAmbient/Doors/Door4/OpenWithKey" to="BaseAmbient/Doors/Door4/FancyDoor" method="set_visible" binds= [false]]
-[connection signal="item_used" from="BaseAmbient/Doors/Door4/OpenWithKey" to="BaseAmbient/Doors/Door4/FancyDoorOpened" method="set_visible" binds= [true]]
 [connection signal="on_clicked" from="Levels/LivingRoom/NextArea" to="Levels/LivingRoom/NextArea" method="disable_interactable"]
 [connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" method="queue_free"]
-[connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/PointerPickup/PickupItem" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/KeyPickup/PickupItem" method="enable_interactable"]
 [connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid" method="set_visible" binds= [false]]
 [connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/OpenLid" method="set_visible" binds= [true]]
 [connection signal="on_clicked" from="Levels/LivingRoom/InternalScenes/TableScene/CameraStand/Camera3D/ChangeSceneInteractable" to="Levels/LivingRoom/NextArea" method="enable_interactable"]
-[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableOpen" to="Levels/Kitchen/Scenario/Fridge/InteractableOpen" method="disable_interactable"]
-[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableOpen" to="Levels/Kitchen/Scenario/Fridge/InteractableClose" method="enable_interactable"]
-[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableOpen" to="Levels/Kitchen/Scenario/Fridge/FridgeDoor" method="set_visible" binds= [false]]
-[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableOpen" to="Levels/Kitchen/Scenario/Fridge/Open" method="set_visible" binds= [true]]
-[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableClose" to="Levels/Kitchen/Scenario/Fridge/InteractableOpen" method="enable_interactable"]
-[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableClose" to="Levels/Kitchen/Scenario/Fridge/InteractableClose" method="disable_interactable"]
-[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableClose" to="Levels/Kitchen/Scenario/Fridge/FridgeDoor" method="set_visible" binds= [true]]
-[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableClose" to="Levels/Kitchen/Scenario/Fridge/Open" method="set_visible" binds= [false]]
-[connection signal="item_used" from="Levels/Pantry/Scenario/GrandClock/UseItem/UseSmall" to="Levels/Pantry/Scenario/GrandClock/Counter" method="increment_one"]
-[connection signal="item_used" from="Levels/Pantry/Scenario/GrandClock/UseItem/UseSmall" to="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers/SmallPointer" method="set_visible" binds= [true]]
-[connection signal="item_used" from="Levels/Pantry/Scenario/GrandClock/UseItem/UseNormal" to="Levels/Pantry/Scenario/GrandClock/Counter" method="increment_one"]
-[connection signal="item_used" from="Levels/Pantry/Scenario/GrandClock/UseItem/UseNormal" to="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers/Pointer" method="set_visible" binds= [true]]
-[connection signal="item_used" from="Levels/Pantry/Scenario/GrandClock/UseItem/UseBig" to="Levels/Pantry/Scenario/GrandClock/Counter" method="increment_one"]
-[connection signal="item_used" from="Levels/Pantry/Scenario/GrandClock/UseItem/UseBig" to="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers/BigPointer" method="set_visible" binds= [true]]
-[connection signal="on_target" from="Levels/Pantry/Scenario/GrandClock/Counter" to="Levels/Pantry/Scenario/GrandClock/Key/PickupItem" method="enable_interactable"]
-[connection signal="on_target" from="Levels/Pantry/Scenario/GrandClock/Counter" to="Levels/Pantry/Scenario/GrandClock/ClosedDoor" method="set_visible" binds= [false]]
-[connection signal="on_target" from="Levels/Pantry/Scenario/GrandClock/Counter" to="Levels/Pantry/Scenario/GrandClock/OpenDoor" method="set_visible" binds= [true]]
-[connection signal="on_target" from="Levels/Pantry/Scenario/GrandClock/Counter" to="Levels/Pantry/Scenario/GrandClock/Key" method="set_visible" binds= [true]]
 [connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/Patterned" method="disable_interactable"]
 [connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/BathroomMirrorDoor" method="set_visible" binds= [false]]
 [connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/OpenMirrorDoor" method="set_visible" binds= [true]]
 [connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/HammerPick/PickupItem" method="set_ray_pickable" binds= [true]]
-[connection signal="on_clicked" from="Levels/Bathroom/Scenario/SmallBoxOpen/Interactable" to="Levels/Bathroom/Scenario/SmallBoxOpen/Interactable" method="queue_free"]
-[connection signal="on_clicked" from="Levels/Bathroom/Scenario/SmallBoxOpen/Interactable" to="Levels/Bathroom/Scenario/SmallBoxOpen/PointerPickup" method="enable_interactable"]
-[connection signal="on_clicked" from="Levels/Bathroom/Scenario/SmallBoxOpen/Interactable" to="Levels/Bathroom/Scenario/SmallBoxOpen/ClosedLid" method="set_visible" binds= [false]]
-[connection signal="on_clicked" from="Levels/Bathroom/Scenario/SmallBoxOpen/Interactable" to="Levels/Bathroom/Scenario/SmallBoxOpen/OpenLid" method="set_visible" binds= [true]]
 [connection signal="on_clicked" from="Levels/Bathroom/InternalScenes/BathScene/Interactable" to="Levels/Bathroom/InternalScenes/BathScene/Interactable" method="disable_interactable"]
 [connection signal="on_clicked" from="Levels/Bathroom/InternalScenes/BathScene/Interactable" to="Levels/Bathroom/InternalScenes/BathScene/GoReading" method="enable_interactable"]
 [connection signal="on_clicked" from="Levels/Bathroom/InternalScenes/BathScene/Interactable" to="Levels/Bathroom/Scenario/BathTub/Water" method="set_visible" binds= [true]]
@@ -2202,18 +1433,6 @@ mesh = SubResource("BoxMesh_d0u6y")
 [editable path="BaseAmbient/Doors/Door2/FancyDoor/FancyDoorKnobKeyless"]
 [editable path="BaseAmbient/Doors/Door2/FancyDoorOpened"]
 [editable path="BaseAmbient/Doors/Door2/FancyDoorOpened/FancyDoorKnobKeyless"]
-[editable path="BaseAmbient/Doors/Door3"]
-[editable path="BaseAmbient/Doors/Door3/FancyDoorFrame"]
-[editable path="BaseAmbient/Doors/Door3/FancyDoor"]
-[editable path="BaseAmbient/Doors/Door3/FancyDoor/FancyDoorKnobKeyless"]
-[editable path="BaseAmbient/Doors/Door3/FancyDoorOpened"]
-[editable path="BaseAmbient/Doors/Door3/FancyDoorOpened/FancyDoorKnobKeyless"]
-[editable path="BaseAmbient/Doors/Door4"]
-[editable path="BaseAmbient/Doors/Door4/FancyDoorFrame"]
-[editable path="BaseAmbient/Doors/Door4/FancyDoor"]
-[editable path="BaseAmbient/Doors/Door4/FancyDoor/FancyDoorKnobKeyless"]
-[editable path="BaseAmbient/Doors/Door4/FancyDoorOpened"]
-[editable path="BaseAmbient/Doors/Door4/FancyDoorOpened/FancyDoorKnobKeyless"]
 [editable path="BaseAmbient/Doors/Door5"]
 [editable path="BaseAmbient/Doors/Door5/FancyDoorFrame"]
 [editable path="BaseAmbient/Doors/Door5/FancyDoor"]
@@ -2226,34 +1445,15 @@ mesh = SubResource("BoxMesh_d0u6y")
 [editable path="Levels/LivingRoom/CameraStand"]
 [editable path="Levels/LivingRoom/Scenario/SmallBoxOpen"]
 [editable path="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/SmallBoxLid"]
-[editable path="Levels/LivingRoom/Scenario/SmallBoxOpen/PointerPickup/Pointer"]
 [editable path="Levels/LivingRoom/Scenario/Paper1"]
 [editable path="Levels/LivingRoom/Scenario/Paper2"]
 [editable path="Levels/LivingRoom/InternalScenes/TableScene/CameraStand"]
-[editable path="Levels/Kitchen/CameraStand"]
-[editable path="Levels/Kitchen/Scenario/Fridge"]
-[editable path="Levels/Kitchen/Scenario/Fridge/FridgeDoor"]
-[editable path="Levels/Kitchen/Scenario/Fridge/Open/FridgeDoor"]
-[editable path="Levels/Kitchen/Scenario/Rack/Vase"]
-[editable path="Levels/Kitchen/Scenario/Rack/Vase2"]
-[editable path="Levels/Kitchen/Scenario/Rack/Vase3"]
-[editable path="Levels/Kitchen/Scenario/Rack/Vase4"]
-[editable path="Levels/Kitchen/Scenario/Rack/Vase5"]
-[editable path="Levels/Kitchen/InternalScenes/Vases/CameraStand"]
-[editable path="Levels/Kitchen/InternalScenes/Oven/CameraStand"]
-[editable path="Levels/Kitchen/InternalScenes/Book/CameraStand"]
-[editable path="Levels/Pantry/CameraStand"]
-[editable path="Levels/Pantry/Scenario/GrandClock"]
-[editable path="Levels/Pantry/Scenario/Portrait"]
-[editable path="Levels/Pantry/Finally/CameraStand"]
-[editable path="Levels/Pantry/Finally/CameraStand/Camera3D/ChangeSceneInteractable/Arrow"]
 [editable path="Levels/Bathroom/CameraStand"]
 [editable path="Levels/Bathroom/Scenario/BathroomLightHolder"]
 [editable path="Levels/Bathroom/Scenario/BathroomLightHolder/LightBulb"]
 [editable path="Levels/Bathroom/Scenario/BathroomMirror"]
 [editable path="Levels/Bathroom/Scenario/BathroomMirror/BathroomMirrorDoor"]
 [editable path="Levels/Bathroom/Scenario/BathroomMirror/HammerPick/Hammer"]
-[editable path="Levels/Bathroom/Scenario/SmallBoxOpen"]
 [editable path="Levels/Bathroom/InternalScenes/MirrorSinkScene/CameraStand"]
 [editable path="Levels/Bathroom/InternalScenes/BathScene/CameraStand"]
 [editable path="Levels/Bathroom/InternalScenes/ReadingScene/CameraStand"]

@@ -1,0 +1,356 @@
+[gd_scene format=3 uid="uid://gfbgmmpl3qxt"]
+
+[ext_resource type="Script" uid="uid://cxjw1pb2uilr5" path="res://scripts/phase.gd" id="1_1t20u"]
+[ext_resource type="PackedScene" uid="uid://dv51nlgvw0pki" path="res://resources/models/fbx/man.glb" id="2_nyh2r"]
+[ext_resource type="Script" uid="uid://ypfbu7sipw7r" path="res://scripts/scene.gd" id="3_x1x6d"]
+[ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/interactables/change_scene_interactable.gd" id="4_3q5q3"]
+[ext_resource type="PackedScene" uid="uid://dybkw4ji7oj7w" path="res://scenes/components/camera_stand.tscn" id="5_ksx3l"]
+[ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="6_qwtln"]
+[ext_resource type="Script" uid="uid://cahki8kabd553" path="res://scripts/interact/interactables/go_to_chapter.gd" id="7_m7eum"]
+[ext_resource type="Resource" uid="uid://c0dfpalx2y01p" path="res://resources/levels/level1.tres" id="8_m67gd"]
+[ext_resource type="Texture2D" uid="uid://c806x075t6ufi" path="res://resources/sprites/egg.png" id="9_pbm4v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_086en"]
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+stencil_flags = 2
+stencil_reference = 3
+stencil_color = Color(1, 1, 1, 1)
+stencil_outline_thickness = 0.011
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cnkwe"]
+transparency = 1
+vertex_color_use_as_albedo = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ulerj"]
+albedo_color = Color(0.6133905, 0.6133902, 0.61339027, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_junhc"]
+shading_mode = 0
+albedo_color = Color(0.57175875, 0.24322969, 0.5710737, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
+material = SubResource("StandardMaterial3D_junhc")
+size = Vector2(8, 8)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qouja"]
+material = SubResource("StandardMaterial3D_junhc")
+size = Vector2(10, 2)
+
+[sub_resource type="Curve" id="Curve_cnkwe"]
+_data = [Vector2(0, 0), 0.0, 22.449434, 0, 0, Vector2(0.11351352, 1), 0.16784139, 0.16784139, 0, 0, Vector2(0.11352352, 1), 0.0, 0.0, 0, 0, Vector2(0.745946, 0.6741574), -1.3324685, -1.3324685, 0, 0, Vector2(1, 0), -3.2219124, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_086en"]
+curve = SubResource("Curve_cnkwe")
+
+[sub_resource type="Curve" id="Curve_js0lu"]
+_data = [Vector2(0, 0), 0.0, 19.747194, 0, 0, Vector2(0.12432433, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_junhc"]
+curve = SubResource("Curve_js0lu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g4v7s"]
+lifetime_randomness = 0.1
+emission_shape = 3
+emission_box_extents = Vector3(1.5, 1.5, 2)
+direction = Vector3(0, 0, -1)
+spread = 10.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, -1, 0)
+linear_accel_min = 12.049997
+linear_accel_max = 12.049997
+scale_curve = SubResource("CurveTexture_junhc")
+alpha_curve = SubResource("CurveTexture_086en")
+
+[sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
+material = SubResource("StandardMaterial3D_cnkwe")
+size = Vector3(0.5, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v2yb1"]
+size = Vector3(1.9399414, 3.1285934, 0.1)
+
+[node name="Man" type="Node3D" unique_id=1538013195 node_paths=PackedStringArray("starting_scene")]
+script = ExtResource("1_1t20u")
+starting_scene = NodePath("Walk1")
+metadata/_custom_type_script = "uid://cxjw1pb2uilr5"
+
+[node name="Scenario" type="Node3D" parent="." unique_id=766808852]
+
+[node name="man" parent="Scenario" unique_id=1814177653 instance=ExtResource("2_nyh2r")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, 0)
+
+[node name="Tree" parent="Scenario/man" index="0" unique_id=188449865]
+surface_material_override/0 = SubResource("StandardMaterial3D_086en")
+
+[node name="TreeLeaves1" parent="Scenario/man" index="1" unique_id=1863581582]
+surface_material_override/0 = SubResource("StandardMaterial3D_cnkwe")
+surface_material_override/1 = SubResource("StandardMaterial3D_ulerj")
+
+[node name="TreeLeaves2" parent="Scenario/man" index="2" unique_id=79305172]
+surface_material_override/0 = SubResource("StandardMaterial3D_ulerj")
+surface_material_override/1 = SubResource("StandardMaterial3D_cnkwe")
+
+[node name="Floor1" type="MeshInstance3D" parent="Scenario" unique_id=260511292]
+mesh = SubResource("PlaneMesh_g4v7s")
+
+[node name="Floor2" type="MeshInstance3D" parent="Scenario" unique_id=1654616792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+mesh = SubResource("PlaneMesh_qouja")
+
+[node name="DistantLight" type="OmniLight3D" parent="Scenario" unique_id=475049157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.184051, 4.6258774, 0)
+light_energy = 2.0
+omni_range = 11.470477
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Scenario" unique_id=1458663751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5291958, 4.6468544, 0.7804631)
+amount = 2
+speed_scale = 0.25
+process_material = SubResource("ParticleProcessMaterial_g4v7s")
+draw_pass_1 = SubResource("BoxMesh_yf5fn")
+
+[node name="Walk1" type="Node3D" parent="." unique_id=1098009334 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.065346, -0.00018692017, -3.5254743e-07)
+script = ExtResource("3_x1x6d")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Walk1" unique_id=1567529194 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("4_3q5q3")
+scene = NodePath("../../Walk2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walk1/NextArea" unique_id=260064032]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Walk1" unique_id=72479423 instance=ExtResource("5_ksx3l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Walk1/CameraStand/Camera3D" parent_id_path=PackedInt32Array(72479423, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Walk2" type="Node3D" parent="." unique_id=1482468995 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.065346, -0.00018692017, -3.5254743e-07)
+script = ExtResource("3_x1x6d")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Walk2" unique_id=1862721834 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("4_3q5q3")
+scene = NodePath("../../Walk3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walk2/NextArea" unique_id=722707448]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Walk2" unique_id=1476889287 instance=ExtResource("5_ksx3l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Walk2/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1476889287, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Walk3" type="Node3D" parent="." unique_id=1997943579 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.065346, -0.00018692017, -3.5254743e-07)
+script = ExtResource("3_x1x6d")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Walk3" unique_id=403907369 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("4_3q5q3")
+scene = NodePath("../../Walk4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walk3/NextArea" unique_id=236439308]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Walk3" unique_id=984112839 instance=ExtResource("5_ksx3l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Walk3/CameraStand/Camera3D" parent_id_path=PackedInt32Array(984112839, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Walk4" type="Node3D" parent="." unique_id=131832552 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.065346, -0.00018692017, -3.5254743e-07)
+script = ExtResource("3_x1x6d")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Walk4" unique_id=340780001 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("4_3q5q3")
+scene = NodePath("../../Walk5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walk4/NextArea" unique_id=524606304]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Walk4" unique_id=1171772135 instance=ExtResource("5_ksx3l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Walk4/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1171772135, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Walk5" type="Node3D" parent="." unique_id=544284452 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.065346, -0.00018692017, -3.5254743e-07)
+script = ExtResource("3_x1x6d")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Walk5" unique_id=2033002008 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("4_3q5q3")
+scene = NodePath("../../Walk6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walk5/NextArea" unique_id=538791041]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Walk5" unique_id=566241283 instance=ExtResource("5_ksx3l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Walk5/CameraStand/Camera3D" parent_id_path=PackedInt32Array(566241283, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Walk6" type="Node3D" parent="." unique_id=371556319 node_paths=PackedStringArray("camera", "on_scene_only")]
+transform = Transform3D(0.99080724, -0.09236793, -0.09883941, 0.09282245, 0.99568266, -9.313226e-10, 0.098412685, -0.0091745155, 0.99510336, 2.4299579, -0.27187207, 1.5958415)
+script = ExtResource("3_x1x6d")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("NextArea")]
+
+[node name="NextArea" type="Area3D" parent="Walk6" unique_id=1711346157 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("4_3q5q3")
+scene = NodePath("../../Walk7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walk6/NextArea" unique_id=352484961]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Walk6" unique_id=1743054714 instance=ExtResource("5_ksx3l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Walk6/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1743054714, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Walk7" type="Node3D" parent="." unique_id=1662153440 node_paths=PackedStringArray("camera")]
+transform = Transform3D(0.8414385, -0.09236793, -0.53239983, 0.08297886, 0.99568266, -0.041599493, 0.5339437, -0.009174511, 0.84547025, 0.85243213, -0.4132715, 2.132505)
+script = ExtResource("3_x1x6d")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Walk7" unique_id=450611276 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("4_3q5q3")
+scene = NodePath("../../Text1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walk7/NextArea" unique_id=1057355107]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Walk7" unique_id=1788757415 instance=ExtResource("5_ksx3l")]
+transform = Transform3D(0.09263525, -0.17545913, 0.9801188, 0, 0.9843514, 0.17621686, -0.9957001, -0.01632389, 0.09118564, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Walk7/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1788757415, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Text1" type="Node3D" parent="." unique_id=1437569869 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20, 0, 0)
+script = ExtResource("3_x1x6d")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Text1" unique_id=817689249 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("4_3q5q3")
+scene = NodePath("../../Text2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Text1/NextArea" unique_id=638675879]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Text1" unique_id=920285901 instance=ExtResource("5_ksx3l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Text1/CameraStand/Camera3D" parent_id_path=PackedInt32Array(920285901, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Text1" unique_id=493471571]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
+text = "Well, there is a man here."
+font = ExtResource("6_qwtln")
+
+[node name="Text2" type="Node3D" parent="." unique_id=1571301016 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20, 0, 4)
+script = ExtResource("3_x1x6d")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Text2" unique_id=1500310976 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("4_3q5q3")
+scene = NodePath("../../Text3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Text2/NextArea" unique_id=616644412]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Text2" unique_id=1837377719 instance=ExtResource("5_ksx3l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Text2/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1837377719, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Text2" unique_id=690631888]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
+text = "He offered you something."
+font = ExtResource("6_qwtln")
+
+[node name="Text3" type="Node3D" parent="." unique_id=171782415 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20, 0, 8)
+script = ExtResource("3_x1x6d")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="Ending" type="Area3D" parent="Text3" unique_id=1183246321]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("7_m7eum")
+level = ExtResource("8_m67gd")
+metadata/_custom_type_script = "uid://dacaijey35bqu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Text3/Ending" unique_id=1242766234]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Text3" unique_id=827205692 instance=ExtResource("5_ksx3l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Text3/CameraStand/Camera3D" parent_id_path=PackedInt32Array(827205692, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Text3" unique_id=1223571453]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.3039513, 5.1972734e-08)
+text = "You received an Egg."
+font = ExtResource("6_qwtln")
+
+[node name="Sprite3D" type="Sprite3D" parent="Text3" unique_id=1860139436]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, -1.8713398, 1.9539261, -2.982605e-08)
+texture = ExtResource("9_pbm4v")
+
+[editable path="Scenario/man"]
+[editable path="Walk1/CameraStand"]
+[editable path="Walk2/CameraStand"]
+[editable path="Walk3/CameraStand"]
+[editable path="Walk4/CameraStand"]
+[editable path="Walk5/CameraStand"]
+[editable path="Walk6/CameraStand"]
+[editable path="Walk7/CameraStand"]
+[editable path="Text1/CameraStand"]
+[editable path="Text2/CameraStand"]
+[editable path="Text3/CameraStand"]

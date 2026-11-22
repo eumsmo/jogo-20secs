@@ -24,8 +24,11 @@
 [ext_resource type="PackedScene" uid="uid://cvf8jfwsd6m4t" path="res://resources/models/phase1/hammer.tscn" id="21_iw7sw"]
 [ext_resource type="Script" uid="uid://gdx1msx8ssyi" path="res://scripts/interact/interactables/pickup_item.gd" id="22_vrtms"]
 [ext_resource type="PackedScene" uid="uid://ctjk83r6mhda5" path="res://resources/models/phase1/key.tscn" id="23_gmevc"]
+[ext_resource type="Texture2D" uid="uid://bcfepyxiv6k6u" path="res://resources/sprites/tree.png" id="24_147fn"]
 [ext_resource type="PackedScene" uid="uid://ce86the00e4o6" path="res://resources/models/phase1/rock_001.tscn" id="24_ogh68"]
 [ext_resource type="PackedScene" uid="uid://wyai1bnir2iv" path="res://resources/models/phase1/rock_002.tscn" id="25_cgjo5"]
+[ext_resource type="Script" uid="uid://dkosuwavd4k66" path="res://scripts/forgotten.gd" id="25_ols1j"]
+[ext_resource type="Resource" uid="uid://chx7cb6ef57pc" path="res://resources/levels/man.tres" id="26_d1jdy"]
 [ext_resource type="PackedScene" uid="uid://bkahuymasj6c0" path="res://resources/models/phase1/gate.tscn" id="26_er8fm"]
 
 [sub_resource type="Environment" id="Environment_yf5fn"]
@@ -1278,7 +1281,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.982029, 0.3768747, -1.06712
 scene = NodePath("../../../../Scene7")
 
 [node name="Lights" type="Node3D" parent="Levels/Scene14" unique_id=1810708969]
-visible = false
 
 [node name="AreaLight3D2" type="AreaLight3D" parent="Levels/Scene14/Lights" unique_id=1885119473]
 transform = Transform3D(0.8277533, -0.56109226, -2.452612e-08, 0, -4.371139e-08, 1, -0.56109226, -0.8277533, -3.6182247e-08, -11.095967, 2.283586, -8.787571)
@@ -1332,6 +1334,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.876979, -2.861023e-06, -1
 
 [node name="Tree15" parent="Levels/Scene14/Scenario" unique_id=1051475580 instance=ExtResource("3_147fn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.651394, -2.861023e-06, -12.3872795)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene14" unique_id=222789744]
+transform = Transform3D(0.07972325, -0.15537821, 0.09747727, -0.010268025, 0.10233934, 0.17152618, -0.18313594, -0.07337761, 0.03281698, -1.6457939, 0.39483473, -0.50821686)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("24_147fn")
+
+[node name="Forgotten" type="Node" parent="Levels/Scene14" unique_id=1905003897 node_paths=PackedStringArray("scene1", "scene2")]
+script = ExtResource("25_ols1j")
+scene1 = NodePath("..")
+scene2 = NodePath("../../Scene7")
+level = ExtResource("26_d1jdy")
 
 [node name="Scene15" type="Node3D" parent="Levels" unique_id=1066984796 node_paths=PackedStringArray("camera")]
 transform = Transform3D(0.706212, 0, -0.7080005, 0, 1, 0, 0.7080005, 0, 0.706212, 6.11943, 0, -16.536085)

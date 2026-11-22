@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://b2ji5vy7bsh32"]
+
+[ext_resource type="Texture2D" uid="uid://cekmjckyhlwgq" path="res://resources/sprites/palettes/phase3_palette.png" id="1_q61ba"]
+[ext_resource type="Script" uid="uid://gps7yv5j2dm7" path="res://scripts/level_info.gd" id="2_5y2b1"]
+
+[resource]
+script = ExtResource("2_5y2b1")
+idx = 4
+chapter = "4"
+name = "Tested"
+pattern = Array[int]([2, 3, 2, 1, 0])
+palette = ExtResource("1_q61ba")
+metadata/_custom_type_script = "uid://gps7yv5j2dm7"
