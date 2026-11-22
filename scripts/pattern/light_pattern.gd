@@ -15,9 +15,9 @@ extends Node
 
 @export var start_on := true
 @export var off_when_stopped := false
-@export var on_time: float = 0.1
+@export var on_time: float = 0.3
 @export var off_time: float = 0.1
-@export var between_time: float = 0.1
+@export var between_time: float = 0.3
 
 
 var current_tween : Tween

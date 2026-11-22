@@ -1,0 +1,1524 @@
+[gd_scene format=3 uid="uid://d1kwbasfxf7av"]
+
+[ext_resource type="Script" uid="uid://ypfbu7sipw7r" path="res://scripts/scene.gd" id="1_r0mlc"]
+[ext_resource type="Script" uid="uid://cxjw1pb2uilr5" path="res://scripts/phase.gd" id="1_t723o"]
+[ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/interactables/change_scene_interactable.gd" id="2_t723o"]
+[ext_resource type="PackedScene" uid="uid://bacdcel6e0wlt" path="res://resources/models/phase1/tree.tscn" id="3_147fn"]
+[ext_resource type="PackedScene" uid="uid://dybkw4ji7oj7w" path="res://scenes/components/camera_stand.tscn" id="4_ols1j"]
+[ext_resource type="PackedScene" uid="uid://c2r1o6tdvi2f5" path="res://resources/models/phase1/arrow.tscn" id="5_d1jdy"]
+[ext_resource type="Script" uid="uid://ccup386pslxg0" path="res://scripts/counter.gd" id="6_6c58o"]
+[ext_resource type="Resource" uid="uid://dc8c2m2dwvehx" path="res://resources/itens/hammer.tres" id="7_7fxg3"]
+[ext_resource type="Material" uid="uid://dcp258ghdupuw" path="res://resources/materials/Brown.tres" id="8_01web"]
+[ext_resource type="Material" uid="uid://cdj1opmtoccxq" path="res://resources/materials/Grey.tres" id="9_ofsq0"]
+[ext_resource type="Script" uid="uid://c3g0o3cunkyuj" path="res://scripts/interact/interactables/use_item_interactable.gd" id="10_mayj3"]
+[ext_resource type="PackedScene" uid="uid://bbxd2px1e2tfj" path="res://resources/models/phase1/rock.tscn" id="11_x4bpc"]
+[ext_resource type="Script" uid="uid://dbinv34xc0tpr" path="res://scripts/interact/interactables/patterned.gd" id="12_5g1ak"]
+[ext_resource type="Material" uid="uid://dlgx6v3h2xhf0" path="res://resources/materials/vfx/highlighted.tres" id="13_ho56g"]
+[ext_resource type="Material" uid="uid://kb2catetgn4p" path="res://resources/materials/vfx/locked.tres" id="14_epaei"]
+[ext_resource type="Texture2D" uid="uid://bgyywk6y58kt3" path="res://resources/sprites/arrow.png" id="15_gim1n"]
+[ext_resource type="Resource" uid="uid://c7q66k03g4ree" path="res://resources/itens/key.tres" id="16_i0w06"]
+[ext_resource type="Script" uid="uid://cahki8kabd553" path="res://scripts/interact/interactables/go_to_chapter.gd" id="17_ra3pq"]
+[ext_resource type="Resource" uid="uid://buhgr8f3cvu4b" path="res://resources/levels/level2.tres" id="18_kifj5"]
+[ext_resource type="PackedScene" uid="uid://bf1hydheni8a5" path="res://resources/models/phase1/chest.tscn" id="19_vg0k6"]
+[ext_resource type="PackedScene" uid="uid://dakb4ontcxv2u" path="res://resources/models/phase1/lock.tscn" id="20_22o04"]
+[ext_resource type="PackedScene" uid="uid://cvf8jfwsd6m4t" path="res://resources/models/phase1/hammer.tscn" id="21_iw7sw"]
+[ext_resource type="Script" uid="uid://gdx1msx8ssyi" path="res://scripts/interact/interactables/pickup_item.gd" id="22_vrtms"]
+[ext_resource type="PackedScene" uid="uid://ctjk83r6mhda5" path="res://resources/models/phase1/key.tscn" id="23_gmevc"]
+[ext_resource type="PackedScene" uid="uid://ce86the00e4o6" path="res://resources/models/phase1/rock_001.tscn" id="24_ogh68"]
+[ext_resource type="PackedScene" uid="uid://wyai1bnir2iv" path="res://resources/models/phase1/rock_002.tscn" id="25_cgjo5"]
+[ext_resource type="PackedScene" uid="uid://bkahuymasj6c0" path="res://resources/models/phase1/gate.tscn" id="26_er8fm"]
+
+[sub_resource type="Environment" id="Environment_yf5fn"]
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.97
+fog_depth_begin = 0.0
+fog_depth_end = 15.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g4v7s"]
+radius = 0.4
+height = 1.76
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(5, 5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dinhu"]
+size = Vector3(3, 5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kvuet"]
+size = Vector3(3, 5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_trtic"]
+size = Vector3(0.6, 0.1, 0.19)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ir15t"]
+size = Vector3(2, 5, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_twgab"]
+size = Vector3(0.25, 3, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(0.1, 0.5, 4)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g4v7s"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.1
+radial_segments = 8
+rings = 1
+cap_top = false
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fcnqv"]
+size = Vector3(0.1, 0.5, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rysoc"]
+size = Vector3(5, 5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qnb83"]
+size = Vector3(1.2966156, 0.62231445, 1.4014893)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhx41"]
+size = Vector3(1.4562683, 0.62231445, 1.2297363)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sww3w"]
+size = Vector3(6, 6, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_57qmd"]
+size = Vector3(0.225, 0.674, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n8ral"]
+size = Vector3(3.5, 4, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3gngh"]
+size = Vector3(0.2, 1.0332031, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxtfn"]
+size = Vector3(0.2, 0.16259766, 0.47224122)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d0u6y"]
+size = Vector3(1.3232422, 1.3123779, 2.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_twgab"]
+size = Vector3(1.2885742, 0.89782715, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(0.5, 0.1, 0.3)
+
+[node name="Phase1" type="Node3D" unique_id=862451345 node_paths=PackedStringArray("starting_scene")]
+script = ExtResource("1_t723o")
+starting_scene = NodePath("Levels/Scene1")
+metadata/_custom_type_script = "uid://cxjw1pb2uilr5"
+
+[node name="Levels" type="Node3D" parent="." unique_id=1609163511]
+
+[node name="Scene1" type="Node3D" parent="Levels" unique_id=1119658060 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
+script = ExtResource("1_r0mlc")
+camera = NodePath("Player/Camera3D")
+
+[node name="Player" type="Node3D" parent="Levels/Scene1" unique_id=1938722490]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.6478233, 0.9583132, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Levels/Scene1/Player" unique_id=2142422517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3768747, 0)
+environment = SubResource("Environment_yf5fn")
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Levels/Scene1/Player" unique_id=623662226]
+mesh = SubResource("CapsuleMesh_g4v7s")
+
+[node name="NextArea" type="Area3D" parent="Levels/Scene1" unique_id=410454035 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.1809273, 2, -0.81898785)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene1/NextArea" unique_id=288272258]
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene1" unique_id=1624669567]
+
+[node name="Tree" parent="Levels/Scene1/Scenario" unique_id=1205772040 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9141197, 4.7683716e-07, -2.9879012)
+
+[node name="Tree2" parent="Levels/Scene1/Scenario" unique_id=1664303419 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7341309, 4.7683716e-07, -5.466445)
+
+[node name="Tree3" parent="Levels/Scene1/Scenario" unique_id=1904334172 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2530518, 4.7683716e-07, -5.633071)
+
+[node name="Tree4" parent="Levels/Scene1/Scenario" unique_id=1802636100 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3622818, 4.7683716e-07, 1.5194044)
+
+[node name="Tree5" parent="Levels/Scene1/Scenario" unique_id=1447278360 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7079544, 4.7683716e-07, 3.2378514)
+
+[node name="Tree8" parent="Levels/Scene1/Scenario" unique_id=1749888634 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.874302, 4.7683716e-07, 5.0600033)
+
+[node name="Tree9" parent="Levels/Scene1/Scenario" unique_id=667202227 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.203125, 4.7683716e-07, 2.7797365)
+
+[node name="Tree10" parent="Levels/Scene1/Scenario" unique_id=253863371 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5068893, 4.7683716e-07, -5.1063747)
+
+[node name="Tree11" parent="Levels/Scene1/Scenario" unique_id=313629012 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5541306, 4.7683716e-07, -7.6027107)
+
+[node name="Tree6" parent="Levels/Scene1/Scenario" unique_id=758125199 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2559814, 4.7683716e-07, 3.789539)
+
+[node name="Tree7" parent="Levels/Scene1/Scenario" unique_id=2099317482 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8314705, 4.7683716e-07, 7.2508745)
+
+[node name="Scene2" type="Node3D" parent="Levels" unique_id=1181274402 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 0)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Levels/Scene2" unique_id=954478772 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5521164, 2, -5.369342)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene2/NextArea" unique_id=436925282]
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="NextArea2" type="Area3D" parent="Levels/Scene2" unique_id=1380587976 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.1693077, 2, 2.357193)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene2/NextArea2" unique_id=606125082]
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CameraStand" parent="Levels/Scene2" unique_id=72479423 instance=ExtResource("4_ols1j")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.987446, 0.9999995, -1.4201453)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene2/CameraStand/Camera3D" parent_id_path=PackedInt32Array(72479423, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../Scene1")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene2" unique_id=812674343]
+
+[node name="Tree" parent="Levels/Scene2/Scenario" unique_id=1032472004 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4138947, 0, 0)
+
+[node name="Tree2" parent="Levels/Scene2/Scenario" unique_id=2106362169 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4943161, 0, -2.1509845)
+
+[node name="Tree7" parent="Levels/Scene2/Scenario" unique_id=154429899 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4943161, 0, -2.1509845)
+
+[node name="Tree4" parent="Levels/Scene2/Scenario" unique_id=991321400 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6637955, 0, 5.5552316)
+
+[node name="Tree5" parent="Levels/Scene2/Scenario" unique_id=2028634061 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0023766, 0, -7.4786696)
+
+[node name="Tree6" parent="Levels/Scene2/Scenario" unique_id=1470397115 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1513023, 0, -1.1796184)
+
+[node name="Tree3" parent="Levels/Scene2/Scenario" unique_id=1695236090 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7342606, 0, -2.984902)
+
+[node name="Scene3" type="Node3D" parent="Levels" unique_id=6685137 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 4)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Levels/Scene3" unique_id=690132703 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.45223138, 0, 0.89190066, 0, 1, 0, -0.89190066, 0, 0.45223138, -5.6314507, 2.0000005, 0.6956444)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene3/NextArea" unique_id=1197227651]
+shape = SubResource("BoxShape3D_dinhu")
+
+[node name="NextArea2" type="Area3D" parent="Levels/Scene3" unique_id=1795449402 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-0.74446374, 0, 0.66766286, 0, 1, 0, -0.66766286, 0, -0.74446374, -3.4166641, 2.000001, 6.782922)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene9")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene3/NextArea2" unique_id=521226301]
+shape = SubResource("BoxShape3D_dinhu")
+
+[node name="CameraStand" parent="Levels/Scene3" unique_id=851228497 instance=ExtResource("4_ols1j")]
+transform = Transform3D(-0.26405588, 0, 0.9645074, 0, 1, 0, -0.9645074, 0, -0.26405588, 0.631567, 0.9999995, 2.6932564)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene3/CameraStand/Camera3D" parent_id_path=PackedInt32Array(851228497, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../Scene2")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene3" unique_id=1032107673]
+
+[node name="Tree" parent="Levels/Scene3/Scenario" unique_id=310106344 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9585934, -9.536743e-07, 8.679256)
+
+[node name="Tree2" parent="Levels/Scene3/Scenario" unique_id=57819730 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9279385, -1.9073486e-06, 5.1085854)
+
+[node name="Tree3" parent="Levels/Scene3/Scenario" unique_id=1398695516 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0521183, -1.9073486e-06, 3.634697)
+
+[node name="Tree4" parent="Levels/Scene3/Scenario" unique_id=705068522 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.030905, -1.9073486e-06, -0.34656572)
+
+[node name="Tree5" parent="Levels/Scene3/Scenario" unique_id=913537488 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.614933, -1.9073486e-06, 2.471725)
+
+[node name="Tree6" parent="Levels/Scene3/Scenario" unique_id=1485050993 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.617939, -1.9073486e-06, 3.2171416)
+
+[node name="Tree7" parent="Levels/Scene3/Scenario" unique_id=1475135238 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4767437, -1.9073486e-06, -2.1516275)
+
+[node name="Tree8" parent="Levels/Scene3/Scenario" unique_id=176512608 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.250376, -1.9073486e-06, 1.3077188)
+
+[node name="Scene4" type="Node3D" parent="Levels" unique_id=579780107 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, -10.393522)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="CameraStand" parent="Levels/Scene4" unique_id=841396496 instance=ExtResource("4_ols1j")]
+transform = Transform3D(0.27643216, 0, 0.96103346, 0, 1, 0, -0.96103346, 0, 0.27643216, 0.631567, 0.9999995, 2.6932564)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene4/CameraStand/Camera3D" parent_id_path=PackedInt32Array(841396496, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../Scene2")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene4" unique_id=79196371]
+
+[node name="Tree" parent="Levels/Scene4/Scenario" unique_id=1394445206 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1281376, -9.536743e-07, -4.5329504)
+
+[node name="Tree2" parent="Levels/Scene4/Scenario" unique_id=995413402 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74687, -1.9073486e-06, 5.806832)
+
+[node name="Tree9" parent="Levels/Scene4/Scenario" unique_id=1743525501 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2455807, -1.9073486e-06, 5.6706967)
+
+[node name="Tree3" parent="Levels/Scene4/Scenario" unique_id=926308420 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9159355, -1.9073486e-06, -0.45034885)
+
+[node name="Tree4" parent="Levels/Scene4/Scenario" unique_id=797152469 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7407494, -1.9073486e-06, -2.4790688)
+
+[node name="Tree5" parent="Levels/Scene4/Scenario" unique_id=1096687100 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.614933, -1.9073486e-06, 2.471725)
+
+[node name="Tree6" parent="Levels/Scene4/Scenario" unique_id=1944073317 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7215424, -1.9073486e-06, 7.632174)
+
+[node name="Tree7" parent="Levels/Scene4/Scenario" unique_id=903114861 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1407166, -1.9073486e-06, 0.9101448)
+
+[node name="Tree10" parent="Levels/Scene4/Scenario" unique_id=611190013 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.097681, -1.9073486e-06, 0.27832985)
+
+[node name="Tree8" parent="Levels/Scene4/Scenario" unique_id=1746492597 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8889847, -1.9073486e-06, 1.3321838)
+
+[node name="NextArea" type="Area3D" parent="Levels/Scene4" unique_id=1401509909 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-0.42671645, 0, 0.90438545, 0, 1, 0, -0.90438545, 0, -0.42671645, -5.272381, 2, 3.9828577)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene4/NextArea" unique_id=700738498]
+shape = SubResource("BoxShape3D_dinhu")
+
+[node name="NextArea2" type="Area3D" parent="Levels/Scene4" unique_id=59890180 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, -3.1464062, 2, -1.5137415)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene4/NextArea2" unique_id=1817413080]
+shape = SubResource("BoxShape3D_kvuet")
+
+[node name="Scene5" type="Node3D" parent="Levels" unique_id=1730699067 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.99881, 0, -1.6647215)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="ChangeSceneInteractable" type="Area3D" parent="Levels/Scene5" unique_id=338891651 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.20198363, 0, 0.97938895, 0, 1, 0, -0.97938895, 0, 0.20198363, -0.3475647, 0.9999995, 2.408274)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene3")
+metadata/_custom_type_script = "uid://bnjfxriyseeds"
+
+[node name="Arrow" parent="Levels/Scene5/ChangeSceneInteractable" unique_id=1551828677 instance=ExtResource("5_d1jdy")]
+transform = Transform3D(-5.4639235e-09, 0, 0.15, 0, 0.25, 0, -0.125, 0, -6.5567085e-09, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene5/ChangeSceneInteractable" unique_id=1097457520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1054274e-15, 0, -0.048503876)
+shape = SubResource("BoxShape3D_trtic")
+
+[node name="NextArea" type="Area3D" parent="Levels/Scene5" unique_id=1488326037 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.499192, 2, 1.6883166)
+input_ray_pickable = false
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene5/NextArea" unique_id=364885881]
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CameraStand" parent="Levels/Scene5" unique_id=369885968 instance=ExtResource("4_ols1j")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.24434853, 0.9999995, 1.7990782)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene5/CameraStand/Camera3D" parent_id_path=PackedInt32Array(369885968, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9683788, 0, 0.24948464, 0, 1, 0, -0.24948464, 0, 0.9683788, 0.5054481, -0.3768747, -0.59191513)
+scene = NodePath("../../../../Scene4")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene5" unique_id=1081397177]
+
+[node name="Tree2" parent="Levels/Scene5/Scenario" unique_id=1721642461 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.106045, -4.7683716e-06, 5.1711164)
+
+[node name="Tree9" parent="Levels/Scene5/Scenario" unique_id=1723430224 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.364378, -2.861023e-06, 6.2299833)
+
+[node name="Tree3" parent="Levels/Scene5/Scenario" unique_id=1247185521 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.506778, -2.861023e-06, -1.6238573)
+
+[node name="Tree4" parent="Levels/Scene5/Scenario" unique_id=554168740 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8717556, -1.9073486e-06, -3.6759005)
+
+[node name="Tree5" parent="Levels/Scene5/Scenario" unique_id=1317505708 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.520282, -2.861023e-06, 3.64347)
+
+[node name="Tree11" parent="Levels/Scene5/Scenario" unique_id=301287528 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0418053, -4.7683716e-06, -0.3636868)
+
+[node name="Tree13" parent="Levels/Scene5/Scenario" unique_id=1772423810 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5168247, -4.7683716e-06, -0.916358)
+
+[node name="Tree12" parent="Levels/Scene5/Scenario" unique_id=2006515357 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.227623, -3.8146973e-06, -1.9351206)
+
+[node name="Tree6" parent="Levels/Scene5/Scenario" unique_id=1989383605 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8257046, -9.536743e-07, 5.3577957)
+
+[node name="Tree7" parent="Levels/Scene5/Scenario" unique_id=2335733 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.202983, -9.536743e-07, -0.16712451)
+
+[node name="Tree10" parent="Levels/Scene5/Scenario" unique_id=1810734359 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8603144, -1.9073486e-06, -2.4076805)
+
+[node name="Tree8" parent="Levels/Scene5/Scenario" unique_id=1967823320 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97495, -9.536743e-07, 3.2834604)
+
+[node name="NextArea2" type="Area3D" parent="Levels/Scene5" unique_id=1345334898 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, -0.9659258, -3.8087273, 2.000001, 6.495566)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene10")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene5/NextArea2" unique_id=972436991]
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="NextArea3" type="Area3D" parent="Levels/Scene5" unique_id=1562417642 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.7071068, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071068, -3.226778, 2, -1.5886486)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene5/NextArea3" unique_id=899526179]
+shape = SubResource("BoxShape3D_ir15t")
+
+[node name="Block" type="Node3D" parent="Levels/Scene5" unique_id=42100037]
+transform = Transform3D(0.9486251, 0, -0.31640178, 0, 1, 0, 0.31640178, 0, 0.9486251, -3.821948, 2.3841858e-07, 2.1016083)
+
+[node name="Counter" type="Node" parent="Levels/Scene5/Block" unique_id=664204778]
+script = ExtResource("6_6c58o")
+target = 3
+remove_item_on_target = ExtResource("7_7fxg3")
+metadata/_custom_type_script = "uid://ccup386pslxg0"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Levels/Scene5/Block" unique_id=944064514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.435688, -2.029172)
+material_override = ExtResource("8_01web")
+mesh = SubResource("BoxMesh_twgab")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Levels/Scene5/Block" unique_id=1999148759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.435688, 1.970828)
+material_override = ExtResource("8_01web")
+mesh = SubResource("BoxMesh_twgab")
+
+[node name="Wood" type="Node3D" parent="Levels/Scene5/Block" unique_id=420747835]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99770206, 0.06775404, 0, -0.06775402, 0.99770194, 0.01381588, 0.41870356, 0.009554356)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood" unique_id=415165299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("8_01web")
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood" unique_id=578737768]
+transform = Transform3D(-4.4703484e-08, -1.0000001, 1.4901161e-08, 1.0000001, -4.284084e-08, 7.450581e-09, 0, 0, 1.0000001, 0.19001733, 0.15493777, -1.912849)
+material_override = ExtResource("9_ofsq0")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood" unique_id=458812770]
+transform = Transform3D(-4.4703484e-08, -1.0000001, 1.4901161e-08, 1.0000001, -4.284084e-08, 7.450581e-09, 0, 0, 1.0000001, 0.19001739, -0.124355346, -1.9313936)
+material_override = ExtResource("9_ofsq0")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood" unique_id=1776228864]
+transform = Transform3D(-4.4703484e-08, -1.0000001, 1.4901161e-08, 1.0000001, -4.284084e-08, 7.450581e-09, 0, 0, 1.0000001, 0.19001678, 0.13810486, 1.9072564)
+material_override = ExtResource("9_ofsq0")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood" unique_id=1804072882]
+transform = Transform3D(-4.4703484e-08, -1.0000001, 1.4901161e-08, 1.0000001, -4.284084e-08, 7.450581e-09, 0, 0, 1.0000001, 0.19001685, -0.12597343, 1.9107062)
+material_override = ExtResource("9_ofsq0")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="HammerUse" type="Area3D" parent="Levels/Scene5/Block/Wood" unique_id=2090508735 node_paths=PackedStringArray("delete_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+script = ExtResource("10_mayj3")
+item = ExtResource("7_7fxg3")
+remove_item = false
+delete_nodes = [NodePath("..")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene5/Block/Wood/HammerUse" unique_id=414575635]
+shape = SubResource("BoxShape3D_fcnqv")
+
+[node name="Wood2" type="Node3D" parent="Levels/Scene5/Block" unique_id=653587213]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9952734, -0.097112924, 0, 0.09711287, 0.9952731, 0.01381588, 1.2655015, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood2" unique_id=501789132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("8_01web")
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood2" unique_id=1722946136]
+transform = Transform3D(-4.4703484e-08, -1.0000001, 1.4901161e-08, 1.0000001, -4.284084e-08, 7.450581e-09, 0, 0, 1.0000001, 0.19001773, 0.1340817, -1.8405699)
+material_override = ExtResource("9_ofsq0")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood2" unique_id=1524505279]
+transform = Transform3D(-4.4703484e-08, -0.94883764, 0.31576478, 1.0000001, -4.0553697e-08, 2.1566365e-08, -2.220446e-16, 0.31576476, 0.94883764, 0.19001687, -0.14051887, -1.9155654)
+material_override = ExtResource("9_ofsq0")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood2" unique_id=1289508107]
+transform = Transform3D(-4.4703484e-08, -0.98827505, -0.1526847, 1.0000001, -4.2316685e-08, 6.2504224e-10, 0, -0.15268472, 0.98827505, 0.23125504, 0.13810486, 1.9072564)
+material_override = ExtResource("9_ofsq0")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood2" unique_id=74167385]
+transform = Transform3D(-4.4703484e-08, -1.0000001, 1.4901161e-08, 1.0000001, -4.284084e-08, 7.450581e-09, 0, 0, 1.0000001, 0.190017, -0.09892945, 1.8744389)
+material_override = ExtResource("9_ofsq0")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="HammerUse" type="Area3D" parent="Levels/Scene5/Block/Wood2" unique_id=1716043792 node_paths=PackedStringArray("delete_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+script = ExtResource("10_mayj3")
+item = ExtResource("7_7fxg3")
+remove_item = false
+delete_nodes = [NodePath("..")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene5/Block/Wood2/HammerUse" unique_id=31165134]
+shape = SubResource("BoxShape3D_fcnqv")
+
+[node name="Wood3" type="Node3D" parent="Levels/Scene5/Block" unique_id=1682662503]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9955256, 0.094492145, 0, -0.09449214, 0.99552524, 0.01381588, 2.0868497, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood3" unique_id=378709204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("8_01web")
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood3" unique_id=1451817718]
+transform = Transform3D(-4.4703484e-08, -0.92144346, -0.3885128, 1.0000001, -3.932908e-08, -9.917292e-09, 0, -0.3885128, 0.92144346, 0.231695, 0.16523613, -1.9126197)
+material_override = ExtResource("9_ofsq0")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood3" unique_id=689526856]
+transform = Transform3D(-4.4703484e-08, -0.9956765, 0.09288955, 1.0000001, -4.2647557e-08, 1.1603066e-08, 0, 0.09288953, 0.9956765, 0.19246608, -0.08269899, -1.9051443)
+material_override = ExtResource("9_ofsq0")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood3" unique_id=1210176896]
+transform = Transform3D(0.12510802, -0.9921432, 1.4901161e-08, 0.9921432, 0.12510802, 7.450581e-09, -1.8057167e-09, -1.0492045e-09, 1.0000001, 0.19001727, 0.17022768, 1.9100268)
+material_override = ExtResource("9_ofsq0")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood3" unique_id=1563391286]
+transform = Transform3D(-0.110740155, -0.98910147, 0.09703215, 0.99379086, -0.11126519, 1.3038516e-08, 0.010796293, 0.09642963, 0.9952814, 0.19001755, -0.11598582, 1.8801465)
+material_override = ExtResource("9_ofsq0")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="HammerUse" type="Area3D" parent="Levels/Scene5/Block/Wood3" unique_id=421221169 node_paths=PackedStringArray("delete_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+script = ExtResource("10_mayj3")
+item = ExtResource("7_7fxg3")
+remove_item = false
+delete_nodes = [NodePath("..")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene5/Block/Wood3/HammerUse" unique_id=744373675]
+shape = SubResource("BoxShape3D_fcnqv")
+
+[node name="Wood_Fallen" type="Node3D" parent="Levels/Scene5/Block" unique_id=1583286395]
+transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.9999999, -4.3711385e-08, 0, 0, 0, 0.9999999, 0.7480053, -0.049577415, -0.1337975)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood_Fallen" unique_id=1478956456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("8_01web")
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="Wood_Fallen2" type="Node3D" parent="Levels/Scene5/Block" unique_id=406636333]
+transform = Transform3D(-0.026331149, -0.83129066, 0.55521375, 0.99763227, 0.013446324, 0.06744539, -0.063532315, 0.5556751, 0.82896835, -0.71190417, -0.04957789, -0.29978535)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood_Fallen2" unique_id=1366345046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("8_01web")
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="Wood_Fallen3" type="Node3D" parent="Levels/Scene5/Block" unique_id=991037148]
+transform = Transform3D(0.0057081636, -0.99399203, -0.109302945, 0.99863905, -4.377216e-08, 0.052152656, -0.05183933, -0.10945191, 0.99263924, -0.29181826, 0.023676474, 0.15740275)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Levels/Scene5/Block/Wood_Fallen3" unique_id=51310596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("8_01web")
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="Scene7" type="Node3D" parent="Levels" unique_id=250615258 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.93402, 0, -16.761272)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Levels/Scene7" unique_id=1597703276 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.70090926, 0, 0.71325046, 0, 1, 0, -0.71325046, 0, 0.70090926, -3.1602516, 2, -1.5687733)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene7/NextArea" unique_id=317039451]
+shape = SubResource("BoxShape3D_dinhu")
+
+[node name="CameraStand" parent="Levels/Scene7" unique_id=566586844 instance=ExtResource("4_ols1j")]
+transform = Transform3D(0.7071067, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071067, 0.24434853, 0.9999995, 1.799078)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene7/CameraStand/Camera3D" parent_id_path=PackedInt32Array(566586844, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../Scene4")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene7" unique_id=1720542473]
+
+[node name="Tree3" parent="Levels/Scene7/Scenario" unique_id=177277528 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.594469, -2.861023e-06, -3.5775375)
+
+[node name="Tree4" parent="Levels/Scene7/Scenario" unique_id=2069932103 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2548904, -1.9073486e-06, -7.118763)
+
+[node name="Tree5" parent="Levels/Scene7/Scenario" unique_id=1294125093 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.520281, -2.861023e-06, 3.6434698)
+
+[node name="Tree11" parent="Levels/Scene7/Scenario" unique_id=39925653 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5536175, -4.7683716e-06, -0.04527855)
+
+[node name="Tree13" parent="Levels/Scene7/Scenario" unique_id=846844233 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61847496, -4.7683716e-06, -4.0284843)
+
+[node name="Tree12" parent="Levels/Scene7/Scenario" unique_id=1926672691 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.187479, -3.8146973e-06, -2.7029152)
+
+[node name="Tree7" parent="Levels/Scene7/Scenario" unique_id=735979217 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.113718, -9.536743e-07, -1.2868347)
+
+[node name="Tree10" parent="Levels/Scene7/Scenario" unique_id=789922836 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5320435, -1.9073486e-06, 0.56383324)
+
+[node name="Tree8" parent="Levels/Scene7/Scenario" unique_id=1423557464 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97495, -9.536743e-07, 3.2834606)
+
+[node name="NextArea2" type="Area3D" parent="Levels/Scene7" unique_id=342911208 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.70090926, 0, 0.71325046, 0, 1, 0, -0.71325046, 0, 0.70090926, 1.0495586, 2, -5.041239)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene14")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene7/NextArea2" unique_id=1854961808]
+shape = SubResource("BoxShape3D_dinhu")
+
+[node name="NextArea3" type="Area3D" parent="Levels/Scene7" unique_id=1108489417 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.4797911, 0, 0.87738276, 0, 1, 0, -0.87738276, 0, 0.4797911, -5.099518, 2, 1.7756119)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene7/NextArea3" unique_id=397471232]
+shape = SubResource("BoxShape3D_dinhu")
+
+[node name="Scene8" type="Node3D" parent="Levels" unique_id=1181406165 node_paths=PackedStringArray("camera", "on_scene_only")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.934019, 0, -28.761272)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("Lights")]
+
+[node name="CameraStand" parent="Levels/Scene8" unique_id=521136173 instance=ExtResource("4_ols1j")]
+transform = Transform3D(0.7071067, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071067, 0.24434853, 0.9999995, 1.799078)
+
+[node name="Camera3D" parent="Levels/Scene8/CameraStand" index="0" unique_id=1331824599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022750854, 0.3768747, -2.6610708)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene8/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../Scene7")
+
+[node name="Lights" type="Node3D" parent="Levels/Scene8" unique_id=397331132]
+visible = false
+
+[node name="AreaLight3D" type="AreaLight3D" parent="Levels/Scene8/Lights" unique_id=1760381213]
+transform = Transform3D(0.5505169, -0.834824, -3.6491315e-08, 0, -4.371139e-08, 1, -0.834824, -0.5505169, -2.4063858e-08, -21.15305, 7.460917, -14.113209)
+light_energy = 500.0
+area_range = 10.0
+area_size = Vector2(18.84919, 6.090561)
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="Levels/Scene8/Lights" unique_id=1787330038]
+transform = Transform3D(0.8228686, -0.5682317, -2.4838197e-08, 0, -4.371139e-08, 1, -0.5682317, -0.8228686, -3.596873e-08, -14.137667, 7.460917, -6.982765)
+light_energy = 300.0
+area_range = 10.0
+area_size = Vector2(18.84919, 6.090561)
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene8" unique_id=442575679]
+
+[node name="Tree3" parent="Levels/Scene8/Scenario" unique_id=1792443993 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3802433, -2.861023e-06, -4.267727)
+
+[node name="Tree11" parent="Levels/Scene8/Scenario" unique_id=1086141075 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.330579, -4.7683716e-06, 0.551857)
+
+[node name="Tree13" parent="Levels/Scene8/Scenario" unique_id=822703255 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61847496, -4.7683716e-06, -4.0284843)
+
+[node name="Tree12" parent="Levels/Scene8/Scenario" unique_id=672613034 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.187479, -3.8146973e-06, -2.7029152)
+
+[node name="Tree10" parent="Levels/Scene8/Scenario" unique_id=661611516 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5320435, -1.9073486e-06, 0.56383324)
+
+[node name="NextArea" type="Area3D" parent="Levels/Scene8" unique_id=836342548 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.5577086, 0, 0.83003676, 0, 1, 0, -0.83003676, 0, 0.5577086, -12.663455, 2, -9.215016)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene16")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene8/NextArea" unique_id=370761521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3840166, 0, -0.3866158)
+shape = SubResource("BoxShape3D_rysoc")
+
+[node name="Path" type="Node3D" parent="Levels/Scene8" unique_id=46502729]
+
+[node name="Rock3" type="Node3D" parent="Levels/Scene8/Path" unique_id=146968489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4175, -0.753008, -7.3583183)
+
+[node name="Rock3" parent="Levels/Scene8/Path/Rock3" unique_id=2041314870 instance=ExtResource("11_x4bpc")]
+transform = Transform3D(0.94099545, 0.30617896, -0.14416021, 0.31135905, -0.9501847, 0.014295846, -0.13260174, -0.058337986, -0.98945117, 0, 0, 0)
+visible = false
+
+[node name="Rock4" parent="Levels/Scene8/Path/Rock3" unique_id=1044394629 instance=ExtResource("11_x4bpc")]
+transform = Transform3D(0.94099545, 0.30617896, -0.14416021, 0.31135905, -0.9501847, 0.014295846, -0.13260174, -0.058337986, -0.98945117, -3.3104105, 0, 2.563305)
+
+[node name="Area3D" type="Area3D" parent="Levels/Scene8/Path/Rock3/Rock4" unique_id=1561630026 node_paths=PackedStringArray("mesh", "active_on_selected")]
+script = ExtResource("12_5g1ak")
+pattern = Array[int]([3])
+mesh = NodePath("../Rock")
+selected_material = ExtResource("13_ho56g")
+locked_material = ExtResource("14_epaei")
+active_on_selected = [NodePath("../Sprite3D")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene8/Path/Rock3/Rock4/Area3D" unique_id=2025187089]
+transform = Transform3D(0.8729318, -0.46430233, -0.14970815, 0.45063797, 0.88499516, -0.11708571, 0.1868541, 0.034743693, 0.98177344, 0.18897486, -0.5095937, -0.050727844)
+shape = SubResource("BoxShape3D_qnb83")
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene8/Path/Rock3/Rock4" unique_id=1721985228]
+transform = Transform3D(0.72075886, -0.36739868, 2.8888624, 0.27414614, -2.9542527, -0.44411308, 2.8991985, 0.37068954, -0.6761948, 0.71866214, -0.35702312, -0.28454503)
+visible = false
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("15_gim1n")
+
+[node name="Rock2" type="Node3D" parent="Levels/Scene8/Path" unique_id=1136727659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.507656, -0.6720575, -5.434803)
+
+[node name="Rock2" parent="Levels/Scene8/Path/Rock2" unique_id=784292372 instance=ExtResource("11_x4bpc")]
+transform = Transform3D(0.05880217, 0.058802187, 0.99653643, 0.3143737, -0.94856143, 0.037421238, 0.9474764, 0.31108436, -0.07426333, 0, 0, 0)
+visible = false
+
+[node name="Rock3" parent="Levels/Scene8/Path/Rock2" unique_id=1340417971 instance=ExtResource("11_x4bpc")]
+transform = Transform3D(0.05880217, 0.058802187, 0.99653643, 0.3143737, -0.94856143, 0.037421238, 0.9474764, 0.31108436, -0.07426333, 5.397311, 0, -4.7821274)
+
+[node name="Area3D" type="Area3D" parent="Levels/Scene8/Path/Rock2/Rock3" unique_id=237192529 node_paths=PackedStringArray("mesh", "active_on_selected")]
+script = ExtResource("12_5g1ak")
+pattern = Array[int]([1])
+mesh = NodePath("../Rock")
+selected_material = ExtResource("13_ho56g")
+locked_material = ExtResource("14_epaei")
+active_on_selected = [NodePath("../Sprite3D")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene8/Path/Rock2/Rock3/Area3D" unique_id=1205833451]
+transform = Transform3D(0.9710877, -0.23820028, 0.015761372, 0.23840082, 0.9710881, -0.01236123, -0.012361202, 0.015761364, 0.9997994, 0.22634506, -0.4949417, 0.109187126)
+shape = SubResource("BoxShape3D_qnb83")
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene8/Path/Rock2/Rock3" unique_id=2003389989]
+transform = Transform3D(0.25957024, -1.1716994, -2.7494988, 0.32569647, -2.7323236, 1.1951278, -2.9709504, -0.40190715, -0.109203406, 0.7701734, -0.31578922, 0.0403897)
+visible = false
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("15_gim1n")
+
+[node name="Rock1" type="Node3D" parent="Levels/Scene8/Path" unique_id=1343682909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9974036, -0.67205775, -3.9878159)
+
+[node name="Rock" parent="Levels/Scene8/Path/Rock1" unique_id=689535443 instance=ExtResource("11_x4bpc")]
+transform = Transform3D(-0.7071067, -0.7071068, 0, 0.7071068, -0.7071067, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+
+[node name="Rock2" parent="Levels/Scene8/Path/Rock1" unique_id=1492981617 instance=ExtResource("11_x4bpc")]
+transform = Transform3D(-0.7071067, -0.7071068, 0, 0.7071068, -0.7071067, 0, 0, 0, 1, -5.765081, 0, 2.6545048)
+
+[node name="Area3D" type="Area3D" parent="Levels/Scene8/Path/Rock1/Rock2" unique_id=1172568945 node_paths=PackedStringArray("mesh", "active_on_selected")]
+script = ExtResource("12_5g1ak")
+pattern = Array[int]([3])
+mesh = NodePath("../Rock")
+selected_material = ExtResource("13_ho56g")
+locked_material = ExtResource("14_epaei")
+active_on_selected = [NodePath("../Sprite3D")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene8/Path/Rock1/Rock2/Area3D" unique_id=1478178024]
+transform = Transform3D(0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, 0, 0, 0, 1, 0.30251455, -0.4748515, 0.022338867)
+shape = SubResource("BoxShape3D_bhx41")
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene8/Path/Rock1/Rock2" unique_id=1197988645]
+transform = Transform3D(-0.51463354, 2.826671, -0.86318314, -0.5818461, -0.9559217, -2.7834635, -2.89769, -0.31007457, 0.7122123, -0.07749956, -0.83539385, 0.1348007)
+visible = false
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("15_gim1n")
+
+[node name="TravelBlock" type="Node3D" parent="Levels/Scene8" unique_id=721778945]
+
+[node name="Rock1" type="StaticBody3D" parent="Levels/Scene8/TravelBlock" unique_id=162490412]
+transform = Transform3D(0.5577086, 0, 0.83003676, 0, 1, 0, -0.83003676, 0, 0.5577086, -12.57733, 2, -9.157148)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene8/TravelBlock/Rock1" unique_id=1501429352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3840166, 0, -0.3866158)
+shape = SubResource("BoxShape3D_sww3w")
+
+[node name="Rock2" type="StaticBody3D" parent="Levels/Scene8/TravelBlock" unique_id=1312038712]
+transform = Transform3D(0.5577086, 0, 0.83003676, 0, 1, 0, -0.83003676, 0, 0.5577086, -12.532641, 2, -9.127123)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene8/TravelBlock/Rock2" unique_id=1890133560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3840166, 0, -0.3866158)
+shape = SubResource("BoxShape3D_sww3w")
+
+[node name="Rock3" type="StaticBody3D" parent="Levels/Scene8/TravelBlock" unique_id=1568860221]
+transform = Transform3D(0.5577086, 0, 0.83003676, 0, 1, 0, -0.83003676, 0, 0.5577086, -12.443409, 2, -9.067165)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene8/TravelBlock/Rock3" unique_id=109421948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3840166, 0, -0.3866158)
+shape = SubResource("BoxShape3D_sww3w")
+
+[node name="Scene6" type="Node3D" parent="Levels" unique_id=1560717440 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.744192, 0, -1.6647215)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="CameraStand" parent="Levels/Scene6" unique_id=169512781 instance=ExtResource("4_ols1j")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.24434853, 0.9999995, 1.7990782)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene6/CameraStand/Camera3D" parent_id_path=PackedInt32Array(169512781, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../Scene5")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene6" unique_id=1009232667]
+
+[node name="Tree2" parent="Levels/Scene6/Scenario" unique_id=1846867025 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6668105, -4.7683716e-06, 5.978212)
+
+[node name="Tree9" parent="Levels/Scene6/Scenario" unique_id=644232308 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.284772, -2.861023e-06, 6.6333838)
+
+[node name="Tree3" parent="Levels/Scene6/Scenario" unique_id=1061356523 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3586636, -2.3841858e-06, -1.056421)
+
+[node name="Tree4" parent="Levels/Scene6/Scenario" unique_id=326790889 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0230174, -1.9073486e-06, -2.3250055)
+
+[node name="Tree11" parent="Levels/Scene6/Scenario" unique_id=500930188 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4656012, -4.7683716e-06, -2.9658833)
+
+[node name="Tree12" parent="Levels/Scene6/Scenario" unique_id=1589539811 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9380107, -3.8146973e-06, -1.5869992)
+
+[node name="Tree6" parent="Levels/Scene6/Scenario" unique_id=2032282228 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9246807, -9.536743e-07, 5.1733704)
+
+[node name="Tree8" parent="Levels/Scene6/Scenario" unique_id=65265545 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.167051, -9.536743e-07, 4.6724486)
+
+[node name="LockUse" type="Area3D" parent="Levels/Scene6" unique_id=1604106793 node_paths=PackedStringArray("delete_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.313214, 1.7045269, 1.6507423)
+script = ExtResource("10_mayj3")
+item = ExtResource("16_i0w06")
+delete_nodes = [NodePath("../../../Lock"), NodePath(".")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene6/LockUse" unique_id=1792030379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0871582, 0)
+shape = SubResource("BoxShape3D_57qmd")
+
+[node name="NextChapter" type="Area3D" parent="Levels/Scene6" unique_id=915682529]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -5.3303933, 2.1251361, 1.566083)
+input_ray_pickable = false
+script = ExtResource("17_ra3pq")
+level = ExtResource("18_kifj5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene6/NextChapter" unique_id=511956555]
+shape = SubResource("BoxShape3D_n8ral")
+
+[node name="Scene9" type="Node3D" parent="Levels" unique_id=682667727 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.10382, 0, 13.81772)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Levels/Scene9" unique_id=580582165 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.70090926, 0, 0.71325046, 0, 1, 0, -0.71325046, 0, 0.70090926, -3.1602516, 2, -1.5687733)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene11")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene9/NextArea" unique_id=288350688]
+shape = SubResource("BoxShape3D_dinhu")
+
+[node name="CameraStand" parent="Levels/Scene9" unique_id=900643293 instance=ExtResource("4_ols1j")]
+transform = Transform3D(0.7071067, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071067, 0.24434853, 0.9999995, 1.799078)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene9/CameraStand/Camera3D" parent_id_path=PackedInt32Array(900643293, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../Scene3")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene9" unique_id=1331215300]
+
+[node name="Tree3" parent="Levels/Scene9/Scenario" unique_id=1970747327 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.594469, -2.861023e-06, -3.5775375)
+
+[node name="Tree4" parent="Levels/Scene9/Scenario" unique_id=48799662 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2548904, -1.9073486e-06, -7.118763)
+
+[node name="Tree5" parent="Levels/Scene9/Scenario" unique_id=1838020780 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.520281, -2.861023e-06, 3.6434698)
+
+[node name="Tree11" parent="Levels/Scene9/Scenario" unique_id=1542784888 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5536175, -4.7683716e-06, -0.04527855)
+
+[node name="Tree13" parent="Levels/Scene9/Scenario" unique_id=1301668940 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61847496, -4.7683716e-06, -4.0284843)
+
+[node name="Tree12" parent="Levels/Scene9/Scenario" unique_id=1084839687 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.187479, -3.8146973e-06, -2.7029152)
+
+[node name="Tree7" parent="Levels/Scene9/Scenario" unique_id=313600324 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.113718, -9.536743e-07, -1.2868347)
+
+[node name="Tree10" parent="Levels/Scene9/Scenario" unique_id=1282857603 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5320435, -1.9073486e-06, 0.56383324)
+
+[node name="Tree8" parent="Levels/Scene9/Scenario" unique_id=1035006608 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97495, -9.536743e-07, 3.2834606)
+
+[node name="NextArea2" type="Area3D" parent="Levels/Scene9" unique_id=1231939926 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.70090926, 0, 0.71325046, 0, 1, 0, -0.71325046, 0, 0.70090926, 0.5635214, 1.9999995, -5.166218)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene10")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene9/NextArea2" unique_id=1878909392]
+shape = SubResource("BoxShape3D_dinhu")
+
+[node name="NextArea3" type="Area3D" parent="Levels/Scene9" unique_id=856295277 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-0.2672385, 0, 0.96363044, 0, 1, 0, -0.96363044, 0, -0.2672385, -5.6978464, 2.000001, 1.4980526)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene13")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene9/NextArea3" unique_id=1841014304]
+shape = SubResource("BoxShape3D_dinhu")
+
+[node name="Scene10" type="Node3D" parent="Levels" unique_id=741745792 node_paths=PackedStringArray("camera")]
+transform = Transform3D(0.91847974, 0, 0.39546806, 0, 1, 0, -0.39546806, 0, 0.91847974, 3.8308644, 0, 15.164958)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="ChangeSceneInteractable" type="Area3D" parent="Levels/Scene10" unique_id=908939808 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.29892915, 0, 0.9542753, 0, 1, 0, -0.9542753, 0, 0.29892915, -0.33239937, 0.9999995, 2.391222)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene9")
+metadata/_custom_type_script = "uid://bnjfxriyseeds"
+
+[node name="Arrow" parent="Levels/Scene10/ChangeSceneInteractable" unique_id=612044301 instance=ExtResource("5_d1jdy")]
+transform = Transform3D(-5.4639235e-09, 0, 0.15, 0, 0.25, 0, -0.125, 0, -6.5567085e-09, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene10/ChangeSceneInteractable" unique_id=304842976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1054274e-15, 0, -0.048503876)
+shape = SubResource("BoxShape3D_trtic")
+
+[node name="CameraStand" parent="Levels/Scene10" unique_id=695718027 instance=ExtResource("4_ols1j")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.24434853, 0.9999995, 1.7990782)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene10/CameraStand/Camera3D" parent_id_path=PackedInt32Array(695718027, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9676106, 0, 0.25244758, 0, 1, 0, -0.25244758, 0, 0.9676106, 0.55651665, -0.3768747, -0.55901384)
+scene = NodePath("../../../../Scene5")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene10" unique_id=1659934200]
+
+[node name="Tree2" parent="Levels/Scene10/Scenario" unique_id=1358299425 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.129405, -4.7683716e-06, 2.2389183)
+
+[node name="Tree9" parent="Levels/Scene10/Scenario" unique_id=348010278 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.804854, -2.861023e-06, 6.6819286)
+
+[node name="Tree6" parent="Levels/Scene10/Scenario" unique_id=1629542046 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9246807, -9.536743e-07, 5.1733704)
+
+[node name="Tree8" parent="Levels/Scene10/Scenario" unique_id=781413893 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.167051, -9.536743e-07, 4.6724486)
+
+[node name="Tree10" parent="Levels/Scene10/Scenario" unique_id=1704865672 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6640916, -2.861023e-06, 1.3397999)
+
+[node name="Tree3" parent="Levels/Scene10/Scenario" unique_id=1543217815 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5867033, -4.7683716e-06, 3.6449528)
+
+[node name="Scene11" type="Node3D" parent="Levels" unique_id=851317880 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.174294, 0, 22.405687)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Levels/Scene11" unique_id=2058648260 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.70090926, 0, 0.71325046, 0, 1, 0, -0.71325046, 0, 0.70090926, -3.1602516, 2, -1.5687733)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene12")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene11/NextArea" unique_id=2025868009]
+shape = SubResource("BoxShape3D_dinhu")
+
+[node name="CameraStand" parent="Levels/Scene11" unique_id=417683200 instance=ExtResource("4_ols1j")]
+transform = Transform3D(0.7071067, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071067, 0.24434853, 0.9999995, 1.799078)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene11/CameraStand/Camera3D" parent_id_path=PackedInt32Array(417683200, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../Scene9")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene11" unique_id=929305630]
+
+[node name="Tree3" parent="Levels/Scene11/Scenario" unique_id=1695194123 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4252377, -1.9073486e-06, -5.315595)
+
+[node name="Tree5" parent="Levels/Scene11/Scenario" unique_id=1194600117 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.682127, -2.861023e-06, 2.8793)
+
+[node name="Tree11" parent="Levels/Scene11/Scenario" unique_id=63302363 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0513134, -4.7683716e-06, 1.4029131)
+
+[node name="Tree13" parent="Levels/Scene11/Scenario" unique_id=324364663 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7949562, -5.722046e-06, -3.1837177)
+
+[node name="Tree12" parent="Levels/Scene11/Scenario" unique_id=829452067 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46497726, -3.8146973e-06, -3.8157058)
+
+[node name="Tree7" parent="Levels/Scene11/Scenario" unique_id=1578602328 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.448822, -9.536743e-07, -4.737856)
+
+[node name="Tree10" parent="Levels/Scene11/Scenario" unique_id=396791389 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5320435, -1.9073486e-06, 0.56383324)
+
+[node name="Tree8" parent="Levels/Scene11/Scenario" unique_id=1059460491 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.417036, -1.9073486e-06, 2.187768)
+
+[node name="Tree14" parent="Levels/Scene11/Scenario" unique_id=1550108792 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22271347, -1.9073486e-06, -5.6870403)
+
+[node name="Tree15" parent="Levels/Scene11/Scenario" unique_id=161881281 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52710915, -1.9073486e-06, -2.2909136)
+
+[node name="Tree16" parent="Levels/Scene11/Scenario" unique_id=390592221 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7571106, -4.7683716e-06, 0.08931351)
+
+[node name="Tree17" parent="Levels/Scene11/Scenario" unique_id=1609618411 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9705849, -4.7683716e-06, 1.206192)
+
+[node name="Tree18" parent="Levels/Scene11/Scenario" unique_id=1954043913 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2634068, -1.9073486e-06, -2.9951277)
+
+[node name="Tree19" parent="Levels/Scene11/Scenario" unique_id=211892629 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.307026, -9.536743e-07, -1.9704733)
+
+[node name="Tree20" parent="Levels/Scene11/Scenario" unique_id=2044976186 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.864811, -1.9073486e-06, 2.3217354)
+
+[node name="Tree21" parent="Levels/Scene11/Scenario" unique_id=354392671 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8344631, -1.9073486e-06, -1.1721067)
+
+[node name="Scene12" type="Node3D" parent="Levels" unique_id=807063194 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.2456217, 0, 26.733809)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="CameraStand" parent="Levels/Scene12" unique_id=547984072 instance=ExtResource("4_ols1j")]
+transform = Transform3D(0.7071067, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071067, 0.24434853, 0.9999995, 1.799078)
+
+[node name="Camera3D" parent="Levels/Scene12/CameraStand" index="0" unique_id=1331824599]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.25691986, 0.3768747, -11.653965)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene12/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../Scene11")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene12" unique_id=600200177]
+
+[node name="Tree3" parent="Levels/Scene12/Scenario" unique_id=288810908 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.742319, -1.9073486e-06, -9.466302)
+
+[node name="Tree5" parent="Levels/Scene12/Scenario" unique_id=603535499 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.01573, -2.861023e-06, -6.166088)
+
+[node name="Tree11" parent="Levels/Scene12/Scenario" unique_id=651914794 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9316273, -4.7683716e-06, -13.001716)
+
+[node name="Tree4" parent="Levels/Scene12/Scenario" unique_id=1440846927 instance=ExtResource("3_147fn")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -14.750235, -1.9073486e-06, -10.863011)
+
+[node name="Tree6" parent="Levels/Scene12/Scenario" unique_id=86622621 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.628653, -1.9073486e-06, -13.223282)
+
+[node name="Tree7" parent="Levels/Scene12/Scenario" unique_id=1841158249 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.798937, -1.9073486e-06, -13.622004)
+
+[node name="Tree8" parent="Levels/Scene12/Scenario" unique_id=1105148443 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.425524, -1.9073486e-06, -13.328989)
+
+[node name="Tree9" parent="Levels/Scene12/Scenario" unique_id=1721744650 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.180422, -1.9073486e-06, -13.125766)
+
+[node name="Tree10" parent="Levels/Scene12/Scenario" unique_id=2039508254 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.349295, -1.9073486e-06, -12.871284)
+
+[node name="Tree12" parent="Levels/Scene12/Scenario" unique_id=1983339666 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.714392, -1.9073486e-06, -15.264648)
+
+[node name="Tree13" parent="Levels/Scene12/Scenario" unique_id=1138433009 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.383516, -1.9073486e-06, -7.832751)
+
+[node name="Tree14" parent="Levels/Scene12/Scenario" unique_id=2060433127 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.079035, -1.9073486e-06, -15.276096)
+
+[node name="Scene13" type="Node3D" parent="Levels" unique_id=815115559 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-0.9004215, 0, 0.43501872, 0, 1, 0, -0.43501872, 0, -0.9004215, 20.061281, 0, 31.709553)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="CameraStand" parent="Levels/Scene13" unique_id=275548809 instance=ExtResource("4_ols1j")]
+transform = Transform3D(0.7071067, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071067, 0.24434853, 0.9999995, 1.799078)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene13/CameraStand/Camera3D" parent_id_path=PackedInt32Array(275548809, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../Scene9")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene13" unique_id=1256607395]
+
+[node name="Tree3" parent="Levels/Scene13/Scenario" unique_id=1066375031 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4252377, -1.9073486e-06, -5.315595)
+
+[node name="Tree5" parent="Levels/Scene13/Scenario" unique_id=1583216449 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.682127, -2.861023e-06, 2.8793)
+
+[node name="Tree11" parent="Levels/Scene13/Scenario" unique_id=29201057 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0513134, -4.7683716e-06, 1.4029131)
+
+[node name="Tree13" parent="Levels/Scene13/Scenario" unique_id=1386412656 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7949562, -5.722046e-06, -3.1837177)
+
+[node name="Tree12" parent="Levels/Scene13/Scenario" unique_id=482609743 instance=ExtResource("3_147fn")]
+transform = Transform3D(0.99060714, 0, -0.13673836, 0, 1, 0, 0.13673836, 0, 0.99060714, -0.46497726, -3.8146973e-06, -3.8157043)
+
+[node name="Tree7" parent="Levels/Scene13/Scenario" unique_id=591036519 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.448822, -9.536743e-07, -4.737856)
+
+[node name="Tree10" parent="Levels/Scene13/Scenario" unique_id=2008365645 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5320435, -1.9073486e-06, 0.56383324)
+
+[node name="Tree8" parent="Levels/Scene13/Scenario" unique_id=2018672401 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.417036, -1.9073486e-06, 2.187768)
+
+[node name="Tree14" parent="Levels/Scene13/Scenario" unique_id=2062712482 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22271347, -1.9073486e-06, -5.6870403)
+
+[node name="Tree15" parent="Levels/Scene13/Scenario" unique_id=601426353 instance=ExtResource("3_147fn")]
+transform = Transform3D(0.9825885, 0, 0.18579303, 0, 1, 0, -0.18579303, 0, 0.9825885, -4.831566, -1.9073486e-06, -3.6607494)
+
+[node name="Tree16" parent="Levels/Scene13/Scenario" unique_id=577964902 instance=ExtResource("3_147fn")]
+transform = Transform3D(0.9999999, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.9999999, -6.719879, -5.722046e-06, -2.5280704)
+
+[node name="Tree17" parent="Levels/Scene13/Scenario" unique_id=418778335 instance=ExtResource("3_147fn")]
+transform = Transform3D(0.9999999, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.9999999, -8.177994, -4.7683716e-06, -0.3535118)
+
+[node name="Tree18" parent="Levels/Scene13/Scenario" unique_id=1950404331 instance=ExtResource("3_147fn")]
+transform = Transform3D(0.9999999, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.9999999, -3.110012, -1.9073486e-06, -4.210047)
+
+[node name="Tree19" parent="Levels/Scene13/Scenario" unique_id=409669590 instance=ExtResource("3_147fn")]
+transform = Transform3D(0.9999999, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.9999999, -8.393036, 0, -2.1328144)
+
+[node name="Tree20" parent="Levels/Scene13/Scenario" unique_id=1831632701 instance=ExtResource("3_147fn")]
+transform = Transform3D(0.8369532, 0, 0.5472742, 0, 1, 0, -0.5472742, 0, 0.8369532, -3.6777267, -1.9073486e-06, 2.6602097)
+
+[node name="Tree21" parent="Levels/Scene13/Scenario" unique_id=1390715479 instance=ExtResource("3_147fn")]
+transform = Transform3D(0.5744555, 0, 0.81853557, 0, 1, 0, -0.81853557, 0, 0.5744555, 0.9239578, -1.9073486e-06, -2.4628143)
+
+[node name="ChestScene" type="Node3D" parent="Levels/Scene13" unique_id=1213082177 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2456012, -0.231004, -2.6869907)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="CameraStand" parent="Levels/Scene13/ChestScene" unique_id=1128883154 instance=ExtResource("4_ols1j")]
+transform = Transform3D(0.70710665, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.70710665, 0.24434662, 0.9999995, 1.7990799)
+
+[node name="Camera3D" parent="Levels/Scene13/ChestScene/CameraStand" index="0" unique_id=1331824599]
+transform = Transform3D(0.99583983, -0.04915829, 0.07672447, -3.7252899e-09, 0.84199905, 0.5394791, -0.09112179, -0.5372347, 0.83849627, 1.3723011, 0.51077855, -0.21507645)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene13/ChestScene/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9105348, 0.22303817, -0.34810972, -0.22303812, 0.9739623, 0.040638745, 0.3481097, 0.040638745, 0.9365726, -0.5340624, -0.3410473, -0.5914421)
+scene = NodePath("../../../..")
+
+[node name="Chest" parent="Levels/Scene13/ChestScene" unique_id=1430990470 instance=ExtResource("19_vg0k6")]
+transform = Transform3D(0.0352208, 0, -0.4987579, 0, 0.5, 0, 0.4987579, 0, 0.0352208, 0, 0, 0)
+
+[node name="ChestMesh" parent="Levels/Scene13/ChestScene/Chest/chest/Chest/Skeleton3D" parent_id_path=PackedInt32Array(1430990470, 546841921, 507044364) index="0" unique_id=2144824632]
+transform = Transform3D(1, 0, 0, 5.9604645e-08, 1, -4.2632564e-14, 7.1054274e-15, 1.7763568e-15, 1.0000002, -0.0004425645, -0.0003682971, 0.0025534637)
+
+[node name="Lock" parent="Levels/Scene13/ChestScene/Chest" unique_id=42583008 instance=ExtResource("20_22o04")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.9272212, 1.5130141, 2.6550929e-08)
+
+[node name="Hammer" parent="Levels/Scene13/ChestScene/Chest" unique_id=1051621178 instance=ExtResource("21_iw7sw")]
+transform = Transform3D(0.4364419, -0.1476434, 0.88753605, 0.46600398, 0.8809173, -0.08261306, -0.76964843, 0.449651, 0.4532717, -0.07618332, 0.6092377, 0.564415)
+
+[node name="PickItem" type="Area3D" parent="Levels/Scene13/ChestScene/Chest/Hammer" unique_id=1198085123 node_paths=PackedStringArray("remove_node")]
+input_ray_pickable = false
+script = ExtResource("22_vrtms")
+item = ExtResource("7_7fxg3")
+remove_node = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene13/ChestScene/Chest/Hammer/PickItem" unique_id=178934901]
+transform = Transform3D(1, -1.4901161e-08, -1.1920929e-07, 0, 0.9999999, -2.9802322e-08, 0, 1.4901161e-08, 1, 0, 0.45507813, 1.9073486e-06)
+shape = SubResource("BoxShape3D_3gngh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Levels/Scene13/ChestScene/Chest/Hammer/PickItem" unique_id=505911545]
+transform = Transform3D(1, -1.4901161e-08, -1.1920929e-07, 0, 0.9999999, -2.9802322e-08, 0, 1.4901161e-08, 1, -7.6293945e-06, 0.92944336, 0.010528564)
+shape = SubResource("BoxShape3D_gxtfn")
+
+[node name="Pattern" type="Node3D" parent="Levels/Scene13/ChestScene/Chest" unique_id=2132701747]
+transform = Transform3D(1, 0, 0, 0, 0.49999994, -0.8660254, 0, 0.8660254, 0.49999994, -0.36615473, 1.8414698, -0.8510831)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene13/ChestScene/Chest/Pattern" unique_id=690318856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85213447, -0.08591878, -0.28454503)
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("15_gim1n")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Scene13/ChestScene/Chest/Pattern" unique_id=38365318]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.62268704, -0.085918784, -0.28454503)
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("15_gim1n")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Scene13/ChestScene/Chest/Pattern" unique_id=759584724]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.43501058, -0.08591878, -0.28454503)
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("15_gim1n")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/Scene13/ChestScene/Chest/Pattern" unique_id=256021238]
+transform = Transform3D(-1, -1.509958e-07, 0, 1.509958e-07, -1, 0, 0, 0, 1, 0.21120647, -0.08591878, -0.28454503)
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("15_gim1n")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Levels/Scene13/ChestScene/Chest/Pattern" unique_id=2082774772]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.0023370832, -0.08591881, -0.28454503)
+cast_shadow = 0
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("15_gim1n")
+
+[node name="Patterned" type="Area3D" parent="Levels/Scene13/ChestScene/Chest" unique_id=68005875 node_paths=PackedStringArray("mesh")]
+script = ExtResource("12_5g1ak")
+pattern = Array[int]([1, 0, 2, 3, 0])
+mesh = NodePath("../chest/Chest/Skeleton3D/ChestMesh")
+selected_material = ExtResource("13_ho56g")
+locked_material = ExtResource("14_epaei")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene13/ChestScene/Chest/Patterned" unique_id=814289404]
+transform = Transform3D(1.0000001, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, 1.0000001, 0.088378906, 1.1042056, 0)
+shape = SubResource("BoxShape3D_d0u6y")
+
+[node name="NextArea" type="Area3D" parent="Levels/Scene13" unique_id=1686871533 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9202961, 0, 0.39122242, 0, 1, 0, -0.39122242, 0, 0.9202961, -1.2024238, 0, -1.1180158)
+script = ExtResource("2_t723o")
+scene = NodePath("../ChestScene")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene13/NextArea" unique_id=519650283]
+transform = Transform3D(1.0000259, 0, 4.954636e-07, 0, 1, 0, -4.954636e-07, 0, 1.0000259, -0.012435913, 0.7942505, 0)
+shape = SubResource("BoxShape3D_twgab")
+
+[node name="Scene14" type="Node3D" parent="Levels" unique_id=130345762 node_paths=PackedStringArray("camera", "on_scene_only")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.114592, 0, -36.129333)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("Lights")]
+
+[node name="CameraStand" parent="Levels/Scene14" unique_id=1310824476 instance=ExtResource("4_ols1j")]
+transform = Transform3D(0.7071067, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071067, 0.24434853, 0.9999995, 1.799078)
+
+[node name="Camera3D" parent="Levels/Scene14/CameraStand" index="0" unique_id=1331824599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.982029, 0.3768747, -1.0671234)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene14/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../Scene7")
+
+[node name="Lights" type="Node3D" parent="Levels/Scene14" unique_id=1810708969]
+visible = false
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="Levels/Scene14/Lights" unique_id=1885119473]
+transform = Transform3D(0.8277533, -0.56109226, -2.452612e-08, 0, -4.371139e-08, 1, -0.56109226, -0.8277533, -3.6182247e-08, -11.095967, 2.283586, -8.787571)
+light_energy = 100.0
+area_range = 10.0
+area_size = Vector2(22.361832, 3.1332703)
+
+[node name="AreaLight3D3" type="AreaLight3D" parent="Levels/Scene14/Lights" unique_id=192857151]
+transform = Transform3D(0.8277533, -0.56109226, -2.4526122e-08, 0, -4.371139e-08, 1, -0.56109226, -0.8277533, -3.6182247e-08, -10.565039, 7.205954, -11.5871315)
+light_energy = 300.0
+area_range = 10.0
+area_size = Vector2(12.719711, 3.1332703)
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene14" unique_id=1113336638]
+
+[node name="Tree3" parent="Levels/Scene14/Scenario" unique_id=2055455321 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0836124, -2.861023e-06, -5.334507)
+
+[node name="Tree11" parent="Levels/Scene14/Scenario" unique_id=917336940 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.34021, -4.7683716e-06, -0.8362808)
+
+[node name="Tree13" parent="Levels/Scene14/Scenario" unique_id=1193798819 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5447845, -4.7683716e-06, -3.6386108)
+
+[node name="Tree12" parent="Levels/Scene14/Scenario" unique_id=1677060484 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10867882, -3.8146973e-06, -4.0267105)
+
+[node name="Tree10" parent="Levels/Scene14/Scenario" unique_id=1617356629 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5701523, -1.9073486e-06, 0.41096878)
+
+[node name="Tree14" parent="Levels/Scene14/Scenario" unique_id=858238896 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8745346, -4.7683716e-06, 0.43720245)
+
+[node name="Tree4" parent="Levels/Scene14/Scenario" unique_id=1834366477 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.54615, -2.861023e-06, -10.01675)
+
+[node name="Tree5" parent="Levels/Scene14/Scenario" unique_id=1440483292 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.981249, -2.861023e-06, -11.763386)
+
+[node name="Tree6" parent="Levels/Scene14/Scenario" unique_id=1414231976 instance=ExtResource("3_147fn")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -11.050877, -2.861023e-06, -13.649673)
+
+[node name="Tree7" parent="Levels/Scene14/Scenario" unique_id=712682266 instance=ExtResource("3_147fn")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -14.3811035, -2.861023e-06, -10.994816)
+
+[node name="Tree8" parent="Levels/Scene14/Scenario" unique_id=279442540 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.458832, -2.861023e-06, -9.99041)
+
+[node name="Tree9" parent="Levels/Scene14/Scenario" unique_id=931209946 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.876979, -2.861023e-06, -13.625332)
+
+[node name="Tree15" parent="Levels/Scene14/Scenario" unique_id=1051475580 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.651394, -2.861023e-06, -12.3872795)
+
+[node name="Scene15" type="Node3D" parent="Levels" unique_id=1066984796 node_paths=PackedStringArray("camera")]
+transform = Transform3D(0.706212, 0, -0.7080005, 0, 1, 0, 0.7080005, 0, 0.706212, 6.11943, 0, -16.536085)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="ChangeSceneInteractable" type="Area3D" parent="Levels/Scene15" unique_id=899813765 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.29892915, 0, 0.9542753, 0, 1, 0, -0.9542753, 0, 0.29892915, -0.33239937, 0.9999995, 2.391222)
+script = ExtResource("2_t723o")
+scene = NodePath("../../Scene5")
+metadata/_custom_type_script = "uid://bnjfxriyseeds"
+
+[node name="Arrow" parent="Levels/Scene15/ChangeSceneInteractable" unique_id=870645740 instance=ExtResource("5_d1jdy")]
+transform = Transform3D(-5.4639235e-09, 0, 0.15, 0, 0.25, 0, -0.125, 0, -6.5567085e-09, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene15/ChangeSceneInteractable" unique_id=670046599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1054274e-15, 0, -0.048503876)
+shape = SubResource("BoxShape3D_trtic")
+
+[node name="CameraStand" parent="Levels/Scene15" unique_id=1517885728 instance=ExtResource("4_ols1j")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.24434853, 0.9999995, 1.7990782)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene15/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1517885728, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9676106, 0, 0.25244758, 0, 1, 0, -0.25244758, 0, 0.9676106, 0.55651665, -0.3768747, -0.55901384)
+scene = NodePath("../../../../Scene7")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene15" unique_id=562141807]
+
+[node name="Tree2" parent="Levels/Scene15/Scenario" unique_id=145565286 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8135905, -4.7683716e-06, 2.851159)
+
+[node name="Tree9" parent="Levels/Scene15/Scenario" unique_id=1169432546 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4589915, -2.861023e-06, -2.6338387)
+
+[node name="Tree6" parent="Levels/Scene15/Scenario" unique_id=629135643 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.059359, -9.536743e-07, -2.5864582)
+
+[node name="Tree8" parent="Levels/Scene15/Scenario" unique_id=1758251534 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6183305, -9.536743e-07, -0.18254852)
+
+[node name="Tree10" parent="Levels/Scene15/Scenario" unique_id=1793194509 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7263103, -2.861023e-06, 1.1010418)
+
+[node name="Tree11" parent="Levels/Scene15/Scenario" unique_id=367092272 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.181543, -9.536743e-07, -2.0030441)
+
+[node name="Tree12" parent="Levels/Scene15/Scenario" unique_id=1378198757 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2485976, -9.536743e-07, -0.27926254)
+
+[node name="Tree13" parent="Levels/Scene15/Scenario" unique_id=1129095000 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0746713, -9.536743e-07, -4.6149254)
+
+[node name="Scene16" type="Node3D" parent="Levels" unique_id=1371638002 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6844592, 0, -39.122265)
+script = ExtResource("1_r0mlc")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="CameraStand" parent="Levels/Scene16" unique_id=871294000 instance=ExtResource("4_ols1j")]
+transform = Transform3D(0.7071067, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071067, 0.24434853, 0.9999995, 1.799078)
+
+[node name="Camera3D" parent="Levels/Scene16/CameraStand" index="0" unique_id=1331824599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5124836, 0.3768747, -4.9844093)
+
+[node name="ChangeSceneInteractable" parent="Levels/Scene16/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../Scene8")
+
+[node name="Scenario" type="Node3D" parent="Levels/Scene16" unique_id=1852755002]
+
+[node name="Trees" type="Node3D" parent="Levels/Scene16/Scenario" unique_id=1014171712]
+
+[node name="Tree3" parent="Levels/Scene16/Scenario/Trees" unique_id=188187214 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3802433, -2.861023e-06, -4.267727)
+
+[node name="Tree4" parent="Levels/Scene16/Scenario/Trees" unique_id=1575127825 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.638451, -2.861023e-06, -8.791237)
+
+[node name="Tree5" parent="Levels/Scene16/Scenario/Trees" unique_id=615529915 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.029171, -2.861023e-06, -7.569374)
+
+[node name="Tree6" parent="Levels/Scene16/Scenario/Trees" unique_id=1574634901 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7972927, -2.861023e-06, -8.100609)
+
+[node name="Tree7" parent="Levels/Scene16/Scenario/Trees" unique_id=638143301 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.233984, -2.861023e-06, -9.028404)
+
+[node name="Tree8" parent="Levels/Scene16/Scenario/Trees" unique_id=512443741 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.783179, -2.861023e-06, -8.439632)
+
+[node name="Tree9" parent="Levels/Scene16/Scenario/Trees" unique_id=1222977076 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.489366, -2.861023e-06, -6.078869)
+
+[node name="Tree10" parent="Levels/Scene16/Scenario/Trees" unique_id=1511467579 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.465568, -2.861023e-06, -4.2401123)
+
+[node name="Tree11" parent="Levels/Scene16/Scenario/Trees" unique_id=26059307 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.399959, -2.861023e-06, -3.0692139)
+
+[node name="Tree12" parent="Levels/Scene16/Scenario/Trees" unique_id=1048872301 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.083906, -2.861023e-06, -1.1522713)
+
+[node name="Tree13" parent="Levels/Scene16/Scenario/Trees" unique_id=1860324305 instance=ExtResource("3_147fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.727334, -2.861023e-06, 0.99108505)
+
+[node name="Key" parent="Levels/Scene16/Scenario" unique_id=1887049370 instance=ExtResource("23_gmevc")]
+transform = Transform3D(-0.43301275, 0.3224846, -0.8417266, -0.25000006, 0.8542113, 0.4558763, 0.8660254, 0.40783194, -0.28926316, -6.303914, 0.65094143, -3.9462557)
+
+[node name="Area3D" type="Area3D" parent="Levels/Scene16/Scenario/Key" unique_id=1222432745 node_paths=PackedStringArray("remove_node")]
+script = ExtResource("22_vrtms")
+item = ExtResource("16_i0w06")
+remove_node = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene16/Scenario/Key/Area3D" unique_id=1438814796]
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="Rock" parent="Levels/Scene16/Scenario" unique_id=2118982840 instance=ExtResource("11_x4bpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.652157, 0, -4.1249237)
+
+[node name="Rock_001" parent="Levels/Scene16/Scenario" unique_id=1420111785 instance=ExtResource("24_ogh68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2639394, 2.3841858e-07, -5.4499702)
+
+[node name="Rock_002" parent="Levels/Scene16/Scenario" unique_id=1595551348 instance=ExtResource("25_cgjo5")]
+transform = Transform3D(0.94334465, 0, -1.2861283, 0, 1.595, 0, 1.2861283, 0, 0.94334465, -8.130272, 0, -5.54393)
+
+[node name="Rock_003" parent="Levels/Scene16/Scenario" unique_id=25773011 instance=ExtResource("24_ogh68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.03195, 2.3841858e-07, -2.1232872)
+
+[node name="Rock2" parent="Levels/Scene16/Scenario" unique_id=950328957 instance=ExtResource("11_x4bpc")]
+transform = Transform3D(0.5416646, 0, -0.8405947, 0, 1, 0, 0.8405947, 0, 0.5416646, -2.9550972, 0, -6.716259)
+
+[node name="Gate" parent="." unique_id=462562098 instance=ExtResource("26_er8fm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35007334, 0.014947891, -0.0078115463)
+
+[node name="Skeleton3D" parent="Gate/gate/Gate" parent_id_path=PackedInt32Array(462562098, 1605280492, 2008915509) index="0" unique_id=1509647614]
+bones/1/rotation = Quaternion(0.70710677, -1.15202326e-07, -1.15202326e-07, 0.70710677)
+bones/1/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(-0.5, -0.5, 0.5, 0.5)
+
+[node name="Lock" parent="." unique_id=782141336 instance=ExtResource("20_22o04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30222178, 1.9907675, -0.02244842)
+
+[connection signal="on_target" from="Levels/Scene5/Block/Counter" to="Levels/Scene5/NextArea" method="set_ray_pickable" binds= [true]]
+[connection signal="item_used" from="Levels/Scene5/Block/Wood/HammerUse" to="Levels/Scene5/Block/Counter" method="increment_one"]
+[connection signal="item_used" from="Levels/Scene5/Block/Wood/HammerUse" to="Levels/Scene5/Block/Wood_Fallen" method="set_visible" binds= [true]]
+[connection signal="item_used" from="Levels/Scene5/Block/Wood2/HammerUse" to="Levels/Scene5/Block/Counter" method="increment_one"]
+[connection signal="item_used" from="Levels/Scene5/Block/Wood2/HammerUse" to="Levels/Scene5/Block/Wood_Fallen2" method="set_visible" binds= [true]]
+[connection signal="item_used" from="Levels/Scene5/Block/Wood3/HammerUse" to="Levels/Scene5/Block/Counter" method="increment_one"]
+[connection signal="item_used" from="Levels/Scene5/Block/Wood3/HammerUse" to="Levels/Scene5/Block/Wood_Fallen3" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Levels/Scene8/Path/Rock3/Rock4/Area3D" to="Levels/Scene8/Path/Rock3/Rock3" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Levels/Scene8/Path/Rock3/Rock4/Area3D" to="Levels/Scene8/Path/Rock3/Rock4" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Levels/Scene8/Path/Rock3/Rock4/Area3D" to="Levels/Scene8/Path/Rock3/Rock4" method="set_physics_process" binds= [false]]
+[connection signal="on_pattern_made" from="Levels/Scene8/Path/Rock3/Rock4/Area3D" to="Levels/Scene8/TravelBlock/Rock3" method="set_ray_pickable" binds= [false]]
+[connection signal="on_pattern_made" from="Levels/Scene8/Path/Rock2/Rock3/Area3D" to="Levels/Scene8/Path/Rock2/Rock2" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Levels/Scene8/Path/Rock2/Rock3/Area3D" to="Levels/Scene8/Path/Rock2/Rock3" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Levels/Scene8/Path/Rock2/Rock3/Area3D" to="Levels/Scene8/Path/Rock2/Rock3" method="set_physics_process" binds= [false]]
+[connection signal="on_pattern_made" from="Levels/Scene8/Path/Rock2/Rock3/Area3D" to="Levels/Scene8/TravelBlock/Rock2" method="set_ray_pickable" binds= [false]]
+[connection signal="on_pattern_made" from="Levels/Scene8/Path/Rock1/Rock2/Area3D" to="Levels/Scene8/Path/Rock1/Rock" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Levels/Scene8/Path/Rock1/Rock2/Area3D" to="Levels/Scene8/Path/Rock1/Rock2" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Levels/Scene8/Path/Rock1/Rock2/Area3D" to="Levels/Scene8/Path/Rock1/Rock2" method="set_physics_process" binds= [false]]
+[connection signal="on_pattern_made" from="Levels/Scene8/Path/Rock1/Rock2/Area3D" to="Levels/Scene8/TravelBlock/Rock1" method="set_ray_pickable" binds= [false]]
+[connection signal="item_used" from="Levels/Scene6/LockUse" to="Levels/Scene6/NextChapter" method="set_ray_pickable" binds= [true]]
+[connection signal="item_used" from="Levels/Scene6/LockUse" to="Gate/gate/AnimationPlayer" method="play" binds= ["Gate|Open"]]
+[connection signal="on_pattern_made" from="Levels/Scene13/ChestScene/Chest/Patterned" to="Levels/Scene13/ChestScene/Chest/chest/AnimationPlayer" method="play" binds= ["OpenLid_001"]]
+[connection signal="on_pattern_made" from="Levels/Scene13/ChestScene/Chest/Patterned" to="Levels/Scene13/ChestScene/Chest/Lock" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Levels/Scene13/ChestScene/Chest/Patterned" to="Levels/Scene13/ChestScene/Chest/Hammer/PickItem" method="set_ray_pickable" binds= [true]]
+[connection signal="on_pattern_made" from="Levels/Scene13/ChestScene/Chest/Patterned" to="Levels/Scene13/ChestScene/Chest/Pattern" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Levels/Scene13/ChestScene/Chest/Patterned" to="Levels/Scene13/ChestScene/Chest/Patterned" method="set_ray_pickable" binds= [false]]
+
+[editable path="Levels/Scene2/CameraStand"]
+[editable path="Levels/Scene3/CameraStand"]
+[editable path="Levels/Scene4/CameraStand"]
+[editable path="Levels/Scene5/CameraStand"]
+[editable path="Levels/Scene7/CameraStand"]
+[editable path="Levels/Scene8/CameraStand"]
+[editable path="Levels/Scene8/Path/Rock3/Rock4"]
+[editable path="Levels/Scene8/Path/Rock2/Rock3"]
+[editable path="Levels/Scene8/Path/Rock1/Rock2"]
+[editable path="Levels/Scene6/CameraStand"]
+[editable path="Levels/Scene9/CameraStand"]
+[editable path="Levels/Scene10/CameraStand"]
+[editable path="Levels/Scene11/CameraStand"]
+[editable path="Levels/Scene12/CameraStand"]
+[editable path="Levels/Scene13/CameraStand"]
+[editable path="Levels/Scene13/ChestScene/CameraStand"]
+[editable path="Levels/Scene13/ChestScene/Chest"]
+[editable path="Levels/Scene13/ChestScene/Chest/chest"]
+[editable path="Levels/Scene14/CameraStand"]
+[editable path="Levels/Scene15/CameraStand"]
+[editable path="Levels/Scene16/CameraStand"]
+[editable path="Gate"]
+[editable path="Gate/gate"]

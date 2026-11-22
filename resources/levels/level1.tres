@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_fvcan")
-chapter = 1
+chapter = "1"
 name = "Learning Outside"
 pattern = Array[int]([1, 0, 2, 3, 0])
 palette = ExtResource("1_nvddv")

@@ -1,7 +1,7 @@
 class_name LevelInfo
 extends Resource
 
-@export var chapter: int
+@export var chapter: String
 @export var name: String
 @export var pattern: Array[Game.Direction]
 

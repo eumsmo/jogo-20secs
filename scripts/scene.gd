@@ -4,16 +4,27 @@ extends Node3D
 @export var camera: Camera3D
 @export var on_scene_only: Array[Node3D]
 @export var scene_patterns: Array[ScenePattern]
+@export var child_of: Scene = null
 
 func activate():
 	camera.make_current()
 	
 	for obj in on_scene_only:
+		if obj == null:
+			continue
+		
 		obj.visible = true
+		if obj is Area3D:
+			obj.input_ray_pickable = true
 
 func deactivate():
 	for obj in on_scene_only:
+		if obj == null:
+			continue
+		
 		obj.visible = false
+		if obj is Area3D:
+			obj.input_ray_pickable = false
 
 func check_pattern(pattern: Array[Game.Direction]) -> bool:
 	var got_it: ScenePattern = null

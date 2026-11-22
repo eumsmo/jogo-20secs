@@ -1,0 +1,71 @@
+[gd_scene format=4 uid="uid://p2hc6py72uul"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnsmg"]
+resource_name = "Grey"
+cull_mode = 2
+albedo_color = Color(0.76078445, 0.7647061, 0.78039235, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygp4x"]
+resource_name = "Blue"
+cull_mode = 2
+albedo_color = Color(0.1137255, 0.16862746, 0.3254902, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_76tko"]
+_surfaces = [{
+"aabb": AABB(-0.41708374, -0.56703347, -0.042684525, 0.84711784, 1.1340668, 0.052800536),
+"format": 34359742465,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAAADAAQAAgAFAAMABAADAAUABAAFAAYABwAFAAIABwAGAAUACAAEAAYACAAGAAcAAAAEAAgAAgAJAAcAAgABAAkABwAKAAgABwAJAAoACAALAAAAAAALAAEACAAKAAsAAQAMAAkACQAMAA0ACQANAAoAAQAOAAwACwAOAAEACgANAA8ACwAPAA4ACgAPAAsA"),
+"name": "Grey",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("bi3cPhspEb+gvSU8Y7W+PpvzBz+gvSU8bi3cPhopET+gvSU8bi3cPhspEb/41S69AIzVvhspEb/41S69bi3cPhopET/41S69AIzVvhopET/41S69AIzVvhopET+gvSU8AIzVvhspEb+gvSU8AiHDvpvzBz+gvSU8AiHDvpzzB7+gvSU8Y7W+PpzzB7+gvSU8tHS7vnQdBD+A5mU7tHS7vnUdBL+A5mU7FQm3PnQdBD+A5mU7FQm3PnUdBL+A5mU7")
+}, {
+"aabb": AABB(-0.36612475, -0.5160745, 0.0035080016, 0.7236159, 1.0321488, 0.015436202),
+"format": 34359742465,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAgADAAQAAAAFAAEAAwABAAUABgAFAAAABAADAAcABAAHAAYAAwAFAAcABgAHAAUA"),
+"name": "Blue",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("tHS7vnQdBD+A5mU78wq1viUV/77gMJs8tHS7vnUdBL+A5mU7VJ+wPiUV/77gMJs8FQm3PnUdBL+A5mU78wq1vigV/z7gMJs8FQm3PnQdBD+A5mU7VJ+wPigV/z7gMJs8")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5r2bk"]
+resource_name = "phase3_BathroomMirrorDoor"
+_surfaces = [{
+"aabb": AABB(-0.41708374, -0.56703347, -0.042684525, 0.84711784, 1.1340668, 0.052800536),
+"attribute_data": PackedByteArray("AADAPgAAgD5O+B0/CCF1PgAAID8AAIA+TfgdP4DvLTxmD8Q+DCF1PgAAID8AAAAAAADAPgAAAABmD8Q+gO8tPGYPxD4MIXU+zB8dP2h4cD5O+B0/CCF1PmzAxT5seHA+TvgdPwghdT7LHx0/QHl4PE34HT+A7y08zB8dP2h4cD5N+B0/gO8tPGzAxT5AeXg8Zg/EPoDvLTzLHx0/QHl4PGYPxD6A7y08bMDFPmx4cD5mD8Q+DCF1PmzAxT5AeXg8AAAgPwAAgD4AAMA+AACAPgAAwD4AAIA+AAAgPwAAgD4AAMA+AACAPgAAwD4AAAAAAADAPgAAAAAAAMA+AACAPgAAwD4AAAAAAAAgPwAAAAAAACA/AAAAAAAAwD4AAAAAAAAgPwAAAAAAACA/AACAPgAAID8AAIA+AAAgPwAAAAAAAMA+AAAAAAAAID8AAIA+AAAgPwAAAAAAAMA+AACAPg=="),
+"format": 34359742487,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAAAEAAEAAgADAAUABgAEAAAABQADAAcABgAHAAQABQAHAAYACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkA"),
+"material": SubResource("StandardMaterial3D_mnsmg"),
+"name": "Grey",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 44,
+"vertex_data": PackedByteArray("bi3cPhspEb+gvSU8Y7W+PpvzBz+gvSU8bi3cPhopET+gvSU8AiHDvpvzBz+gvSU8Y7W+PpzzB7+gvSU8AIzVvhopET+gvSU8AIzVvhspEb+gvSU8AiHDvpzzB7+gvSU8Y7W+PpzzB7+gvSU8FQm3PnQdBD+A5mU7Y7W+PpvzBz+gvSU8FQm3PnUdBL+A5mU7Y7W+PpvzBz+gvSU8tHS7vnQdBD+A5mU7AiHDvpvzBz+gvSU8FQm3PnQdBD+A5mU7AiHDvpvzBz+gvSU8tHS7vnUdBL+A5mU7AiHDvpzzB7+gvSU8tHS7vnQdBD+A5mU7AiHDvpzzB7+gvSU8FQm3PnUdBL+A5mU7Y7W+PpzzB7+gvSU8tHS7vnUdBL+A5mU7bi3cPhopET+gvSU8bi3cPhspEb/41S69bi3cPhspEb+gvSU8bi3cPhopET/41S69bi3cPhspEb+gvSU8AIzVvhspEb/41S69AIzVvhspEb+gvSU8bi3cPhspEb/41S69AIzVvhspEb+gvSU8AIzVvhopET/41S69AIzVvhopET+gvSU8AIzVvhspEb/41S69AIzVvhopET+gvSU8bi3cPhopET/41S69bi3cPhopET+gvSU8AIzVvhopET/41S69AIzVvhspEb/41S69bi3cPhopET/41S69AIzVvhopET/41S69bi3cPhspEb/41S69/3//f1Brp/X/f/9/5J6M8P9//3/SkxX2/3//f6KArf//f/9/emI88f9//3//f/7//3//f8R/4f//f/9/wYEe/9NY/3//f/7/01j/f/9//v/TWP9//3/+/9NY/3//f/7//3/TWP9/aez/f9NY/39p7P9/01j/f2ns/3/TWP9/aewrp/9//3///yun/3//f///K6f/f/9///8rp/9//3////9/K6crp/7//38rpyun/v//fyunK6f+//9/K6crp/7/////f////7////9/////v////3////+/////f////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+//3///////7//f///////v/9///////+//3///////7///////38AAP//////fwAA//////9/AAD//////38AAA==")
+}, {
+"aabb": AABB(-0.36612475, -0.5160745, 0.0035080016, 0.7236159, 1.0321488, 0.015436202),
+"attribute_data": PackedByteArray("yx8dP0B5eDxswMU+QHl4PGzAxT5AeXg8yx8dP0B5eDxswMU+bHhwPssfHT9AeXg8zB8dP2h4cD5swMU+QHl4PGzAxT5AeXg8bMDFPmx4cD5swMU+bHhwPmzAxT5AeXg8zB8dP2h4cD7LHx0/QHl4PMsfHT9AeXg8zB8dP2h4cD5swMU+bHhwPswfHT9oeHA+zB8dP2h4cD5swMU+bHhwPg=="),
+"format": 34359742487,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEA"),
+"material": SubResource("StandardMaterial3D_ygp4x"),
+"name": "Blue",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("tHS7vnQdBD+A5mU78wq1viUV/77gMJs8tHS7vnUdBL+A5mU78wq1vigV/z7gMJs8VJ+wPiUV/77gMJs88wq1vigV/z7gMJs8VJ+wPigV/z7gMJs88wq1viUV/77gMJs8tHS7vnUdBL+A5mU7VJ+wPiUV/77gMJs8FQm3PnUdBL+A5mU78wq1viUV/77gMJs8FQm3PnQdBD+A5mU78wq1vigV/z7gMJs8tHS7vnQdBD+A5mU7VJ+wPigV/z7gMJs8FQm3PnUdBL+A5mU7VJ+wPigV/z7gMJs8FQm3PnQdBD+A5mU7VJ+wPiUV/77gMJs8Vjn/f////z9WOf9/////P1Y5/3////8/Vjn/f////z//f/9//3////9//3//f////3//f/9//v//f/9//3////9/qkT///8//3+qRP///z//f6pE////P/9/qkT///8//39Uu////z//f1S7////P/9/VLv///8//39Uu////z+oxv9/////P6jG/3////8/qMb/f////z+oxv9/////Pw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_76tko")
+
+[node name="BathroomMirrorDoor" type="Node3D" unique_id=1526694068]
+
+[node name="BathroomMirrorDoor" type="MeshInstance3D" parent="." unique_id=1079248967]
+layers = 32
+mesh = SubResource("ArrayMesh_5r2bk")

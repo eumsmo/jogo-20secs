@@ -7,7 +7,7 @@ static var previous_level: LevelInfo
 static var current_level: LevelInfo
 
 @export var first_level: LevelInfo
-@export var level_scene_relation: Dictionary[LevelInfo, Scene]
+@export var level_scene_relation: Dictionary[LevelInfo, Phase]
 
 @export_group("Controllers")
 @export var scenes: ScenesController
@@ -22,6 +22,10 @@ func _init() -> void:
 func _ready() -> void:
 	await get_tree().physics_frame
 	GrandTimer.instance.start_timer()
+	
+	for key in level_scene_relation.keys():
+		if key != current_level:
+			level_scene_relation[key].set_disabled()
 
 func change_chapter(level: LevelInfo):
 	previous_level = current_level

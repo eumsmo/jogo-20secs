@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://byg5d7nahtjck"]
+
+[ext_resource type="Texture2D" uid="uid://cekmjckyhlwgq" path="res://resources/sprites/palettes/phase3_palette.png" id="1_3t06t"]
+[ext_resource type="Script" uid="uid://gps7yv5j2dm7" path="res://scripts/level_info.gd" id="2_2hrbm"]
+
+[resource]
+script = ExtResource("2_2hrbm")
+chapter = "3"
+name = "Lessons"
+pattern = Array[int]([3, 0, 2, 1, 2])
+palette = ExtResource("1_3t06t")
+metadata/_custom_type_script = "uid://gps7yv5j2dm7"

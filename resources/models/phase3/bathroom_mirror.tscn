@@ -1,0 +1,82 @@
+[gd_scene format=4 uid="uid://0r4gvcg0lrb3"]
+
+[ext_resource type="PackedScene" uid="uid://p2hc6py72uul" path="res://resources/models/phase3/bathroom_mirror_door.tscn" id="1_d50hj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnsmg"]
+resource_name = "Grey"
+cull_mode = 2
+albedo_color = Color(0.76078445, 0.7647061, 0.78039235, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbljn"]
+resource_name = "Fence"
+cull_mode = 2
+albedo_color = Color(0.3725491, 0.34117657, 0.30980396, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ftsgp"]
+_surfaces = [{
+"aabb": AABB(-0.4235589, -0.5670232, -0.09049106, 0.84711784, 1.1340668, 0.39771032),
+"format": 34359742465,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABgAFAAMABAAHAAYABgAHAAUABAAAAAcABQAIAAIAAgAJAAAAAgAIAAkAAAAKAAcAAAAJAAoABwALAAUABQALAAgABwAKAAsACQAMAAoACwANAAgACAAOAAkACQAOAAwACAANAA4ACgAMAA8ACgAPAAsADgAPAAwACwAPAA0ADgANAA8A"),
+"name": "Grey",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("ttzYvm8oEb/XS50+ttzYvsYpET9gU7m9ttzYvsYpET/XS50+uNzYPsYpET9gU7m9ttzYvm8oEb9gU7m9uNzYPsYpET/XS50+uNzYPm8oEb9gU7m9uNzYPm8oEb/XS50+brvAvugCAT/YS50+brvAvo0BAb/YS50+cLvAPo0BAb/YS50+cLvAPugCAT/YS50+cLvAPo0BAb/gnKM8brvAvugCAT/gnKM8brvAvo0BAb/gnKM8cLvAPugCAT/gnKM8")
+}, {
+"aabb": AABB(-0.38922644, -0.21842831, -0.0035485588, 0.778453, 0.39329612, 0.26982683),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAAAEAAMAAAAFAAQABQAGAAQABQAHAAYACAAJAAoACAALAAkACAAMAAsACAANAAwADQAOAAwADQAPAA4A"),
+"name": "Fence",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAACruAAD//wAAAAAAAAAAAAAAAAAA//8AACruAAD//6gW//8AAAAAqBb//wAA//+oFgAAAAAAAKgWAAAAAAAAVukq7gAA//9W6QAAAAAAAFbpAAAAAP//Vukq7gAA////////AAAAAP////8AAP////8AAAAAAAD//wAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ydgbw"]
+resource_name = "phase3_BathroomMirror"
+_surfaces = [{
+"aabb": AABB(-0.4235589, -0.5670232, -0.09049106, 0.84711784, 1.1340668, 0.39771032),
+"attribute_data": PackedByteArray("AADAPgAAgD8AACA/AABAPwAAID8AAIA/AADAPgAAQD8AAMA+AAAAPwAAID8AAIA+AAAgPwAAAD8AAMA+AACAPgAAAD4AAAA/AADAPgAAgD4AAMA+AAAAPwAAAD4AAIA+AAAgPwAAAD8AAGA/AACAPgAAYD8AAAA/AAAgPwAAgD4AACA/AACAPgAAYD8AAIA+AABgPwAAgD4AACA/AACAPgAAwD4AAIA+AADAPgAAgD4AAAA+AACAPgAAAD4AAIA+AAAgPwAAgD8AAMA+AACAPwAAwD4AAIA/AAAgPwAAgD8AACA/AACAPgAAYD8AAIA+AABgPwAAgD4AACA/AACAPgAAwD4AAIA+AAAgPwAAgD4AACA/AACAPgAAwD4AAIA+AAAAPgAAgD4AAMA+AACAPgAAwD4AAIA+AAAAPgAAgD4AACA/AACAPwAAwD4AAIA/AADAPgAAgD8AACA/AACAPwAAAD4AAIA+AAAgPwAAgD4AAMA+AACAPgAAYD8AAIA+"),
+"format": 34359742487,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAATABAAFAAVABMAFgAVABQAFgAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_mnsmg"),
+"name": "Grey",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("ttzYvm8oEb/XS50+ttzYvsYpET9gU7m9ttzYvsYpET/XS50+ttzYvm8oEb9gU7m9uNzYPm8oEb9gU7m9uNzYPsYpET/XS50+uNzYPsYpET9gU7m9uNzYPm8oEb/XS50+ttzYvm8oEb9gU7m9uNzYPm8oEb/XS50+uNzYPm8oEb9gU7m9ttzYvm8oEb/XS50+uNzYPsYpET9gU7m9ttzYvsYpET/XS50+ttzYvsYpET9gU7m9uNzYPsYpET/XS50+uNzYPsYpET/XS50+brvAvugCAT/YS50+ttzYvsYpET/XS50+cLvAPugCAT/YS50+uNzYPm8oEb/XS50+cLvAPo0BAb/YS50+ttzYvm8oEb/XS50+brvAvo0BAb/YS50+ttzYvsYpET/XS50+brvAvo0BAb/YS50+ttzYvm8oEb/XS50+brvAvugCAT/YS50+cLvAPugCAT/YS50+brvAvugCAT/gnKM8brvAvugCAT/YS50+cLvAPugCAT/gnKM8cLvAPo0BAb/YS50+cLvAPugCAT/gnKM8cLvAPugCAT/YS50+cLvAPo0BAb/gnKM8brvAvo0BAb/YS50+cLvAPo0BAb/gnKM8cLvAPo0BAb/YS50+brvAvo0BAb/gnKM8brvAvugCAT/YS50+brvAvo0BAb/gnKM8brvAvo0BAb/YS50+brvAvugCAT/gnKM8brvAvo0BAb/gnKM8cLvAPugCAT/gnKM8cLvAPo0BAb/gnKM8brvAvugCAT/gnKM8AAD/f/9///8AAP9//3///wAA/3//f///AAD/f/9///////9//3///////3//f///////f/9///////9//3////9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//fwAA////v/9/AAD///+//38AAP///7//fwAA////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+//3///////7//f///////v/9///////+//3///////7////9/////v////3////+/////f////7////9/////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
+}, {
+"aabb": AABB(-0.38922644, -0.21842831, -0.0035485588, 0.778453, 0.39329612, 0.26982683),
+"attribute_data": PackedByteArray("/x//P/9f/z//H/8//1//P/8f/z//X/8//1//P/8f/z//H/8//1//P/9f/z//H/8//x//P/9f/z//H/8//1//P/8f/z//X/8//1//P/8f/z//H/8//1//P/9f/z//H/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_cbljn"),
+"name": "Fence",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAACru/7///wAAAAD/vwAAAAAAAP+///8AACru/78AAKgW////v///qBYAAP+///+oFv///78AAKgWAAD/vwAAAAAq7tNr//+oFv//02v//wAAKu7TawAAqBb//9NrAABW6Sru/7///1bpAAD/vwAAVukAAP+///9W6Sru/78AAP//////v/////8AAP+//////////78AAP//AAD/vwAAVukq7tNr////////02v//1bpKu7TawAA/////9NrAAD/fwAA/38AAP9/AAD/f////3////9/////f////38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f////3////9/////f////38AAP9/AAD/fwAA/38AAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ftsgp")
+
+[node name="BathroomMirror" type="Node3D" unique_id=944343569]
+
+[node name="BathroomMirror" type="MeshInstance3D" parent="." unique_id=332104852]
+layers = 32
+mesh = SubResource("ArrayMesh_ydgbw")
+
+[node name="BathroomMirrorDoor" parent="." unique_id=1526694068 instance=ExtResource("1_d50hj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3575356)
+
+[node name="OpenMirrorDoor" type="Node3D" parent="." unique_id=1299978893]
+visible = false
+
+[node name="BathroomMirrorDoor" parent="OpenMirrorDoor" unique_id=793943375 instance=ExtResource("1_d50hj")]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -0.7242786, 0, 0.60377055)

@@ -22,7 +22,7 @@ func set_target(target: Patterned, locked:= false):
 	current_target.on_target()
 
 func clear_target(target: Patterned):
-	if current_target != target:
+	if current_target != target or current_target == null:
 		return
 	
 	reset_pattern()

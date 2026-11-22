@@ -38,3 +38,9 @@ func unhovered():
 
 func _exit_tree() -> void:
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+
+func disable_interactable():
+	input_ray_pickable = false
+
+func enable_interactable():
+	input_ray_pickable = true

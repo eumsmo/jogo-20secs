@@ -1,5 +1,7 @@
 [gd_scene format=4 uid="uid://c2r1o6tdvi2f5"]
 
+[ext_resource type="Material" uid="uid://b5w06tpd4x7h3" path="res://resources/materials/vfx/CompleteBlack.tres" id="1_pykfv"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aekex"]
 resource_name = "Black"
 vertex_color_use_as_albedo = true
@@ -43,4 +45,5 @@ shadow_mesh = SubResource("ArrayMesh_mbu1w")
 [node name="Arrow" type="Node3D" unique_id=1551828677]
 
 [node name="Arrow" type="MeshInstance3D" parent="." unique_id=1210424325]
+material_override = ExtResource("1_pykfv")
 mesh = SubResource("ArrayMesh_otd0u")

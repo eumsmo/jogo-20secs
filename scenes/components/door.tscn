@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://pqjqg772sf46"]
+
+[ext_resource type="PackedScene" uid="uid://by5turrkfnuvq" path="res://resources/models/phase2/fancy_door_frame.tscn" id="1_yrrgt"]
+[ext_resource type="PackedScene" uid="uid://boupmy2th60ol" path="res://resources/models/phase2/fancy_door.tscn" id="2_cbol8"]
+[ext_resource type="PackedScene" uid="uid://duk8yk3rfff3b" path="res://resources/models/phase2/fancy_door_knob_keyless.tscn" id="3_h1fut"]
+
+[node name="Door" type="Node3D" unique_id=1542209821]
+
+[node name="FancyDoorFrame" parent="." unique_id=465612966 instance=ExtResource("1_yrrgt")]
+
+[node name="FancyDoor" parent="." unique_id=173200455 instance=ExtResource("2_cbol8")]
+
+[node name="FancyDoorKnobKeyless" parent="FancyDoor" unique_id=2100792129 instance=ExtResource("3_h1fut")]
+
+[node name="FancyDoorOpened" parent="." unique_id=557807790 instance=ExtResource("2_cbol8")]
+transform = Transform3D(-0.8567344, 0, -0.5157579, 0, 1, 0, 0.5157579, 0, -0.8567344, 0.42448425, -4.7683716e-07, 1.1543505)
+visible = false
+
+[node name="FancyDoorKnobKeyless" parent="FancyDoorOpened" unique_id=85017689 instance=ExtResource("3_h1fut")]
+
+[editable path="FancyDoorFrame"]

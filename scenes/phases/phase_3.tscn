@@ -1,0 +1,2259 @@
+[gd_scene format=3 uid="uid://cfltysogfkth2"]
+
+[ext_resource type="PackedScene" uid="uid://orv7mf5mjxhm" path="res://resources/models/phase3/house_inside.tscn" id="1_6l8ip"]
+[ext_resource type="Script" uid="uid://cxjw1pb2uilr5" path="res://scripts/phase.gd" id="1_wmmqu"]
+[ext_resource type="PackedScene" uid="uid://pqjqg772sf46" path="res://scenes/components/door.tscn" id="2_fwj52"]
+[ext_resource type="Material" uid="uid://b5phwkultvryt" path="res://resources/materials/Ceil.tres" id="3_l7uou"]
+[ext_resource type="PackedScene" uid="uid://dcaxyjup2ddry" path="res://resources/models/phase3/toilet.tscn" id="4_os2ap"]
+[ext_resource type="PackedScene" uid="uid://ck3mcujf7uuxp" path="res://resources/models/phase3/fireplace.tscn" id="4_smdk6"]
+[ext_resource type="Script" uid="uid://dbinv34xc0tpr" path="res://scripts/interact/interactables/patterned.gd" id="5_6hhkj"]
+[ext_resource type="PackedScene" uid="uid://clig5hyu72ok4" path="res://resources/models/phase3/sofa.tscn" id="5_os2ap"]
+[ext_resource type="Material" uid="uid://dlgx6v3h2xhf0" path="res://resources/materials/vfx/highlighted.tres" id="6_av7uq"]
+[ext_resource type="PackedScene" uid="uid://msu4onycj1xp" path="res://resources/models/phase3/small_table.tscn" id="6_ly5n8"]
+[ext_resource type="Material" uid="uid://kb2catetgn4p" path="res://resources/materials/vfx/locked.tres" id="7_46pcy"]
+[ext_resource type="PackedScene" uid="uid://k1b1g3dryds2" path="res://resources/models/phase3/balcony.tscn" id="7_fshl6"]
+[ext_resource type="PackedScene" uid="uid://b42pn8878vei0" path="res://resources/models/phase3/rack.tscn" id="8_2o7ai"]
+[ext_resource type="Script" uid="uid://ccup386pslxg0" path="res://scripts/counter.gd" id="9_p103g"]
+[ext_resource type="PackedScene" uid="uid://c7umki4syhlmd" path="res://resources/models/phase2/window.tscn" id="9_wmmqu"]
+[ext_resource type="PackedScene" uid="uid://defjucdfdrn2i" path="res://resources/models/phase3/dinner_table.tscn" id="10_6hhkj"]
+[ext_resource type="PackedScene" uid="uid://c1hg75cxi2kgm" path="res://resources/models/phase3/inside_chair.tscn" id="11_ex26s"]
+[ext_resource type="Material" uid="uid://dcp258ghdupuw" path="res://resources/materials/Brown.tres" id="11_kqo7x"]
+[ext_resource type="Script" uid="uid://ypfbu7sipw7r" path="res://scripts/scene.gd" id="12_av7uq"]
+[ext_resource type="Material" uid="uid://cdj1opmtoccxq" path="res://resources/materials/Grey.tres" id="12_fq1ua"]
+[ext_resource type="Script" uid="uid://c3g0o3cunkyuj" path="res://scripts/interact/interactables/use_item_interactable.gd" id="13_5sliu"]
+[ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/interactables/change_scene_interactable.gd" id="13_46pcy"]
+[ext_resource type="PackedScene" uid="uid://bkcavx5bvtdnb" path="res://resources/models/phase3/bath_tub.tscn" id="13_ly5n8"]
+[ext_resource type="PackedScene" uid="uid://cf28yci5qmoth" path="res://resources/models/phase3/bath_faucet.tscn" id="14_fshl6"]
+[ext_resource type="PackedScene" uid="uid://dybkw4ji7oj7w" path="res://scenes/components/camera_stand.tscn" id="14_kyx3d"]
+[ext_resource type="Texture2D" uid="uid://bxfjw58nnv1xy" path="res://resources/sprites/flower_indicator.png" id="15_kibnp"]
+[ext_resource type="PackedScene" uid="uid://dol7110otibo0" path="res://resources/models/phase3/small_box_open.tscn" id="15_ld5oi"]
+[ext_resource type="PackedScene" uid="uid://nl55v1swyely" path="res://resources/models/phase3/trash_can.tscn" id="15_ly5n8"]
+[ext_resource type="PackedScene" uid="uid://b1127ab6reggu" path="res://resources/models/phase3/sink.tscn" id="16_fshl6"]
+[ext_resource type="PackedScene" uid="uid://cqi3f8nch3tq5" path="res://resources/models/phase3/stove.tscn" id="16_qr730"]
+[ext_resource type="Script" uid="uid://cahki8kabd553" path="res://scripts/interact/interactables/go_to_chapter.gd" id="17_7v5th"]
+[ext_resource type="PackedScene" uid="uid://5nm55x152v7k" path="res://resources/models/phase3/fridge.tscn" id="17_qiq6q"]
+[ext_resource type="PackedScene" uid="uid://bof6f6q6tfq7g" path="res://resources/models/phase2/grand_clock.tscn" id="18_duo4a"]
+[ext_resource type="Resource" uid="uid://c0dfpalx2y01p" path="res://resources/levels/level1.tres" id="18_hxkjw"]
+[ext_resource type="PackedScene" uid="uid://slxkdyrw3jpa" path="res://resources/models/phase3/path_marker.tscn" id="23_a0ipy"]
+[ext_resource type="PackedScene" uid="uid://dmpck8yhr2f67" path="res://resources/models/phase3/plate.tscn" id="23_yidlo"]
+[ext_resource type="PackedScene" uid="uid://bt8828jobikwb" path="res://resources/models/phase3/bathroom_light_holder.tscn" id="24_2o7ai"]
+[ext_resource type="PackedScene" uid="uid://0r4gvcg0lrb3" path="res://resources/models/phase3/bathroom_mirror.tscn" id="24_fshl6"]
+[ext_resource type="PackedScene" uid="uid://b3pivog53tnpw" path="res://resources/models/phase3/map_marker.tscn" id="24_rf3fd"]
+[ext_resource type="PackedScene" uid="uid://bnhld3f70y5v0" path="res://resources/models/phase3/map_end_marker.tscn" id="25_rf3fd"]
+[ext_resource type="PackedScene" uid="uid://bn3ssnj765x3e" path="res://resources/models/phase2/pointer.tscn" id="26_p1ahy"]
+[ext_resource type="PackedScene" uid="uid://bvf8q1kb4xvxr" path="res://resources/models/phase3/paper_1.tscn" id="26_yk2uw"]
+[ext_resource type="Material" uid="uid://hosl1egdb006" path="res://resources/materials/Grey_Mid.tres" id="27_frsad"]
+[ext_resource type="PackedScene" uid="uid://cc3wngp2a3sod" path="res://resources/models/phase3/paper_2.tscn" id="27_hbuq6"]
+[ext_resource type="Material" uid="uid://iuxm21dlfxvs" path="res://resources/materials/Black.tres" id="27_hwwor"]
+[ext_resource type="Material" uid="uid://bhrslc85heo8s" path="res://resources/materials/vfx/water/DarkBlue_Water_Bath.tres" id="28_2oi3e"]
+[ext_resource type="Resource" uid="uid://bo0ogvlnrqf3d" path="res://resources/itens/pointer.tres" id="28_tulss"]
+[ext_resource type="PackedScene" uid="uid://6hmq62i4ban2" path="res://resources/models/phase3/book.tscn" id="29_1q704"]
+[ext_resource type="Material" uid="uid://dg1jepudiwts7" path="res://resources/materials/vfx/phase3_bath_light_glow.tres" id="29_kyx3d"]
+[ext_resource type="Texture2D" uid="uid://cyvbdnet6e2sm" path="res://resources/sprites/map/start_map.png" id="29_tutd8"]
+[ext_resource type="Texture2D" uid="uid://bka73mhdtn6be" path="res://resources/sprites/map/end_map.png" id="30_4l8ae"]
+[ext_resource type="Script" uid="uid://cc47stsmi2lmq" path="res://scripts/pattern/light_pattern.gd" id="30_46pcy"]
+[ext_resource type="Texture2D" uid="uid://duyvhh5ak3cy5" path="res://resources/sprites/lightbulb.png" id="31_ld5oi"]
+[ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="32_21e76"]
+[ext_resource type="Texture2D" uid="uid://w5ejho3g80yq" path="res://resources/sprites/lightbulb_line.png" id="32_qr730"]
+[ext_resource type="Texture2D" uid="uid://bgyywk6y58kt3" path="res://resources/sprites/arrow.png" id="33_2t6pw"]
+[ext_resource type="Texture2D" uid="uid://3mn3toy27vc1" path="res://resources/sprites/map/x.png" id="33_4l8ae"]
+[ext_resource type="PackedScene" uid="uid://cvf8jfwsd6m4t" path="res://resources/models/phase1/hammer.tscn" id="33_ri7pd"]
+[ext_resource type="Script" uid="uid://gdx1msx8ssyi" path="res://scripts/interact/interactables/pickup_item.gd" id="34_2oi3e"]
+[ext_resource type="Texture2D" uid="uid://3ep5nawta0xm" path="res://resources/sprites/map/v.png" id="34_wiegk"]
+[ext_resource type="Resource" uid="uid://dc8c2m2dwvehx" path="res://resources/itens/hammer.tres" id="35_1q704"]
+[ext_resource type="Script" uid="uid://dacaijey35bqu" path="res://scripts/interact/interactable.gd" id="41_5rpng"]
+[ext_resource type="Resource" uid="uid://f2shrknh5bpl" path="res://resources/itens/small_pointer.tres" id="42_d0vjv"]
+[ext_resource type="PackedScene" uid="uid://dklcs0v142k7s" path="res://resources/models/phase3/vase.tscn" id="47_kqo7x"]
+[ext_resource type="PackedScene" uid="uid://ddgeygsriykj2" path="res://resources/models/phase3/petal.tscn" id="48_5sliu"]
+[ext_resource type="PackedScene" uid="uid://c2r1o6tdvi2f5" path="res://resources/models/phase1/arrow.tscn" id="48_fq1ua"]
+[ext_resource type="PackedScene" uid="uid://llcclrh03si0" path="res://resources/models/phase3/petal_002.tscn" id="49_uawrl"]
+[ext_resource type="PackedScene" uid="uid://dfhctpafdov8f" path="res://resources/models/phase3/petal_001.tscn" id="50_tv733"]
+[ext_resource type="PackedScene" uid="uid://dp321n0as212" path="res://resources/models/phase3/portrait.tscn" id="51_fdwj4"]
+[ext_resource type="Texture2D" uid="uid://cqsgx0ii5wjbs" path="res://resources/sprites/circleish.png" id="54_cl5ek"]
+[ext_resource type="PackedScene" uid="uid://ciimexoue3wo0" path="res://resources/models/phase3/paper_3.tscn" id="55_kmd6w"]
+[ext_resource type="Material" uid="uid://4fiib57bwe0v" path="res://resources/materials/vfx/CompleteBlackish.tres" id="59_f30f1"]
+[ext_resource type="PackedScene" uid="uid://b5djxodymkseb" path="res://resources/models/phase3/wall_portrait.tscn" id="59_njbst"]
+[ext_resource type="Script" uid="uid://1hpvwn6n1g6h" path="res://scripts/interact/interactables/multiple_interactables.gd" id="59_rd0e2"]
+[ext_resource type="Texture2D" uid="uid://d1ceppnseojbe" path="res://resources/sprites/itens/big_pointer.png" id="60_ajucn"]
+[ext_resource type="Resource" uid="uid://cxxf2pau1r4ug" path="res://resources/itens/big_pointer.tres" id="61_7v5th"]
+[ext_resource type="Texture2D" uid="uid://c7hwd03cr1311" path="res://resources/sprites/itens/pointer.png" id="61_g5vhj"]
+[ext_resource type="Texture2D" uid="uid://dvy7id61c7wfe" path="res://resources/sprites/itens/small_pointer.png" id="62_518l1"]
+[ext_resource type="PackedScene" uid="uid://ctjk83r6mhda5" path="res://resources/models/phase1/key.tscn" id="62_hxkjw"]
+[ext_resource type="Resource" uid="uid://c7q66k03g4ree" path="res://resources/itens/key.tres" id="63_fwl16"]
+[ext_resource type="Material" uid="uid://fxtilcw5bsx8" path="res://resources/materials/DarkBlue.tres" id="63_i65mh"]
+[ext_resource type="Texture2D" uid="uid://dxrx8atqe6cl2" path="res://resources/sprites/temp_outoforder.png" id="64_d50wq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_46pcy"]
+size = Vector3(1.5, 2.54, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qr730"]
+size = Vector3(1.5, 2.526, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uawrl"]
+size = Vector3(0.1, 0.4, 1.8)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tv733"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.1
+radial_segments = 8
+rings = 1
+cap_top = false
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdwj4"]
+size = Vector3(0.1, 0.4, 1.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_av7uq"]
+size = Vector3(1, 2.5948486, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ex26s"]
+size = Vector3(3.5, 2.75, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwwor"]
+size = Vector3(2.3, 1.1882629, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d0u6y"]
+size = Vector3(0.8, 0.3, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3gngh"]
+size = Vector3(0.03, 0.326, 0.06)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o8ni1"]
+size = Vector3(2.4311218, 1.2194214, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kibnp"]
+size = Vector3(2.2131348, 1.2194214, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fcnqv"]
+size = Vector3(0.19970703, 2.3443604, 1.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.305, 0.05, 0.086)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cl5ek"]
+size = Vector3(1.442627, 0.8704071, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yidlo"]
+size = Vector3(1.2895508, 2.116333, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vga31"]
+size = Vector3(0.8, 2.2091308, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_88oub"]
+size = Vector3(0.5, 0.1, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wmmqu"]
+size = Vector3(0.6934738, 1.550293, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6hhkj"]
+size = Vector3(2.4916916, 0.9992676, 0.1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
+size = Vector2(1.75, 3.5)
+
+[sub_resource type="Animation" id="Animation_2oi3e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material_override:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Book:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.037002563, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Book:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.0471976, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1q704"]
+resource_name = "flow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material_override:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1, -1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Book:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.98),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.037002563, 0), Vector3(0, 0.011508942, 0), Vector3(0, 0.037002563, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Book:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.98),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.0471976, 0), Vector3(0, -0.89606005, 0), Vector3(0, -1.0471976, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_21e76"]
+_data = {
+&"RESET": SubResource("Animation_2oi3e"),
+&"flow": SubResource("Animation_1q704")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(0.1, 0.407, 0.03)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kqo7x"]
+size = Vector3(0.835, 1.135, 0.329)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21e76"]
+albedo_color = Color(0.19076243, 0.19076231, 0.19076231, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2t6pw"]
+size = Vector3(0.3, 1.126, 0.49)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(0.75, 0.36914063, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_57qmd"]
+size = Vector3(0.1, 0.22053222, 0.5600586)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_weeiq"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d0u6y"]
+flip_faces = true
+size = Vector3(50, 50, 50)
+
+[node name="Phase3" type="Node3D" unique_id=1972877620 node_paths=PackedStringArray("starting_scene")]
+script = ExtResource("1_wmmqu")
+starting_scene = NodePath("Levels/Hallway")
+metadata/_custom_type_script = "uid://cxjw1pb2uilr5"
+
+[node name="BaseAmbient" type="Node3D" parent="." unique_id=1058561911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35.548447, 0)
+
+[node name="HouseInside" parent="BaseAmbient" unique_id=558754050 instance=ExtResource("1_6l8ip")]
+
+[node name="Doors" type="Node3D" parent="BaseAmbient" unique_id=937090135]
+
+[node name="Door" parent="BaseAmbient/Doors" unique_id=1542209821 instance=ExtResource("2_fwj52")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.494353, -0.0008125305, -3.32001)
+
+[node name="FancyDoorFrame" parent="BaseAmbient/Doors/Door/FancyDoorFrame" parent_id_path=PackedInt32Array(1542209821, 465612966) index="0" unique_id=1064917078]
+layers = 32
+material_override = ExtResource("3_l7uou")
+
+[node name="FancyDoor" parent="BaseAmbient/Doors/Door/FancyDoor" parent_id_path=PackedInt32Array(1542209821, 173200455) index="0" unique_id=196420203]
+layers = 32
+
+[node name="MapMarker" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="0" unique_id=445997022 instance=ExtResource("24_rf3fd")]
+transform = Transform3D(-9.272585e-08, 3, 9.272586e-08, -2.1213202, -1.3113416e-07, 2.1213202, 2.1213202, 0, 2.1213202, 0.14752749, 2.3034058, 0.38336134)
+
+[node name="MapMarker2" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="1" unique_id=2005727285 instance=ExtResource("24_rf3fd")]
+transform = Transform3D(-1.3113416e-07, 3, 0, -3, -1.3113416e-07, 0, 0, 0, 3, 0.14752749, 2.3034058, -0.4295979)
+
+[node name="MapMarker3" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="2" unique_id=890186399 instance=ExtResource("24_rf3fd")]
+transform = Transform3D(-1.3113416e-07, 3, 0, -3, -1.3113416e-07, 0, 0, 0, 3, 0.14752743, 0.82707214, 0.38336134)
+
+[node name="MapMarker4" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="3" unique_id=2069468247 instance=ExtResource("24_rf3fd")]
+transform = Transform3D(-9.272585e-08, 3, 9.272586e-08, -2.1213202, -1.3113416e-07, 2.1213202, 2.1213202, 0, 2.1213202, 0.14752743, 0.82707214, -0.4295979)
+
+[node name="MapEndMarker" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="4" unique_id=44120882 instance=ExtResource("25_rf3fd")]
+transform = Transform3D(-1.3113416e-07, 3, 0, -3, -1.3113416e-07, 0, 0, 0, 3, 0.14752746, 1.8200302, 0.38336134)
+
+[node name="MapEndMarker2" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="5" unique_id=942137051 instance=ExtResource("25_rf3fd")]
+transform = Transform3D(-9.272585e-08, 3, 9.272586e-08, -2.1213202, -1.3113416e-07, 2.1213202, 2.1213202, 0, 2.1213202, 0.14752746, 1.8200302, -0.43637276)
+
+[node name="MapEndMarker3" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="6" unique_id=1082254681 instance=ExtResource("25_rf3fd")]
+transform = Transform3D(-9.272585e-08, 3, 9.272586e-08, -2.1213202, -1.3113416e-07, 2.1213202, 2.1213202, 0, 2.1213202, 0.14752744, 1.3624763, 0.38336134)
+
+[node name="MapEndMarker4" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="7" unique_id=1499916259 instance=ExtResource("25_rf3fd")]
+transform = Transform3D(-1.3113416e-07, 3, 0, -3, -1.3113416e-07, 0, 0, 0, 3, 0.14752744, 1.3624763, -0.43637276)
+
+[node name="MapMarker5" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="8" unique_id=305917440 instance=ExtResource("24_rf3fd")]
+transform = Transform3D(-9.272585e-08, 3, 9.272586e-08, -2.1213202, -1.3113416e-07, 2.1213202, 2.1213202, 0, 2.1213202, 0.1475274, 0.23156357, 0.38336134)
+
+[node name="MapMarker6" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="9" unique_id=125816399 instance=ExtResource("24_rf3fd")]
+transform = Transform3D(-1.3113416e-07, 3, 0, -3, -1.3113416e-07, 0, 0, 0, 3, 0.1475274, 0.23156357, -0.4295979)
+
+[node name="PathMarker" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="10" unique_id=1677907898 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(-8.742278e-08, 2, 8.742278e-08, 0, -8.742278e-08, 2, 2, 8.742278e-08, 3.821371e-15, 0.14752743, 0.22715735, -0.22931337)
+
+[node name="PathMarker2" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="11" unique_id=1559157285 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(-1.0053619e-07, 2, 8.742278e-08, 0, -8.742278e-08, 2, 2.3, 8.742278e-08, 3.821371e-15, 0.1475275, 1.8219945, -0.25856352)
+
+[node name="PathMarker3" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="12" unique_id=1484472162 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(5.2453674e-07, 2, 3.019916e-07, 12, -8.742278e-08, -8.742278e-08, -5.245366e-07, 3.019916e-07, -2, 0.14752744, 0.9651296, -0.12066129)
+
+[node name="PathMarker10" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="13" unique_id=263239686 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(8.742278e-08, 2, 8.742278e-08, 2, -8.742278e-08, -8.742277e-08, -8.742277e-08, 8.742277e-08, -2, 0.14752749, 1.7110555, -0.12066132)
+
+[node name="PathMarker11" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="14" unique_id=1616368905 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(-8.742278e-08, 2, 8.742278e-08, 0, -8.742278e-08, 2, 2, 8.742278e-08, 3.821371e-15, 0.14752746, 0.8129232, -0.25243807)
+
+[node name="PathMarker12" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="15" unique_id=816650521 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(-8.742278e-08, 2, 8.742278e-08, 0, -8.742278e-08, 2, 2, 8.742278e-08, 3.821371e-15, 0.14752744, 0.8129232, -0.06466341)
+
+[node name="PathMarker13" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="16" unique_id=2018845504 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(8.742278e-08, 2, 8.742278e-08, 2, -8.742278e-08, -8.742277e-08, -8.742277e-08, 8.742277e-08, -2, 0.14752744, 0.71059775, 0.034131512)
+
+[node name="PathMarker14" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="17" unique_id=1576192667 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(1.5298988e-07, 2, 3.019916e-07, 3.5, -8.742278e-08, -8.742278e-08, -1.5298983e-07, 3.019916e-07, -2, 0.14752743, 0.42142463, 0.034131523)
+
+[node name="PathMarker15" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="18" unique_id=1031429107 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(-1.0053619e-07, 2, 8.742278e-08, 0, -8.742278e-08, 2, 2.3, 8.742278e-08, 3.821371e-15, 0.14752746, 0.2286222, 0.1747365)
+
+[node name="PathMarker16" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="19" unique_id=1768741535 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(8.742278e-08, 2, 8.742278e-08, 2, -8.742278e-08, -8.742277e-08, -8.742277e-08, 8.742277e-08, -2, 0.14752743, 0.34244132, -0.12066126)
+
+[node name="PathMarker17" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="20" unique_id=1658442722 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(-1.3113416e-07, 2, 8.742278e-08, 0, -8.742278e-08, 2, 3, 8.742278e-08, 3.821371e-15, 0.14752747, 1.3678167, 0.196702)
+
+[node name="PathMarker18" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="21" unique_id=338914891 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(8.742278e-08, 2, 8.742278e-08, 2, -8.742278e-08, -8.742277e-08, -8.742277e-08, 8.742277e-08, -2, 0.14752749, 1.4812772, 0.028594434)
+
+[node name="PathMarker19" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="22" unique_id=1026148129 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(-1.3113416e-07, 2, 8.742278e-08, 0, -8.742278e-08, 2, 3, 8.742278e-08, 3.821371e-15, 0.14752752, 2.299095, 0.196702)
+
+[node name="PathMarker20" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="23" unique_id=417606044 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(8.742278e-08, 2, 8.742278e-08, 2, -8.742278e-08, -8.742277e-08, -8.742277e-08, 8.742277e-08, -2, 0.14752752, 2.1757886, 0.028594404)
+
+[node name="PathMarker21" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoor" index="24" unique_id=1977508898 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(2.1855698e-07, 2, 3.019916e-07, 5, -8.742278e-08, -8.742278e-08, -2.185569e-07, 3.019916e-07, -2, 0.1475275, 1.8424718, 0.028594417)
+
+[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door/FancyDoor/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(1542209821, 2100792129) index="0" unique_id=1751405653]
+layers = 32
+
+[node name="FancyDoor" parent="BaseAmbient/Doors/Door/FancyDoorOpened" parent_id_path=PackedInt32Array(1542209821, 557807790) index="0" unique_id=196420203]
+layers = 32
+
+[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door/FancyDoorOpened/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(1542209821, 85017689) index="0" unique_id=1751405653]
+layers = 32
+
+[node name="Patterned" type="Area3D" parent="BaseAmbient/Doors/Door" unique_id=319696667 node_paths=PackedStringArray("mesh")]
+script = ExtResource("5_6hhkj")
+pattern = Array[int]([1, 0, 3])
+mesh = NodePath("../FancyDoorFrame/FancyDoorFrame")
+selected_material = ExtResource("6_av7uq")
+locked_material = ExtResource("7_46pcy")
+metadata/_custom_type_script = "uid://dbinv34xc0tpr"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door/Patterned" unique_id=2076565220]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.3049469, 0)
+shape = SubResource("BoxShape3D_46pcy")
+
+[node name="NextScene" type="Area3D" parent="BaseAmbient/Doors/Door" unique_id=1198330782 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.29070067, 0.6120987, -0.005661958)
+input_ray_pickable = false
+script = ExtResource("13_46pcy")
+scene = NodePath("../../../../Levels/Bathroom")
+metadata/_custom_type_script = "uid://bnjfxriyseeds"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door/NextScene" unique_id=1725422565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
+shape = SubResource("BoxShape3D_qr730")
+
+[node name="Door2" parent="BaseAmbient/Doors" unique_id=2022432079 instance=ExtResource("2_fwj52")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7843122, -0.0008125305, 9.143403)
+
+[node name="FancyDoorFrame" parent="BaseAmbient/Doors/Door2/FancyDoorFrame" parent_id_path=PackedInt32Array(2022432079, 465612966) index="0" unique_id=1064917078]
+layers = 32
+material_override = ExtResource("3_l7uou")
+
+[node name="FancyDoor" parent="BaseAmbient/Doors/Door2/FancyDoor" parent_id_path=PackedInt32Array(2022432079, 173200455) index="0" unique_id=196420203]
+layers = 32
+
+[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door2/FancyDoor/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(2022432079, 2100792129) index="0" unique_id=1751405653]
+layers = 32
+
+[node name="FancyDoor" parent="BaseAmbient/Doors/Door2/FancyDoorOpened" parent_id_path=PackedInt32Array(2022432079, 557807790) index="0" unique_id=196420203]
+layers = 32
+
+[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door2/FancyDoorOpened/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(2022432079, 85017689) index="0" unique_id=1751405653]
+layers = 32
+
+[node name="NextScene" type="Area3D" parent="BaseAmbient/Doors/Door2" unique_id=458127908 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.29070067, 0.6120987, -0.005661958)
+input_ray_pickable = false
+script = ExtResource("13_46pcy")
+scene = NodePath("../../../../Levels/Kitchen")
+metadata/_custom_type_script = "uid://bnjfxriyseeds"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door2/NextScene" unique_id=1396000897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
+shape = SubResource("BoxShape3D_qr730")
+
+[node name="DoorWoods" type="Node3D" parent="BaseAmbient/Doors/Door2" unique_id=401722219]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.9887551, -0.021274567, -3.636724e-08)
+
+[node name="Counter" type="Node" parent="BaseAmbient/Doors/Door2/DoorWoods" unique_id=1454349054]
+script = ExtResource("9_p103g")
+target = 3
+remove_item_on_target = ExtResource("35_1q704")
+metadata/_custom_type_script = "uid://ccup386pslxg0"
+
+[node name="Wood" type="Node3D" parent="BaseAmbient/Doors/Door2/DoorWoods" unique_id=2064580265]
+transform = Transform3D(-4.3711374e-08, 0.09410831, -0.9955616, 0, 0.99556196, 0.094108276, 0.99999964, 4.113605e-09, -4.351738e-08, 0.013815926, 2.0868497, -1.0744361)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood" unique_id=2051140268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("11_kqo7x")
+mesh = SubResource("BoxMesh_uawrl")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood" unique_id=1036499065]
+transform = Transform3D(-4.4703484e-08, -0.92144346, -0.3885128, 1.0000005, -2.9802322e-08, -1.4901161e-08, 0, -0.38851297, 0.92144364, 0.1741972, 0.11875963, -0.782022)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood" unique_id=654590149]
+transform = Transform3D(-4.4703484e-08, -0.9956765, 0.09288955, 1.0000004, -4.377216e-08, 7.450581e-09, 0, 0.09288956, 0.99567676, 0.1628828, -0.12917614, -0.77454674)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood" unique_id=1550776759]
+transform = Transform3D(0.12510802, -0.9921432, 1.4901161e-08, 0.9921437, 0.12510808, 7.450581e-09, 1.4901161e-08, 9.313226e-10, 1.0000006, 0.16043472, 0.11216378, 0.77537113)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood" unique_id=1195204280]
+transform = Transform3D(-0.110740155, -0.98910147, 0.09703215, 0.99379104, -0.11126521, 7.450581e-09, 0.010796301, 0.096429646, 0.9952816, 0.16043472, -0.12802958, 0.74984056)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="HammerUse" type="Area3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood" unique_id=545576641 node_paths=PackedStringArray("delete_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+script = ExtResource("13_5sliu")
+item = ExtResource("35_1q704")
+remove_item = false
+delete_nodes = [NodePath("..")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood/HammerUse" unique_id=1726951610]
+shape = SubResource("BoxShape3D_fdwj4")
+
+[node name="Wood2" type="Node3D" parent="BaseAmbient/Doors/Door2/DoorWoods" unique_id=90725816]
+transform = Transform3D(-4.371136e-08, -0.1604749, -0.98703957, 3.1086245e-15, 0.9870398, -0.1604748, 0.9999995, -7.014579e-09, -4.314486e-08, 0.06772615, 1.3760502, -1.0744305)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood2" unique_id=1038733007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("11_kqo7x")
+mesh = SubResource("BoxMesh_uawrl")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood2" unique_id=1453983749]
+transform = Transform3D(-0.05938763, -0.98396736, -0.16817077, 0.91556275, -0.12082036, 0.38359916, -0.3977676, -0.13118988, 0.9080589, 0.17420292, 0.13109231, -0.82076126)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood2" unique_id=1316776110]
+transform = Transform3D(-0.024204357, -0.9981147, -0.056404028, 0.99970573, -0.02426802, 0.0004441142, -0.0018121153, -0.05637661, 0.9984082, 0.16288662, -0.11499405, -0.8123782)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood2" unique_id=1732564580]
+transform = Transform3D(0.12510802, -0.9921432, 1.4901161e-08, 0.9921437, 0.12510808, 1.4901161e-08, 1.4901161e-08, -1.8626451e-09, 1.0000006, 0.16043568, 0.11476922, 0.79139614)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood2" unique_id=1436500771]
+transform = Transform3D(-0.10048467, -0.98279727, 0.1549598, 0.9947942, -0.101899974, -0.0011967868, 0.016966596, 0.15403278, 0.9879203, 0.16043663, -0.11520457, 0.8287216)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="HammerUse" type="Area3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood2" unique_id=757615812 node_paths=PackedStringArray("delete_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+script = ExtResource("13_5sliu")
+item = ExtResource("35_1q704")
+remove_item = false
+delete_nodes = [NodePath("..")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood2/HammerUse" unique_id=79193916]
+shape = SubResource("BoxShape3D_fdwj4")
+
+[node name="Wood3" type="Node3D" parent="BaseAmbient/Doors/Door2/DoorWoods" unique_id=901230441]
+transform = Transform3D(-4.371136e-08, 0.057720106, -0.99833244, 6.661338e-16, 0.99833274, 0.05772008, 0.9999995, 2.523025e-09, -4.3638494e-08, 0.0138159245, 0.5655379, -1.0744343)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood3" unique_id=1334068871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("11_kqo7x")
+mesh = SubResource("BoxMesh_uawrl")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood3" unique_id=1027775852]
+transform = Transform3D(-4.4703484e-08, -0.92144346, -0.3885128, 1.0000006, -2.9802322e-08, -1.4901161e-08, 0, -0.388513, 0.9214437, 0.17419815, 0.12055206, -0.81363726)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood3" unique_id=828661604]
+transform = Transform3D(-4.4703484e-08, -0.9956765, 0.09288955, 1.0000005, -4.377216e-08, 1.1175871e-08, -3.7252903e-09, 0.09288956, 0.9956768, 0.16288376, -0.12421107, -0.7981892)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood3" unique_id=1745829435]
+transform = Transform3D(0.12510802, -0.9921432, 1.4901161e-08, 0.99214375, 0.12510808, 7.450581e-09, 1.4901161e-08, 9.313226e-10, 1.0000007, 0.16043568, 0.12122834, 0.81458145)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood3" unique_id=1345369147]
+transform = Transform3D(-0.110740155, -0.98910147, 0.09703215, 0.99379116, -0.11126522, 7.450581e-09, 0.010796297, 0.09642965, 0.9952816, 0.16043568, -0.1299671, 0.8271212)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="HammerUse" type="Area3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood3" unique_id=1562745381 node_paths=PackedStringArray("delete_nodes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+script = ExtResource("13_5sliu")
+item = ExtResource("35_1q704")
+remove_item = false
+delete_nodes = [NodePath("..")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood3/HammerUse" unique_id=1776984871]
+shape = SubResource("BoxShape3D_fdwj4")
+
+[node name="WoodFallen" type="Node3D" parent="BaseAmbient/Doors/Door2/DoorWoods" unique_id=1142736057]
+transform = Transform3D(5.463398e-15, 0.094108365, -0.9955616, 0.9999996, -4.3517392e-08, -4.113602e-09, -4.371137e-08, -0.99556184, -0.09410831, -0.13995665, -0.057683706, -0.49720478)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/WoodFallen" unique_id=2012104230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("11_kqo7x")
+mesh = SubResource("BoxMesh_uawrl")
+
+[node name="WoodFallen2" type="Node3D" parent="BaseAmbient/Doors/Door2/DoorWoods" unique_id=747012957]
+transform = Transform3D(-4.3869988e-09, -0.006284371, -0.9999799, 0.9999995, -4.3517385e-08, -4.113601e-09, -4.349066e-08, -0.99998015, 0.006284401, 0.048957705, -0.057683706, 0.58498436)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/WoodFallen2" unique_id=391528857]
+transform = Transform3D(0.9940724, 0.075556286, 0.07817568, -0.106772035, 0.8139844, 0.5709899, -0.020491892, -0.57595223, 0.8172265, 0.14035988, 0.12063789, 0.41410667)
+material_override = ExtResource("11_kqo7x")
+mesh = SubResource("BoxMesh_uawrl")
+
+[node name="WoodFallen3" type="Node3D" parent="BaseAmbient/Doors/Door2/DoorWoods" unique_id=1955056262]
+transform = Transform3D(0.029788742, -0.43404272, -0.9003994, 0.9976528, 0.06846987, -3.7252903e-09, 0.061650228, -0.8982866, 0.43506363, 0.6037047, -0.07097316, -0.0050101727)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BaseAmbient/Doors/Door2/DoorWoods/WoodFallen3" unique_id=2021095847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("11_kqo7x")
+mesh = SubResource("BoxMesh_uawrl")
+
+[node name="ClickBlock" type="Area3D" parent="BaseAmbient/Doors/Door2" unique_id=1908415017]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.069302574, 0.6120987, -0.0056619677)
+input_ray_pickable = false
+script = ExtResource("41_5rpng")
+metadata/_custom_type_script = "uid://dacaijey35bqu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door2/ClickBlock" unique_id=1387021410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
+shape = SubResource("BoxShape3D_qr730")
+
+[node name="Door3" parent="BaseAmbient/Doors" unique_id=1528351947 instance=ExtResource("2_fwj52")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.676056, -0.008296967, 3.488769)
+
+[node name="FancyDoorFrame" parent="BaseAmbient/Doors/Door3/FancyDoorFrame" parent_id_path=PackedInt32Array(1528351947, 465612966) index="0" unique_id=1064917078]
+layers = 32
+material_override = ExtResource("3_l7uou")
+
+[node name="FancyDoor" parent="BaseAmbient/Doors/Door3/FancyDoor" parent_id_path=PackedInt32Array(1528351947, 173200455) index="0" unique_id=196420203]
+layers = 32
+
+[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door3/FancyDoor/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(1528351947, 2100792129) index="0" unique_id=1751405653]
+layers = 32
+
+[node name="Sprite3D" type="Sprite3D" parent="BaseAmbient/Doors/Door3/FancyDoor" parent_id_path=PackedInt32Array(1528351947, 173200455) index="2" unique_id=1802228952]
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0.08198309, 1.7556343, -3.5835943e-09)
+visible = false
+texture = ExtResource("15_kibnp")
+
+[node name="FancyDoorOpened" parent="BaseAmbient/Doors/Door3" index="2" unique_id=557807790]
+transform = Transform3D(0.67687595, 0, -0.7360971, 0, 1, 0, 0.7360971, 0, 0.67687595, 0.58584857, -4.7683716e-07, 0.30215144)
+
+[node name="FancyDoor" parent="BaseAmbient/Doors/Door3/FancyDoorOpened" index="0" unique_id=196420203]
+layers = 32
+
+[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door3/FancyDoorOpened/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(1528351947, 85017689) index="0" unique_id=1751405653]
+layers = 32
+
+[node name="Patterned" type="Area3D" parent="BaseAmbient/Doors/Door3" unique_id=787653714 node_paths=PackedStringArray("mesh", "active_on_selected")]
+input_ray_pickable = false
+script = ExtResource("5_6hhkj")
+pattern = Array[int]([2, 3, 2, 1, 0])
+mesh = NodePath("../FancyDoorFrame/FancyDoorFrame")
+selected_material = ExtResource("6_av7uq")
+locked_material = ExtResource("7_46pcy")
+active_on_selected = [NodePath("../FancyDoor/Sprite3D")]
+metadata/_custom_type_script = "uid://dbinv34xc0tpr"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door3/Patterned" unique_id=1407619402]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.3049469, 0)
+shape = SubResource("BoxShape3D_46pcy")
+
+[node name="NextScene" type="Area3D" parent="BaseAmbient/Doors/Door3" unique_id=473244986 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.29070067, 0.6120987, -0.005661958)
+input_ray_pickable = false
+script = ExtResource("13_46pcy")
+scene = NodePath("../../../../Levels/Pantry")
+metadata/_custom_type_script = "uid://bnjfxriyseeds"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door3/NextScene" unique_id=431806617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
+shape = SubResource("BoxShape3D_qr730")
+
+[node name="Door4" parent="BaseAmbient/Doors" unique_id=776691643 instance=ExtResource("2_fwj52")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.6308062, -0.008296967, -5.997151)
+
+[node name="FancyDoorFrame" parent="BaseAmbient/Doors/Door4/FancyDoorFrame" parent_id_path=PackedInt32Array(776691643, 465612966) index="0" unique_id=1064917078]
+layers = 32
+material_override = ExtResource("3_l7uou")
+
+[node name="FancyDoor" parent="BaseAmbient/Doors/Door4/FancyDoor" parent_id_path=PackedInt32Array(776691643, 173200455) index="0" unique_id=196420203]
+layers = 32
+
+[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door4/FancyDoor/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(776691643, 2100792129) index="0" unique_id=1751405653]
+layers = 32
+
+[node name="FancyDoor" parent="BaseAmbient/Doors/Door4/FancyDoorOpened" parent_id_path=PackedInt32Array(776691643, 557807790) index="0" unique_id=196420203]
+layers = 32
+
+[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door4/FancyDoorOpened/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(776691643, 85017689) index="0" unique_id=1751405653]
+layers = 32
+
+[node name="OpenWithKey" type="Area3D" parent="BaseAmbient/Doors/Door4" unique_id=268101810]
+input_ray_pickable = false
+script = ExtResource("13_5sliu")
+item = ExtResource("63_fwl16")
+metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door4/OpenWithKey" unique_id=225303750]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.3049469, 0)
+shape = SubResource("BoxShape3D_46pcy")
+
+[node name="NextChapter" type="Area3D" parent="BaseAmbient/Doors/Door4" unique_id=1322198420]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.29070067, 0.6120987, -0.005661958)
+input_ray_pickable = false
+script = ExtResource("17_7v5th")
+level = ExtResource("18_hxkjw")
+metadata/_custom_type_script = "uid://dacaijey35bqu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door4/NextChapter" unique_id=132204164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
+shape = SubResource("BoxShape3D_qr730")
+
+[node name="Door5" parent="BaseAmbient/Doors" unique_id=372918242 instance=ExtResource("2_fwj52")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.3701537, -0.119636536, -1.2100595)
+
+[node name="FancyDoorFrame" parent="BaseAmbient/Doors/Door5/FancyDoorFrame" parent_id_path=PackedInt32Array(372918242, 465612966) index="0" unique_id=1064917078]
+layers = 32
+material_override = ExtResource("3_l7uou")
+
+[node name="FancyDoor" parent="BaseAmbient/Doors/Door5/FancyDoor" parent_id_path=PackedInt32Array(372918242, 173200455) index="0" unique_id=196420203]
+layers = 32
+
+[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door5/FancyDoor/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(372918242, 2100792129) index="0" unique_id=1751405653]
+layers = 32
+
+[node name="FancyDoor" parent="BaseAmbient/Doors/Door5/FancyDoorOpened" parent_id_path=PackedInt32Array(372918242, 557807790) index="0" unique_id=196420203]
+layers = 32
+
+[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door5/FancyDoorOpened/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(372918242, 85017689) index="0" unique_id=1751405653]
+layers = 32
+
+[node name="DoorWoods" type="Node3D" parent="BaseAmbient/Doors/Door5" unique_id=310786052]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.9887551, -0.021274567, -3.636724e-08)
+
+[node name="Wood" type="Node3D" parent="BaseAmbient/Doors/Door5/DoorWoods" unique_id=796654363]
+transform = Transform3D(-4.3711374e-08, 0.09410831, -0.9955616, 0, 0.99556196, 0.094108276, 0.99999964, 4.113605e-09, -4.351738e-08, 0.013815926, 2.0868497, -1.0744361)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood" unique_id=1752104892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("11_kqo7x")
+mesh = SubResource("BoxMesh_uawrl")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood" unique_id=829848662]
+transform = Transform3D(-4.4703484e-08, -0.92144346, -0.3885128, 1.0000005, -2.9802322e-08, -1.4901161e-08, 0, -0.38851297, 0.92144364, 0.1741972, 0.11875963, -0.782022)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood" unique_id=634443583]
+transform = Transform3D(-4.4703484e-08, -0.9956765, 0.09288955, 1.0000004, -4.377216e-08, 7.450581e-09, 0, 0.09288956, 0.99567676, 0.1628828, -0.12917614, -0.77454674)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood" unique_id=927548384]
+transform = Transform3D(0.12510802, -0.9921432, 1.4901161e-08, 0.9921437, 0.12510808, 7.450581e-09, 1.4901161e-08, 9.313226e-10, 1.0000006, 0.16043472, 0.11216378, 0.77537113)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood" unique_id=1274368216]
+transform = Transform3D(-0.110740155, -0.98910147, 0.09703215, 0.99379104, -0.11126521, 7.450581e-09, 0.010796301, 0.096429646, 0.9952816, 0.16043472, -0.12802958, 0.74984056)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="Wood2" type="Node3D" parent="BaseAmbient/Doors/Door5/DoorWoods" unique_id=2010117011]
+transform = Transform3D(-4.371136e-08, -0.1604749, -0.98703957, 3.1086245e-15, 0.9870398, -0.1604748, 0.9999995, -7.014579e-09, -4.314486e-08, 0.06772615, 1.3760502, -1.0744305)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood2" unique_id=1036926043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
+material_override = ExtResource("11_kqo7x")
+mesh = SubResource("BoxMesh_uawrl")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood2" unique_id=2123604653]
+transform = Transform3D(-0.05938763, -0.98396736, -0.16817077, 0.91556275, -0.12082036, 0.38359916, -0.3977676, -0.13118988, 0.9080589, 0.17420292, 0.13109231, -0.82076126)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood2" unique_id=1251138531]
+transform = Transform3D(-0.024204357, -0.9981147, -0.056404028, 0.99970573, -0.02426802, 0.0004441142, -0.0018121153, -0.05637661, 0.9984082, 0.16288662, -0.11499405, -0.8123782)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood2" unique_id=1067138942]
+transform = Transform3D(0.12510802, -0.9921432, 1.4901161e-08, 0.9921437, 0.12510808, 1.4901161e-08, 1.4901161e-08, -1.8626451e-09, 1.0000006, 0.16043568, 0.11476922, 0.79139614)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood2" unique_id=1072435113]
+transform = Transform3D(-0.10048467, -0.98279727, 0.1549598, 0.9947942, -0.101899974, -0.0011967868, 0.016966596, 0.15403278, 0.9879203, 0.16043663, -0.11520457, 0.8287216)
+material_override = ExtResource("12_fq1ua")
+mesh = SubResource("CylinderMesh_tv733")
+
+[node name="Static" type="Node3D" parent="BaseAmbient" unique_id=290911926]
+
+[node name="Toilet" parent="BaseAmbient/Static" unique_id=671017704 instance=ExtResource("4_os2ap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.397976, 0, -9.218906)
+
+[node name="Fireplace" parent="BaseAmbient/Static" unique_id=1889551830 instance=ExtResource("4_smdk6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.978532, 0.10970688, 11.765693)
+
+[node name="Sofa" parent="BaseAmbient/Static" unique_id=1144757253 instance=ExtResource("5_os2ap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7173905, 0, 6.090711)
+
+[node name="SmallTable" parent="BaseAmbient/Static" unique_id=1693436289 instance=ExtResource("6_ly5n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0076466, 0.15568542, 8.546247)
+
+[node name="SmallTable" parent="BaseAmbient/Static/SmallTable" index="0" unique_id=1178793272]
+material_override = ExtResource("3_l7uou")
+
+[node name="Balcony" parent="BaseAmbient/Static" unique_id=1914068267 instance=ExtResource("7_fshl6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.581854, 0.6069145, 9.17347)
+
+[node name="Window" parent="BaseAmbient/Static" unique_id=369382780 instance=ExtResource("9_wmmqu")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.709072, 2.0689735, 8.342641)
+
+[node name="Window2" parent="BaseAmbient/Static" unique_id=1163198417 instance=ExtResource("9_wmmqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.204413, 2.2982197, 8.583728)
+
+[node name="DinnerTable" parent="BaseAmbient/Static" unique_id=960412411 instance=ExtResource("10_6hhkj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.9623117, 0, -1.2571074)
+
+[node name="Plate" parent="BaseAmbient/Static/DinnerTable" unique_id=770521819 instance=ExtResource("23_yidlo")]
+transform = Transform3D(0.66673195, 0, 0.3647857, 0, 0.7600001, 0, -0.3647857, 0, 0.66673195, -0.61642003, 1.2095642, 1.2674575)
+
+[node name="InsideChair" parent="BaseAmbient/Static/DinnerTable" unique_id=569781967 instance=ExtResource("11_ex26s")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.074919, 0, 0)
+
+[node name="InsideChair2" parent="BaseAmbient/Static/DinnerTable" unique_id=1805904658 instance=ExtResource("11_ex26s")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.2353028, 0, 1.3099502)
+
+[node name="InsideChair3" parent="BaseAmbient/Static/DinnerTable" unique_id=1810352916 instance=ExtResource("11_ex26s")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.2353026, 0, -1.3088117)
+
+[node name="InsideChair5" parent="BaseAmbient/Static/DinnerTable" unique_id=1494875846 instance=ExtResource("11_ex26s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2348752, 0, 1.3099505)
+
+[node name="InsideChair6" parent="BaseAmbient/Static/DinnerTable" unique_id=678667184 instance=ExtResource("11_ex26s")]
+transform = Transform3D(0.8353201, 0, -0.54976386, 0, 1, 0, 0.54976386, 0, 0.8353201, -1.2556257, 0, -1.6122725)
+
+[node name="Plate2" parent="BaseAmbient/Static/DinnerTable" unique_id=1835761282 instance=ExtResource("23_yidlo")]
+transform = Transform3D(0.30043378, 0, 0.69809717, 0, 0.7600001, 0, -0.69809717, 0, 0.30043378, 0.617394, 1.2095642, 0.007360935)
+
+[node name="Plate3" parent="BaseAmbient/Static/DinnerTable" unique_id=2117120211 instance=ExtResource("23_yidlo")]
+transform = Transform3D(0.2968929, 0, 0.69961035, 0, 0.7600001, 0, -0.69961035, 0, 0.2968929, -0.5013107, 1.2095642, -1.5255883)
+
+[node name="Plate4" parent="BaseAmbient/Static/DinnerTable" unique_id=893426176 instance=ExtResource("23_yidlo")]
+transform = Transform3D(0.7503705, 0, -0.12059912, 0, 0.7600001, 0, 0.12059912, 0, 0.7503705, 0.5219781, 1.2095642, -1.1945758)
+
+[node name="Plate5" parent="BaseAmbient/Static/DinnerTable" unique_id=266013284 instance=ExtResource("23_yidlo")]
+transform = Transform3D(0.33601478, 0, 0.6816848, 0, 0.7600001, 0, -0.6816848, 0, 0.33601478, 0.59942055, 1.2095642, 1.2369814)
+
+[node name="Window3" parent="BaseAmbient/Static" unique_id=1145960291 instance=ExtResource("9_wmmqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.204413, 2.2982197, -1.2208457)
+
+[node name="TrashCan" parent="BaseAmbient/Static" unique_id=749459464 instance=ExtResource("15_ly5n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.541335, 0.08591461, -8.990692)
+
+[node name="Sink" parent="BaseAmbient/Static" unique_id=122587018 instance=ExtResource("16_fshl6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1092086, 1.0445595, -9.397773)
+
+[node name="Window4" parent="BaseAmbient/Static" unique_id=1791951865 instance=ExtResource("9_wmmqu")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.617895, 2.0689735, -7.1937375)
+
+[node name="Levels" type="Node3D" parent="." unique_id=981331737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35.548447, 0)
+
+[node name="Hallway" type="Node3D" parent="Levels" unique_id=1453181900 node_paths=PackedStringArray("camera", "on_scene_only")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.15349, 0, -1.0361676)
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("CloseLight"), NodePath("DistantLight")]
+
+[node name="NextArea" type="Area3D" parent="Levels/Hallway" unique_id=2076215658 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.40620264, 0, 0.91378295, 0, 1, 0, -0.91378295, 0, 0.40620264, -2.9384391, 1.7177658, -1.8111165)
+script = ExtResource("13_46pcy")
+scene = NodePath("../InternalScenes/DoorScene")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Hallway/NextArea" unique_id=369487648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45257568, 0)
+shape = SubResource("BoxShape3D_av7uq")
+
+[node name="NextArea2" type="Area3D" parent="Levels/Hallway" unique_id=1368997603 node_paths=PackedStringArray("scene")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3375454, 1.4541473, 1.8773155)
+script = ExtResource("13_46pcy")
+scene = NodePath("../../LivingRoom")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Hallway/NextArea2" unique_id=1395447072]
+shape = SubResource("BoxShape3D_ex26s")
+
+[node name="CameraStand" parent="Levels/Hallway" unique_id=72479423 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4181337, 1.2028122, -6.1988594e-08)
+
+[node name="Camera3D" parent="Levels/Hallway/CameraStand" index="0" unique_id=1331824599]
+current = true
+
+[node name="ChangeSceneInteractable" parent="Levels/Hallway/CameraStand/Camera3D" index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="MeshInstance3D" parent="Levels/Hallway/CameraStand" index="1" unique_id=1075611605]
+visible = true
+
+[node name="Scenario" type="Node3D" parent="Levels/Hallway" unique_id=44889517]
+
+[node name="CloseLight" type="OmniLight3D" parent="Levels/Hallway" unique_id=1357184873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3398104, 2.6690464, 0)
+light_energy = 2.0
+omni_range = 11.833762
+
+[node name="DistantLight" type="OmniLight3D" parent="Levels/Hallway" unique_id=464233788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.648705, 1.8174686, 0)
+light_energy = 2.0
+omni_range = 7.166872
+
+[node name="InternalScenes" type="Node3D" parent="Levels/Hallway" unique_id=1323118218]
+
+[node name="DoorScene" type="Node3D" parent="Levels/Hallway/InternalScenes" unique_id=560464070 node_paths=PackedStringArray("camera", "on_scene_only")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5482965, 0, -0.30404067)
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("DoorLight"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+metadata/_custom_type_script = "uid://ypfbu7sipw7r"
+
+[node name="CameraStand" parent="Levels/Hallway/InternalScenes/DoorScene" unique_id=1803911997 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(0.9828045, -0.0077109835, 0.18448825, -4.656613e-10, 0.99912775, 0.041760147, -0.18464935, -0.041042056, 0.9819472, 0.27609205, 0.9629364, 0.14286768)
+
+[node name="ChangeSceneInteractable" parent="Levels/Hallway/InternalScenes/DoorScene/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1803911997, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9987074, 0.00087845477, -0.05081965, -0.00088222, 0.99999976, -5.1675706e-05, 0.05081959, 9.6443575e-05, 0.99870783, -0.033305913, -0.4730417, -0.66054887)
+scene = NodePath("../../../../..")
+
+[node name="DoorLight" type="OmniLight3D" parent="Levels/Hallway/InternalScenes/DoorScene" unique_id=1565596812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0041952133, 1.5412712, 0.5830964)
+visible = false
+light_energy = 1.5
+omni_range = 10.0
+
+[node name="LivingRoom" type="Node3D" parent="Levels" unique_id=1113038264 node_paths=PackedStringArray("camera", "on_scene_only")]
+transform = Transform3D(0.7588419, 0, 0.6512749, 0, 1, 0, -0.6512749, 0, 0.7588419, 8.799813, 0, 6.8635745)
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("OmniLight3D"), NodePath("OmniLight3D2"), NodePath("SpotLight3D")]
+
+[node name="NextArea" type="Area3D" parent="Levels/LivingRoom" unique_id=184793682 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.75927126, 0, -0.6507742, 0, 1, 0, 0.6507742, 0, 0.75927126, -2.4726412, 0.519176, 0.16245632)
+script = ExtResource("13_46pcy")
+scene = NodePath("../InternalScenes/TableScene")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/LivingRoom/NextArea" unique_id=456666909]
+transform = Transform3D(1.0000004, 0, -1.1641532e-10, 0, 1, 0, 1.1641532e-10, 0, 1.0000004, 0, 0.09413147, 0)
+shape = SubResource("BoxShape3D_hwwor")
+
+[node name="CameraStand" parent="Levels/LivingRoom" unique_id=967050185 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4181337, 1.2028122, -6.1988594e-08)
+
+[node name="ChangeSceneInteractable" parent="Levels/LivingRoom/CameraStand/Camera3D" parent_id_path=PackedInt32Array(967050185, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.398681, -0.3768747, -0.54202175)
+
+[node name="Scenario" type="Node3D" parent="Levels/LivingRoom" unique_id=1403459706]
+
+[node name="SmallBoxOpen" parent="Levels/LivingRoom/Scenario" unique_id=1717161670 instance=ExtResource("15_ld5oi")]
+transform = Transform3D(0.34818918, 0, -0.9374243, 0, 1, 0, 0.9374243, 0, 0.34818918, -2.6155083, 0.96352386, -0.11920333)
+
+[node name="Markers" type="Node3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid" parent_id_path=PackedInt32Array(1717161670, 1811716749) index="1" unique_id=1039446487]
+
+[node name="MapEndMarker" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=375732095 instance=ExtResource("25_rf3fd")]
+transform = Transform3D(1.0606601, 0, -1.0606601, 0, 1.5, 0, 1.0606601, 0, 1.0606601, -0.12041855, 0.19763565, 0.11244631)
+
+[node name="MapMarker" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=215346487 instance=ExtResource("24_rf3fd")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.24558926, 0.195961, -0.11454201)
+
+[node name="PathMarker" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=1638356710 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18245602, 0.19595718, -0.11902094)
+
+[node name="PathMarker2" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=180900751 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06174317, 0.19595718, -7.390743e-06)
+
+[node name="PathMarker3" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=1738489174 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055440724, 0.19595718, -0.111608736)
+
+[node name="PathMarker4" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=853346625 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17951995, 0.19595718, -0.113352254)
+
+[node name="PathMarker5" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=328042286 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17951995, 0.19595718, 0.114845976)
+
+[node name="PathMarker6" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=531082911 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0.118376374, 0.19595718, -0.06091185)
+
+[node name="PathMarker7" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=1948449002 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0.0038074255, 0.19595718, -0.06091184)
+
+[node name="PathMarker8" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=747882823 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0.0020884722, 0.18846512, 0.053948525)
+
+[node name="PathMarker9" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=1504093902 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.11875021, 0.19595718, -0.057274833)
+
+[node name="PathMarker10" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=322509954 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.23937657, 0.19595718, 0.055101223)
+
+[node name="PathMarker11" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=185284382 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.23937657, 0.19595718, -0.05512494)
+
+[node name="PathMarker12" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=41612180 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18196137, 0.19595718, -0.0028006325)
+
+[node name="PathMarker13" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=427480795 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06174317, 0.19595718, 0.11234445)
+
+[node name="PathMarker14" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/Markers" unique_id=886294330 instance=ExtResource("23_a0ipy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1839843, 0.19595718, 0.11234445)
+
+[node name="Patterned" type="Area3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen" unique_id=1966976852 node_paths=PackedStringArray("mesh")]
+input_ray_pickable = false
+script = ExtResource("5_6hhkj")
+pattern = Array[int]([3, 0, 3, 2, 3, 0, 1])
+mesh = NodePath("../ClosedLid/SmallBoxLid/SmallBoxLid")
+material_idx = Array[int]([1])
+selected_material = ExtResource("6_av7uq")
+locked_material = ExtResource("7_46pcy")
+metadata/_custom_type_script = "uid://dbinv34xc0tpr"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" unique_id=1327150922]
+shape = SubResource("BoxShape3D_d0u6y")
+
+[node name="PointerPickup" type="Node3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen" unique_id=333822303]
+transform = Transform3D(-4.6960178e-08, -0.9191376, -0.3939366, 1, -4.371139e-08, -1.721952e-08, -1.392408e-09, -0.3939366, 0.9191376, 0.10590268, -0.090099335, 0.028151512)
+
+[node name="Pointer" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/PointerPickup" unique_id=1519642052 instance=ExtResource("26_p1ahy")]
+transform = Transform3D(2.5, 3.5527137e-15, 2.842171e-14, 1.0658141e-14, 2.5000002, 4.7683716e-07, -1.4210855e-14, -1.1920929e-07, 6, 0, 0, -9.536743e-07)
+
+[node name="Pointer" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/PointerPickup/Pointer" index="0" unique_id=821043829]
+material_override = ExtResource("27_hwwor")
+
+[node name="PickupItem" type="Area3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/PointerPickup" unique_id=946705346 node_paths=PackedStringArray("remove_node")]
+input_ray_pickable = false
+script = ExtResource("34_2oi3e")
+item = ExtResource("28_tulss")
+remove_node = NodePath("..")
+metadata/_custom_type_script = "uid://gdx1msx8ssyi"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/PointerPickup/PickupItem" unique_id=1348199097]
+transform = Transform3D(1, 1.7763568e-15, 2.309264e-13, 1.4210855e-14, 1, 0, -9.769963e-15, 0, 1, 0, 0.14561367, 9.536743e-07)
+shape = SubResource("BoxShape3D_3gngh")
+
+[node name="Paper1" parent="Levels/LivingRoom/Scenario" unique_id=884619473 instance=ExtResource("26_yk2uw")]
+transform = Transform3D(0.9398807, 0, -0.3415029, 0, 1, 0, 0.3415029, 0, 0.9398807, -1.9602227, 0.88209915, 0.73378277)
+
+[node name="Paper1" parent="Levels/LivingRoom/Scenario/Paper1" index="0" unique_id=104045266]
+transform = Transform3D(0.9999606, 0, 0.008879155, 0, 1, 0, -0.008879155, 0, 0.9999606, 0, 0, 0)
+material_override = ExtResource("27_frsad")
+
+[node name="Maze1" type="Node3D" parent="Levels/LivingRoom/Scenario/Paper1" unique_id=776438797]
+transform = Transform3D(0.9937762, 0, 0.11139619, 0, 1, 0, -0.11139619, 0, 0.9937762, -0.02730751, 0.012554169, 0.23526478)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1/Maze1" unique_id=611417495]
+transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0.1716299, 0, 0.03774166)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("29_tutd8")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1/Maze1" unique_id=95306926]
+transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, -0.11960316, 0, -0.062026024)
+modulate = Color(0, 0, 0, 1)
+shaded = true
+texture = ExtResource("30_4l8ae")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1/Maze1" unique_id=1150013608]
+transform = Transform3D(-2.6077032e-08, -0.6, 0, -2.6226834e-08, 0, -0.6, 0.6, -2.6077032e-08, -2.6226832e-08, 0, 0, 0)
+modulate = Color(0.23392546, 0.23392546, 0.23392543, 1)
+texture = ExtResource("32_qr730")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1/Maze1" unique_id=489735733]
+transform = Transform3D(0.6, 0, 0, 0, -2.6226834e-08, -0.6, 0, 0.6, -2.6226834e-08, -0.030714512, 0, -0.05577469)
+modulate = Color(0.23392546, 0.23392546, 0.23392543, 1)
+texture = ExtResource("32_qr730")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1/Maze1" unique_id=1158030528]
+transform = Transform3D(0.6, 0, 0, 0, -2.6226834e-08, -0.6, 0, 0.6, -2.6226834e-08, 0.049689293, 0, 0.041959763)
+modulate = Color(0.23392546, 0.23392546, 0.23392543, 1)
+texture = ExtResource("32_qr730")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1/Maze1" unique_id=655727633]
+transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0.1716299, 0, 0.03774166)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("29_tutd8")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1/Maze1" unique_id=123799584]
+transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, -0.11960316, 0, -0.062026024)
+modulate = Color(0, 0, 0, 1)
+shaded = true
+texture = ExtResource("30_4l8ae")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1" unique_id=1832579476]
+transform = Transform3D(-0.0244933, 0.29886493, 0.008937553, 1.2619011e-08, 0.008967493, -0.29986596, -0.29899848, -0.02448237, -0.00073215854, 0.1134634, 0.0021362305, 0.07998085)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1" unique_id=89033301]
+transform = Transform3D(-0.2988649, -0.02449321, 0.008937553, -0.008967493, 1.3779648e-08, -0.29986593, 0.024482377, -0.29899865, -0.0007321576, 0.18818617, 0.0058631897, 0.07462883)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1" unique_id=309258725]
+transform = Transform3D(-0.2988649, -0.02449321, 0.0089375535, -0.008967493, 1.3779648e-08, -0.29986593, 0.024482377, -0.29899865, -0.00073215854, 0.034814835, 0.0058631897, 0.08719635)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1" unique_id=2006982333]
+transform = Transform3D(-0.2, 1.4901161e-08, 8.881784e-16, 0, -8.742278e-09, 0.2, 1.4901161e-08, 0.2, 8.742279e-09, -0.04862261, 0.010856628, 0.10744858)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("34_wiegk")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1/Sprite3D8" unique_id=1347284789]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999976, 0, -0.026, 0)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("34_wiegk")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1/Sprite3D8" unique_id=2013797420]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999976, 0.018809969, 0.0030450728, -1.164153e-10)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("34_wiegk")
+
+[node name="Maze2" type="Node3D" parent="Levels/LivingRoom/Scenario/Paper1" unique_id=1071972635]
+transform = Transform3D(0.9937762, 0, 0.11139619, 0, 1, 0, -0.11139619, 0, 0.9937762, -0.039076805, 0.0042762756, -0.09672165)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1/Maze2" unique_id=102790124]
+transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0.1716299, 0, 0.03774166)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("29_tutd8")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper1/Maze2/Sprite3D" unique_id=133983998]
+transform = Transform3D(1, 2.9802322e-08, 0, -2.9802322e-08, 1, 3.5527137e-15, 0, -7.1054274e-15, 0.99999994, 0, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("29_tutd8")
+
+[node name="Paper2" parent="Levels/LivingRoom/Scenario" unique_id=1867951422 instance=ExtResource("27_hbuq6")]
+transform = Transform3D(0.26429573, 0, -0.9644419, 0, 1, 0, 0.9644419, 0, 0.26429573, -1.9856186, 0.8968735, 0.47588348)
+
+[node name="Maze3" type="Node3D" parent="Levels/LivingRoom/Scenario/Paper2" unique_id=740953247]
+transform = Transform3D(0.99995685, 0, -0.009279698, 0, 1, 0, 0.009279698, 0, 0.99995685, 0.0118608475, 0.008392334, 0.06221819)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/Maze3" unique_id=1370976225]
+transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, -0.11149979, 0, 0.1791277)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("29_tutd8")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/Maze3" unique_id=374031580]
+transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0.12309599, 0, 0.0072727203)
+modulate = Color(0, 0, 0, 1)
+shaded = true
+texture = ExtResource("30_4l8ae")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/Maze3" unique_id=1620971879]
+transform = Transform3D(-2.6077032e-08, -0.6, 0, -2.6226834e-08, 0, -0.6, 0.6, -2.6077032e-08, -2.6226832e-08, -0.117518425, 0, 0.06001854)
+modulate = Color(0.23392546, 0.23392546, 0.23392543, 1)
+texture = ExtResource("32_qr730")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/Maze3" unique_id=1056809785]
+transform = Transform3D(0.6, 0, 0, 0, -2.6226834e-08, -0.6, 0, 0.6, -2.6226834e-08, -0.049214363, 0, -0.08176041)
+modulate = Color(0.23392546, 0.23392546, 0.23392543, 1)
+texture = ExtResource("32_qr730")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/Maze3" unique_id=1953520982]
+transform = Transform3D(0.6, 0, 0, 0, -2.6226834e-08, -0.6, 0, 0.6, -2.6226834e-08, 0.03816557, 0, 0.008944511)
+modulate = Color(0.23392546, 0.23392546, 0.23392543, 1)
+texture = ExtResource("32_qr730")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/Maze3" unique_id=1422729762]
+transform = Transform3D(-2.6077032e-08, -0.6, 0, -2.6226834e-08, 0, -0.6, 0.6, -2.6077032e-08, -2.6226832e-08, -0.114626884, 0, -0.02937603)
+modulate = Color(0.23392546, 0.23392546, 0.23392543, 1)
+texture = ExtResource("32_qr730")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/Maze3" unique_id=1767124294]
+transform = Transform3D(-2.6077032e-08, -0.6, 0, -2.6226834e-08, 0, -0.6, 0.6, -2.6077032e-08, -2.6226832e-08, -0.016264439, 0, -0.026434898)
+modulate = Color(0.23392546, 0.23392546, 0.23392543, 1)
+texture = ExtResource("32_qr730")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/Maze3" unique_id=1609668554]
+transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, -0.11149979, 0, 0.1791277)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("29_tutd8")
+
+[node name="Sprite3D9" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/Maze3" unique_id=1600124067]
+transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0.12309599, 0, 0.0072727203)
+modulate = Color(0, 0, 0, 1)
+shaded = true
+texture = ExtResource("30_4l8ae")
+
+[node name="PatternTest" type="Node3D" parent="Levels/LivingRoom/Scenario/Paper2" unique_id=834804677]
+transform = Transform3D(0.009482965, 0.299716, 0.0089630075, 1.2664632e-08, 0.008967491, -0.29986593, -0.29985005, 0.009478688, 0.0002834471, 0.1944542, 0.02217102, -0.11362219)
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest" unique_id=1852234785]
+transform = Transform3D(0.99999994, -5.9604645e-08, -9.313226e-10, -2.9802322e-08, 0.99999994, -2.7939677e-09, 9.313226e-10, 9.313226e-10, 0.99999994, 0, 0, 0)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest" unique_id=215192611]
+transform = Transform3D(0.99999994, -5.9604645e-08, -9.313226e-10, -2.9802322e-08, 0.99999994, -2.7939677e-09, 9.313226e-10, 9.313226e-10, 0.99999994, 0, -0.22562027, 1.5258789e-05)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest" unique_id=726859727]
+transform = Transform3D(-5.9604645e-08, -0.99999964, -9.313226e-10, 1.0000001, 2.9802322e-08, 9.313226e-10, 1.5832484e-08, -7.450581e-09, 0.9999998, -9.536743e-07, -0.47016525, 1.5258789e-05)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest" unique_id=874592627]
+transform = Transform3D(-0.99999994, 2.0861626e-07, -2.7939677e-09, 0, -0.99999994, 2.7939677e-09, 4.656613e-09, -2.8871e-08, 0.99999976, 0, -0.7311554, 7.6293945e-06)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest" unique_id=1302157888]
+transform = Transform3D(-5.9604645e-08, -0.99999964, -9.313226e-10, 1.0000001, 2.9802322e-08, 9.313226e-10, 1.5832484e-08, -7.450581e-09, 0.9999998, 0, -0.9790993, 0)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest" unique_id=221122642]
+transform = Transform3D(-0.75, 1.13246855e-07, 3.49246e-09, -1.13246855e-07, -0.75, -2.165325e-08, 3.4924565e-09, -2.165325e-08, 0.75, -0.0016039258, -1.2541959, 9.628316e-06)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_4l8ae")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest/Sprite3D8" unique_id=416375617]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999976, -0.025729375, 0, -2.9103824e-11)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_4l8ae")
+
+[node name="PatternTest2" type="Node3D" parent="Levels/LivingRoom/Scenario/Paper2" unique_id=1395813413]
+transform = Transform3D(0.009482965, 0.299716, 0.0089630075, 1.2664632e-08, 0.008967491, -0.29986593, -0.29985005, 0.009478688, 0.0002834471, 0.197731, 0.022171024, -0.21723466)
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest2" unique_id=459454464]
+transform = Transform3D(0.99999994, -5.9604645e-08, -9.313226e-10, -2.9802322e-08, 0.99999994, -2.7939677e-09, 9.313226e-10, 9.313226e-10, 0.99999994, 0, 0, 0)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest2" unique_id=552654490]
+transform = Transform3D(-5.9604645e-08, -0.99999964, -9.313226e-10, 1.0000001, 2.9802322e-08, 9.313226e-10, 1.5832484e-08, -7.450581e-09, 0.9999998, -9.666211e-07, -0.25295454, 1.5262927e-05)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest2" unique_id=2111859842]
+transform = Transform3D(-0.99999994, 2.0861626e-07, -2.7939677e-09, 0, -0.99999994, 2.7939677e-09, 4.656613e-09, -2.8871e-08, 0.99999976, -6.393449e-08, -0.4961146, 7.635947e-06)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest2" unique_id=878343953]
+transform = Transform3D(-5.9604645e-08, -0.99999964, -9.313226e-10, 1.0000001, 2.9802322e-08, 9.313226e-10, 1.5832484e-08, -7.450581e-09, 0.9999998, -1.2946765e-08, -0.76188856, 4.1374766e-09)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest2" unique_id=1956553512]
+transform = Transform3D(8.0463316e-08, -0.75, -3.4924643e-09, -0.75, -8.0463316e-08, 8.722033e-08, -8.722033e-08, 3.4924557e-09, -0.75, -0.06047229, -1.1126219, -0.015142346)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("34_wiegk")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest2/Sprite3D8" unique_id=686515018]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999976, 0, -0.026, 0)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("34_wiegk")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest2/Sprite3D8" unique_id=609282406]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999976, 0.018809969, 0.0030450728, -1.164153e-10)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("34_wiegk")
+
+[node name="PatternTest3" type="Node3D" parent="Levels/LivingRoom/Scenario/Paper2" unique_id=203255532]
+transform = Transform3D(0.009482965, 0.299716, 0.0089630075, 1.2664632e-08, 0.008967491, -0.29986593, -0.29985005, 0.009478688, 0.0002834471, 0.20072258, 0.022171028, -0.31182808)
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest3" unique_id=668893687]
+transform = Transform3D(-7.3513704e-08, 0.99999994, -9.313227e-10, -0.99999994, 1.589326e-08, -2.7939677e-09, -2.7939677e-09, -9.3132224e-10, 0.99999994, 0, 0, 0)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest3" unique_id=980449072]
+transform = Transform3D(0.99999994, -5.9604645e-08, -9.313226e-10, -2.9802322e-08, 0.99999994, -2.7939677e-09, 9.313226e-10, 9.313226e-10, 0.99999994, 0, -0.22562027, 1.5258789e-05)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest3" unique_id=5123323]
+transform = Transform3D(1.4702744e-07, 0.99999964, -9.3132246e-10, -1.0000001, 5.7620426e-08, 9.313226e-10, 1.7695129e-08, -5.5879354e-09, 0.9999998, -9.536743e-07, -0.47016525, 1.5258789e-05)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest3" unique_id=153837221]
+transform = Transform3D(-0.99999994, 2.0861626e-07, -2.7939677e-09, 0, -0.99999994, 2.7939677e-09, 4.656613e-09, -2.8871e-08, 0.99999976, 0, -0.7311554, 7.6293945e-06)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest3" unique_id=121081823]
+transform = Transform3D(-0.75, 1.13246855e-07, 3.49246e-09, -1.13246855e-07, -0.75, -2.165325e-08, 3.4924565e-09, -2.165325e-08, 0.75, -0.0016039672, -1.0543835, 9.634608e-06)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_4l8ae")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Levels/LivingRoom/Scenario/Paper2/PatternTest3/Sprite3D7" unique_id=384784853]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999976, -0.026, 0, 0)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_4l8ae")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Levels/LivingRoom" unique_id=1205549191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58282685, 6.600189, -1.3792002)
+visible = false
+light_energy = 4.0
+omni_range = 11.850739
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Levels/LivingRoom" unique_id=1857349984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.791673, 1.8174686, -1.8836076)
+visible = false
+omni_range = 7.166872
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Levels/LivingRoom" unique_id=1181941483]
+transform = Transform3D(0.33737996, -0.15187085, 0.92903715, -0.037158716, 0.98398274, 0.17434709, -0.9406348, -0.09334305, 0.32633275, 7.9600725, 4.9512753, 5.1202955)
+visible = false
+light_energy = 10.0
+spot_range = 22.809076
+spot_angle = 31.775599
+
+[node name="InternalScenes" type="Node3D" parent="Levels/LivingRoom" unique_id=1456699710]
+
+[node name="TableScene" type="Node3D" parent="Levels/LivingRoom/InternalScenes" unique_id=42251406 node_paths=PackedStringArray("camera", "on_scene_only", "child_of")]
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("../../Scenario/SmallBoxOpen/Patterned"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+child_of = NodePath("../..")
+metadata/_custom_type_script = "uid://ypfbu7sipw7r"
+
+[node name="CameraStand" parent="Levels/LivingRoom/InternalScenes/TableScene" unique_id=1704840289 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(-0.6378622, -0.70564866, 0.30853134, 0.020356346, 0.3850241, 0.9226819, -0.76988167, 0.5948246, -0.23122805, -1.6729376, 1.8862603, -0.36596704)
+
+[node name="ChangeSceneInteractable" parent="Levels/LivingRoom/InternalScenes/TableScene/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1704840289, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9913066, 2.9802322e-08, 0.13157219, 0.11995862, 0.41078556, -0.903806, -0.054047972, 0.9117321, 0.4072144, 0.18586215, -0.444936, -0.60863763)
+scene = NodePath("../../../../..")
+
+[node name="Kitchen" type="Node3D" parent="Levels" unique_id=1101520854 node_paths=PackedStringArray("camera", "on_scene_only")]
+transform = Transform3D(0.8824419, 0, -0.47042146, 0, 1, 0, 0.47042146, 0, 0.8824419, -0.50982475, 0, 8.652653)
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("ExtraSupportingLight")]
+
+[node name="NextArea" type="Area3D" parent="Levels/Kitchen" unique_id=339509453 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.5681572, 0, 0.82292, 0, 1, 0, -0.82292, 0, 0.5681572, -2.1381414, 1.6907516, -1.0389664)
+script = ExtResource("13_46pcy")
+scene = NodePath("../InternalScenes/Vases")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/NextArea" unique_id=1533480783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21556091, -0.34573364, -1.4305115e-06)
+shape = SubResource("BoxShape3D_o8ni1")
+
+[node name="NextArea2" type="Area3D" parent="Levels/Kitchen" unique_id=768644032 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.4740882, 0, -0.88047737, 0, 1, 0, 0.88047737, 0, 0.4740882, -3.3466985, 1.4274864, 1.0288806)
+script = ExtResource("13_46pcy")
+scene = NodePath("../InternalScenes/Oven")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/NextArea2" unique_id=1174488959]
+transform = Transform3D(0.8649616, 0, -0.50184125, 0, 1, 0, 0.50184125, 0, 0.8649616, 0.23629999, 0, 0.13709974)
+shape = SubResource("BoxShape3D_kibnp")
+
+[node name="CameraStand" parent="Levels/Kitchen" unique_id=2037867561 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.12938637, 1.2028122, 0.7687455)
+
+[node name="ChangeSceneInteractable" parent="Levels/Kitchen/CameraStand/Camera3D" parent_id_path=PackedInt32Array(2037867561, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../LivingRoom")
+
+[node name="Scenario" type="Node3D" parent="Levels/Kitchen" unique_id=369342444]
+
+[node name="Stove" parent="Levels/Kitchen/Scenario" unique_id=79689749 instance=ExtResource("16_qr730")]
+transform = Transform3D(0.88212687, 0, 0.47101188, 0, 1, 0, -0.47101188, 0, 0.88212687, -7.339996, 0.017181396, 1.255549)
+
+[node name="Fridge" parent="Levels/Kitchen/Scenario" unique_id=1779587862 instance=ExtResource("17_qiq6q")]
+transform = Transform3D(0.88212687, 0, 0.47101188, 0, 1, 0, -0.47101188, 0, 0.88212687, -8.176278, 0, 0.04454039)
+
+[node name="Fridge" parent="Levels/Kitchen/Scenario/Fridge" index="0" unique_id=1867149036]
+surface_material_override/0 = null
+
+[node name="InteractableOpen" type="Area3D" parent="Levels/Kitchen/Scenario/Fridge" unique_id=1110793084]
+script = ExtResource("41_5rpng")
+metadata/_custom_type_script = "uid://dacaijey35bqu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/Scenario/Fridge/InteractableOpen" unique_id=678338648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5251465, 1.1829224, 0)
+shape = SubResource("BoxShape3D_fcnqv")
+
+[node name="InteractableClose" type="Area3D" parent="Levels/Kitchen/Scenario/Fridge" unique_id=818614218]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 0.7878069, 0, 0.08985889)
+input_ray_pickable = false
+script = ExtResource("41_5rpng")
+metadata/_custom_type_script = "uid://dacaijey35bqu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/Scenario/Fridge/InteractableClose" unique_id=607764706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5251465, 1.1829224, 0)
+shape = SubResource("BoxShape3D_fcnqv")
+
+[node name="Rack" parent="Levels/Kitchen/Scenario" unique_id=451151315 instance=ExtResource("8_2o7ai")]
+transform = Transform3D(0.8824419, 0, 0.47042146, 0, 1, 0, -0.47042146, 0, 0.8824419, -4.6069727, 0, -3.1740906)
+
+[node name="Vase" parent="Levels/Kitchen/Scenario/Rack" unique_id=981569761 instance=ExtResource("47_kqo7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1043882, 1.2110252, 0.46485472)
+
+[node name="Vase" parent="Levels/Kitchen/Scenario/Rack/Vase" index="0" unique_id=1127715418]
+transform = Transform3D(0.99431986, 0, -0.106433466, 0, 1, 0, 0.106433466, 0, 0.99431986, 0, 0, 0)
+
+[node name="Stem_001" parent="Levels/Kitchen/Scenario/Rack/Vase/Stem" parent_id_path=PackedInt32Array(981569761, 1418974435) index="1" unique_id=1722989645]
+visible = false
+
+[node name="Stem_002" parent="Levels/Kitchen/Scenario/Rack/Vase/Stem" parent_id_path=PackedInt32Array(981569761, 1418974435) index="2" unique_id=1706917780]
+visible = false
+
+[node name="Petal" parent="Levels/Kitchen/Scenario/Rack/Vase/Petals/Petal0" parent_id_path=PackedInt32Array(981569761, 1913540289) index="0" unique_id=974585322 instance=ExtResource("48_5sliu")]
+
+[node name="Petal" parent="Levels/Kitchen/Scenario/Rack/Vase/Petals/Petal2" parent_id_path=PackedInt32Array(981569761, 1704322284) index="0" unique_id=317220112 instance=ExtResource("48_5sliu")]
+
+[node name="Petal" parent="Levels/Kitchen/Scenario/Rack/Vase/Petals/Petal4" parent_id_path=PackedInt32Array(981569761, 1623970076) index="0" unique_id=754542251 instance=ExtResource("48_5sliu")]
+
+[node name="Petal" parent="Levels/Kitchen/Scenario/Rack/Vase/Petals/Petal6" parent_id_path=PackedInt32Array(981569761, 658658361) index="0" unique_id=1636062082 instance=ExtResource("48_5sliu")]
+
+[node name="Vase2" parent="Levels/Kitchen/Scenario/Rack" unique_id=1585296928 instance=ExtResource("47_kqo7x")]
+transform = Transform3D(0.99337935, 0, -0.11488042, 0, 1, 0, 0.11488042, 0, 0.99337935, -0.59088564, 1.2110252, 0.10279703)
+
+[node name="Stem" parent="Levels/Kitchen/Scenario/Rack/Vase2/Stem" parent_id_path=PackedInt32Array(1585296928, 1418974435) index="0" unique_id=821859533]
+visible = false
+
+[node name="Stem_002" parent="Levels/Kitchen/Scenario/Rack/Vase2/Stem" parent_id_path=PackedInt32Array(1585296928, 1418974435) index="2" unique_id=1706917780]
+visible = false
+
+[node name="Petal_002" parent="Levels/Kitchen/Scenario/Rack/Vase2/Petals/Petal0" parent_id_path=PackedInt32Array(1585296928, 1913540289) index="0" unique_id=1071909424 instance=ExtResource("49_uawrl")]
+
+[node name="Petal_002" parent="Levels/Kitchen/Scenario/Rack/Vase2/Petals/Petal3" parent_id_path=PackedInt32Array(1585296928, 1097545143) index="0" unique_id=1491959236 instance=ExtResource("49_uawrl")]
+
+[node name="Petal_002" parent="Levels/Kitchen/Scenario/Rack/Vase2/Petals/Petal5" parent_id_path=PackedInt32Array(1585296928, 1623592) index="0" unique_id=1000151913 instance=ExtResource("49_uawrl")]
+
+[node name="Vase3" parent="Levels/Kitchen/Scenario/Rack" unique_id=558564695 instance=ExtResource("47_kqo7x")]
+transform = Transform3D(0.9668119, 0, -0.2554893, 0, 1, 0, 0.2554893, 0, 0.9668119, -0.092321515, 1.2110252, 0.5086808)
+
+[node name="Stem_001" parent="Levels/Kitchen/Scenario/Rack/Vase3/Stem" parent_id_path=PackedInt32Array(558564695, 1418974435) index="1" unique_id=1722989645]
+visible = false
+
+[node name="Stem_002" parent="Levels/Kitchen/Scenario/Rack/Vase3/Stem" parent_id_path=PackedInt32Array(558564695, 1418974435) index="2" unique_id=1706917780]
+visible = false
+
+[node name="Petal_001" parent="Levels/Kitchen/Scenario/Rack/Vase3/Petals/Petal0" parent_id_path=PackedInt32Array(558564695, 1913540289) index="0" unique_id=31733523 instance=ExtResource("50_tv733")]
+
+[node name="Petal_001" parent="Levels/Kitchen/Scenario/Rack/Vase3/Petals/Petal2" parent_id_path=PackedInt32Array(558564695, 1704322284) index="0" unique_id=1658843155 instance=ExtResource("50_tv733")]
+
+[node name="Petal_001" parent="Levels/Kitchen/Scenario/Rack/Vase3/Petals/Petal4" parent_id_path=PackedInt32Array(558564695, 1623970076) index="0" unique_id=269963825 instance=ExtResource("50_tv733")]
+
+[node name="Petal_001" parent="Levels/Kitchen/Scenario/Rack/Vase3/Petals/Petal6" parent_id_path=PackedInt32Array(558564695, 658658361) index="0" unique_id=410724750 instance=ExtResource("50_tv733")]
+
+[node name="Petal_001" parent="Levels/Kitchen/Scenario/Rack/Vase3/Petals/Petal7" parent_id_path=PackedInt32Array(558564695, 2112569297) index="0" unique_id=777923502 instance=ExtResource("50_tv733")]
+
+[node name="Vase4" parent="Levels/Kitchen/Scenario/Rack" unique_id=60185055 instance=ExtResource("47_kqo7x")]
+transform = Transform3D(0.94883, 0, -0.31578726, 0, 1, 0, 0.31578726, 0, 0.94883, 0.55176306, 1.2110252, 0.10970831)
+
+[node name="Stem" parent="Levels/Kitchen/Scenario/Rack/Vase4/Stem" parent_id_path=PackedInt32Array(60185055, 1418974435) index="0" unique_id=821859533]
+visible = false
+
+[node name="Stem_001" parent="Levels/Kitchen/Scenario/Rack/Vase4/Stem" parent_id_path=PackedInt32Array(60185055, 1418974435) index="1" unique_id=1722989645]
+visible = false
+
+[node name="Petal_002" parent="Levels/Kitchen/Scenario/Rack/Vase4/Petals/Petal1" parent_id_path=PackedInt32Array(60185055, 1161815551) index="0" unique_id=2049771108 instance=ExtResource("49_uawrl")]
+
+[node name="Vase5" parent="Levels/Kitchen/Scenario/Rack" unique_id=1633125929 instance=ExtResource("47_kqo7x")]
+transform = Transform3D(0.6944822, 0, -0.7195099, 0, 1, 0, 0.7195099, 0, 0.6944822, 0.9656093, 1.2110252, 0.6102176)
+
+[node name="Stem" parent="Levels/Kitchen/Scenario/Rack/Vase5/Stem" parent_id_path=PackedInt32Array(1633125929, 1418974435) index="0" unique_id=821859533]
+visible = false
+
+[node name="Stem_002" parent="Levels/Kitchen/Scenario/Rack/Vase5/Stem" parent_id_path=PackedInt32Array(1633125929, 1418974435) index="2" unique_id=1706917780]
+visible = false
+
+[node name="Petal" parent="Levels/Kitchen/Scenario/Rack/Vase5/Petals/Petal2" parent_id_path=PackedInt32Array(1633125929, 1704322284) index="0" unique_id=965581054 instance=ExtResource("48_5sliu")]
+
+[node name="Petal" parent="Levels/Kitchen/Scenario/Rack/Vase5/Petals/Petal6" parent_id_path=PackedInt32Array(1633125929, 658658361) index="0" unique_id=1851497157 instance=ExtResource("48_5sliu")]
+
+[node name="Portrait" parent="Levels/Kitchen/Scenario/Rack" unique_id=582164424 instance=ExtResource("51_fdwj4")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.117232084, 0.69812775, 0.7722254)
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Rack/Portrait" unique_id=1882574399]
+transform = Transform3D(-6.119594e-08, -1.4, 0, 1.3787308, -6.026624e-08, 0.24310745, -0.24310745, 1.0626564e-08, 1.3787308, 0, 0.24988876, 0.03186748)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Portrait2" parent="Levels/Kitchen/Scenario/Rack" unique_id=2140116277 instance=ExtResource("51_fdwj4")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.9946215, 0.69812775, 0.7722254)
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Rack/Portrait2" unique_id=944060179]
+transform = Transform3D(-1.4, 1.2239188e-07, 0, -1.2053248e-07, -1.3787308, 0.24310745, 2.1253127e-08, 0.24310745, 1.3787308, 0, 0.24988876, 0.03186748)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Portrait3" parent="Levels/Kitchen/Scenario/Rack" unique_id=1524405739 instance=ExtResource("51_fdwj4")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.5626488, 0.21820831, 0.7722254)
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Rack/Portrait3" unique_id=893676288]
+transform = Transform3D(-6.119594e-08, 1.4, 0, -1.3787308, -6.026624e-08, 0.24310745, 0.24310745, 1.0626564e-08, 1.3787308, 0, 0.24988876, 0.03186748)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Portrait4" parent="Levels/Kitchen/Scenario/Rack" unique_id=95484796 instance=ExtResource("51_fdwj4")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.42514634, 0.21820831, 0.7722254)
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Rack/Portrait4" unique_id=1950092692]
+transform = Transform3D(-6.119594e-08, 1.4, 0, -1.3787308, -6.026624e-08, 0.24310745, 0.24310745, 1.0626564e-08, 1.3787308, 0, 0.24988876, 0.03186748)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Portrait5" parent="Levels/Kitchen/Scenario/Rack" unique_id=839837664 instance=ExtResource("51_fdwj4")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.9019164, 0.69812775, 0.7722254)
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Rack/Portrait5" unique_id=1766231415]
+transform = Transform3D(1.4, 0, 0, 0, 1.3787308, 0.24310745, 0, -0.24310745, 1.3787308, 0, 0.24988876, 0.03186748)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Book" parent="Levels/Kitchen/Scenario" unique_id=368589947 instance=ExtResource("29_1q704")]
+transform = Transform3D(0.45506305, 0.7711606, -0.44522977, 7.2930977e-09, 0.49999985, 0.8660253, 0.89045954, -0.394096, 0.22753142, -6.4557133, 1.4401093, 3.3514671)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book" unique_id=11001403]
+transform = Transform3D(0.15, 0, 0, 0, -6.5567085e-09, 0.15, 0, -0.15, -6.5567085e-09, 0.19546328, 0.07533325, 0.09153269)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("15_kibnp")
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D" unique_id=1434073351]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.84839964, 1.8929102, 0.091532744)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("54_cl5ek")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D" unique_id=34301703]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.034172207, 2.0346427, 0.091532744)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("54_cl5ek")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D" unique_id=1457525523]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.035445683, 1.754478, 0.09153273)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("54_cl5ek")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D" unique_id=1892749144]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.992713, 2.0059435, 0.091532744)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("54_cl5ek")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D" unique_id=1718955883]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.8283219, 1.684331, 0.09153273)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("54_cl5ek")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D" unique_id=671035950]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.6946217, 2.0059435, 0.091532744)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("54_cl5ek")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book" unique_id=1526453840]
+transform = Transform3D(-0.15, 1.3113417e-08, 0, 5.7320567e-16, 6.5567085e-09, -0.15, -1.3113417e-08, -0.15, -6.5567085e-09, -0.21349011, 0.07533325, 0.09153269)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("15_kibnp")
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D2" unique_id=1303398961]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.84839964, 1.8929102, -0.055773742)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("54_cl5ek")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D2" unique_id=486194588]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.034172207, 2.0346427, -0.055773742)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("54_cl5ek")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D2" unique_id=83668188]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.035445683, 1.754478, -0.055773757)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("54_cl5ek")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D2" unique_id=840426048]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.992713, 2.0059435, -0.055773742)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("54_cl5ek")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D2" unique_id=1196469274]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.8283219, 1.684331, -0.055773757)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("54_cl5ek")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Levels/Kitchen/Scenario/Book/Sprite3D2" unique_id=1603350801]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.6946217, 2.0059435, -0.055773742)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("54_cl5ek")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Levels/Kitchen" unique_id=1367401999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3398104, 2.6690464, 0)
+light_energy = 2.0
+omni_range = 11.833762
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Levels/Kitchen" unique_id=976859331]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5479383, 1.8174686, -0.032151997)
+omni_range = 7.166872
+
+[node name="ExtraSupportingLight" type="OmniLight3D" parent="Levels/Kitchen" unique_id=91849959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.547939, 1.8174667, -0.032152176)
+visible = false
+omni_range = 7.166872
+
+[node name="InternalScenes" type="Node3D" parent="Levels/Kitchen" unique_id=752738016]
+transform = Transform3D(0.88212687, 0, 0.47101188, 0, 1, 0, -0.47101188, 0, 0.88212687, -3.117393, 0, 0.5309087)
+
+[node name="Vases" type="Node3D" parent="Levels/Kitchen/InternalScenes" unique_id=1617229151 node_paths=PackedStringArray("camera", "on_scene_only")]
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("GoToArea/ChangeSceneInteractable"), NodePath("../../../../BaseAmbient/Doors/Door3/Patterned")]
+metadata/_custom_type_script = "uid://ypfbu7sipw7r"
+
+[node name="GoToArea" type="Node3D" parent="Levels/Kitchen/InternalScenes/Vases" unique_id=169679025]
+
+[node name="ChangeSceneInteractable" type="Area3D" parent="Levels/Kitchen/InternalScenes/Vases/GoToArea" unique_id=1481339678 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9302751, 0, -0.36686262, 0, 1, 0, 0.36686262, 0, 0.9302751, -1.3083775, 0.97278976, -1.9727857)
+visible = false
+input_ray_pickable = false
+script = ExtResource("13_46pcy")
+scene = NodePath("../../../Oven")
+metadata/_custom_type_script = "uid://bnjfxriyseeds"
+
+[node name="Arrow" parent="Levels/Kitchen/InternalScenes/Vases/GoToArea/ChangeSceneInteractable" unique_id=1551828677 instance=ExtResource("48_fq1ua")]
+transform = Transform3D(-5.4639235e-09, 0, 0.15, 0, 0.25, 0, -0.125, 0, -6.5567085e-09, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/InternalScenes/Vases/GoToArea/ChangeSceneInteractable" unique_id=1013445010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5527137e-15, 0, -0.031253874)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CameraStand" parent="Levels/Kitchen/InternalScenes/Vases" unique_id=1557869714 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(0.9814107, 0, -0.19191943, 0, 1, 0, 0.19191943, 0, 0.9814107, -0.9754766, 1.2028122, -1.0606797)
+
+[node name="ChangeSceneInteractable" parent="Levels/Kitchen/InternalScenes/Vases/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1557869714, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9006981, 0, 0.43444544, 0, 1, 0, -0.43444544, 0, 0.9006981, 0.54233044, -0.3768747, -0.5486967)
+visible = false
+input_ray_pickable = false
+scene = NodePath("../../../../..")
+
+[node name="Oven" type="Node3D" parent="Levels/Kitchen/InternalScenes" unique_id=401744678 node_paths=PackedStringArray("camera", "on_scene_only")]
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("GoToArea/ChangeSceneInteractable"), NodePath("NextArea")]
+metadata/_custom_type_script = "uid://ypfbu7sipw7r"
+
+[node name="GoToArea" type="Node3D" parent="Levels/Kitchen/InternalScenes/Oven" unique_id=1879056135]
+
+[node name="ChangeSceneInteractable" type="Area3D" parent="Levels/Kitchen/InternalScenes/Oven/GoToArea" unique_id=1291794419 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-0.09777218, 0, 0.9952088, 0, 1, 0, -0.9952088, 0, -0.09777218, -1.5240692, 1.1402779, -1.2405123)
+input_ray_pickable = false
+script = ExtResource("13_46pcy")
+scene = NodePath("../../../Vases")
+metadata/_custom_type_script = "uid://bnjfxriyseeds"
+
+[node name="Arrow" parent="Levels/Kitchen/InternalScenes/Oven/GoToArea/ChangeSceneInteractable" unique_id=683720678 instance=ExtResource("48_fq1ua")]
+transform = Transform3D(-5.4639235e-09, 0, 0.15, 0, 0.25, 0, -0.125, 0, -6.5567085e-09, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/InternalScenes/Oven/GoToArea/ChangeSceneInteractable" unique_id=1061205912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5527137e-15, 0, -0.031253874)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CameraStand" parent="Levels/Kitchen/InternalScenes/Oven" unique_id=204791942 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(0.9814107, 0, -0.19191943, 0, 1, 0, 0.19191943, 0, 0.9814107, -0.9754766, 1.2028122, -1.0606797)
+
+[node name="Camera3D" parent="Levels/Kitchen/InternalScenes/Oven/CameraStand" index="0" unique_id=1331824599]
+transform = Transform3D(-0.06699832, 0, 0.9977532, 0, 1, 0, -0.9977532, 0, -0.06699832, 0.09610271, 0.3768747, 0.5444761)
+
+[node name="ChangeSceneInteractable" parent="Levels/Kitchen/InternalScenes/Oven/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.99785066, 0, -0.06552842, 0, 1, 0, 0.06552842, 0, 0.99785066, 0.07166538, -0.5039995, -0.68721473)
+input_ray_pickable = false
+scene = NodePath("../../../../..")
+
+[node name="NextArea" type="Area3D" parent="Levels/Kitchen/InternalScenes/Oven" unique_id=566022010 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.84186, 0, -0.53969586, 0, 1, 0, 0.53969586, 0, 0.84186, -2.8885052, 1.3348427, 0.47292852)
+input_ray_pickable = false
+script = ExtResource("13_46pcy")
+scene = NodePath("../../Book")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Kitchen/InternalScenes/Oven/NextArea" unique_id=722867833]
+transform = Transform3D(0.8649596, 0, -0.5018412, 0, 1, 0, 0.5018412, 0, 0.8649596, -0.04096651, 0.41371918, -0.023767471)
+shape = SubResource("BoxShape3D_cl5ek")
+
+[node name="Book" type="Node3D" parent="Levels/Kitchen/InternalScenes" unique_id=1396463088 node_paths=PackedStringArray("camera", "on_scene_only")]
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+metadata/_custom_type_script = "uid://ypfbu7sipw7r"
+
+[node name="CameraStand" parent="Levels/Kitchen/InternalScenes/Book" unique_id=130495989 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(0.76672, -0.6419811, -0.00015610649, 0.6419811, 0.7667202, 0.00042960196, -0.0001561066, -0.0004296019, 0.99999994, -3.05363, 1.6397781, 0.3645959)
+
+[node name="Camera3D" parent="Levels/Kitchen/InternalScenes/Book/CameraStand" index="0" unique_id=1331824599]
+transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, 0.09610271, 0.3768747, 0.5444761)
+
+[node name="ChangeSceneInteractable" parent="Levels/Kitchen/InternalScenes/Book/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.99520737, -0.00423481, 0.09769768, 0.06308616, 0.7911659, -0.60833955, -0.07471884, 0.6115874, 0.78764135, -0.042513847, -0.4725418, -0.64808464)
+input_ray_pickable = false
+scene = NodePath("../../../../Oven")
+
+[node name="Paper2" parent="Levels/Kitchen/InternalScenes/Book" unique_id=1702852817 instance=ExtResource("27_hbuq6")]
+transform = Transform3D(0.1740935, 0, 0.98472893, 0, 1, 0, -0.98472893, 0, 0.1740935, -3.8285348, 1.1998711, 0.32364464)
+
+[node name="Paper3" parent="Levels/Kitchen/InternalScenes/Book" unique_id=2054346809 instance=ExtResource("55_kmd6w")]
+transform = Transform3D(0.33813837, 0, -0.9410962, 0, 1, 0, 0.9410962, 0, 0.33813837, -3.864712, 1.214962, 1.544806)
+
+[node name="Paper1" parent="Levels/Kitchen/InternalScenes/Book" unique_id=1023382641 instance=ExtResource("26_yk2uw")]
+transform = Transform3D(-0.57296526, 0, -0.81957924, 0, 1, 0, 0.81957924, 0, -0.57296526, -3.7474988, 1.1988907, 0.91693544)
+
+[node name="Pantry" type="Node3D" parent="Levels" unique_id=1622995380 node_paths=PackedStringArray("camera", "on_scene_only")]
+transform = Transform3D(-0.58117485, 0, -0.8137787, 0, 1, 0, 0.8137787, 0, -0.58117485, -5.2545733, 0, 3.3583531)
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("SupportLight"), NodePath("NextArea"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+
+[node name="NextArea" type="Area3D" parent="Levels/Pantry" unique_id=1641832192 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-8.940697e-08, 0, 1, 0, 1, 0, -1, 0, -8.940697e-08, -6.6676087, 1.6103554, 1.9204596)
+input_ray_pickable = false
+script = ExtResource("13_46pcy")
+scene = NodePath("../Finally")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Pantry/NextArea" unique_id=256942971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14477539, 0.058166504, 0)
+shape = SubResource("BoxShape3D_yidlo")
+
+[node name="CameraStand" parent="Levels/Pantry" unique_id=1681632611 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(0.1716325, 0, 0.9851609, 0, 1, 0, -0.9851609, 0, 0.1716325, -0.93862295, 1.2028122, 3.2814636)
+
+[node name="Camera3D" parent="Levels/Pantry/CameraStand" index="0" unique_id=1331824599]
+transform = Transform3D(0.9803542, 0, -0.1972453, 0, 1, 0, 0.1972453, 0, 0.9803542, -0.15615082, 0.37687302, -0.9593768)
+
+[node name="ChangeSceneInteractable" parent="Levels/Pantry/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6285931, -0.3768747, -0.5898186)
+scene = NodePath("../../../../Kitchen/InternalScenes/Vases")
+
+[node name="Scenario" type="Node3D" parent="Levels/Pantry" unique_id=1600828933]
+
+[node name="GrandClock" parent="Levels/Pantry/Scenario" unique_id=1593380876 instance=ExtResource("18_duo4a")]
+transform = Transform3D(0.8141155, 0, 0.5807029, 0, 1, 0, -0.5807029, 0, 0.8141155, -9.3122835, 0, 2.5564125)
+
+[node name="BigPointer" parent="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="0" unique_id=177566143]
+visible = false
+
+[node name="Pointer" parent="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="1" unique_id=1519642052]
+visible = false
+
+[node name="SmallPointer" parent="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="2" unique_id=1442474372]
+visible = false
+
+[node name="UseItem" type="Area3D" parent="Levels/Pantry/Scenario/GrandClock" unique_id=2039464743 node_paths=PackedStringArray("interactables")]
+script = ExtResource("59_rd0e2")
+interactables = [NodePath("UseSmall"), NodePath("UseNormal"), NodePath("UseBig")]
+metadata/_custom_type_script = "uid://1hpvwn6n1g6h"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Pantry/Scenario/GrandClock/UseItem" unique_id=1648089775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1060791, 0)
+shape = SubResource("BoxShape3D_vga31")
+
+[node name="UseSmall" type="Area3D" parent="Levels/Pantry/Scenario/GrandClock/UseItem" unique_id=1921877302]
+script = ExtResource("13_5sliu")
+item = ExtResource("42_d0vjv")
+metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
+
+[node name="UseNormal" type="Area3D" parent="Levels/Pantry/Scenario/GrandClock/UseItem" unique_id=1166600051]
+script = ExtResource("13_5sliu")
+item = ExtResource("28_tulss")
+metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
+
+[node name="UseBig" type="Area3D" parent="Levels/Pantry/Scenario/GrandClock/UseItem" unique_id=1071104348]
+script = ExtResource("13_5sliu")
+item = ExtResource("61_7v5th")
+metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
+
+[node name="Counter" type="Node" parent="Levels/Pantry/Scenario/GrandClock" unique_id=653725565]
+script = ExtResource("9_p103g")
+target = 3
+metadata/_custom_type_script = "uid://ccup386pslxg0"
+
+[node name="Key" type="Node3D" parent="Levels/Pantry/Scenario/GrandClock" unique_id=63501585]
+transform = Transform3D(-0.011624814, 0.11589613, -0.48624372, 0.016134545, 0.48620877, 0.11550203, 0.49960434, -0.013005267, -0.015044055, 0.07996479, 0.37823945, -0.021914003)
+visible = false
+
+[node name="Key" parent="Levels/Pantry/Scenario/GrandClock/Key" unique_id=1887049370 instance=ExtResource("62_hxkjw")]
+
+[node name="PickupItem" type="Area3D" parent="Levels/Pantry/Scenario/GrandClock/Key" unique_id=188730149 node_paths=PackedStringArray("remove_node")]
+input_ray_pickable = false
+script = ExtResource("34_2oi3e")
+item = ExtResource("63_fwl16")
+remove_node = NodePath("..")
+metadata/_custom_type_script = "uid://gdx1msx8ssyi"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Pantry/Scenario/GrandClock/Key/PickupItem" unique_id=1619571896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02941085, -9.313226e-10, 0.022182465)
+shape = SubResource("BoxShape3D_88oub")
+
+[node name="WallPortrait" parent="Levels/Pantry/Scenario" unique_id=472917611 instance=ExtResource("59_njbst")]
+transform = Transform3D(-0.7409474, 0, 1.0067258, 0, 1.25, 0, -1.0067258, 0, -0.7409474, -9.024672, 1.988697, 3.5273569)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Pantry/Scenario/WallPortrait" unique_id=703728668]
+transform = Transform3D(-2.8412401e-08, -0.65, 0, 0.65, -2.8412401e-08, 0, 0, 0, 0.65, -2.0251183e-09, 0.046762086, 0.06301085)
+texture = ExtResource("60_ajucn")
+
+[node name="WallPortrait2" parent="Levels/Pantry/Scenario" unique_id=1906273570 instance=ExtResource("59_njbst")]
+transform = Transform3D(-0.7409474, 0, 1.0067258, 0, 1.25, 0, -1.0067258, 0, -0.7409474, -9.024672, 1.2025872, 3.5273569)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Pantry/Scenario/WallPortrait2" unique_id=434576589]
+transform = Transform3D(-2.8412401e-08, -0.65, 0, 0.65, -2.8412401e-08, 0, 0, 0, 0.65, -2.0251183e-09, 0.046762086, 0.06301085)
+texture = ExtResource("61_g5vhj")
+
+[node name="WallPortrait3" parent="Levels/Pantry/Scenario" unique_id=295714834 instance=ExtResource("59_njbst")]
+transform = Transform3D(-0.7409474, 0, 1.0067258, 0, 1.25, 0, -1.0067258, 0, -0.7409474, -9.024672, 0.413994, 3.5273569)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Pantry/Scenario/WallPortrait3" unique_id=1216890726]
+transform = Transform3D(-2.8412401e-08, -0.65, 0, 0.65, -2.8412401e-08, 0, 0, 0, 0.65, -2.0251183e-09, 0.046762086, 0.06301085)
+texture = ExtResource("62_518l1")
+
+[node name="Rack" parent="Levels/Pantry/Scenario" unique_id=774218958 instance=ExtResource("8_2o7ai")]
+transform = Transform3D(0.5715142, 0, -0.59903234, 0, 1, 0, 0.8205922, 0, 0.41720536, -7.2290754, 0, 4.8630776)
+
+[node name="Portrait" parent="Levels/Pantry/Scenario" unique_id=1293701813 instance=ExtResource("51_fdwj4")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -8.055678, 1.2101059, 4.017117)
+
+[node name="Portrait" parent="Levels/Pantry/Scenario/Portrait" index="0" unique_id=995350063]
+surface_material_override/0 = ExtResource("11_kqo7x")
+surface_material_override/1 = ExtResource("63_i65mh")
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Pantry/Scenario/Portrait" unique_id=1995891607]
+transform = Transform3D(-1.4687084e-08, -0.35, -3.1293426e-09, 0.3434949, -1.5014638e-08, 0.06716593, -0.06716593, -2.526898e-10, 0.3434949, -0.0026115172, 0.26383314, 0.026108818)
+modulate = Color(0.6789437, 0.6789437, 0.6789437, 1)
+texture = ExtResource("64_d50wq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Levels/Pantry" unique_id=1352702924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7924113, 2.6690464, 1.2347227)
+light_energy = 3.0
+omni_range = 11.833762
+
+[node name="SupportLight" type="OmniLight3D" parent="Levels/Pantry" unique_id=1344721750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.580982, 1.8174667, 1.58149)
+visible = false
+light_energy = 2.0
+omni_range = 7.166872
+
+[node name="Finally" type="Node3D" parent="Levels/Pantry" unique_id=488509585 node_paths=PackedStringArray("camera")]
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+metadata/_custom_type_script = "uid://ypfbu7sipw7r"
+
+[node name="CameraStand" parent="Levels/Pantry/Finally" unique_id=135273085 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(-0.83698875, 0, 0.54721975, 0, 1, 0, -0.54721975, 0, -0.83698875, -7.781739, 0.8466339, 0.02073957)
+
+[node name="Camera3D" parent="Levels/Pantry/Finally/CameraStand" index="0" unique_id=1331824599]
+transform = Transform3D(0.9803542, 0, -0.1972453, 0, 1, 0, 0.1972453, 0, 0.9803542, -0.15615082, 0.37687302, -0.9593768)
+
+[node name="ChangeSceneInteractable" parent="Levels/Pantry/Finally/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9054235, 0, -0.42450944, 0, 1, 0, 0.42450944, 0, 0.9054235, -0.5097634, -0.3768747, -0.58396053)
+scene = NodePath("../../../..")
+
+[node name="Arrow" parent="Levels/Pantry/Finally/CameraStand/Camera3D/ChangeSceneInteractable/Arrow" parent_id_path=PackedInt32Array(135273085, 1551828677) index="0" unique_id=1210424325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29210296, 0, 0.0008314289)
+material_override = ExtResource("59_f30f1")
+
+[node name="Bathroom" type="Node3D" parent="Levels" unique_id=233155056 node_paths=PackedStringArray("camera", "on_scene_only")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.300255, 0, -4.4390073)
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("DeepBathroomLight")]
+
+[node name="NextArea" type="Area3D" parent="Levels/Bathroom" unique_id=1034253787 node_paths=PackedStringArray("scene")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8000126, 2.0175323, -3.2301998)
+script = ExtResource("13_46pcy")
+scene = NodePath("../InternalScenes/MirrorSinkScene")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Bathroom/NextArea" unique_id=1248531791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2636757, -0.15600586, 0)
+shape = SubResource("BoxShape3D_wmmqu")
+
+[node name="NextArea2" type="Area3D" parent="Levels/Bathroom" unique_id=1054560390 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.450241, 1.1040535, -2.5598898)
+script = ExtResource("13_46pcy")
+scene = NodePath("../InternalScenes/BathScene")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Bathroom/NextArea2" unique_id=1094033911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1085701, -0.2816162, 0)
+shape = SubResource("BoxShape3D_6hhkj")
+
+[node name="CameraStand" parent="Levels/Bathroom" unique_id=2145240657 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071068, 0.17924118, 1.2028122, -2.1397233)
+
+[node name="ChangeSceneInteractable" parent="Levels/Bathroom/CameraStand/Camera3D" parent_id_path=PackedInt32Array(2145240657, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+scene = NodePath("../../../../Hallway")
+
+[node name="Scenario" type="Node3D" parent="Levels/Bathroom" unique_id=54430598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7667661, 2.094532, -4.984859)
+
+[node name="BathTub" parent="Levels/Bathroom/Scenario" unique_id=123658952 instance=ExtResource("13_ly5n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78595, -2.094532, 1.7494121)
+
+[node name="BathFaucet" parent="Levels/Bathroom/Scenario/BathTub" unique_id=1737699982 instance=ExtResource("14_fshl6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.516943, 1.106926, -1.7958493)
+
+[node name="Water" type="MeshInstance3D" parent="Levels/Bathroom/Scenario/BathTub" unique_id=1416065572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.202775, 0.7798271, 0.1874218)
+visible = false
+material_override = ExtResource("28_2oi3e")
+mesh = SubResource("PlaneMesh_g4v7s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Levels/Bathroom/Scenario/BathTub/Water" unique_id=401014153]
+libraries/ = SubResource("AnimationLibrary_21e76")
+autoplay = &"flow"
+speed_scale = 0.03
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Levels/Bathroom/Scenario/BathTub/Water" unique_id=1722079291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06013775, 0.18148041, -1.4937854)
+material_override = ExtResource("28_2oi3e")
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="Book" parent="Levels/Bathroom/Scenario/BathTub/Water" unique_id=1623896443 instance=ExtResource("29_1q704")]
+transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 0, 0.037002563, 0)
+
+[node name="Page" type="Node3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book" unique_id=1567648805]
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page" unique_id=2074019503]
+transform = Transform3D(0.5, 0, -8.881784e-16, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, -0.17450953, 0.08375168, -0.020129953)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("31_ld5oi")
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page/Sprite3D" unique_id=1284116050]
+transform = Transform3D(-3.278354e-08, -0.75, 0, 0.75, -3.278354e-08, 0, 0, 0, 0.75, -0.00011481345, 0.36309215, 8.549455e-09)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("32_qr730")
+
+[node name="Label3D" type="Label3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page" unique_id=1085670174]
+transform = Transform3D(0.25, 0, -4.440892e-16, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.21400881, 0.07535553, 0.23525047)
+modulate = Color(0.24313726, 0.24313726, 0.24313726, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "1   2   3   4"
+font = ExtResource("32_21e76")
+font_size = 48
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page/Label3D" unique_id=1443787572]
+transform = Transform3D(-3.278354e-08, -0.75, 0, 0.75, -3.278354e-08, 0, 0, 0, 0.75, -0.42665088, 0.020999998, -0.021)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page/Label3D" unique_id=993554595]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.029344112, 0.02056302, 0.00079344027)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page/Label3D" unique_id=1297448102]
+transform = Transform3D(-3.278354e-08, 0.75, 0, -0.75, -3.278354e-08, 0, 0, 0, 0.75, 0.35381365, 0.020563008, 0.00079344027)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page/Label3D" unique_id=1940281315]
+transform = Transform3D(-0.75, 6.556708e-08, 0, -6.556708e-08, -0.75, 0, 0, 0, 0.75, 0.720852, 0.020562991, 0.00079344027)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Page2" type="Node3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book" unique_id=1202060447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37358403, 0, -1.4901161e-08)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page2" unique_id=2012896254]
+transform = Transform3D(0.5, 0, -8.881784e-16, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, -0.17450953, 0.08375168, -0.020129953)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("31_ld5oi")
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page2/Sprite3D" unique_id=122599917]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.24885027, 0.09922144, -2.9846996e-09)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("32_qr730")
+
+[node name="Label3D" type="Label3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page2" unique_id=1200945039]
+transform = Transform3D(0.25, 0, -4.440892e-16, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.19875406, 0.07535553, 0.23525047)
+modulate = Color(0.24313726, 0.24313726, 0.24313726, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "1   2   3   4"
+font = ExtResource("32_21e76")
+font_size = 48
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page2/Label3D" unique_id=1237478293]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.3980944, 0.020563, -0.021179214)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page2/Label3D" unique_id=10322375]
+transform = Transform3D(-3.278354e-08, 0.75, 0, -0.75, -3.278354e-08, 0, 0, 0, 0.75, -0.029344112, 0.02056302, 0.00079344027)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page2/Label3D" unique_id=277444569]
+transform = Transform3D(-0.75, -6.556708e-08, 0, 6.556708e-08, -0.75, 0, 0, 0, 0.75, 0.35381365, 0.020563008, 0.00079344027)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathTub/Water/Book/Page2/Label3D" unique_id=2057850165]
+transform = Transform3D(-3.278354e-08, -0.75, 0, 0.75, -3.278354e-08, 0, 0, 0, 0.75, 0.720852, 0.020562991, 0.00079344027)
+modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
+texture = ExtResource("33_2t6pw")
+
+[node name="BathroomLightHolder" parent="Levels/Bathroom/Scenario" unique_id=8687540 instance=ExtResource("24_2o7ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.725029, 0, 0.14035606)
+
+[node name="LightBulb" parent="Levels/Bathroom/Scenario/BathroomLightHolder/LightBulb" parent_id_path=PackedInt32Array(8687540, 1257964650) index="0" unique_id=819909767]
+surface_material_override/0 = ExtResource("29_kyx3d")
+
+[node name="SinkLight" type="OmniLight3D" parent="Levels/Bathroom/Scenario/BathroomLightHolder/LightBulb" parent_id_path=PackedInt32Array(8687540, 1257964650) index="1" unique_id=370026986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11811447, 0.05077839)
+
+[node name="BathroomMirror" parent="Levels/Bathroom/Scenario" unique_id=944343569 instance=ExtResource("24_fshl6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031719208, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathroomMirror/BathroomMirrorDoor" parent_id_path=PackedInt32Array(944343569, 1526694068) index="1" unique_id=2010616255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.035678864)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("31_ld5oi")
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Bathroom/Scenario/BathroomMirror/BathroomMirrorDoor/Sprite3D" unique_id=966601235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.235, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("32_qr730")
+
+[node name="Patterned" type="Area3D" parent="Levels/Bathroom/Scenario/BathroomMirror" unique_id=1924283381 node_paths=PackedStringArray("mesh")]
+script = ExtResource("5_6hhkj")
+pattern = Array[int]([1, 0, 0, 1, 3])
+mesh = NodePath("../BathroomMirrorDoor/BathroomMirrorDoor")
+material_idx = Array[int]([1])
+selected_material = ExtResource("6_av7uq")
+locked_material = ExtResource("7_46pcy")
+metadata/_custom_type_script = "uid://dbinv34xc0tpr"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Bathroom/Scenario/BathroomMirror/Patterned" unique_id=812001808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1847229)
+shape = SubResource("BoxShape3D_kqo7x")
+
+[node name="HammerPick" type="Node3D" parent="Levels/Bathroom/Scenario/BathroomMirror" unique_id=2120461102]
+transform = Transform3D(0.04741764, -0.4948079, -0.054006293, 0.3264651, 0.0718687, -0.37182721, 0.37572888, -2.8356417e-09, 0.32989073, 0.22551632, -0.14515305, 0.11507797)
+
+[node name="Hammer" parent="Levels/Bathroom/Scenario/BathroomMirror/HammerPick" unique_id=1051621178 instance=ExtResource("33_ri7pd")]
+transform = Transform3D(1, 1.4901161e-08, -3.7252903e-09, 0, 0.99999994, -1.4901161e-08, 0, -1.4901161e-08, 0.99999994, 5.9604645e-08, 0, 9.536743e-07)
+
+[node name="Martelo" parent="Levels/Bathroom/Scenario/BathroomMirror/HammerPick/Hammer" index="0" unique_id=419443982]
+surface_material_override/0 = SubResource("StandardMaterial3D_21e76")
+
+[node name="PickupItem" type="Area3D" parent="Levels/Bathroom/Scenario/BathroomMirror/HammerPick" unique_id=1216777757 node_paths=PackedStringArray("remove_node")]
+input_ray_pickable = false
+script = ExtResource("34_2oi3e")
+item = ExtResource("35_1q704")
+remove_node = NodePath("..")
+metadata/_custom_type_script = "uid://gdx1msx8ssyi"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Bathroom/Scenario/BathroomMirror/HammerPick/PickupItem" unique_id=2133523167]
+transform = Transform3D(1, 0, 0, 0, 1, 2.9802337e-08, 0, -2.9802337e-08, 1, 4.172325e-07, 0.41882515, 0.013792992)
+shape = SubResource("BoxShape3D_2t6pw")
+
+[node name="LightPattern" type="Node" parent="Levels/Bathroom/Scenario" unique_id=362316004 node_paths=PackedStringArray("lights")]
+script = ExtResource("30_46pcy")
+mat = ExtResource("29_kyx3d")
+lights = [NodePath("../BathroomLightHolder/LightBulb/SinkLight")]
+on_color = Color(1, 1, 1, 1)
+off_color = Color(0.73333335, 0.73333335, 0.73333335, 1)
+on_light_attenuation = 1.0
+off_light_attenuation = 0.5
+pattern = Array[int]([1, 0, 0, 1, 3])
+pattern_blinks = Dictionary[int, int]({
+0: 2,
+1: 1,
+2: 4,
+3: 3
+})
+
+[node name="SmallBoxOpen" parent="Levels/Bathroom/Scenario" unique_id=545474080 instance=ExtResource("15_ld5oi")]
+transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, 2.3597817, -1.2177086, 0.7649107)
+
+[node name="Interactable" type="Area3D" parent="Levels/Bathroom/Scenario/SmallBoxOpen" unique_id=1926902850]
+script = ExtResource("41_5rpng")
+metadata/_custom_type_script = "uid://dacaijey35bqu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Bathroom/Scenario/SmallBoxOpen/Interactable" unique_id=1492212919]
+shape = SubResource("BoxShape3D_d0u6y")
+
+[node name="PointerPickup" type="Area3D" parent="Levels/Bathroom/Scenario/SmallBoxOpen" unique_id=694973354 node_paths=PackedStringArray("remove_node")]
+input_ray_pickable = false
+script = ExtResource("34_2oi3e")
+item = ExtResource("42_d0vjv")
+remove_node = NodePath(".")
+metadata/_custom_type_script = "uid://gdx1msx8ssyi"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Bathroom/Scenario/SmallBoxOpen/PointerPickup" unique_id=1493457219]
+shape = SubResource("BoxShape3D_d0u6y")
+
+[node name="DeepBathroomLight" type="OmniLight3D" parent="Levels/Bathroom" unique_id=1841255994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.683092, 2.198124, -3.120265)
+visible = false
+light_energy = 2.0
+omni_range = 3.382672
+
+[node name="InternalScenes" type="Node3D" parent="Levels/Bathroom" unique_id=727479928]
+
+[node name="MirrorSinkScene" type="Node3D" parent="Levels/Bathroom/InternalScenes" unique_id=131312140 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, -7.450581e-09, 0, 7.450581e-09, 1, 0.82864666, -0.27308273, -3.171636)
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+metadata/_custom_type_script = "uid://ypfbu7sipw7r"
+
+[node name="CameraStand" parent="Levels/Bathroom/InternalScenes/MirrorSinkScene" unique_id=1080157643 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(0.9999999, 0, 5.960464e-08, -5.1111058e-09, 0.99631685, 0.085750155, -5.9385105e-08, -0.085750185, 0.99631673, 0, 1.9856606, -0.17090034)
+
+[node name="ChangeSceneInteractable" parent="Levels/Bathroom/InternalScenes/MirrorSinkScene/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1080157643, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(1.0000001, -1.7009905e-08, 2.4786608e-09, 1.7009903e-08, 0.9584152, -0.28537855, 2.478668e-09, 0.28537875, 0.95841444, -0.01750803, -0.44369888, -0.6051769)
+scene = NodePath("../../../../..")
+
+[node name="BathScene" type="Node3D" parent="Levels/Bathroom/InternalScenes" unique_id=1175219669 node_paths=PackedStringArray("camera", "on_scene_only", "child_of")]
+transform = Transform3D(1, 0, 0, 0, 1, -7.450581e-09, 0, 7.450581e-09, 1, 3.485179, -0.27308273, -2.9370728)
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("InnerBathLight")]
+child_of = NodePath("../..")
+metadata/_custom_type_script = "uid://ypfbu7sipw7r"
+
+[node name="CameraStand" parent="Levels/Bathroom/InternalScenes/BathScene" unique_id=210957545 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(0.49999997, 0.07426183, -0.86283565, 1.3412866e-09, 0.99631685, 0.08575014, 0.8660253, -0.04287509, 0.4981584, 0.13545609, 1.5143814, 0.50181675)
+
+[node name="ChangeSceneInteractable" parent="Levels/Bathroom/InternalScenes/BathScene/CameraStand/Camera3D" parent_id_path=PackedInt32Array(210957545, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.4703484e-08, 0.902586, -0.43051106, -1.0000006, -4.8428774e-08, -9.778887e-09, -7.450581e-09, 0.43051144, 0.902585, -0.7906132, -0.2664795, -0.6269579)
+scene = NodePath("../../../../..")
+
+[node name="InnerBathLight" type="OmniLight3D" parent="Levels/Bathroom/InternalScenes/BathScene" unique_id=843944441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5305605, 1.6398239, 0.4602909)
+visible = false
+light_energy = 0.5
+omni_range = 3.382672
+
+[node name="Interactable" type="Area3D" parent="Levels/Bathroom/InternalScenes/BathScene" unique_id=1134756277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8057165, 1.5536938, -1.8058205)
+script = ExtResource("41_5rpng")
+metadata/_custom_type_script = "uid://dacaijey35bqu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Bathroom/InternalScenes/BathScene/Interactable" unique_id=944539482]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.089084625, 0)
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="GoReading" type="Area3D" parent="Levels/Bathroom/InternalScenes/BathScene" unique_id=820354965 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.7171461, 0.42002738, 0.55612814, -0.5053894, 0.86289144, 0, -0.47987822, -0.28106126, 0.83109653, 1.1720518, 1.4193352, 0.14897142)
+input_ray_pickable = false
+script = ExtResource("13_46pcy")
+scene = NodePath("../../ReadingScene")
+metadata/_custom_type_script = "uid://dacaijey35bqu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Bathroom/InternalScenes/BathScene/GoReading" unique_id=487982472]
+transform = Transform3D(1.0000026, -3.874302e-07, 2.0861626e-07, 0, 1.0000002, -7.4505806e-08, -1.4305115e-06, -1.5199184e-06, 1.0000002, -5.722046e-06, -0.018154144, 0.030031681)
+shape = SubResource("BoxShape3D_57qmd")
+
+[node name="ReadingScene" type="Node3D" parent="Levels/Bathroom/InternalScenes" unique_id=1076212476 node_paths=PackedStringArray("camera", "on_scene_only", "child_of")]
+transform = Transform3D(1, 0, 0, 0, 1, -7.450581e-09, 0, 7.450581e-09, 1, 3.485179, -0.27308273, -2.9370728)
+script = ExtResource("12_av7uq")
+camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+child_of = NodePath("../BathScene")
+metadata/_custom_type_script = "uid://ypfbu7sipw7r"
+
+[node name="CameraStand" parent="Levels/Bathroom/InternalScenes/ReadingScene" unique_id=785376916 instance=ExtResource("14_kyx3d")]
+transform = Transform3D(0.4999999, 0.7500002, -0.43301275, 0, 0.5, 0.86602557, 0.8660253, -0.43301275, 0.25, 1.3214896, 1.5143814, 0.25935176)
+
+[node name="Camera3D" parent="Levels/Bathroom/InternalScenes/ReadingScene/CameraStand" index="0" unique_id=1331824599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04026848, 0.2834092, 0.032915525)
+
+[node name="ChangeSceneInteractable" parent="Levels/Bathroom/InternalScenes/ReadingScene/CameraStand/Camera3D" index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+transform = Transform3D(0.9999891, 4.4703484e-08, -0.0047812164, -0.0047812834, -2.9802322e-08, -0.99998814, 1.4759182e-08, 1.0000007, -2.9588243e-08, -0.0032949839, -0.3529844, -0.5001068)
+visible = false
+input_ray_pickable = false
+scene = NodePath("../../../../BathScene")
+
+[node name="Void" type="MeshInstance3D" parent="." unique_id=940551125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35.548447, 0)
+material_override = SubResource("StandardMaterial3D_weeiq")
+mesh = SubResource("BoxMesh_d0u6y")
+
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door/Patterned" to="BaseAmbient/Doors/Door/Patterned" method="disable_interactable"]
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door/Patterned" to="BaseAmbient/Doors/Door/FancyDoor" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door/Patterned" to="BaseAmbient/Doors/Door/FancyDoorOpened" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door/Patterned" to="BaseAmbient/Doors/Door/NextScene" method="set_ray_pickable" binds= [true]]
+[connection signal="on_target" from="BaseAmbient/Doors/Door2/DoorWoods/Counter" to="BaseAmbient/Doors/Door2/ClickBlock" method="enable_interactable"]
+[connection signal="item_used" from="BaseAmbient/Doors/Door2/DoorWoods/Wood/HammerUse" to="BaseAmbient/Doors/Door2/DoorWoods/Counter" method="increment_one"]
+[connection signal="item_used" from="BaseAmbient/Doors/Door2/DoorWoods/Wood/HammerUse" to="BaseAmbient/Doors/Door2/DoorWoods/WoodFallen" method="set_visible" binds= [true]]
+[connection signal="item_used" from="BaseAmbient/Doors/Door2/DoorWoods/Wood2/HammerUse" to="BaseAmbient/Doors/Door2/DoorWoods/Counter" method="increment_one"]
+[connection signal="item_used" from="BaseAmbient/Doors/Door2/DoorWoods/Wood2/HammerUse" to="BaseAmbient/Doors/Door2/DoorWoods/WoodFallen2" method="set_visible" binds= [true]]
+[connection signal="item_used" from="BaseAmbient/Doors/Door2/DoorWoods/Wood3/HammerUse" to="BaseAmbient/Doors/Door2/DoorWoods/Counter" method="increment_one"]
+[connection signal="item_used" from="BaseAmbient/Doors/Door2/DoorWoods/Wood3/HammerUse" to="BaseAmbient/Doors/Door2/DoorWoods/WoodFallen3" method="set_visible" binds= [true]]
+[connection signal="on_clicked" from="BaseAmbient/Doors/Door2/ClickBlock" to="BaseAmbient/Doors/Door2/FancyDoor" method="queue_free"]
+[connection signal="on_clicked" from="BaseAmbient/Doors/Door2/ClickBlock" to="BaseAmbient/Doors/Door2/NextScene" method="enable_interactable"]
+[connection signal="on_clicked" from="BaseAmbient/Doors/Door2/ClickBlock" to="BaseAmbient/Doors/Door2/ClickBlock" method="queue_free"]
+[connection signal="on_clicked" from="BaseAmbient/Doors/Door2/ClickBlock" to="BaseAmbient/Doors/Door2/FancyDoorOpened" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/Patterned" method="disable_interactable"]
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/Patterned" method="queue_free"]
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/NextScene" method="enable_interactable"]
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/FancyDoor" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/FancyDoorOpened" method="set_visible" binds= [true]]
+[connection signal="item_used" from="BaseAmbient/Doors/Door4/OpenWithKey" to="BaseAmbient/Doors/Door4/NextChapter" method="enable_interactable"]
+[connection signal="item_used" from="BaseAmbient/Doors/Door4/OpenWithKey" to="BaseAmbient/Doors/Door4/FancyDoor" method="set_visible" binds= [false]]
+[connection signal="item_used" from="BaseAmbient/Doors/Door4/OpenWithKey" to="BaseAmbient/Doors/Door4/FancyDoorOpened" method="set_visible" binds= [true]]
+[connection signal="on_clicked" from="Levels/LivingRoom/NextArea" to="Levels/LivingRoom/NextArea" method="disable_interactable"]
+[connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" method="queue_free"]
+[connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/PointerPickup/PickupItem" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/OpenLid" method="set_visible" binds= [true]]
+[connection signal="on_clicked" from="Levels/LivingRoom/InternalScenes/TableScene/CameraStand/Camera3D/ChangeSceneInteractable" to="Levels/LivingRoom/NextArea" method="enable_interactable"]
+[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableOpen" to="Levels/Kitchen/Scenario/Fridge/InteractableOpen" method="disable_interactable"]
+[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableOpen" to="Levels/Kitchen/Scenario/Fridge/InteractableClose" method="enable_interactable"]
+[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableOpen" to="Levels/Kitchen/Scenario/Fridge/FridgeDoor" method="set_visible" binds= [false]]
+[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableOpen" to="Levels/Kitchen/Scenario/Fridge/Open" method="set_visible" binds= [true]]
+[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableClose" to="Levels/Kitchen/Scenario/Fridge/InteractableOpen" method="enable_interactable"]
+[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableClose" to="Levels/Kitchen/Scenario/Fridge/InteractableClose" method="disable_interactable"]
+[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableClose" to="Levels/Kitchen/Scenario/Fridge/FridgeDoor" method="set_visible" binds= [true]]
+[connection signal="on_clicked" from="Levels/Kitchen/Scenario/Fridge/InteractableClose" to="Levels/Kitchen/Scenario/Fridge/Open" method="set_visible" binds= [false]]
+[connection signal="item_used" from="Levels/Pantry/Scenario/GrandClock/UseItem/UseSmall" to="Levels/Pantry/Scenario/GrandClock/Counter" method="increment_one"]
+[connection signal="item_used" from="Levels/Pantry/Scenario/GrandClock/UseItem/UseSmall" to="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers/SmallPointer" method="set_visible" binds= [true]]
+[connection signal="item_used" from="Levels/Pantry/Scenario/GrandClock/UseItem/UseNormal" to="Levels/Pantry/Scenario/GrandClock/Counter" method="increment_one"]
+[connection signal="item_used" from="Levels/Pantry/Scenario/GrandClock/UseItem/UseNormal" to="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers/Pointer" method="set_visible" binds= [true]]
+[connection signal="item_used" from="Levels/Pantry/Scenario/GrandClock/UseItem/UseBig" to="Levels/Pantry/Scenario/GrandClock/Counter" method="increment_one"]
+[connection signal="item_used" from="Levels/Pantry/Scenario/GrandClock/UseItem/UseBig" to="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers/BigPointer" method="set_visible" binds= [true]]
+[connection signal="on_target" from="Levels/Pantry/Scenario/GrandClock/Counter" to="Levels/Pantry/Scenario/GrandClock/Key/PickupItem" method="enable_interactable"]
+[connection signal="on_target" from="Levels/Pantry/Scenario/GrandClock/Counter" to="Levels/Pantry/Scenario/GrandClock/ClosedDoor" method="set_visible" binds= [false]]
+[connection signal="on_target" from="Levels/Pantry/Scenario/GrandClock/Counter" to="Levels/Pantry/Scenario/GrandClock/OpenDoor" method="set_visible" binds= [true]]
+[connection signal="on_target" from="Levels/Pantry/Scenario/GrandClock/Counter" to="Levels/Pantry/Scenario/GrandClock/Key" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/Patterned" method="disable_interactable"]
+[connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/BathroomMirrorDoor" method="set_visible" binds= [false]]
+[connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/OpenMirrorDoor" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/HammerPick/PickupItem" method="set_ray_pickable" binds= [true]]
+[connection signal="on_clicked" from="Levels/Bathroom/Scenario/SmallBoxOpen/Interactable" to="Levels/Bathroom/Scenario/SmallBoxOpen/Interactable" method="queue_free"]
+[connection signal="on_clicked" from="Levels/Bathroom/Scenario/SmallBoxOpen/Interactable" to="Levels/Bathroom/Scenario/SmallBoxOpen/PointerPickup" method="enable_interactable"]
+[connection signal="on_clicked" from="Levels/Bathroom/Scenario/SmallBoxOpen/Interactable" to="Levels/Bathroom/Scenario/SmallBoxOpen/ClosedLid" method="set_visible" binds= [false]]
+[connection signal="on_clicked" from="Levels/Bathroom/Scenario/SmallBoxOpen/Interactable" to="Levels/Bathroom/Scenario/SmallBoxOpen/OpenLid" method="set_visible" binds= [true]]
+[connection signal="on_clicked" from="Levels/Bathroom/InternalScenes/BathScene/Interactable" to="Levels/Bathroom/InternalScenes/BathScene/Interactable" method="disable_interactable"]
+[connection signal="on_clicked" from="Levels/Bathroom/InternalScenes/BathScene/Interactable" to="Levels/Bathroom/InternalScenes/BathScene/GoReading" method="enable_interactable"]
+[connection signal="on_clicked" from="Levels/Bathroom/InternalScenes/BathScene/Interactable" to="Levels/Bathroom/Scenario/BathTub/Water" method="set_visible" binds= [true]]
+
+[editable path="BaseAmbient/Doors/Door"]
+[editable path="BaseAmbient/Doors/Door/FancyDoorFrame"]
+[editable path="BaseAmbient/Doors/Door/FancyDoor"]
+[editable path="BaseAmbient/Doors/Door/FancyDoor/FancyDoorKnobKeyless"]
+[editable path="BaseAmbient/Doors/Door/FancyDoorOpened"]
+[editable path="BaseAmbient/Doors/Door/FancyDoorOpened/FancyDoorKnobKeyless"]
+[editable path="BaseAmbient/Doors/Door2"]
+[editable path="BaseAmbient/Doors/Door2/FancyDoorFrame"]
+[editable path="BaseAmbient/Doors/Door2/FancyDoor"]
+[editable path="BaseAmbient/Doors/Door2/FancyDoor/FancyDoorKnobKeyless"]
+[editable path="BaseAmbient/Doors/Door2/FancyDoorOpened"]
+[editable path="BaseAmbient/Doors/Door2/FancyDoorOpened/FancyDoorKnobKeyless"]
+[editable path="BaseAmbient/Doors/Door3"]
+[editable path="BaseAmbient/Doors/Door3/FancyDoorFrame"]
+[editable path="BaseAmbient/Doors/Door3/FancyDoor"]
+[editable path="BaseAmbient/Doors/Door3/FancyDoor/FancyDoorKnobKeyless"]
+[editable path="BaseAmbient/Doors/Door3/FancyDoorOpened"]
+[editable path="BaseAmbient/Doors/Door3/FancyDoorOpened/FancyDoorKnobKeyless"]
+[editable path="BaseAmbient/Doors/Door4"]
+[editable path="BaseAmbient/Doors/Door4/FancyDoorFrame"]
+[editable path="BaseAmbient/Doors/Door4/FancyDoor"]
+[editable path="BaseAmbient/Doors/Door4/FancyDoor/FancyDoorKnobKeyless"]
+[editable path="BaseAmbient/Doors/Door4/FancyDoorOpened"]
+[editable path="BaseAmbient/Doors/Door4/FancyDoorOpened/FancyDoorKnobKeyless"]
+[editable path="BaseAmbient/Doors/Door5"]
+[editable path="BaseAmbient/Doors/Door5/FancyDoorFrame"]
+[editable path="BaseAmbient/Doors/Door5/FancyDoor"]
+[editable path="BaseAmbient/Doors/Door5/FancyDoor/FancyDoorKnobKeyless"]
+[editable path="BaseAmbient/Doors/Door5/FancyDoorOpened"]
+[editable path="BaseAmbient/Doors/Door5/FancyDoorOpened/FancyDoorKnobKeyless"]
+[editable path="BaseAmbient/Static/SmallTable"]
+[editable path="Levels/Hallway/CameraStand"]
+[editable path="Levels/Hallway/InternalScenes/DoorScene/CameraStand"]
+[editable path="Levels/LivingRoom/CameraStand"]
+[editable path="Levels/LivingRoom/Scenario/SmallBoxOpen"]
+[editable path="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/SmallBoxLid"]
+[editable path="Levels/LivingRoom/Scenario/SmallBoxOpen/PointerPickup/Pointer"]
+[editable path="Levels/LivingRoom/Scenario/Paper1"]
+[editable path="Levels/LivingRoom/Scenario/Paper2"]
+[editable path="Levels/LivingRoom/InternalScenes/TableScene/CameraStand"]
+[editable path="Levels/Kitchen/CameraStand"]
+[editable path="Levels/Kitchen/Scenario/Fridge"]
+[editable path="Levels/Kitchen/Scenario/Fridge/FridgeDoor"]
+[editable path="Levels/Kitchen/Scenario/Fridge/Open/FridgeDoor"]
+[editable path="Levels/Kitchen/Scenario/Rack/Vase"]
+[editable path="Levels/Kitchen/Scenario/Rack/Vase2"]
+[editable path="Levels/Kitchen/Scenario/Rack/Vase3"]
+[editable path="Levels/Kitchen/Scenario/Rack/Vase4"]
+[editable path="Levels/Kitchen/Scenario/Rack/Vase5"]
+[editable path="Levels/Kitchen/InternalScenes/Vases/CameraStand"]
+[editable path="Levels/Kitchen/InternalScenes/Oven/CameraStand"]
+[editable path="Levels/Kitchen/InternalScenes/Book/CameraStand"]
+[editable path="Levels/Pantry/CameraStand"]
+[editable path="Levels/Pantry/Scenario/GrandClock"]
+[editable path="Levels/Pantry/Scenario/Portrait"]
+[editable path="Levels/Pantry/Finally/CameraStand"]
+[editable path="Levels/Pantry/Finally/CameraStand/Camera3D/ChangeSceneInteractable/Arrow"]
+[editable path="Levels/Bathroom/CameraStand"]
+[editable path="Levels/Bathroom/Scenario/BathroomLightHolder"]
+[editable path="Levels/Bathroom/Scenario/BathroomLightHolder/LightBulb"]
+[editable path="Levels/Bathroom/Scenario/BathroomMirror"]
+[editable path="Levels/Bathroom/Scenario/BathroomMirror/BathroomMirrorDoor"]
+[editable path="Levels/Bathroom/Scenario/BathroomMirror/HammerPick/Hammer"]
+[editable path="Levels/Bathroom/Scenario/SmallBoxOpen"]
+[editable path="Levels/Bathroom/InternalScenes/MirrorSinkScene/CameraStand"]
+[editable path="Levels/Bathroom/InternalScenes/BathScene/CameraStand"]
+[editable path="Levels/Bathroom/InternalScenes/ReadingScene/CameraStand"]

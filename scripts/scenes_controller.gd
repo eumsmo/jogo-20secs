@@ -14,7 +14,7 @@ func change_scene(scene: Scene):
 		await get_tree().physics_frame
 	
 	
-	if current_scene != null:
+	if current_scene != null and scene.child_of != current_scene:
 		current_scene.deactivate()
 	
 	current_scene = scene

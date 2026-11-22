@@ -1,0 +1,47 @@
+[gd_scene format=4 uid="uid://slxkdyrw3jpa"]
+
+[ext_resource type="Material" uid="uid://k0oggbccmtay" path="res://resources/materials/vfx/glow.tres" id="1_jdubk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygp4x"]
+resource_name = "Blue"
+cull_mode = 2
+albedo_color = Color(0.1137255, 0.16862746, 0.3254902, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_p858c"]
+_surfaces = [{
+"aabb": AABB(-0.061476544, -0.008188195, -0.008192009, 0.12295501, 0.016386334, 0.016386334),
+"format": 34896613377,
+"index_count": 96,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIABAADAAIABQACAAEABAACAAUABQABAAYABwADAAQAAwAHAAAABAAFAAgACAAFAAYABwAEAAkABAAIAAkACgAHAAkACgAAAAcACgAJAAsACwAJAAgACgALAAwACwAIAAwACgAMAA0ACgANAAAACAAOAAwADQAMAA4ADQAOAA8AAAANAA8AAAAPABAADgAQAA8AAAAQAAEACAARAA4ADgARABAAEQABABAACAAGABEAEQAGAAEA"),
+"name": "Blue",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("AAD/f/9/AAAQE/9///8AAFYJ/z//vwAAEBMAAP9/AADu7AAA/38AAKj2/z//vwAA7uz/f///AABWCf8//z8AAP///3//fwAAqPb/P/8/AAAQE/9/AAAAAO7s/38AAAAAqPb/v/8/AABWCf+//z8AAO7s////fwAAEBP///9/AABWCf+//78AAKj2/7//vwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_u2osv"]
+resource_name = "phase3_PathMarker"
+_surfaces = [{
+"aabb": AABB(-0.061476544, -0.008188195, -0.008192009, 0.12295501, 0.016386334, 0.016386334),
+"attribute_data": PackedByteArray("/3//3/+f////f////5//3/9//7//n/9//5//v/9//3//X/+//1//f/9f/z//f/9f/1//X/9//z//f/8//58AAP+f/z//fwAA/1//P/9fAAD/H/9f/1//P/9f/1//H/8//x//f/9f/3//n/9f/9//P//f/1//n/8//5//f//f/3//X/9//3//X/9//3//X/9f/3//3/+f/7//n//f/3//v/9//1//n/9//3//f/+f/1//f/9f/5//P/+f/1//f/8//1////9//9//f////1//3/9f/7//f//f/1//3/9//78="),
+"format": 34896613399,
+"index_count": 96,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAHAAQACAAJAAcACgALAAwACgANAAsADgAPABAADgARAA8AEgARAA4AEgATABEAFAAVABYAFAAXABUAGAAUABYAGAAWABkAGgAbABwAGgAdABsAHgAaABwAHgAcAB8AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUA"),
+"material": SubResource("StandardMaterial3D_ygp4x"),
+"name": "Blue",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 56,
+"vertex_data": PackedByteArray("AAD/f/9/2aUQE/9////ZpVYJ/z//v7ilVgn/v/+/+qVWCf+//z846u7s////fyXyEBP///9/ReOo9v+//z846hAT/38AACXy7uz/fwAARePu7AAA/3+oz////3//f6jPqPb/P/8/xc+o9v8//7+Lz6j2/z//v0/EEBP/f///ZbDu7P9///+W3lYJ/z//v0/E7uwAAP9/ZbAQEwAA/3+W3lYJ/z//P//f7uwAAP9//9+o9v8//z//3xATAAD/f//fEBP/fwAA/9/u7P9/AAD/36j2/7//v///EBP/f/////9WCf+//7///+7s/3//////7uz///9///8QE////3///+7s/38AAI33////f/9/jfeo9v+//z+f96j2/z//P3r3AAD/f/9/M8AQE////38zwFYJ/7//vy/AVgn/v/8/N8D///9//3/p++7s////f+n7qPb/v/8/w/uo9v+//78Q/P///3//f6fp7uz/f///p+mo9v+//7906aj2/z//v9rpEBMAAP9/gdsAAP9//3+B21YJ/z//v6PbVgn/P/8/X9sQE/9/AACW4wAA/3//f5bjVgn/P/8/nONWCf+//z+Q4+rCf+3qwn/tnMKU7TfDae2JsxC2EaEew1rMg6SJsxC2EqEew1rMg6RkBfdLZAX3SzIF/0uXBe9LrRzp4YMXRtDiIEXwrRzp4YMXRtDiIEXwAAD/fwAA/38AAP9/AAD/fwAA/38AAP9//398pf9/fKX/f3yl/398pf9/fKX/f3ylARf3SwEX90vTFhhMLxfWS8/KVbvPylW7jcpfuxHLS7snKqcgJyqnIEAqjSAPKsEg4wmmIOMJpiD5CaAgzQmsIE+7HvtPux77ebvz+ia7SvvEpavkxKWr5ASmfOSDpdnk")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_p858c")
+
+[node name="PathMarker" type="Node3D" unique_id=1677907898]
+
+[node name="PathMarker" type="MeshInstance3D" parent="." unique_id=1213929553]
+layers = 32
+material_override = ExtResource("1_jdubk")
+mesh = SubResource("ArrayMesh_u2osv")

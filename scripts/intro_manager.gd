@@ -89,7 +89,7 @@ func on_pattern_right():
 	pattern_listener.process_mode = Node.PROCESS_MODE_DISABLED
 	game.process_mode = Node.PROCESS_MODE_INHERIT
 	
-	game.scenes.change_scene(game.level_scene_relation[game.current_level])
+	game.scenes.change_scene(game.level_scene_relation[game.current_level].starting_scene)
 	
 	simple_timer(func(progress): modulate.a = progress)
 	await transition_circle(intro_fade.material)
