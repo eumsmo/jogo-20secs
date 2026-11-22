@@ -18,6 +18,9 @@
 [ext_resource type="Resource" uid="uid://chx7cb6ef57pc" path="res://resources/levels/man.tres" id="9_yfbtn"]
 [ext_resource type="PackedScene" uid="uid://dpcb80nty0wh5" path="res://scenes/components/arrows/up_arrow.tscn" id="10_8x14w"]
 [ext_resource type="Script" uid="uid://bsgq3bdgo1dx8" path="res://scripts/pattern/simple_pattern_listener.gd" id="13_8x14w"]
+[ext_resource type="Texture2D" uid="uid://cqsgx0ii5wjbs" path="res://resources/sprites/circleish.png" id="18_yh8me"]
+[ext_resource type="Script" uid="uid://bkvypxuckxda3" path="res://scripts/ui/chapter_listing.gd" id="19_cei74"]
+[ext_resource type="Texture2D" uid="uid://b2vh4tx306dlt" path="res://resources/sprites/arrow_ui.png" id="19_j7bs0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ljqmr"]
 blend_mode = 3
@@ -34,6 +37,24 @@ font_size = 64
 [sub_resource type="LabelSettings" id="LabelSettings_0to4s"]
 font = ExtResource("6_xj5ry")
 font_size = 48
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_junhc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_086en"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cnkwe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ulerj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhu2g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
+font = ExtResource("6_xj5ry")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_j7bs0"]
+font = ExtResource("6_xj5ry")
+font_size = 38
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jdsl7"]
 shader = ExtResource("5_ljqmr")
@@ -205,6 +226,237 @@ layout_mode = 2
 material = null
 layout_mode = 2
 
+[node name="ChapterListing" type="Control" parent="SubViewportContainer/SubViewport/Intro" unique_id=2047402881 node_paths=PackedStringArray("previous_label", "current_label", "next_label", "previous_progress_label", "current_progress_label", "next_progress_label", "previous_button", "next_button", "listing", "button")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("19_cei74")
+previous_label = NodePath("Listing/MarginContainer/HBoxContainer/Button")
+current_label = NodePath("Listing/MarginContainer/HBoxContainer/Label2")
+next_label = NodePath("Listing/MarginContainer/HBoxContainer/Button2")
+previous_progress_label = NodePath("Listing/MarginContainer/HBoxContainer/Button/Label")
+current_progress_label = NodePath("Listing/MarginContainer/HBoxContainer/Label2/Label")
+next_progress_label = NodePath("Listing/MarginContainer/HBoxContainer/Button2/Label")
+previous_button = NodePath("Listing/Left")
+next_button = NodePath("Listing/Right")
+listing = NodePath("Listing")
+button = NodePath("Button")
+
+[node name="Listing" type="Control" parent="SubViewportContainer/SubViewport/Intro/ChapterListing" unique_id=867569907]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing" unique_id=62205608]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -78.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/MarginContainer" unique_id=352033433]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Button" type="Button" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/MarginContainer/HBoxContainer" unique_id=1506258289]
+modulate = Color(0.47788048, 0.47788006, 0.47788024, 1)
+custom_minimum_size = Vector2(333, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_xj5ry")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_junhc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_086en")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cnkwe")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ulerj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mhu2g")
+text = "Learning Outside"
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/MarginContainer/HBoxContainer/Button" unique_id=2024177619]
+modulate = Color(0.8431839, 0.8431839, 0.84318376, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.5
+offset_top = -37.0
+offset_right = 43.5
+offset_bottom = 11.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 1)
+text = "(2/4)"
+label_settings = SubResource("LabelSettings_yf5fn")
+
+[node name="Label2" type="Label" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/MarginContainer/HBoxContainer" unique_id=509475235]
+modulate = Color(0.7371927, 0.73719305, 0.7371929, 1)
+custom_minimum_size = Vector2(333, 0)
+layout_mode = 2
+text = "Knowledge Gates"
+label_settings = SubResource("LabelSettings_j7bs0")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/MarginContainer/HBoxContainer/Label2" unique_id=128119295]
+modulate = Color(0.8431839, 0.8431839, 0.84318376, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.5
+offset_top = -37.0
+offset_right = 43.5
+offset_bottom = 11.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 1)
+text = "(2/4)"
+label_settings = SubResource("LabelSettings_yf5fn")
+
+[node name="Button2" type="Button" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/MarginContainer/HBoxContainer" unique_id=783028780]
+modulate = Color(0.47788048, 0.47788006, 0.47788024, 1)
+custom_minimum_size = Vector2(333, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_xj5ry")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_junhc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_086en")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cnkwe")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ulerj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mhu2g")
+text = "Lessons"
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/MarginContainer/HBoxContainer/Button2" unique_id=741914799]
+modulate = Color(0.8431839, 0.8431839, 0.84318376, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.5
+offset_top = -37.0
+offset_right = 43.5
+offset_bottom = 11.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 1)
+text = "(2/4)"
+label_settings = SubResource("LabelSettings_yf5fn")
+
+[node name="Left" type="TextureButton" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing" unique_id=2117011203]
+modulate = Color(0.601223, 0.601223, 0.60122293, 1)
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -63.0
+offset_right = 46.0
+offset_bottom = -31.0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(-1, 1)
+texture_normal = ExtResource("19_j7bs0")
+texture_pressed = ExtResource("19_j7bs0")
+texture_hover = ExtResource("19_j7bs0")
+texture_disabled = ExtResource("19_j7bs0")
+texture_focused = ExtResource("19_j7bs0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Right" type="TextureButton" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing" unique_id=2036417312]
+modulate = Color(0.601223, 0.601223, 0.60122293, 1)
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -63.0
+offset_right = -19.0
+offset_bottom = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("19_j7bs0")
+texture_pressed = ExtResource("19_j7bs0")
+texture_hover = ExtResource("19_j7bs0")
+texture_disabled = ExtResource("19_j7bs0")
+texture_focused = ExtResource("19_j7bs0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="SubViewportContainer/SubViewport/Intro/ChapterListing" unique_id=922641985]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -55.625
+offset_right = 30.0
+offset_bottom = -15.625
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 1)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Button" unique_id=242209556]
+modulate = Color(0.41598046, 0.41598043, 0.4159804, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -40.0
+offset_right = 28.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 1)
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Button/HBoxContainer2" unique_id=310932369]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("18_yh8me")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Button/HBoxContainer2" unique_id=759883277]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("18_yh8me")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Button/HBoxContainer2" unique_id=58681546]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("18_yh8me")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/Intro" unique_id=1797031567]
 material = SubResource("ShaderMaterial_jdsl7")
 layout_mode = 1
@@ -238,5 +490,12 @@ timer = NodePath("Timer")
 wait_time = 20.0
 one_shot = true
 
+[connection signal="chapter_selected" from="SubViewportContainer/SubViewport/Intro/ChapterListing" to="SubViewportContainer/SubViewport/Intro" method="set_info"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/MarginContainer/HBoxContainer/Button" to="SubViewportContainer/SubViewport/Intro/ChapterListing" method="previous"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/MarginContainer/HBoxContainer/Button2" to="SubViewportContainer/SubViewport/Intro/ChapterListing" method="next"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/Left" to="SubViewportContainer/SubViewport/Intro/ChapterListing" method="previous"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/Right" to="SubViewportContainer/SubViewport/Intro/ChapterListing" method="next"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/Intro/ChapterListing/Button" to="SubViewportContainer/SubViewport/Intro/ChapterListing" method="show_listing"]
 [connection signal="gui_input" from="SubViewportContainer/SubViewport/Intro/ColorRect" to="SubViewportContainer/SubViewport/Intro" method="_on_intro_block_input"]
+[connection signal="pattern_added" from="SubViewportContainer/SubViewport/Intro/SimplePatternListener" to="SubViewportContainer/SubViewport/Intro/ChapterListing" method="_on_simple_pattern_listener_pattern_added"]
 [connection signal="on_ended" from="GrandTimer" to="SubViewportContainer/SubViewport/Intro" method="timer_ended"]

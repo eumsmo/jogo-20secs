@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ProgressMarker" format=3 uid="uid://mt8jg5dcnt3i"]
+
+[ext_resource type="Script" uid="uid://bx5am22m0deaw" path="res://scripts/progress/progress_marker.gd" id="1_ek2u3"]
+
+[resource]
+script = ExtResource("1_ek2u3")
+description = "Entered the left gate"
+metadata/_custom_type_script = "uid://bx5am22m0deaw"

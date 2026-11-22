@@ -55,6 +55,9 @@ func set_info(level_info: LevelInfo):
 		UIManager.instance.shader.transition_palette(Game.previous_level.palette, level_info.palette)
 	else:
 		UIManager.instance.shader.set_palette(level_info.palette)
+	
+	Game.current_level = level_info
+	ProgressManager.unlock_chapter(level_info)
 
 func simple_timer(callback: Callable, inverted: bool = true):
 	var time = 1.0
@@ -90,6 +93,7 @@ func on_pattern_right():
 	game.process_mode = Node.PROCESS_MODE_INHERIT
 	
 	game.scenes.change_scene(game.level_scene_relation[game.current_level].starting_scene)
+	game.game_actually_started()
 	
 	simple_timer(func(progress): modulate.a = progress)
 	await transition_circle(intro_fade.material)

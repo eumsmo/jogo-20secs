@@ -22,7 +22,8 @@ func _init() -> void:
 func _ready() -> void:
 	await get_tree().physics_frame
 	GrandTimer.instance.start_timer()
-	
+
+func game_actually_started():
 	for key in level_scene_relation.keys():
 		if key != current_level:
 			level_scene_relation[key].set_disabled()

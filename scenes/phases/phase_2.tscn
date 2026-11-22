@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://c0dfpalx2y01p" path="res://resources/levels/level1.tres" id="5_6mlwq"]
 [ext_resource type="Script" uid="uid://c3g0o3cunkyuj" path="res://scripts/interact/interactables/use_item_interactable.gd" id="6_ypc7x"]
 [ext_resource type="Resource" uid="uid://c7q66k03g4ree" path="res://resources/itens/key.tres" id="7_amv4o"]
+[ext_resource type="Resource" uid="uid://mt8jg5dcnt3i" path="res://resources/progress/phase2/left_gate.tres" id="7_ypc7x"]
 [ext_resource type="PackedScene" uid="uid://chrdenauhbkb2" path="res://resources/models/phase2/electric_panel.tscn" id="8_6vo26"]
 [ext_resource type="Material" uid="uid://c2pw4dy1xjum5" path="res://resources/materials/Fence.tres" id="9_5w46j"]
 [ext_resource type="Script" uid="uid://irap3h13rsfh" path="res://scripts/pattern/scene_pattern.gd" id="10_6qr28"]
@@ -33,6 +34,7 @@
 [ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="29_c8d6m"]
 [ext_resource type="Resource" uid="uid://byg5d7nahtjck" path="res://resources/levels/level3.tres" id="30_hn4vf"]
 [ext_resource type="Material" uid="uid://cs62pcgda5eor" path="res://resources/materials/vfx/sprite_mesh_mats/base_sprite_mesh_mat.tres" id="30_wyqdk"]
+[ext_resource type="Resource" uid="uid://c4pnuwb7ykqwj" path="res://resources/progress/phase2/entered_phase3.tres" id="31_6mlwq"]
 [ext_resource type="Material" uid="uid://1iri3ypfxyxh" path="res://resources/materials/vfx/sprite_mesh_mats/highlight_sprite_mesh_mat.tres" id="31_kgx2a"]
 [ext_resource type="Material" uid="uid://brcgsmls5gnle" path="res://resources/materials/vfx/sprite_mesh_mats/locked_sprite_mesh_mat.tres" id="32_6jnj4"]
 [ext_resource type="PackedScene" uid="uid://cm3xsqwxmduug" path="res://resources/models/phase1/house.tscn" id="33_vlf7q"]
@@ -40,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://c6dgjothkm064" path="res://resources/models/phase2/house_fence.tscn" id="35_v0bm0"]
 [ext_resource type="PackedScene" uid="uid://dmfw0gxln2v4k" path="res://resources/models/phase2/house_fence_div.tscn" id="36_0jkeh"]
 [ext_resource type="PackedScene" uid="uid://kuvc4qnw6apj" path="res://resources/models/phase2/house_fence_wider.tscn" id="37_ryu8u"]
+[ext_resource type="Resource" uid="uid://cr8vqf4ay54j3" path="res://resources/progress/phase2/right_gate.tres" id="38_amv4o"]
 [ext_resource type="PackedScene" uid="uid://by5turrkfnuvq" path="res://resources/models/phase2/fancy_door_frame.tscn" id="38_c1qks"]
 [ext_resource type="PackedScene" uid="uid://boupmy2th60ol" path="res://resources/models/phase2/fancy_door.tscn" id="39_ous80"]
 [ext_resource type="PackedScene" uid="uid://duk8yk3rfff3b" path="res://resources/models/phase2/fancy_door_knob_keyless.tscn" id="40_pakfa"]
@@ -176,6 +179,7 @@ transform = Transform3D(0.3540609, 0, 0.9352224, 0, 1, 0, -0.9352224, 0, 0.35406
 input_ray_pickable = false
 script = ExtResource("4_hn4vf")
 level = ExtResource("5_6mlwq")
+progress_marker = ExtResource("7_ypc7x")
 metadata/_custom_type_script = "uid://dacaijey35bqu"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene3/NextChapter" unique_id=1990620327]
@@ -645,6 +649,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.19472794,
 input_ray_pickable = false
 script = ExtResource("4_hn4vf")
 level = ExtResource("30_hn4vf")
+progress_marker = ExtResource("31_6mlwq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene5/Scenario/NextChapter" unique_id=1490938368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
@@ -803,6 +808,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.65
 input_ray_pickable = false
 script = ExtResource("4_hn4vf")
 level = ExtResource("5_6mlwq")
+progress_marker = ExtResource("38_amv4o")
 metadata/_custom_type_script = "uid://dacaijey35bqu"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene7/NextChapter" unique_id=1262584175]

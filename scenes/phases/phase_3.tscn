@@ -22,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://b2ji5vy7bsh32" path="res://resources/levels/level4.tres" id="13_tulss"]
 [ext_resource type="PackedScene" uid="uid://cf28yci5qmoth" path="res://resources/models/phase3/bath_faucet.tscn" id="14_fshl6"]
 [ext_resource type="PackedScene" uid="uid://dybkw4ji7oj7w" path="res://scenes/components/camera_stand.tscn" id="14_kyx3d"]
+[ext_resource type="Resource" uid="uid://d328gupe12sik" path="res://resources/progress/phase3/entered_phase4.tres" id="14_p1ahy"]
 [ext_resource type="PackedScene" uid="uid://dol7110otibo0" path="res://resources/models/phase3/small_box_open.tscn" id="15_ld5oi"]
 [ext_resource type="PackedScene" uid="uid://nl55v1swyely" path="res://resources/models/phase3/trash_can.tscn" id="15_ly5n8"]
 [ext_resource type="PackedScene" uid="uid://b1127ab6reggu" path="res://resources/models/phase3/sink.tscn" id="16_fshl6"]
@@ -361,6 +362,7 @@ transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 
 input_ray_pickable = false
 script = ExtResource("17_7v5th")
 level = ExtResource("13_tulss")
+progress_marker = ExtResource("14_p1ahy")
 metadata/_custom_type_script = "uid://dacaijey35bqu"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door2/NextChapter" unique_id=1396000897]

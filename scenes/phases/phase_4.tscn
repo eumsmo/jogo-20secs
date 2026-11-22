@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/interactables/change_scene_interactable.gd" id="11_v4xj5"]
 [ext_resource type="Script" uid="uid://ccup386pslxg0" path="res://scripts/counter.gd" id="12_xeugt"]
 [ext_resource type="Material" uid="uid://dcp258ghdupuw" path="res://resources/materials/Brown.tres" id="14_7kms7"]
+[ext_resource type="Resource" uid="uid://od2f10fj1e5" path="res://resources/progress/phase4/entered_phase5.tres" id="14_62d6c"]
 [ext_resource type="Material" uid="uid://cdj1opmtoccxq" path="res://resources/materials/Grey.tres" id="15_iwfh7"]
 [ext_resource type="Script" uid="uid://c3g0o3cunkyuj" path="res://scripts/interact/interactables/use_item_interactable.gd" id="16_6wwba"]
 [ext_resource type="Script" uid="uid://dacaijey35bqu" path="res://scripts/interact/interactable.gd" id="17_4mdbh"]
@@ -231,6 +232,7 @@ transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 
 input_ray_pickable = false
 script = ExtResource("20_dqn7x")
 level = ExtResource("21_hjfd0")
+progress_marker = ExtResource("14_62d6c")
 metadata/_custom_type_script = "uid://dacaijey35bqu"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door4/NextChapter" unique_id=132204164]

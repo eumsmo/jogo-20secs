@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ProgressMarker" format=3 uid="uid://cd55jhojfbn52"]
+
+[ext_resource type="Script" uid="uid://bx5am22m0deaw" path="res://scripts/progress/progress_marker.gd" id="1_yvl57"]
+
+[resource]
+script = ExtResource("1_yvl57")
+description = "Entered"
+metadata/_custom_type_script = "uid://bx5am22m0deaw"

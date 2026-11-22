@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://6ttbn3mrx4gh" path="res://resources/sprites/palettes/palette_phase2.png" id="1_cs0ij"]
 [ext_resource type="Script" uid="uid://gps7yv5j2dm7" path="res://scripts/level_info.gd" id="1_npykx"]
+[ext_resource type="Script" uid="uid://bx5am22m0deaw" path="res://scripts/progress/progress_marker.gd" id="2_y53l7"]
+[ext_resource type="Resource" uid="uid://c4pnuwb7ykqwj" path="res://resources/progress/phase2/entered_phase3.tres" id="3_epg5e"]
+[ext_resource type="Resource" uid="uid://mt8jg5dcnt3i" path="res://resources/progress/phase2/left_gate.tres" id="4_scvgg"]
+[ext_resource type="Resource" uid="uid://cr8vqf4ay54j3" path="res://resources/progress/phase2/right_gate.tres" id="5_sw6vv"]
 
 [resource]
 script = ExtResource("1_npykx")
@@ -10,4 +14,5 @@ chapter = "2"
 name = "Knowledge Gates"
 pattern = Array[int]([0, 0, 2, 2, 1, 3, 1, 3])
 palette = ExtResource("1_cs0ij")
+progress = Array[ExtResource("2_y53l7")]([ExtResource("3_epg5e"), ExtResource("4_scvgg"), ExtResource("5_sw6vv")])
 metadata/_custom_type_script = "uid://gps7yv5j2dm7"

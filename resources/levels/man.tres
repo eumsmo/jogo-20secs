@@ -10,4 +10,5 @@ chapter = "???"
 name = "???"
 pattern = Array[int]([0, 0, 0, 0, 0, 0])
 palette = ExtResource("1_ln3t4")
+show_in_list = false
 metadata/_custom_type_script = "uid://gps7yv5j2dm7"

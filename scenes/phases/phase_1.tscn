@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://cahki8kabd553" path="res://scripts/interact/interactables/go_to_chapter.gd" id="17_ra3pq"]
 [ext_resource type="Resource" uid="uid://buhgr8f3cvu4b" path="res://resources/levels/level2.tres" id="18_kifj5"]
 [ext_resource type="PackedScene" uid="uid://bf1hydheni8a5" path="res://resources/models/phase1/chest.tscn" id="19_vg0k6"]
+[ext_resource type="Resource" uid="uid://cd55jhojfbn52" path="res://resources/progress/phase1/entered_phase2.tres" id="20_6c58o"]
 [ext_resource type="PackedScene" uid="uid://dakb4ontcxv2u" path="res://resources/models/phase1/lock.tscn" id="20_22o04"]
 [ext_resource type="PackedScene" uid="uid://cvf8jfwsd6m4t" path="res://resources/models/phase1/hammer.tscn" id="21_iw7sw"]
 [ext_resource type="Script" uid="uid://gdx1msx8ssyi" path="res://scripts/interact/interactables/pickup_item.gd" id="22_vrtms"]
@@ -871,6 +872,7 @@ transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 
 input_ray_pickable = false
 script = ExtResource("17_ra3pq")
 level = ExtResource("18_kifj5")
+progress_marker = ExtResource("20_6c58o")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene6/NextChapter" unique_id=511956555]
 shape = SubResource("BoxShape3D_n8ral")

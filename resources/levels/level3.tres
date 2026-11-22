@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cekmjckyhlwgq" path="res://resources/sprites/palettes/phase3_palette.png" id="1_3t06t"]
 [ext_resource type="Script" uid="uid://gps7yv5j2dm7" path="res://scripts/level_info.gd" id="2_2hrbm"]
+[ext_resource type="Script" uid="uid://bx5am22m0deaw" path="res://scripts/progress/progress_marker.gd" id="2_8y6dv"]
+[ext_resource type="Resource" uid="uid://d328gupe12sik" path="res://resources/progress/phase3/entered_phase4.tres" id="3_yerog"]
 
 [resource]
 script = ExtResource("2_2hrbm")
@@ -10,4 +12,5 @@ chapter = "3"
 name = "Lessons"
 pattern = Array[int]([1, 0, 3])
 palette = ExtResource("1_3t06t")
+progress = Array[ExtResource("2_8y6dv")]([ExtResource("3_yerog")])
 metadata/_custom_type_script = "uid://gps7yv5j2dm7"
