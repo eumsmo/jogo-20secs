@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bjaygeelrd8t0" path="res://scenes/components/arrows/right_arrow.tscn" id="9_517my"]
 [ext_resource type="Resource" uid="uid://chx7cb6ef57pc" path="res://resources/levels/man.tres" id="9_yfbtn"]
 [ext_resource type="PackedScene" uid="uid://dpcb80nty0wh5" path="res://scenes/components/arrows/up_arrow.tscn" id="10_8x14w"]
+[ext_resource type="Resource" uid="uid://c6igsaxw2oq2" path="res://resources/levels/level6.tres" id="10_t4cuf"]
 [ext_resource type="Script" uid="uid://bsgq3bdgo1dx8" path="res://scripts/pattern/simple_pattern_listener.gd" id="13_8x14w"]
 [ext_resource type="Texture2D" uid="uid://cqsgx0ii5wjbs" path="res://resources/sprites/circleish.png" id="18_yh8me"]
 [ext_resource type="Script" uid="uid://bkvypxuckxda3" path="res://scripts/ui/chapter_listing.gd" id="19_cei74"]
@@ -101,7 +102,8 @@ ExtResource("5_0to4s"): NodePath("Scenario/PhaseHolder/Phase1"),
 ExtResource("6_jdsl7"): NodePath("Scenario/PhaseHolder/Phase2"),
 ExtResource("7_jdsl7"): NodePath("Scenario/PhaseHolder/Phase3"),
 ExtResource("8_kfjyq"): NodePath("Scenario/PhaseHolder/Phase4"),
-ExtResource("9_yfbtn"): NodePath("Scenario/PhaseHolder/Man")
+ExtResource("9_yfbtn"): NodePath("Scenario/PhaseHolder/Man"),
+ExtResource("10_t4cuf"): NodePath("Scenario/PhaseHolder/Phase6")
 }
 
 [node name="Fade" type="Control" parent="SubViewportContainer/SubViewport" unique_id=1771698977]

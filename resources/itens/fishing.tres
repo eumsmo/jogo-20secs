@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bjy1mndfcvk5p"]
+
+[ext_resource type="Script" uid="uid://drqu42ti1jkxf" path="res://scripts/inventory/item.gd" id="1_0h7nb"]
+[ext_resource type="Texture2D" uid="uid://bngmsemmt6mk5" path="res://resources/sprites/fishing.png" id="2_0h7nb"]
+
+[resource]
+script = ExtResource("1_0h7nb")
+sprite = ExtResource("2_0h7nb")
+metadata/_custom_type_script = "uid://drqu42ti1jkxf"

@@ -42,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://c6dgjothkm064" path="res://resources/models/phase2/house_fence.tscn" id="35_v0bm0"]
 [ext_resource type="PackedScene" uid="uid://dmfw0gxln2v4k" path="res://resources/models/phase2/house_fence_div.tscn" id="36_0jkeh"]
 [ext_resource type="PackedScene" uid="uid://kuvc4qnw6apj" path="res://resources/models/phase2/house_fence_wider.tscn" id="37_ryu8u"]
+[ext_resource type="Resource" uid="uid://c6igsaxw2oq2" path="res://resources/levels/level6.tres" id="38_6vo26"]
 [ext_resource type="Resource" uid="uid://cr8vqf4ay54j3" path="res://resources/progress/phase2/right_gate.tres" id="38_amv4o"]
 [ext_resource type="PackedScene" uid="uid://by5turrkfnuvq" path="res://resources/models/phase2/fancy_door_frame.tscn" id="38_c1qks"]
 [ext_resource type="PackedScene" uid="uid://boupmy2th60ol" path="res://resources/models/phase2/fancy_door.tscn" id="39_ous80"]
@@ -807,7 +808,7 @@ font_size = 82
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.6509314, 2.0000005, 0.31374562)
 input_ray_pickable = false
 script = ExtResource("4_hn4vf")
-level = ExtResource("5_6mlwq")
+level = ExtResource("38_6vo26")
 progress_marker = ExtResource("38_amv4o")
 metadata/_custom_type_script = "uid://dacaijey35bqu"
 
