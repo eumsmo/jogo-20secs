@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://c71n7wde5gocs" path="res://resources/sprites/palettes/palette_hollow.png" id="1_nvddv"]
 [ext_resource type="Script" uid="uid://bx5am22m0deaw" path="res://scripts/progress/progress_marker.gd" id="2_tdr2p"]
 [ext_resource type="Resource" uid="uid://cd55jhojfbn52" path="res://resources/progress/phase1/entered_phase2.tres" id="3_olam1"]
-[ext_resource type="Resource" uid="uid://dop2sdlsuhnrw" path="res://resources/progress/phase1/got_the_egg.tres" id="4_wlgs3"]
 
 [resource]
 script = ExtResource("1_fvcan")
@@ -13,5 +12,5 @@ chapter = "1"
 name = "Learning Outside"
 pattern = Array[int]([1, 0, 2, 3, 0])
 palette = ExtResource("1_nvddv")
-progress = Array[ExtResource("2_tdr2p")]([ExtResource("3_olam1"), ExtResource("4_wlgs3")])
+progress = Array[ExtResource("2_tdr2p")]([ExtResource("3_olam1")])
 metadata/_custom_type_script = "uid://gps7yv5j2dm7"

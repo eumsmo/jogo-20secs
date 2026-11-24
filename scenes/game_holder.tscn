@@ -22,10 +22,15 @@
 [ext_resource type="Resource" uid="uid://b2uis0cnr0ivr" path="res://resources/levels/level7.tres" id="12_xdeyo"]
 [ext_resource type="Script" uid="uid://bsgq3bdgo1dx8" path="res://scripts/pattern/simple_pattern_listener.gd" id="13_8x14w"]
 [ext_resource type="Resource" uid="uid://dd5fon0b44ev0" path="res://resources/levels/ending.tres" id="13_xdevx"]
+[ext_resource type="Resource" uid="uid://efl4oxp65gw2" path="res://resources/levels/nowhere.tres" id="14_vjgx8"]
 [ext_resource type="Texture2D" uid="uid://cqsgx0ii5wjbs" path="res://resources/sprites/circleish.png" id="18_yh8me"]
 [ext_resource type="Script" uid="uid://bkvypxuckxda3" path="res://scripts/ui/chapter_listing.gd" id="19_cei74"]
 [ext_resource type="Texture2D" uid="uid://b2vh4tx306dlt" path="res://resources/sprites/arrow_ui.png" id="19_j7bs0"]
 [ext_resource type="Texture2D" uid="uid://dq82l0icg64rp" path="res://resources/sprites/click.png" id="24_cgdp6"]
+[ext_resource type="Texture2D" uid="uid://c806x075t6ufi" path="res://resources/sprites/egg.png" id="25_c7cwp"]
+[ext_resource type="Script" uid="uid://cuhii717svn2j" path="res://scripts/only_if_marker.gd" id="28_kc7oi"]
+[ext_resource type="Resource" uid="uid://dop2sdlsuhnrw" path="res://resources/progress/phase1/got_the_egg.tres" id="29_v6o0l"]
+[ext_resource type="Script" uid="uid://bni1rponevued" path="res://scripts/show_progress_percentage.gd" id="30_v6o0l"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ljqmr"]
 blend_mode = 3
@@ -60,6 +65,15 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_j7bs0"]
 font = ExtResource("6_xj5ry")
 font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
+font = ExtResource("6_xj5ry")
+font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_d0u6y"]
+font = ExtResource("6_xj5ry")
+font_size = 38
+font_color = Color(0.63375676, 0.6337568, 0.63375676, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jdsl7"]
 shader = ExtResource("5_ljqmr")
@@ -110,7 +124,8 @@ ExtResource("9_yfbtn"): NodePath("Scenario/PhaseHolder/Man"),
 ExtResource("10_t4cuf"): NodePath("Scenario/PhaseHolder/Phase6"),
 ExtResource("11_vdffl"): NodePath("Scenario/PhaseHolder/Phase5"),
 ExtResource("12_xdeyo"): NodePath("Scenario/PhaseHolder/Phase7"),
-ExtResource("13_xdevx"): NodePath("Scenario/PhaseHolder/Ending")
+ExtResource("13_xdevx"): NodePath("Scenario/PhaseHolder/Ending"),
+ExtResource("14_vjgx8"): NodePath("Scenario/PhaseHolder/Nowhere")
 }
 
 [node name="Fade" type="Control" parent="SubViewportContainer/SubViewport" unique_id=1771698977]
@@ -302,6 +317,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_mhu2g")
 text = "Learning Outside"
 
 [node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/MarginContainer/HBoxContainer/Button" unique_id=2024177619]
+visible = false
 modulate = Color(0.8431839, 0.8431839, 0.84318376, 1)
 layout_mode = 1
 anchors_preset = 5
@@ -325,6 +341,7 @@ label_settings = SubResource("LabelSettings_j7bs0")
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/MarginContainer/HBoxContainer/Label2" unique_id=128119295]
+visible = false
 modulate = Color(0.8431839, 0.8431839, 0.84318376, 1)
 layout_mode = 1
 anchors_preset = 5
@@ -353,6 +370,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_mhu2g")
 text = "Lessons"
 
 [node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Intro/ChapterListing/Listing/MarginContainer/HBoxContainer/Button2" unique_id=741914799]
+visible = false
 modulate = Color(0.8431839, 0.8431839, 0.84318376, 1)
 layout_mode = 1
 anchors_preset = 5
@@ -467,6 +485,48 @@ texture = ExtResource("18_yh8me")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport/Intro" unique_id=1118325799]
+visible = false
+modulate = Color(0.62152386, 0.62152386, 0.6215238, 1)
+layout_mode = 0
+offset_left = 22.0
+offset_top = 16.0
+offset_right = 72.0
+offset_bottom = 81.0
+mouse_filter = 0
+texture = ExtResource("25_c7cwp")
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Intro/TextureRect" unique_id=1512283529]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -19.5
+offset_right = 74.0
+offset_bottom = 28.5
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 0
+text = "Egg"
+label_settings = SubResource("LabelSettings_57qmd")
+
+[node name="Progress" type="Label" parent="SubViewportContainer/SubViewport/Intro" unique_id=594212161]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -117.0
+offset_top = 16.0
+offset_right = -23.0
+offset_bottom = 73.0
+grow_horizontal = 0
+text = "999%"
+label_settings = SubResource("LabelSettings_d0u6y")
+
 [node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/Intro" unique_id=1797031567]
 material = SubResource("ShaderMaterial_jdsl7")
 layout_mode = 1
@@ -501,6 +561,15 @@ metadata/_custom_type_script = "uid://bsgq3bdgo1dx8"
 
 [node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/Intro/SimplePatternListener" unique_id=457169656]
 wait_time = 0.75
+
+[node name="ShowEgg" type="Node" parent="SubViewportContainer/SubViewport/Intro" unique_id=28376146 node_paths=PackedStringArray("what")]
+script = ExtResource("28_kc7oi")
+marker = ExtResource("29_v6o0l")
+what = NodePath("../TextureRect")
+
+[node name="ShowPercentage" type="Node" parent="SubViewportContainer/SubViewport/Intro" unique_id=204661311 node_paths=PackedStringArray("label")]
+script = ExtResource("30_v6o0l")
+label = NodePath("../Progress")
 
 [node name="GrandTimer" type="Node" parent="." unique_id=492224829 node_paths=PackedStringArray("timer")]
 script = ExtResource("5_yatpk")

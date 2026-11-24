@@ -1,4 +1,4 @@
 extends Node
 
-func _ready() -> void:
+func show_progress() -> void:
 	ProgressManager.showing_progress = true

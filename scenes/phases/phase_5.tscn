@@ -1570,6 +1570,7 @@ shape = SubResource("BoxShape3D_pdti8")
 [node name="ShowProgress" type="Node" parent="." unique_id=342459326]
 script = ExtResource("37_0q801")
 
+[connection signal="on_activated" from="Scenes/Scene1" to="ShowProgress" method="show_progress"]
 [connection signal="item_used" from="Scenes/Scene1/Scenario/Door/ClickBlock" to="Scenes/Scene1/Scenario/Door/FancyDoor" method="queue_free"]
 [connection signal="item_used" from="Scenes/Scene1/Scenario/Door/ClickBlock" to="Scenes/Scene1/Scenario/Door/NextScene" method="enable_interactable"]
 [connection signal="item_used" from="Scenes/Scene1/Scenario/Door/ClickBlock" to="Scenes/Scene1/Scenario/Door/FancyDoorOpened" method="set_visible" binds= [true]]

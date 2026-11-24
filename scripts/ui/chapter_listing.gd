@@ -52,7 +52,9 @@ func update_labels(call_signal := true):
 		
 		if ProgressManager.showing_progress:
 			previous_progress_label.text = "({0}/{1})".format([previous_level.achieved_progress_count, len(previous_level.progress)])
-			previous_progress_label.visible = true 
+			previous_progress_label.visible = true
+		else:
+			previous_progress_label.visible = false
 	else:
 		previous_label.text = ""
 		previous_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -69,7 +71,9 @@ func update_labels(call_signal := true):
 		
 		if ProgressManager.showing_progress:
 			next_progress_label.text = "({0}/{1})".format([next_level.achieved_progress_count, len(next_level.progress)])
-			next_progress_label.visible = true 
+			next_progress_label.visible = true
+		else:
+			next_progress_label.visible = false
 	else:
 		next_label.text = ""
 		next_label.mouse_filter = Control.MOUSE_FILTER_IGNORE

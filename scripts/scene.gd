@@ -6,6 +6,9 @@ extends Node3D
 @export var scene_patterns: Array[ScenePattern]
 @export var child_of: Scene = null
 
+signal on_activated
+signal on_deactivated
+
 func activate():
 	camera.make_current()
 	
@@ -16,6 +19,8 @@ func activate():
 		obj.visible = true
 		if obj is Area3D:
 			obj.input_ray_pickable = true
+	
+	on_activated.emit()
 
 func deactivate():
 	for obj in on_scene_only:
@@ -25,6 +30,8 @@ func deactivate():
 		obj.visible = false
 		if obj is Area3D:
 			obj.input_ray_pickable = false
+	
+	on_deactivated.emit()
 
 func check_pattern(pattern: Array[Game.Direction]) -> bool:
 	var got_it: ScenePattern = null
