@@ -12,21 +12,29 @@
 [ext_resource type="Resource" uid="uid://chx7cb6ef57pc" path="res://resources/levels/man.tres" id="6_bhx41"]
 [ext_resource type="Resource" uid="uid://c6igsaxw2oq2" path="res://resources/levels/level6.tres" id="7_yd4ix"]
 [ext_resource type="PackedScene" uid="uid://d1kwbasfxf7av" path="res://scenes/phases/phase_1.tscn" id="8_5newe"]
+[ext_resource type="Resource" uid="uid://c78i08ur5wn7q" path="res://resources/levels/level5.tres" id="8_i4re6"]
 [ext_resource type="PackedScene" uid="uid://bvomtih21k3k5" path="res://scenes/phases/phase_2.tscn" id="9_37s47"]
+[ext_resource type="Resource" uid="uid://b2uis0cnr0ivr" path="res://resources/levels/level7.tres" id="9_js0lu"]
 [ext_resource type="PackedScene" uid="uid://cfltysogfkth2" path="res://scenes/phases/phase_3.tscn" id="10_bt5mj"]
+[ext_resource type="Resource" uid="uid://dd5fon0b44ev0" path="res://resources/levels/ending.tres" id="10_twgab"]
 [ext_resource type="PackedScene" uid="uid://orv7mf5mjxhm" path="res://resources/models/phase3/house_inside.tscn" id="12_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://dpvnorxwhpu65" path="res://scenes/phases/phase_4.tscn" id="13_e1j6l"]
 [ext_resource type="Script" uid="uid://b25o0snifepw3" path="res://scripts/scenes_controller.gd" id="14_trtic"]
 [ext_resource type="PackedScene" uid="uid://gfbgmmpl3qxt" path="res://scenes/phases/man.tscn" id="16_qnb83"]
 [ext_resource type="PackedScene" uid="uid://bdgw1dcu5ucco" path="res://scenes/phases/phase_6.tscn" id="18_suyxu"]
 [ext_resource type="PackedScene" uid="uid://bjaygeelrd8t0" path="res://scenes/components/arrows/right_arrow.tscn" id="20_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://bjpnf4gmo0y4x" path="res://scenes/phases/ending.tscn" id="20_gxtfn"]
+[ext_resource type="PackedScene" uid="uid://cioufvdocvisy" path="res://scenes/phases/phase_5.tscn" id="20_ms3bu"]
 [ext_resource type="Script" uid="uid://dcpv0k67dldig" path="res://scripts/ui/pattern_visualizer.gd" id="20_pl11u"]
 [ext_resource type="PackedScene" uid="uid://durwe6vmptojo" path="res://scenes/components/arrows/down_arrow.tscn" id="21_pl11u"]
+[ext_resource type="PackedScene" uid="uid://cen6d6t1rfq3x" path="res://scenes/phases/phase_7.tscn" id="21_v2yb1"]
+[ext_resource type="PackedScene" uid="uid://bgumthxbj5lo6" path="res://scenes/phases/nowhere.tscn" id="22_02fa5"]
 [ext_resource type="PackedScene" uid="uid://bf3yaus42rxcw" path="res://scenes/components/arrows/left_arrow.tscn" id="22_bhx41"]
 [ext_resource type="PackedScene" uid="uid://dpcb80nty0wh5" path="res://scenes/components/arrows/up_arrow.tscn" id="23_qnb83"]
 [ext_resource type="Script" uid="uid://d1wrce0jmw64" path="res://scripts/inventory/inventory.gd" id="23_sgl2t"]
 [ext_resource type="Script" uid="uid://dfypdbfyuueh6" path="res://scripts/ui/inventory_visualizer.gd" id="28_suyxu"]
 [ext_resource type="PackedScene" uid="uid://bhqxoqgpw50xc" path="res://scenes/components/item_visualizer.tscn" id="28_sww3w"]
+[ext_resource type="Texture2D" uid="uid://d1ceppnseojbe" path="res://resources/sprites/itens/big_pointer.png" id="30_sgl2t"]
 [ext_resource type="Script" uid="uid://ofye3eveho8k" path="res://scripts/pattern/ingame_pattern_listener.gd" id="31_m4url"]
 [ext_resource type="Texture2D" uid="uid://tucmml0obfyj" path="res://resources/sprites/circle.png" id="40_m4url"]
 
@@ -205,7 +213,10 @@ ExtResource("2_q8j3a"): NodePath("Scenario/PhaseHolder/Phase2"),
 ExtResource("4_37s47"): NodePath("Scenario/PhaseHolder/Phase3"),
 ExtResource("5_pl11u"): NodePath("Scenario/PhaseHolder/Phase4"),
 ExtResource("6_bhx41"): NodePath("Scenario/PhaseHolder/Man"),
-ExtResource("7_yd4ix"): NodePath("Scenario/PhaseHolder/Phase6")
+ExtResource("7_yd4ix"): NodePath("Scenario/PhaseHolder/Phase6"),
+ExtResource("8_i4re6"): NodePath("Scenario/PhaseHolder/Phase5"),
+ExtResource("9_js0lu"): NodePath("Scenario/PhaseHolder/Phase7"),
+ExtResource("10_twgab"): NodePath("Scenario/PhaseHolder/Ending")
 }
 scenes = NodePath("Controllers/ScenesController")
 pattern = NodePath("Controllers/PatternListener")
@@ -271,7 +282,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35.548447, 0)
 [node name="Man" parent="Scenario/PhaseHolder" unique_id=1538013195 instance=ExtResource("16_qnb83")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -57, 0)
 
+[node name="Ending" parent="Scenario/PhaseHolder" unique_id=760985131 instance=ExtResource("20_gxtfn")]
+
+[node name="Nowhere" parent="Scenario/PhaseHolder" unique_id=205762947 instance=ExtResource("22_02fa5")]
+
 [node name="Phase6" parent="Scenario/PhaseHolder" unique_id=318675463 instance=ExtResource("18_suyxu")]
+
+[node name="Phase5" parent="Scenario/PhaseHolder" unique_id=428633545 instance=ExtResource("20_ms3bu")]
+
+[node name="Phase7" parent="Scenario/PhaseHolder" unique_id=1851546452 instance=ExtResource("21_v2yb1")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1671971559]
 transform = Transform3D(0.7592584, -0.38800454, 0.52247405, -0.65078926, -0.4526745, 0.6095565, 0, -0.8028314, -0.5962061, 0, 22.562386, 0)
@@ -352,9 +371,105 @@ scale = Vector2(0.3, 0.3)
 mouse_filter = 2
 max_value = 1.0
 step = 0.001
-value = 1.0
+value = 0.5
 fill_mode = 5
 texture_progress = ExtResource("40_m4url")
 script = SubResource("GDScript_m4url")
+
+[node name="TextureRect" type="TextureRect" parent="InGameUI/TextureProgressBar" unique_id=885180549]
+modulate = Color(0.23031491, 0.23031494, 0.23031488, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.1, 1.1)
+texture = ExtResource("40_m4url")
+
+[node name="Control" type="Control" parent="InGameUI/TextureProgressBar" unique_id=992238780]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="InGameUI/TextureProgressBar/Control" unique_id=927593743]
+modulate = Color(0.29954752, 0.2995474, 0.29954752, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.666666
+offset_right = 126.66675
+offset_bottom = 25.666666
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1, 3)
+texture = ExtResource("30_sgl2t")
+
+[node name="Control2" type="Control" parent="InGameUI/TextureProgressBar" unique_id=2129059005]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 2.1705446
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="InGameUI/TextureProgressBar/Control2" unique_id=813873644]
+modulate = Color(0.29954752, 0.2995474, 0.29954752, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.666666
+offset_right = 126.66675
+offset_bottom = 25.666666
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1, 3)
+texture = ExtResource("30_sgl2t")
+
+[node name="Control3" type="Control" parent="InGameUI/TextureProgressBar" unique_id=218774326]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.9888512
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="InGameUI/TextureProgressBar/Control3" unique_id=1387190371]
+modulate = Color(0.29954752, 0.2995474, 0.29954752, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.666666
+offset_right = 126.66675
+offset_bottom = 25.666666
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1, 3)
+texture = ExtResource("30_sgl2t")
 
 [editable path="Scenario/Ambient/Trees/Tree"]

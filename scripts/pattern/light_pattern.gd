@@ -1,3 +1,4 @@
+class_name LightPattern
 extends Node
 
 @export var mat: BaseMaterial3D

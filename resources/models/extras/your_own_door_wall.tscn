@@ -1,0 +1,43 @@
+[gd_scene format=4 uid="uid://chy4j3f1lwbgb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4siic"]
+resource_name = "Ceil"
+cull_mode = 2
+albedo_color = Color(0.4941177, 0.14509806, 0.3254902, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d1mai"]
+_surfaces = [{
+"aabb": AABB(-0.16581154, -5.9604645e-08, -5.6460667, 0.33162093, 5.681205, 11.292132),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAwAEAAIAAgAEAAUAAAACAAUAAgAGAAMAAgABAAYABwAGAAEACAAHAAEAAAAFAAkACgAAAAkACgALAAAAAAAMAAEACAABAAwACwAMAAAACAAMAA0ACwAOAAwADQAMAA8ADAAOAA8A"),
+"name": "Ceil",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("//9DdTVwAAAAAMN1yY8AAP//Q3XJjwAA//8AAMmPAAD//wAA//8AAP///////wAAAAAAAMmPAAAAAAAAQ/8AAAAA//9D/wAA/////wAAAAD//wAAAAAAAP//AAA1cAAAAADDdTVwAAAAAP//QwAAAAAAAAA1cAAAAAAAAEMAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e2ts7"]
+resource_name = "extras_YourOwnDoorWall"
+_surfaces = [{
+"aabb": AABB(-0.16581154, -5.9604645e-08, -5.6460667, 0.33162093, 5.681205, 11.292132),
+"attribute_data": PackedByteArray("HZGqateRVVUdkVVV15GqaulbtUzpW1VV15FVVRWktUzXkapqFaRJc+lbSXPpW6pq/19UdR2Rqmr/n1R1/1+qav+fqkodkVVV/1+qSv9fVVX/X6pq15Gqah2RqmrpW6pqHZFVVelbVVX/X1VV15FVVQ=="),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABwAEAAYABwAGAAgABwAIAAkACQAIAAoACAALAAoADAANAA4ADAAPAA0ADQAQAA4ADQARABAAEQASABAAEwASABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkA"),
+"material": SubResource("StandardMaterial3D_4siic"),
+"name": "Ceil",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("//9DdTVw9wAAAMN1yY/3AP//Q3XJj/cAAADDdTVw9wAAAAAAQ/+qKgAAAADJj6oqAADDdcmPyzUAAP//Q/9qJwAAw3U1cA0lAAD//0MA+yQAAAAAQwCqKgAAAAA1cKoq//8AAAAAVNX//0N1NXDD0P////8AAIrQ//8AADVwVNX///////+a0v//Q3XJj3/i//8AAP//VNX//wAAyY9U1f//AAA1cI+DAADDdTVw777//0N1NXCVwgAAAAA1cACA//9DdcmP//8AAAAAyY//////AADJj///AADDdcmP//+HwO3+h8Dt/ofA7f6HwO3+VNVU1VTVVNVoxMrdGdly06vbKdK+2x/SVNVU1VTVVNWqKqoqnDCxJ+0wiCeqKqoqGi7yKLgcozGqKqoqqiqqKv////////////////9///////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_d1mai")
+
+[node name="YourOwnDoorWall" type="Node3D" unique_id=58228260]
+
+[node name="YourOwnDoorWall" type="MeshInstance3D" parent="." unique_id=642736182]
+mesh = SubResource("ArrayMesh_e2ts7")

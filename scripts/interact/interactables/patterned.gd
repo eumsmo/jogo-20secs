@@ -7,6 +7,7 @@ extends Interactable
 @export var selected_material: Material
 @export var locked_material: Material
 @export var active_on_selected: Array[Node3D]
+@export var only_in_order := true
 
 
 signal on_pattern_made
@@ -57,7 +58,10 @@ func on_untarget():
 		obj.visible = false
 
 func check_pattern(pattern_to_check: Array[Game.Direction]) -> bool:
-	return PatternListener.compare_pattern(pattern_to_check, pattern)
+	if only_in_order:
+		return PatternListener.compare_pattern(pattern_to_check, pattern)
+	else:
+		return PatternListener.unordered_compare(pattern_to_check, pattern)
 
 func activate_pattern():
 	on_pattern_made.emit()

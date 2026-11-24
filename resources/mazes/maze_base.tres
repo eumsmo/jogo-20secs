@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MazeLayout" format=3 uid="uid://cc5ky547mj3m7"]
+
+[ext_resource type="Script" uid="uid://cp0i3p7klci2b" path="res://scripts/puzzles/maze_layout.gd" id="1_mrnco"]
+
+[resource]
+script = ExtResource("1_mrnco")
+maze = Array[Array]([[false, false, false, false, false, false, false], [false, false, false, false, false, false, false], [false, false, false, false, false, false, false], [false, false, false, true, true, true, true], [false, false, false, false, false, false, false], [false, false, false, false, false, false, false], [false, false, false, false, false, false, false]])
+metadata/_custom_type_script = "uid://cp0i3p7klci2b"

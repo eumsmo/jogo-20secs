@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/interactables/change_scene_interactable.gd" id="2_2ctl3"]
 [ext_resource type="PackedScene" uid="uid://dybkw4ji7oj7w" path="res://scenes/components/camera_stand.tscn" id="3_tx8fj"]
 [ext_resource type="Script" uid="uid://cahki8kabd553" path="res://scripts/interact/interactables/go_to_chapter.gd" id="4_hn4vf"]
-[ext_resource type="Resource" uid="uid://c0dfpalx2y01p" path="res://resources/levels/level1.tres" id="5_6mlwq"]
+[ext_resource type="Resource" uid="uid://efl4oxp65gw2" path="res://resources/levels/nowhere.tres" id="6_6vo26"]
 [ext_resource type="Script" uid="uid://c3g0o3cunkyuj" path="res://scripts/interact/interactables/use_item_interactable.gd" id="6_ypc7x"]
 [ext_resource type="Resource" uid="uid://c7q66k03g4ree" path="res://resources/itens/key.tres" id="7_amv4o"]
 [ext_resource type="Resource" uid="uid://mt8jg5dcnt3i" path="res://resources/progress/phase2/left_gate.tres" id="7_ypc7x"]
@@ -179,7 +179,7 @@ scene = NodePath("../../../../Scene1")
 transform = Transform3D(0.3540609, 0, 0.9352224, 0, 1, 0, -0.9352224, 0, 0.3540609, -0.26040268, 2.0000005, -8.754093)
 input_ray_pickable = false
 script = ExtResource("4_hn4vf")
-level = ExtResource("5_6mlwq")
+level = ExtResource("6_6vo26")
 progress_marker = ExtResource("7_ypc7x")
 metadata/_custom_type_script = "uid://dacaijey35bqu"
 
@@ -323,9 +323,11 @@ transform = Transform3D(0.8427161, 0, -0.5383584, 0, 1, 0, 0.5383584, 0, 0.84271
 visible = false
 
 [node name="Pointer" parent="Levels/Scene5/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="1" unique_id=1519642052]
+transform = Transform3D(1.25, 0, 0, 0, -1.25, -9.188967e-07, 0, 1.8377935e-07, -6.25, 0, 0, 0)
 visible = false
 
 [node name="SmallPointer" parent="Levels/Scene5/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="2" unique_id=1442474372]
+transform = Transform3D(1.25, 0, 0, 0, -4.967383e-08, -6.250001, 0, 1.25, 1.6886332e-07, 0, 0, 0)
 visible = false
 
 [node name="UseItem" type="Area3D" parent="Levels/Scene5/Scenario/GrandClock" unique_id=1448577188 node_paths=PackedStringArray("interactables")]
@@ -976,6 +978,9 @@ transform = Transform3D(-4.341402e-08, 5.0900124e-09, 1, 0.11644591, 0.993197, 0
 [editable path="Levels/ElectricBoxLooking/ElectricBoxInspection/CameraStand"]
 [editable path="Levels/Scene5/CameraStand"]
 [editable path="Levels/Scene5/Scenario/GrandClock"]
+[editable path="Levels/Scene5/Scenario/GrandClock/GrandClockClock/Pointers/BigPointer"]
+[editable path="Levels/Scene5/Scenario/GrandClock/GrandClockClock/Pointers/Pointer"]
+[editable path="Levels/Scene5/Scenario/GrandClock/GrandClockClock/Pointers/SmallPointer"]
 [editable path="Levels/Scene5/Scenario/HammerPick/Hammer"]
 [editable path="Levels/Scene6/CameraStand"]
 [editable path="Levels/Scene7/CameraStand"]

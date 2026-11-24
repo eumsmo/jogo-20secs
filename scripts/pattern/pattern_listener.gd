@@ -96,3 +96,16 @@ static func compare_pattern(checking: Array[Game.Direction], correct: Array[Game
 		i += 1
 	
 	return true
+
+static func unordered_compare(checking: Array[Game.Direction], correct: Array[Game.Direction]) -> bool:
+	var got_it_once = false
+	var tam = len(correct)
+	for i in range(0, tam):
+		var pattern_version = correct.slice(i, tam)
+		pattern_version.append_array(correct.slice(0, i))
+		if PatternListener.compare_pattern(checking, pattern_version):
+			got_it_once = true
+	if not got_it_once:
+		return false
+	
+	return true

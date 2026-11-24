@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://cyvbdnet6e2sm" path="res://resources/sprites/map/start_map.png" id="29_tutd8"]
 [ext_resource type="Texture2D" uid="uid://bka73mhdtn6be" path="res://resources/sprites/map/end_map.png" id="30_4l8ae"]
 [ext_resource type="Script" uid="uid://cc47stsmi2lmq" path="res://scripts/pattern/light_pattern.gd" id="30_46pcy"]
+[ext_resource type="PackedScene" uid="uid://bof6f6q6tfq7g" path="res://resources/models/phase2/grand_clock.tscn" id="30_tulss"]
 [ext_resource type="Texture2D" uid="uid://duyvhh5ak3cy5" path="res://resources/sprites/lightbulb.png" id="31_ld5oi"]
 [ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="32_21e76"]
 [ext_resource type="Texture2D" uid="uid://w5ejho3g80yq" path="res://resources/sprites/lightbulb_line.png" id="32_qr730"]
@@ -207,7 +208,7 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_d0u6y"]
 flip_faces = true
-size = Vector3(50, 50, 50)
+size = Vector3(50, 95, 50)
 
 [node name="Phase3" type="Node3D" unique_id=1972877620 node_paths=PackedStringArray("starting_scene")]
 script = ExtResource("1_wmmqu")
@@ -1064,6 +1065,21 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999976, -0
 modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
 texture = ExtResource("33_4l8ae")
 
+[node name="GrandClock" parent="Levels/LivingRoom/Scenario" unique_id=1593380876 instance=ExtResource("30_tulss")]
+transform = Transform3D(0.45343357, 0, 0.89129007, 0, 1, 0, -0.89129007, 0, 0.45343357, -2.5278327, 0, 3.4619555)
+
+[node name="GrandClock" parent="Levels/LivingRoom/Scenario/GrandClock" index="0" unique_id=1529472642]
+layers = 32
+
+[node name="Pointer" parent="Levels/LivingRoom/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="1" unique_id=1519642052]
+transform = Transform3D(1.25, 0, 0, 0, -0.8838836, 4.419417, 0, -0.88388336, -4.4194183, 0, 0, 0)
+
+[node name="SmallPointer" parent="Levels/LivingRoom/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="2" unique_id=1442474372]
+transform = Transform3D(1.25, 0, 0, 0, -0.8838835, -4.4194183, 0, 0.8838835, -4.4194174, 0, 0, 0)
+
+[node name="GrandClockDoor" parent="Levels/LivingRoom/Scenario/GrandClock/ClosedDoor/GrandClockDoor" parent_id_path=PackedInt32Array(1593380876, 1273123832) index="0" unique_id=1214844442]
+layers = 32
+
 [node name="OmniLight3D" type="OmniLight3D" parent="Levels/LivingRoom" unique_id=1205549191]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58282685, 6.600189, -1.3792002)
 visible = false
@@ -1266,6 +1282,7 @@ mesh = NodePath("../BathroomMirrorDoor/BathroomMirrorDoor")
 material_idx = Array[int]([1])
 selected_material = ExtResource("6_av7uq")
 locked_material = ExtResource("7_46pcy")
+only_in_order = false
 metadata/_custom_type_script = "uid://dbinv34xc0tpr"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Bathroom/Scenario/BathroomMirror/Patterned" unique_id=812001808]
@@ -1391,7 +1408,7 @@ input_ray_pickable = false
 scene = NodePath("../../../../BathScene")
 
 [node name="Void" type="MeshInstance3D" parent="." unique_id=940551125]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35.548447, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -58.048447, 0)
 material_override = SubResource("StandardMaterial3D_weeiq")
 mesh = SubResource("BoxMesh_d0u6y")
 
@@ -1449,6 +1466,11 @@ mesh = SubResource("BoxMesh_d0u6y")
 [editable path="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid/SmallBoxLid"]
 [editable path="Levels/LivingRoom/Scenario/Paper1"]
 [editable path="Levels/LivingRoom/Scenario/Paper2"]
+[editable path="Levels/LivingRoom/Scenario/GrandClock"]
+[editable path="Levels/LivingRoom/Scenario/GrandClock/GrandClockClock/Pointers/BigPointer"]
+[editable path="Levels/LivingRoom/Scenario/GrandClock/GrandClockClock/Pointers/Pointer"]
+[editable path="Levels/LivingRoom/Scenario/GrandClock/GrandClockClock/Pointers/SmallPointer"]
+[editable path="Levels/LivingRoom/Scenario/GrandClock/ClosedDoor/GrandClockDoor"]
 [editable path="Levels/LivingRoom/InternalScenes/TableScene/CameraStand"]
 [editable path="Levels/Bathroom/CameraStand"]
 [editable path="Levels/Bathroom/Scenario/BathroomLightHolder"]

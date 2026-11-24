@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://c78i08ur5wn7q"]
+
+[ext_resource type="Texture2D" uid="uid://cekmjckyhlwgq" path="res://resources/sprites/palettes/phase3_palette.png" id="1_nh23h"]
+[ext_resource type="Script" uid="uid://bx5am22m0deaw" path="res://scripts/progress/progress_marker.gd" id="2_ca8ed"]
+[ext_resource type="Script" uid="uid://gps7yv5j2dm7" path="res://scripts/level_info.gd" id="3_bum1n"]
+[ext_resource type="Resource" uid="uid://g1li0h6dcf7k" path="res://resources/progress/phase5/entered_phase7.tres" id="3_ca8ed"]
+
+[resource]
+script = ExtResource("3_bum1n")
+idx = 5
+chapter = "5"
+name = "Out Of Order"
+pattern = Array[int]([3, 3, 0, 2])
+palette = ExtResource("1_nh23h")
+progress = Array[ExtResource("2_ca8ed")]([ExtResource("3_ca8ed")])
+metadata/_custom_type_script = "uid://gps7yv5j2dm7"

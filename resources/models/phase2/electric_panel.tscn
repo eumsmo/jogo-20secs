@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bn3ssnj765x3e" path="res://resources/models/phase2/pointer.tscn" id="5_72f44"]
 [ext_resource type="Script" uid="uid://byhr1c763aqwc" path="res://scenes/components/wire/wire_area.gd" id="5_73qu0"]
 [ext_resource type="Material" uid="uid://t4hif544cutp" path="res://resources/materials/vfx/phase2_light_glow.tres" id="5_wbrop"]
+[ext_resource type="Texture2D" uid="uid://d1ceppnseojbe" path="res://resources/sprites/itens/big_pointer.png" id="6_4or0n"]
 [ext_resource type="Script" uid="uid://gdx1msx8ssyi" path="res://scripts/interact/interactables/pickup_item.gd" id="6_72f44"]
 [ext_resource type="PackedScene" uid="uid://bc7mwk34afhal" path="res://scenes/components/wire/wire.tscn" id="6_81041"]
 [ext_resource type="PackedScene" uid="uid://cw6ivrhaykcuo" path="res://resources/models/phase2/small_pointer.tscn" id="6_ncdi6"]
@@ -19,6 +20,10 @@
 [ext_resource type="Resource" uid="uid://bo0ogvlnrqf3d" path="res://resources/itens/pointer.tres" id="9_wanmk"]
 [ext_resource type="Resource" uid="uid://cxxf2pau1r4ug" path="res://resources/itens/big_pointer.tres" id="11_rjk2q"]
 [ext_resource type="Script" uid="uid://cc47stsmi2lmq" path="res://scripts/pattern/light_pattern.gd" id="12_33ti1"]
+[ext_resource type="Texture2D" uid="uid://duyvhh5ak3cy5" path="res://resources/sprites/lightbulb.png" id="12_wanmk"]
+[ext_resource type="Texture2D" uid="uid://q3oekbg5lkne" path="res://resources/sprites/bigger_line.png" id="13_rjk2q"]
+[ext_resource type="Texture2D" uid="uid://cyvbdnet6e2sm" path="res://resources/sprites/map/start_map.png" id="14_tx5cs"]
+[ext_resource type="Texture2D" uid="uid://bka73mhdtn6be" path="res://resources/sprites/map/end_map.png" id="15_t3bvy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpcx1"]
 resource_name = "Brown"
@@ -172,6 +177,11 @@ mesh = SubResource("QuadMesh_yf5fn")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Secrets/Secret1/Area3D" unique_id=337224299]
 shape = SubResource("BoxShape3D_g4v7s")
 
+[node name="Sprite3D" type="Sprite3D" parent="Secrets/Secret1" unique_id=900238462]
+transform = Transform3D(-1.0927847e-08, -0.25, 0, 0.25, -1.0927847e-08, 0, 0, 0, 0.25, 0, 0, -0.005)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("14_tx5cs")
+
 [node name="Secret2" type="MeshInstance3D" parent="Secrets" unique_id=784325493]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45418352, 0.71864444, -0.612789)
 material_override = ExtResource("1_ldeor")
@@ -182,6 +192,16 @@ mesh = SubResource("QuadMesh_yf5fn")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Secrets/Secret2/Area3D" unique_id=1726646959]
 shape = SubResource("BoxShape3D_g4v7s")
 
+[node name="Sprite3D" type="Sprite3D" parent="Secrets/Secret2" unique_id=1827568160]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.020822287, -0.0052107573)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("12_wanmk")
+
+[node name="Sprite3D" type="Sprite3D" parent="Secrets/Secret2/Sprite3D" unique_id=219337447]
+transform = Transform3D(-2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0, 0.5, -0.009761691, -0.35610867, 0)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("13_rjk2q")
+
 [node name="Secret3" type="MeshInstance3D" parent="Secrets" unique_id=1892452202]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45418352, 0.37055427, -0.612789)
 material_override = ExtResource("1_ldeor")
@@ -191,6 +211,11 @@ mesh = SubResource("QuadMesh_yf5fn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Secrets/Secret3/Area3D" unique_id=308340658]
 shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="Sprite3D" type="Sprite3D" parent="Secrets/Secret3" unique_id=2117346391]
+transform = Transform3D(-1.0927847e-08, -0.5, 0, 0.25, -2.1855694e-08, 0, 0, 0, 0.25, 0, 0.020822287, -0.0052107573)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("6_4or0n")
 
 [node name="SecretHolder1" type="Node3D" parent="Secrets" unique_id=1135235738]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45418352, 1.0632713, -0.612789)
@@ -251,6 +276,16 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Secrets/SecretHolder3/PickupItem" unique_id=1699320986]
 shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="Sprite3D" type="Sprite3D" parent="Secrets" unique_id=637340765]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.50402325, 1.0957004, -0.55064833)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("14_tx5cs")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Secrets" unique_id=1613408262]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.2164107, 0.67034125, -0.5525718)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("15_t3bvy")
 
 [node name="Puzzle" type="Node3D" parent="." unique_id=170489577]
 
@@ -478,8 +513,6 @@ pattern_blinks = Dictionary[int, int]({
 2: 1,
 3: 4
 })
-on_time = 0.3
-between_time = 0.3
 
 [connection signal="on_clicked" from="OpenDoor/CloseElectricPanel" to="OpenDoor" method="set_visible" binds= [false]]
 [connection signal="on_clicked" from="OpenDoor/CloseElectricPanel" to="OpenDoor/CloseElectricPanel" method="set_physics_process" binds= [false]]

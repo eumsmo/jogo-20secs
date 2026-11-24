@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://b2uis0cnr0ivr"]
+
+[ext_resource type="Texture2D" uid="uid://cekmjckyhlwgq" path="res://resources/sprites/palettes/phase3_palette.png" id="1_1ps0w"]
+[ext_resource type="Script" uid="uid://bx5am22m0deaw" path="res://scripts/progress/progress_marker.gd" id="2_1ps0w"]
+[ext_resource type="Resource" uid="uid://c6786piq1x01u" path="res://resources/progress/phase7/got_ending.tres" id="3_1ps0w"]
+[ext_resource type="Script" uid="uid://gps7yv5j2dm7" path="res://scripts/level_info.gd" id="3_4gecd"]
+
+[resource]
+script = ExtResource("3_4gecd")
+idx = 7
+chapter = "7"
+name = "The Last Cycle"
+pattern = Array[int]([0, 0, 3, 2, 2])
+palette = ExtResource("1_1ps0w")
+progress = Array[ExtResource("2_1ps0w")]([ExtResource("3_1ps0w")])
+metadata/_custom_type_script = "uid://gps7yv5j2dm7"

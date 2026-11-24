@@ -2,13 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://c71n7wde5gocs" path="res://resources/sprites/palettes/palette_hollow.png" id="1_ghngv"]
 [ext_resource type="Script" uid="uid://bx5am22m0deaw" path="res://scripts/progress/progress_marker.gd" id="2_mcyp8"]
+[ext_resource type="Resource" uid="uid://deuff63co7i84" path="res://resources/progress/phase6/got_chest.tres" id="3_mcyp8"]
 [ext_resource type="Script" uid="uid://gps7yv5j2dm7" path="res://scripts/level_info.gd" id="3_wqcm4"]
 
 [resource]
 script = ExtResource("3_wqcm4")
 idx = 6
 chapter = "6"
-name = "Forgotten"
+name = "Around"
 pattern = Array[int]([0, 0, 3, 2, 2])
 palette = ExtResource("1_ghngv")
+progress = Array[ExtResource("2_mcyp8")]([ExtResource("3_mcyp8")])
 metadata/_custom_type_script = "uid://gps7yv5j2dm7"

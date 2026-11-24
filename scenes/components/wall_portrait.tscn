@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b8ifathsn32gv"]
+
+[ext_resource type="Script" uid="uid://1gf3ptu3fmth" path="res://scenes/components/portrait_puzzle.gd" id="1_y6udb"]
+[ext_resource type="PackedScene" uid="uid://b5djxodymkseb" path="res://resources/models/phase3/wall_portrait.tscn" id="2_x0xue"]
+[ext_resource type="Material" uid="uid://hosl1egdb006" path="res://resources/materials/Grey_Mid.tres" id="3_kpfy7"]
+[ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="4_30uiy"]
+
+[node name="WallPortrait" type="Node3D" unique_id=1319685934 node_paths=PackedStringArray("label")]
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, 0, 0, 0)
+script = ExtResource("1_y6udb")
+label = NodePath("WallPortrait/Label3D")
+
+[node name="WallPortrait" parent="." unique_id=472917611 instance=ExtResource("2_x0xue")]
+
+[node name="WallPortrait" parent="WallPortrait" index="0" unique_id=440421127]
+surface_material_override/1 = ExtResource("3_kpfy7")
+
+[node name="Label3D" type="Label3D" parent="WallPortrait" unique_id=683369959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.009141287, 0.072865486)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "A"
+font = ExtResource("4_30uiy")
+font_size = 92
+
+[editable path="WallPortrait"]

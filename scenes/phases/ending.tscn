@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://bjpnf4gmo0y4x"]
+
+[ext_resource type="Script" uid="uid://cxjw1pb2uilr5" path="res://scripts/phase.gd" id="1_ms1rk"]
+[ext_resource type="Script" uid="uid://ypfbu7sipw7r" path="res://scripts/scene.gd" id="2_xa0t2"]
+[ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/interactables/change_scene_interactable.gd" id="3_3x4l7"]
+[ext_resource type="PackedScene" uid="uid://dybkw4ji7oj7w" path="res://scenes/components/camera_stand.tscn" id="4_npcky"]
+[ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="5_q2uiq"]
+[ext_resource type="Script" uid="uid://cahki8kabd553" path="res://scripts/interact/interactables/go_to_chapter.gd" id="6_entt0"]
+[ext_resource type="Resource" uid="uid://c0dfpalx2y01p" path="res://resources/levels/level1.tres" id="7_1xqdy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v2yb1"]
+size = Vector3(1.9399414, 3.1285934, 0.1)
+
+[node name="Ending" type="Node3D" unique_id=760985131 node_paths=PackedStringArray("starting_scene")]
+script = ExtResource("1_ms1rk")
+starting_scene = NodePath("Levels/Text1")
+metadata/_custom_type_script = "uid://cxjw1pb2uilr5"
+
+[node name="Levels" type="Node3D" parent="." unique_id=1741246458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -102, 0)
+
+[node name="Text1" type="Node3D" parent="Levels" unique_id=585677062 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.000002, 0, -16)
+script = ExtResource("2_xa0t2")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Levels/Text1" unique_id=879548726 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("3_3x4l7")
+scene = NodePath("../../Text2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Text1/NextArea" unique_id=1860197537]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Levels/Text1" unique_id=72479423 instance=ExtResource("4_npcky")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Levels/Text1/CameraStand/Camera3D" parent_id_path=PackedInt32Array(72479423, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Levels/Text1" unique_id=1201662839]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
+text = "Well, this is the end."
+font = ExtResource("5_q2uiq")
+
+[node name="Text2" type="Node3D" parent="Levels" unique_id=244282009 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.000002, 0, -12)
+script = ExtResource("2_xa0t2")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Levels/Text2" unique_id=2114209807 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("3_3x4l7")
+scene = NodePath("../../Text3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Text2/NextArea" unique_id=935157156]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Levels/Text2" unique_id=749526465 instance=ExtResource("4_npcky")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Levels/Text2/CameraStand/Camera3D" parent_id_path=PackedInt32Array(749526465, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Levels/Text2" unique_id=1434250553]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
+text = "Thank you for
+taking your lessons."
+font = ExtResource("5_q2uiq")
+
+[node name="Text3" type="Node3D" parent="Levels" unique_id=1305731859 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.000002, 0, -8)
+script = ExtResource("2_xa0t2")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Levels/Text3" unique_id=1220711021 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("3_3x4l7")
+scene = NodePath("../../Text4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Text3/NextArea" unique_id=282581709]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Levels/Text3" unique_id=1919352799 instance=ExtResource("4_npcky")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Levels/Text3/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1919352799, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Levels/Text3" unique_id=88919102]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
+text = "Thank you for
+taking your time."
+font = ExtResource("5_q2uiq")
+
+[node name="Text4" type="Node3D" parent="Levels" unique_id=411021411 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.000002, 0, -4)
+script = ExtResource("2_xa0t2")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Levels/Text4" unique_id=335837881 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("3_3x4l7")
+scene = NodePath("../../Text5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Text4/NextArea" unique_id=906308363]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Levels/Text4" unique_id=727506957 instance=ExtResource("4_npcky")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Levels/Text4/CameraStand/Camera3D" parent_id_path=PackedInt32Array(727506957, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Levels/Text4" unique_id=1956845845]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
+text = "The cycle has ended."
+font = ExtResource("5_q2uiq")
+
+[node name="Text5" type="Node3D" parent="Levels" unique_id=659240266 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.000002, 0, 0)
+script = ExtResource("2_xa0t2")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Levels/Text5" unique_id=2133513245 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("3_3x4l7")
+scene = NodePath("../../Text6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Text5/NextArea" unique_id=2130241535]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Levels/Text5" unique_id=1650806504 instance=ExtResource("4_npcky")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Levels/Text5/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1650806504, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Levels/Text5" unique_id=123692301]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
+text = "Goodbye."
+font = ExtResource("5_q2uiq")
+
+[node name="Text6" type="Node3D" parent="Levels" unique_id=999662791 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.000002, 0, 4)
+script = ExtResource("2_xa0t2")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextChapter" type="Area3D" parent="Levels/Text6" unique_id=1932417700]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("6_entt0")
+level = ExtResource("7_1xqdy")
+metadata/_custom_type_script = "uid://dacaijey35bqu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Text6/NextChapter" unique_id=354725407]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Levels/Text6" unique_id=340404356 instance=ExtResource("4_npcky")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Levels/Text6/CameraStand/Camera3D" parent_id_path=PackedInt32Array(340404356, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Levels/Text6" unique_id=761442676]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
+text = "The end."
+font = ExtResource("5_q2uiq")
+
+[editable path="Levels/Text1/CameraStand"]
+[editable path="Levels/Text2/CameraStand"]
+[editable path="Levels/Text3/CameraStand"]
+[editable path="Levels/Text4/CameraStand"]
+[editable path="Levels/Text5/CameraStand"]
+[editable path="Levels/Text6/CameraStand"]

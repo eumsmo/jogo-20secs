@@ -788,12 +788,15 @@ scene = NodePath("../../../../Kitchen/InternalScenes/Vases")
 transform = Transform3D(0.8141155, 0, 0.5807029, 0, 1, 0, -0.5807029, 0, 0.8141155, -9.3122835, 0, 2.5564125)
 
 [node name="BigPointer" parent="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="0" unique_id=177566143]
+transform = Transform3D(1, 0, 0, 0, -1, 2.3841858e-07, 0, -2.9802322e-08, -4.9999995, 0, 0, 0)
 visible = false
 
 [node name="Pointer" parent="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="1" unique_id=1519642052]
+transform = Transform3D(1.25, 0, 0, 0, 1.0825317, 3.1250005, 0, -0.6250001, 5.4126587, 0, 0, 0)
 visible = false
 
 [node name="SmallPointer" parent="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="2" unique_id=1442474372]
+transform = Transform3D(1.25, 0, 0, 0, 0.8838835, -4.4194174, 0, 0.8838834, 4.4194183, 0, 0, 0)
 visible = false
 
 [node name="UseItem" type="Area3D" parent="Levels/Pantry/Scenario/GrandClock" unique_id=2039464743 node_paths=PackedStringArray("interactables")]
@@ -1037,6 +1040,7 @@ pattern = Array[int]([3, 3, 0, 2, 2])
 mesh = NodePath("../SmallBoxOpen")
 selected_material = ExtResource("9_xs77l")
 locked_material = ExtResource("10_jsur2")
+only_in_order = false
 metadata/_custom_type_script = "uid://dbinv34xc0tpr"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Pantry/Scenario/SmallBoxOpen2/Patterned" unique_id=468212079]
@@ -1177,8 +1181,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35.548447, 0)
 material_override = SubResource("StandardMaterial3D_weeiq")
 mesh = SubResource("BoxMesh_d0u6y")
 
-[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/Patterned" method="queue_free"]
 [connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/Patterned" method="disable_interactable"]
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/Patterned" method="queue_free"]
 [connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/NextScene" method="enable_interactable"]
 [connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/FancyDoor" method="set_visible" binds= [false]]
 [connection signal="on_pattern_made" from="BaseAmbient/Doors/Door3/Patterned" to="BaseAmbient/Doors/Door3/FancyDoorOpened" method="set_visible" binds= [true]]
@@ -1246,6 +1250,9 @@ mesh = SubResource("BoxMesh_d0u6y")
 [editable path="Levels/Kitchen/InternalScenes/Book/CameraStand"]
 [editable path="Levels/Pantry/CameraStand"]
 [editable path="Levels/Pantry/Scenario/GrandClock"]
+[editable path="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers/BigPointer"]
+[editable path="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers/Pointer"]
+[editable path="Levels/Pantry/Scenario/GrandClock/GrandClockClock/Pointers/SmallPointer"]
 [editable path="Levels/Pantry/Scenario/Portrait"]
 [editable path="Levels/Pantry/Scenario/SmallBoxOpen"]
 [editable path="Levels/Pantry/Scenario/SmallBoxOpen/ClosedLid/SmallBoxLid"]

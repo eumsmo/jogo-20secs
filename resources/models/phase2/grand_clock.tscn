@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bn3ssnj765x3e" path="res://resources/models/phase2/pointer.tscn" id="3_pabl3"]
 [ext_resource type="PackedScene" uid="uid://bib8t436q0oae" path="res://resources/models/phase2/clock_thingy.tscn" id="3_vyy5p"]
 [ext_resource type="PackedScene" uid="uid://cw6ivrhaykcuo" path="res://resources/models/phase2/small_pointer.tscn" id="4_boxyn"]
+[ext_resource type="Material" uid="uid://4fiib57bwe0v" path="res://resources/materials/vfx/CompleteBlackish.tres" id="4_pabl3"]
+[ext_resource type="Material" uid="uid://k0oggbccmtay" path="res://resources/materials/vfx/glow.tres" id="6_boxyn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpcx1"]
 resource_name = "Brown"
@@ -89,16 +91,22 @@ mesh = SubResource("ArrayMesh_1pogw")
 [node name="GrandClockClock" parent="." unique_id=776482872 instance=ExtResource("1_ed47t")]
 
 [node name="Pointers" type="Node3D" parent="GrandClockClock" unique_id=1920085468]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23346466, 1.8330293, 0)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.23346466, 1.8330293, 0)
 
 [node name="BigPointer" parent="GrandClockClock/Pointers" unique_id=177566143 instance=ExtResource("2_vfxsp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="Pointer" parent="GrandClockClock/Pointers" unique_id=1519642052 instance=ExtResource("3_pabl3")]
-transform = Transform3D(1.25, 0, 0, 0, -0.6249998, -5.4126596, 0, 1.0825319, -3.124999, 0, 0, 0)
+transform = Transform3D(1.25, 0, 0, 0, -0.6249998, -5.4126596, 0, 1.0825319, -3.1249993, 0, 0, 0)
+
+[node name="Pointer" parent="GrandClockClock/Pointers/Pointer" index="0" unique_id=821043829]
+material_override = ExtResource("4_pabl3")
 
 [node name="SmallPointer" parent="GrandClockClock/Pointers" unique_id=1442474372 instance=ExtResource("4_boxyn")]
-transform = Transform3D(1.25, 0, 0, 0, -0.62500006, 5.4126587, 0, -1.0825317, -3.1250005, 0, 0, 0)
+transform = Transform3D(1.25, 0, 0, 0, -0.62500006, 5.412659, 0, -1.0825317, -3.1250007, 0, 0, 0)
+
+[node name="SmallPointer" parent="GrandClockClock/Pointers/SmallPointer" index="0" unique_id=2030118304]
+material_override = ExtResource("6_boxyn")
 
 [node name="ClockThingy" parent="." unique_id=1946228853 instance=ExtResource("3_vyy5p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.334937, 0)
@@ -112,3 +120,7 @@ visible = false
 
 [node name="GrandClockDoor" parent="OpenDoor" unique_id=1702272648 instance=ExtResource("2_vyy5p")]
 transform = Transform3D(-0.018559992, 0, -0.99982774, 0, 1, 0, 0.99982774, 0, -0.018559992, 0.48621023, 0, 0.02546265)
+
+[editable path="GrandClockClock/Pointers/BigPointer"]
+[editable path="GrandClockClock/Pointers/Pointer"]
+[editable path="GrandClockClock/Pointers/SmallPointer"]

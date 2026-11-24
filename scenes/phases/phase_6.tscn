@@ -35,18 +35,28 @@
 [ext_resource type="PackedScene" uid="uid://bf1hydheni8a5" path="res://resources/models/phase1/chest.tscn" id="33_os7wb"]
 [ext_resource type="PackedScene" uid="uid://dakb4ontcxv2u" path="res://resources/models/phase1/lock.tscn" id="34_1xx2c"]
 [ext_resource type="PackedScene" uid="uid://6hmq62i4ban2" path="res://resources/models/phase3/book.tscn" id="35_iljsm"]
+[ext_resource type="Script" uid="uid://dgdp541f5qyrh" path="res://scripts/win_progress.gd" id="35_yijns"]
 [ext_resource type="Texture2D" uid="uid://duyvhh5ak3cy5" path="res://resources/sprites/lightbulb.png" id="36_3hrq8"]
+[ext_resource type="Texture2D" uid="uid://dbavr532jn2v5" path="res://resources/sprites/circle_outline.png" id="36_6hk7q"]
+[ext_resource type="Resource" uid="uid://deuff63co7i84" path="res://resources/progress/phase6/got_chest.tres" id="36_bs2qq"]
 [ext_resource type="Texture2D" uid="uid://w5ejho3g80yq" path="res://resources/sprites/lightbulb_line.png" id="37_jeo15"]
 [ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="38_mlh8e"]
 [ext_resource type="Texture2D" uid="uid://bgyywk6y58kt3" path="res://resources/sprites/arrow.png" id="39_odbxk"]
 [ext_resource type="Material" uid="uid://fxtilcw5bsx8" path="res://resources/materials/DarkBlue.tres" id="40_iriko"]
 [ext_resource type="Material" uid="uid://4fiib57bwe0v" path="res://resources/materials/vfx/CompleteBlackish.tres" id="41_hqshd"]
+[ext_resource type="PackedScene" uid="uid://ciimexoue3wo0" path="res://resources/models/phase3/paper_3.tscn" id="42_6hk7q"]
 [ext_resource type="Resource" uid="uid://bjy1mndfcvk5p" path="res://resources/itens/fishing.tres" id="42_jgthb"]
+[ext_resource type="Material" uid="uid://d3tjh8dtutcci" path="res://resources/materials/vfx/CompleteAlmostBlackish.tres" id="43_8ktyr"]
+[ext_resource type="Texture2D" uid="uid://3ep5nawta0xm" path="res://resources/sprites/map/v.png" id="43_i7vfc"]
 [ext_resource type="PackedScene" uid="uid://dp321n0as212" path="res://resources/models/phase3/portrait.tscn" id="43_u5865"]
 [ext_resource type="PackedScene" uid="uid://c1hg75cxi2kgm" path="res://resources/models/phase3/inside_chair.tscn" id="44_ndjok"]
+[ext_resource type="Texture2D" uid="uid://q3oekbg5lkne" path="res://resources/sprites/bigger_line.png" id="44_xf5no"]
 [ext_resource type="PackedScene" uid="uid://dol7110otibo0" path="res://resources/models/phase3/small_box_open.tscn" id="45_ay5n5"]
+[ext_resource type="Texture2D" uid="uid://dvy7id61c7wfe" path="res://resources/sprites/itens/small_pointer.png" id="46_cedub"]
 [ext_resource type="Script" uid="uid://dbinv34xc0tpr" path="res://scripts/interact/interactables/patterned.gd" id="46_niwne"]
+[ext_resource type="Texture2D" uid="uid://c7hwd03cr1311" path="res://resources/sprites/itens/pointer.png" id="47_1fpwn"]
 [ext_resource type="Material" uid="uid://dlgx6v3h2xhf0" path="res://resources/materials/vfx/highlighted.tres" id="47_dypof"]
+[ext_resource type="Texture2D" uid="uid://d1ceppnseojbe" path="res://resources/sprites/itens/big_pointer.png" id="48_je4iw"]
 [ext_resource type="Material" uid="uid://kb2catetgn4p" path="res://resources/materials/vfx/locked.tres" id="48_mnt4t"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
@@ -591,9 +601,11 @@ transform = Transform3D(0.041234195, 0, -0.99914944, 0, 1, 0, 0.99914944, 0, 0.0
 visible = false
 
 [node name="Pointer" parent="Levels/Scene4/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="1" unique_id=1519642052]
+transform = Transform3D(1.25, 0, 0, 0, -0.88388336, -4.4194183, 0, 0.8838836, -4.419417, 0, 0, 0)
 visible = false
 
 [node name="SmallPointer" parent="Levels/Scene4/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="2" unique_id=1442474372]
+transform = Transform3D(1.25, 0, 0, 0, 0.8838834, 4.4194183, 0, -0.88388354, 4.4194174, 0, 0, 0)
 visible = false
 
 [node name="UseItem" type="Area3D" parent="Levels/Scene4/GrandClock" unique_id=1228400672 node_paths=PackedStringArray("interactables")]
@@ -662,7 +674,6 @@ scene = NodePath("../../../../Scene4")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Levels/Scene5" unique_id=884321088]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.81975, 3.4521775, -7.9776344)
-visible = false
 light_energy = 20.0
 omni_range = 11.9326
 
@@ -691,92 +702,9 @@ metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
 transform = Transform3D(1.0000001, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, 1.0000001, 0.088378906, 1.1042056, 0)
 shape = SubResource("BoxShape3D_yd4ix")
 
-[node name="Book" parent="Levels/Scene5/Chest" unique_id=368589947 instance=ExtResource("35_iljsm")]
-transform = Transform3D(1.13246855e-07, 1.0810673, 1.0398526, 0, 1.0398526, -1.0810673, -1.5, 8.161831e-08, 7.8506694e-08, -0.21184109, 1.2611504, 1.40058445e-08)
-
-[node name="Book" parent="Levels/Scene5/Chest/Book" index="0" unique_id=1212938781]
-surface_material_override/0 = ExtResource("23_htlh0")
-
-[node name="Page" type="Node3D" parent="Levels/Scene5/Chest/Book" unique_id=1919378952]
-
-[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/Book/Page" unique_id=1296775359]
-transform = Transform3D(0.5, 0, -8.881784e-16, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, -0.17450953, 0.08375168, -0.020129953)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("36_3hrq8")
-
-[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/Book/Page/Sprite3D" unique_id=2119571349]
-transform = Transform3D(-3.278354e-08, -0.75, 0, 0.75, -3.278354e-08, 0, 0, 0, 0.75, -0.00011481345, 0.36309215, 8.549455e-09)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("37_jeo15")
-
-[node name="Label3D" type="Label3D" parent="Levels/Scene5/Chest/Book/Page" unique_id=477169554]
-transform = Transform3D(0.25, 0, -4.440892e-16, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.21400881, 0.07535553, 0.23525047)
-modulate = Color(0.24313726, 0.24313726, 0.24313726, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "1   2   3   4"
-font = ExtResource("38_mlh8e")
-font_size = 48
-
-[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/Book/Page/Label3D" unique_id=1412055639]
-transform = Transform3D(-3.278354e-08, -0.75, 0, 0.75, -3.278354e-08, 0, 0, 0, 0.75, -0.42665088, 0.020999998, -0.021)
-modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
-texture = ExtResource("39_odbxk")
-
-[node name="Sprite3D2" type="Sprite3D" parent="Levels/Scene5/Chest/Book/Page/Label3D" unique_id=1143175950]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.029344112, 0.02056302, 0.00079344027)
-modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
-texture = ExtResource("39_odbxk")
-
-[node name="Sprite3D3" type="Sprite3D" parent="Levels/Scene5/Chest/Book/Page/Label3D" unique_id=1122876636]
-transform = Transform3D(-3.278354e-08, 0.75, 0, -0.75, -3.278354e-08, 0, 0, 0, 0.75, 0.35381365, 0.020563008, 0.00079344027)
-modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
-texture = ExtResource("39_odbxk")
-
-[node name="Sprite3D4" type="Sprite3D" parent="Levels/Scene5/Chest/Book/Page/Label3D" unique_id=974885585]
-transform = Transform3D(-0.75, 6.556708e-08, 0, -6.556708e-08, -0.75, 0, 0, 0, 0.75, 0.720852, 0.020562991, 0.00079344027)
-modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
-texture = ExtResource("39_odbxk")
-
-[node name="Page2" type="Node3D" parent="Levels/Scene5/Chest/Book" unique_id=1803748917]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37358403, 0, -1.4901161e-08)
-
-[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/Book/Page2" unique_id=1005183401]
-transform = Transform3D(0.5, 0, -8.881784e-16, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, -0.17450953, 0.08375168, -0.020129953)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("36_3hrq8")
-
-[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/Book/Page2/Sprite3D" unique_id=1601325538]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.24885027, 0.09922144, -2.9846996e-09)
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("37_jeo15")
-
-[node name="Label3D" type="Label3D" parent="Levels/Scene5/Chest/Book/Page2" unique_id=1892167826]
-transform = Transform3D(0.25, 0, -4.440892e-16, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.19875406, 0.07535553, 0.23525047)
-modulate = Color(0.24313726, 0.24313726, 0.24313726, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "1   2   3   4"
-font = ExtResource("38_mlh8e")
-font_size = 48
-
-[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/Book/Page2/Label3D" unique_id=1477635731]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.3980944, 0.020563, -0.021179214)
-modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
-texture = ExtResource("39_odbxk")
-
-[node name="Sprite3D2" type="Sprite3D" parent="Levels/Scene5/Chest/Book/Page2/Label3D" unique_id=1078379352]
-transform = Transform3D(-3.278354e-08, 0.75, 0, -0.75, -3.278354e-08, 0, 0, 0, 0.75, -0.029344112, 0.02056302, 0.00079344027)
-modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
-texture = ExtResource("39_odbxk")
-
-[node name="Sprite3D3" type="Sprite3D" parent="Levels/Scene5/Chest/Book/Page2/Label3D" unique_id=460039287]
-transform = Transform3D(-0.75, -6.556708e-08, 0, 6.556708e-08, -0.75, 0, 0, 0, 0.75, 0.35381365, 0.020563008, 0.00079344027)
-modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
-texture = ExtResource("39_odbxk")
-
-[node name="Sprite3D4" type="Sprite3D" parent="Levels/Scene5/Chest/Book/Page2/Label3D" unique_id=1976976363]
-transform = Transform3D(-3.278354e-08, -0.75, 0, 0.75, -3.278354e-08, 0, 0, 0, 0.75, 0.720852, 0.020562991, 0.00079344027)
-modulate = Color(0.24477637, 0.2447764, 0.24477637, 1)
-texture = ExtResource("39_odbxk")
+[node name="Marker" type="Node" parent="Levels/Scene5/Chest/Open" unique_id=1062109395]
+script = ExtResource("35_yijns")
+marker = ExtResource("36_bs2qq")
 
 [node name="GoToArea" type="Area3D" parent="Levels/Scene5/Chest" unique_id=2107629680 node_paths=PackedStringArray("scene")]
 input_ray_pickable = false
@@ -815,6 +743,251 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene5/Chest/FishingRod/PickupItem" unique_id=1040409474]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20264053, 0)
 shape = SubResource("BoxShape3D_57qmd")
+
+[node name="ChestInsides" type="Node3D" parent="Levels/Scene5/Chest" unique_id=165494224]
+
+[node name="Book" parent="Levels/Scene5/Chest/ChestInsides" unique_id=368589947 instance=ExtResource("35_iljsm")]
+transform = Transform3D(1.1920929e-07, 1.0810674, 1.0398527, -7.450581e-09, 1.0398527, -1.0810673, -1.5000001, 1.0058284e-07, 5.9604645e-08, -0.2118454, 1.2611504, -7.6293945e-06)
+
+[node name="Book" parent="Levels/Scene5/Chest/ChestInsides/Book" index="0" unique_id=1212938781]
+surface_material_override/0 = ExtResource("41_hqshd")
+
+[node name="Page" type="Node3D" parent="Levels/Scene5/Chest/ChestInsides/Book" unique_id=1919378952]
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page" unique_id=1296775359]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, 0.0026486067, 0.08375167, 0.007328514)
+texture = ExtResource("36_6hk7q")
+
+[node name="Pointers" type="Node3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D" unique_id=712828077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021479625, -0.098968476, 5.2265823e-06)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Pointers" unique_id=2119571349]
+transform = Transform3D(-1.1920929e-07, -1.5000001, -2.2351742e-08, 3.2000003, -5.9604645e-08, 0, -1.1920929e-07, 8.568168e-08, 3, -0.00012207031, 0.36309814, 3.8146973e-06)
+texture = ExtResource("37_jeo15")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Pointers" unique_id=2023278664]
+transform = Transform3D(1.5909902, 1.0606601, -2.2351742e-08, -1.5909904, 1.0606601, 0, 1.1920929e-07, -8.940697e-08, 3, 0.14256287, -0.04953003, 0)
+texture = ExtResource("37_jeo15")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Pointers" unique_id=601104784]
+transform = Transform3D(-1.5000001, 1.3411045e-07, -2.2351742e-08, -1.1920929e-07, -1.5000001, 0, 7.8231096e-08, 5.9604645e-08, 3, -0.14776611, 0.09640503, 0)
+texture = ExtResource("37_jeo15")
+
+[node name="Markers" type="Node3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D" unique_id=1366525205]
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Markers" unique_id=1329691823]
+transform = Transform3D(-5.2453668e-08, 1.2, 0, -1.2, -5.2453668e-08, 0, 0, 0, 1.2, 0.04706572, 0.7123211, -1.2740493e-06)
+texture = ExtResource("37_jeo15")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Markers" unique_id=1327724455]
+transform = Transform3D(-5.2453668e-08, 1.2, 0, -1.2, -5.2453668e-08, 0, 0, 0, 1.2, 0.047065657, -0.7191521, -1.156237e-06)
+texture = ExtResource("37_jeo15")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Markers" unique_id=817284201]
+transform = Transform3D(-0.84852815, 0.84852815, 5.057622e-08, -0.84852815, -0.84852815, 5.0576222e-08, 7.152558e-08, 2.1316283e-15, 1.2, 0.53697205, 0.4704132, 3.8146973e-06)
+texture = ExtResource("37_jeo15")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Markers" unique_id=1042054066]
+transform = Transform3D(-0.84852815, 0.84852815, 5.057622e-08, -0.84852815, -0.84852815, 5.0576222e-08, 7.152558e-08, 2.1316283e-15, 1.2, -0.47521973, -0.54177856, 0)
+texture = ExtResource("37_jeo15")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Markers" unique_id=715327670]
+transform = Transform3D(-1.2, -1.8119498e-07, 5.3644186e-08, 1.8119498e-07, -1.2, 7.1525555e-08, 5.3644175e-08, 7.152556e-08, 1.2, 0.7086792, -0.047042847, 3.8146973e-06)
+texture = ExtResource("37_jeo15")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Markers" unique_id=1745178052]
+transform = Transform3D(-1.2, -1.8119498e-07, 5.3644186e-08, 1.8119498e-07, -1.2, 7.1525555e-08, 5.3644175e-08, 7.152556e-08, 1.2, -0.7227783, -0.047058105, 3.8146973e-06)
+texture = ExtResource("37_jeo15")
+
+[node name="Sprite3D9" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Markers" unique_id=1146241332]
+transform = Transform3D(-0.84852797, -0.8485284, 1.0115244e-07, 0.8485284, -0.84852797, 5.0576215e-08, 3.5762763e-08, 1.07288365e-07, 1.2, 0.4622345, -0.5288086, 3.8146973e-06)
+texture = ExtResource("37_jeo15")
+
+[node name="Sprite3D10" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Markers" unique_id=1383574748]
+transform = Transform3D(-0.84852797, -0.8485284, 1.0115244e-07, 0.8485284, -0.84852797, 5.0576215e-08, 3.5762763e-08, 1.07288365e-07, 1.2, -0.5499573, 0.48339844, 3.8146973e-06)
+texture = ExtResource("37_jeo15")
+
+[node name="Arrows" type="Node3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D" unique_id=79023662]
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Arrows" unique_id=1412055639]
+transform = Transform3D(-3.7252903e-08, -1, 6.3329935e-08, 1, -2.9802322e-08, -5.9604645e-08, -2.9802322e-08, 1.0058284e-07, 0.99999994, 0.035308838, 0.99409485, -0.05457306)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Arrows" unique_id=1351004713]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 0.99999994, 0.035308897, -0.9966769, -0.05457288)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Arrows" unique_id=351789829]
+transform = Transform3D(1, 7.450581e-09, -4.0978193e-08, -7.450581e-09, 1, -8.940697e-08, -5.9604645e-08, 2.9802322e-08, 0.9999999, 0.99409485, -0.03529358, -0.025684357)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/Arrows" unique_id=1016564269]
+transform = Transform3D(-1, -8.195639e-08, 1.4901161e-08, 9.685755e-08, -1.0000001, -2.9802322e-08, 4.4703484e-08, 5.9604645e-08, 0.9999998, -0.99668884, -0.03529358, -0.025688171)
+texture = ExtResource("39_odbxk")
+
+[node name="DiagonalArrows" type="Node3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D" unique_id=1331992368]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1.1641536e-10, -9.313226e-10, 0.028888216)
+
+[node name="Node3D" type="Node3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/DiagonalArrows" unique_id=1165381644]
+transform = Transform3D(-2.9802322e-08, -1.0000001, 1.7881393e-07, 1, -4.4703484e-08, -6.3329935e-08, -1.4901161e-08, -5.9604645e-08, 1, -0.6816301, 0.73851645, -0.043922417)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/DiagonalArrows/Node3D" unique_id=1774233688]
+transform = Transform3D(1, -1.4901161e-08, 1.1175871e-08, 0, 1.0000001, 5.9604645e-08, 0, -5.9604645e-08, 1, -3.0517578e-05, 0, 0)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/DiagonalArrows/Node3D" unique_id=1919116427]
+transform = Transform3D(-5.2154064e-08, -1, 7.8231096e-08, 1.0000001, -2.2351742e-08, 1.1920929e-07, 0, -7.450581e-09, 0.99999994, 0.25003052, -1.5258789e-05, 3.8146973e-06)
+texture = ExtResource("39_odbxk")
+
+[node name="Node3D2" type="Node3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/DiagonalArrows" unique_id=605324969]
+transform = Transform3D(-2.9802322e-08, -1.0000001, 1.7881393e-07, 1, -4.4703484e-08, -6.3329935e-08, -1.4901161e-08, -5.9604645e-08, 1, 0.75510657, 0.6634631, -0.04392221)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/DiagonalArrows/Node3D2" unique_id=2132282072]
+transform = Transform3D(1, -1.4901161e-08, 1.1175871e-08, 0, 1.0000001, 5.9604645e-08, 0, -5.9604645e-08, 1, -3.0517578e-05, 0, 0)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/DiagonalArrows/Node3D2" unique_id=863549816]
+transform = Transform3D(-4.3711392e-08, 1, 0, -1.0000001, -4.371139e-08, 0, 0, 0, 0.99999994, 0.25003052, -1.5258789e-05, 3.8146973e-06)
+texture = ExtResource("39_odbxk")
+
+[node name="Node3D3" type="Node3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/DiagonalArrows" unique_id=285975259]
+transform = Transform3D(-2.9802322e-08, -1.0000001, 1.7881393e-07, 1, -4.4703484e-08, -6.3329935e-08, -1.4901161e-08, -5.9604645e-08, 1, -0.64772326, -1.0169687, -0.04392243)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/DiagonalArrows/Node3D3" unique_id=1921534973]
+transform = Transform3D(-1, 8.7422784e-08, 0, -8.742278e-08, -1.0000001, 5.9604638e-08, 5.210803e-15, 5.9604645e-08, 1, -3.0517578e-05, 0, 0)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/DiagonalArrows/Node3D3" unique_id=17794544]
+transform = Transform3D(-5.2154064e-08, -1, 7.8231096e-08, 1.0000001, -2.2351742e-08, 1.1920929e-07, 0, -7.450581e-09, 0.99999994, 0.25003052, -1.5258789e-05, 3.8146973e-06)
+texture = ExtResource("39_odbxk")
+
+[node name="Node3D4" type="Node3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/DiagonalArrows" unique_id=611476737]
+transform = Transform3D(-2.9802322e-08, -1.0000001, 1.7881393e-07, 1, -4.4703484e-08, -6.3329935e-08, -1.4901161e-08, -5.9604645e-08, 1, 0.7551066, -1.0134169, -0.043922227)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/DiagonalArrows/Node3D4" unique_id=64566827]
+transform = Transform3D(-1, 8.7422784e-08, 0, -8.742278e-08, -1.0000001, 5.9604638e-08, 5.210803e-15, 5.9604645e-08, 1, -3.0517578e-05, 0, 0)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Book/Page/Sprite3D/DiagonalArrows/Node3D4" unique_id=713973397]
+transform = Transform3D(-4.3711392e-08, 1, 0, -1.0000001, -4.371139e-08, 0, 0, 0, 0.99999994, 0.25003052, -1.5258789e-05, 3.8146973e-06)
+texture = ExtResource("39_odbxk")
+
+[node name="Paper3" parent="Levels/Scene5/Chest/ChestInsides" unique_id=2054346809 instance=ExtResource("42_6hk7q")]
+transform = Transform3D(-0.41663957, 0.47091907, -0.7775903, -0.37713453, 0.6887497, 0.6191877, 0.8271523, 0.55123425, -0.1093605, -0.10509773, 1.3344288, -0.8334602)
+
+[node name="Paper3" parent="Levels/Scene5/Chest/ChestInsides/Paper3" index="0" unique_id=105313703]
+material_override = ExtResource("43_8ktyr")
+
+[node name="Node3D" type="Node3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3" unique_id=1003082625]
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D" unique_id=211802394]
+transform = Transform3D(0.40000004, 0, -6.519258e-09, -2.142042e-08, -1.8626451e-08, -0.4, 1.4901161e-08, 0.4, -1.1175871e-08, 0.18484497, 0.013034821, 0.21387482)
+modulate = Color(0.67068946, 0.6706895, 0.6706893, 1)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D" unique_id=1188135356]
+transform = Transform3D(-0.40000004, 2.9802322e-08, -6.519258e-09, 2.514571e-08, 2.2351742e-08, -0.4, -4.4703484e-08, -0.4, -1.1175871e-08, 0.066711426, 0.013034821, 0.21387863)
+modulate = Color(0.67068946, 0.6706895, 0.6706893, 1)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D" unique_id=1989985357]
+transform = Transform3D(-1.4901161e-08, 0.40000004, -6.519258e-09, 1.1175871e-08, -1.9557774e-08, -0.4, -0.4, 7.450581e-09, -1.1175871e-08, -0.035461426, 0.013046265, 0.21387482)
+modulate = Color(0.67068946, 0.6706895, 0.6706893, 1)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D" unique_id=1953317728]
+transform = Transform3D(0, -0.40000004, -6.519258e-09, -1.4901161e-08, 2.142042e-08, -0.4, 0.4, -1.4901161e-08, -1.1175871e-08, -0.13523102, 0.013038635, 0.21387482)
+modulate = Color(0.67068946, 0.6706895, 0.6706893, 1)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D" unique_id=1193126681]
+transform = Transform3D(0.4, -7.450581e-09, 6.513505e-16, 0, -8.742278e-09, -0.4, 1.4901161e-08, 0.2, -1.7484556e-08, 0.019456524, 0.013038555, 0.14570618)
+modulate = Color(0.75819194, 0.75819176, 0.7581917, 1)
+texture = ExtResource("44_xf5no")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D" unique_id=327705788]
+transform = Transform3D(0.2, -7.450581e-09, 6.513505e-16, 0, -8.742278e-09, -0.4, 7.450581e-09, 0.2, -1.7484556e-08, 0.18174547, 0.013038549, 0.14570619)
+texture = ExtResource("44_xf5no")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D" unique_id=462305808]
+transform = Transform3D(0.2, -7.450581e-09, 6.513505e-16, 0, -8.742278e-09, -0.4, 7.450581e-09, 0.2, -1.7484556e-08, -0.12958106, 0.013038539, 0.14570618)
+modulate = Color(0.75819194, 0.75819176, 0.7581917, 1)
+texture = ExtResource("44_xf5no")
+
+[node name="Node3D2" type="Node3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3" unique_id=1955059977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5879354e-09, -0.16883278)
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D2" unique_id=895716309]
+transform = Transform3D(0.40000004, 0, -6.519258e-09, -2.142042e-08, -1.8626451e-08, -0.4, 1.4901161e-08, 0.4, -1.1175871e-08, 0.18484497, 0.013034821, 0.21387482)
+modulate = Color(0.67068946, 0.6706895, 0.6706893, 1)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D2" unique_id=901780274]
+transform = Transform3D(6.218804e-08, 0.4, -6.519258e-09, 2.980232e-08, 4.656613e-09, -0.4, -0.40000004, 4.728688e-08, -1.117587e-08, 0.066711426, 0.013034821, 0.21387863)
+modulate = Color(0.67068946, 0.6706895, 0.6706893, 1)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D2" unique_id=1783682310]
+transform = Transform3D(-0.4, -1.0033975e-08, -6.5192576e-09, 6.519257e-09, -1.8626433e-09, -0.4, 3.2385717e-08, -0.40000004, -1.117587e-08, -0.035461426, 0.013046265, 0.21387482)
+modulate = Color(0.67068946, 0.6706895, 0.6706893, 1)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D2" unique_id=1982594017]
+transform = Transform3D(0, -0.40000004, -6.519258e-09, -1.4901161e-08, 2.142042e-08, -0.4, 0.4, -1.4901161e-08, -1.1175871e-08, -0.13523102, 0.013038635, 0.21387482)
+modulate = Color(0.67068946, 0.6706895, 0.6706893, 1)
+texture = ExtResource("39_odbxk")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D2" unique_id=201906717]
+transform = Transform3D(0.40000004, 0, -6.519258e-09, -2.142042e-08, -1.8626451e-08, -0.4, 1.4901161e-08, 0.4, -1.1175871e-08, 0.029859945, 0.013038563, -0.028546745)
+modulate = Color(0.75819194, 0.75819176, 0.7581917, 1)
+texture = ExtResource("43_i7vfc")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D2" unique_id=1844139389]
+transform = Transform3D(0.4, -7.450581e-09, 6.513505e-16, 0, -8.742278e-09, -0.4, 1.4901161e-08, 0.2, -1.7484556e-08, 0.019456524, 0.013038555, 0.14570618)
+texture = ExtResource("44_xf5no")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D2" unique_id=1901107739]
+transform = Transform3D(0.2, -7.450581e-09, 6.513505e-16, 0, -8.742278e-09, -0.4, 7.450581e-09, 0.2, -1.7484556e-08, 0.18174547, 0.013038549, 0.14570619)
+texture = ExtResource("44_xf5no")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Levels/Scene5/Chest/ChestInsides/Paper3/Node3D2" unique_id=623953630]
+transform = Transform3D(0.2, -7.450581e-09, 6.513505e-16, 0, -8.742278e-09, -0.4, 7.450581e-09, 0.2, -1.7484556e-08, -0.12958106, 0.013038539, 0.14570618)
+texture = ExtResource("44_xf5no")
+
+[node name="OnTop" type="Node3D" parent="Levels/Scene5/Chest" unique_id=1548325193]
+transform = Transform3D(0.70710677, 0.7071068, 0, -0.7071068, 0.70710677, 0, 0, 0, 1, -1.1238223, 2.1867223, 0.085435316)
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Levels/Scene5/Chest/OnTop" unique_id=1830621806]
+transform = Transform3D(-4.3711385e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 0, 0.07115882, 0.19143459, -0.06266186)
+modulate = Color(0.8132577, 0.8132577, 0.81325763, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "1º        2º        3º"
+font = ExtResource("38_mlh8e")
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/OnTop/Label3D" unique_id=1506409195]
+transform = Transform3D(-1.1920929e-07, 2, -3.7252903e-08, 1, 2.2351742e-07, 0, 0, -1.1175871e-07, -1, -0.4897766, 0.059825897, -0.04626751)
+texture = ExtResource("46_cedub")
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/OnTop/Label3D/Sprite3D" unique_id=623270659]
+transform = Transform3D(-1.8874475e-08, 0.5, -3.774895e-08, 0.25, 3.774895e-08, -1.6653345e-15, 1.1846321e-15, -7.54979e-08, -0.25, -0.44505298, 0.0037063728, -0.046267513)
+texture = ExtResource("44_xf5no")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Levels/Scene5/Chest/OnTop/Label3D" unique_id=842448013]
+transform = Transform3D(-1.1920929e-07, 2, -3.7252903e-08, 1, 2.2351742e-07, 0, 0, -1.1175871e-07, -1, 0.10151672, 0.059825897, -0.04626465)
+texture = ExtResource("47_1fpwn")
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/OnTop/Label3D/Sprite3D2" unique_id=1998603477]
+transform = Transform3D(-1.8874475e-08, 0.5, -3.774895e-08, 0.25, 3.774895e-08, -1.6653345e-15, 1.1846321e-15, -7.54979e-08, -0.25, -0.44505298, 0.0037063728, -0.046267513)
+texture = ExtResource("44_xf5no")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Levels/Scene5/Chest/OnTop/Label3D" unique_id=1096677144]
+transform = Transform3D(-1.1920929e-07, 2, -3.7252903e-08, 1, 2.2351742e-07, 0, 0, -1.1175871e-07, -1, 0.7381134, 0.059825897, -0.04626465)
+texture = ExtResource("48_je4iw")
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Scene5/Chest/OnTop/Label3D/Sprite3D3" unique_id=1962860770]
+transform = Transform3D(-1.8874475e-08, 0.5, -3.774895e-08, 0.25, 3.774895e-08, -1.6653345e-15, 1.1846321e-15, -7.54979e-08, -0.25, -0.44505298, 0.0037063728, -0.046267513)
+texture = ExtResource("44_xf5no")
 
 [node name="ChestAnalyse" type="Node3D" parent="Levels/Scene5" unique_id=1138002601 node_paths=PackedStringArray("camera", "on_scene_only", "child_of")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -931,6 +1104,7 @@ pattern = Array[int]([3, 3, 2, 1, 1])
 mesh = NodePath("../SmallBoxOpen")
 selected_material = ExtResource("47_dypof")
 locked_material = ExtResource("48_mnt4t")
+only_in_order = false
 metadata/_custom_type_script = "uid://dbinv34xc0tpr"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene6/SmallBoxOpen/Patterned" unique_id=1635720139]
@@ -958,6 +1132,7 @@ pattern = Array[int]([2, 2, 1, 0, 0])
 mesh = NodePath("../SmallBoxOpen")
 selected_material = ExtResource("47_dypof")
 locked_material = ExtResource("48_mnt4t")
+only_in_order = false
 metadata/_custom_type_script = "uid://dbinv34xc0tpr"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene6/SmallBoxOpen2/Patterned" unique_id=943025746]
@@ -985,6 +1160,7 @@ pattern = Array[int]([1, 1, 0, 3, 3])
 mesh = NodePath("../SmallBoxOpen")
 selected_material = ExtResource("47_dypof")
 locked_material = ExtResource("48_mnt4t")
+only_in_order = false
 metadata/_custom_type_script = "uid://dbinv34xc0tpr"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene6/SmallBoxOpen3/Patterned" unique_id=1125189350]
@@ -1061,7 +1237,9 @@ mesh = SubResource("BoxMesh_g4v7s")
 [connection signal="on_target" from="Levels/Scene4/GrandClock/Counter" to="Levels/Scene4/GrandClock/OpenDoor" method="set_visible" binds= [true]]
 [connection signal="on_target" from="Levels/Scene4/GrandClock/Counter" to="Levels/Scene4/GrandClock/Key" method="set_visible" binds= [true]]
 [connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/GoToArea" method="enable_interactable"]
+[connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/Open/Marker" method="progress"]
 [connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/chest/AnimationPlayer" method="play" binds= ["OpenLid_001"]]
+[connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/OnTop" method="set_visible" binds= [true]]
 [connection signal="item_used" from="Levels/Scene5/UseItemInteractable" to="Levels/Scene5/Chest/Open" method="enable_interactable"]
 [connection signal="item_used" from="Levels/Scene5/UseItemInteractable" to="Levels/Scene5/Chest" method="set_visible" binds= [true]]
 [connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen/Patterned" to="Levels/Scene6/SmallBoxOpen/Patterned" method="queue_free"]
@@ -1092,10 +1270,14 @@ mesh = SubResource("BoxMesh_g4v7s")
 [editable path="Levels/Scene4/Door/FancyDoorOpened"]
 [editable path="Levels/Scene4/Door/FancyDoorOpened/FancyDoorKnobKeyless"]
 [editable path="Levels/Scene4/GrandClock"]
+[editable path="Levels/Scene4/GrandClock/GrandClockClock/Pointers/BigPointer"]
+[editable path="Levels/Scene4/GrandClock/GrandClockClock/Pointers/Pointer"]
+[editable path="Levels/Scene4/GrandClock/GrandClockClock/Pointers/SmallPointer"]
 [editable path="Levels/Scene5/CameraStand"]
 [editable path="Levels/Scene5/Chest"]
 [editable path="Levels/Scene5/Chest/chest"]
-[editable path="Levels/Scene5/Chest/Book"]
+[editable path="Levels/Scene5/Chest/ChestInsides/Book"]
+[editable path="Levels/Scene5/Chest/ChestInsides/Paper3"]
 [editable path="Levels/Scene5/ChestAnalyse/CameraStand"]
 [editable path="Levels/Scene5/ChestAnalyse/CameraStand/Camera3D/ChangeSceneInteractable/Arrow"]
 [editable path="Levels/Scene6/CameraStand"]

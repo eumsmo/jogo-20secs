@@ -18,10 +18,16 @@
 [ext_resource type="Resource" uid="uid://chx7cb6ef57pc" path="res://resources/levels/man.tres" id="9_yfbtn"]
 [ext_resource type="PackedScene" uid="uid://dpcb80nty0wh5" path="res://scenes/components/arrows/up_arrow.tscn" id="10_8x14w"]
 [ext_resource type="Resource" uid="uid://c6igsaxw2oq2" path="res://resources/levels/level6.tres" id="10_t4cuf"]
+[ext_resource type="Resource" uid="uid://c78i08ur5wn7q" path="res://resources/levels/level5.tres" id="11_vdffl"]
+[ext_resource type="Resource" uid="uid://b2uis0cnr0ivr" path="res://resources/levels/level7.tres" id="12_xdeyo"]
 [ext_resource type="Script" uid="uid://bsgq3bdgo1dx8" path="res://scripts/pattern/simple_pattern_listener.gd" id="13_8x14w"]
+[ext_resource type="Resource" uid="uid://dd5fon0b44ev0" path="res://resources/levels/ending.tres" id="13_xdevx"]
 [ext_resource type="Texture2D" uid="uid://cqsgx0ii5wjbs" path="res://resources/sprites/circleish.png" id="18_yh8me"]
 [ext_resource type="Script" uid="uid://bkvypxuckxda3" path="res://scripts/ui/chapter_listing.gd" id="19_cei74"]
 [ext_resource type="Texture2D" uid="uid://b2vh4tx306dlt" path="res://resources/sprites/arrow_ui.png" id="19_j7bs0"]
+[ext_resource type="Texture2D" uid="uid://c806x075t6ufi" path="res://resources/sprites/egg.png" id="25_cgdp6"]
+[ext_resource type="Script" uid="uid://cuhii717svn2j" path="res://scripts/only_if_marker.gd" id="26_vjgx8"]
+[ext_resource type="Resource" uid="uid://dop2sdlsuhnrw" path="res://resources/progress/phase1/got_the_egg.tres" id="27_c7cwp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ljqmr"]
 blend_mode = 3
@@ -56,6 +62,10 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_j7bs0"]
 font = ExtResource("6_xj5ry")
 font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
+font = ExtResource("6_xj5ry")
+font_size = 32
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jdsl7"]
 shader = ExtResource("5_ljqmr")
@@ -103,7 +113,10 @@ ExtResource("6_jdsl7"): NodePath("Scenario/PhaseHolder/Phase2"),
 ExtResource("7_jdsl7"): NodePath("Scenario/PhaseHolder/Phase3"),
 ExtResource("8_kfjyq"): NodePath("Scenario/PhaseHolder/Phase4"),
 ExtResource("9_yfbtn"): NodePath("Scenario/PhaseHolder/Man"),
-ExtResource("10_t4cuf"): NodePath("Scenario/PhaseHolder/Phase6")
+ExtResource("10_t4cuf"): NodePath("Scenario/PhaseHolder/Phase6"),
+ExtResource("11_vdffl"): NodePath("Scenario/PhaseHolder/Phase5"),
+ExtResource("12_xdeyo"): NodePath("Scenario/PhaseHolder/Phase7"),
+ExtResource("13_xdevx"): NodePath("Scenario/PhaseHolder/Ending")
 }
 
 [node name="Fade" type="Control" parent="SubViewportContainer/SubViewport" unique_id=1771698977]
@@ -459,6 +472,35 @@ texture = ExtResource("18_yh8me")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="Egg" type="TextureRect" parent="SubViewportContainer/SubViewport/Intro" unique_id=252113229]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.0
+offset_top = 6.0
+offset_right = -80.0
+offset_bottom = 71.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("25_cgdp6")
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Intro/Egg" unique_id=502103544]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -21.5
+offset_right = 71.0
+offset_bottom = 26.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Egg"
+label_settings = SubResource("LabelSettings_57qmd")
+
 [node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/Intro" unique_id=1797031567]
 material = SubResource("ShaderMaterial_jdsl7")
 layout_mode = 1
@@ -483,6 +525,11 @@ metadata/_custom_type_script = "uid://bsgq3bdgo1dx8"
 
 [node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/Intro/SimplePatternListener" unique_id=457169656]
 wait_time = 0.75
+
+[node name="ShowOnly" type="Node" parent="SubViewportContainer/SubViewport/Intro" unique_id=1869358431 node_paths=PackedStringArray("what")]
+script = ExtResource("26_vjgx8")
+marker = ExtResource("27_c7cwp")
+what = NodePath("../Egg")
 
 [node name="GrandTimer" type="Node" parent="." unique_id=492224829 node_paths=PackedStringArray("timer")]
 script = ExtResource("5_yatpk")

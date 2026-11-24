@@ -23,6 +23,7 @@
 [ext_resource type="Resource" uid="uid://cd55jhojfbn52" path="res://resources/progress/phase1/entered_phase2.tres" id="20_6c58o"]
 [ext_resource type="PackedScene" uid="uid://dakb4ontcxv2u" path="res://resources/models/phase1/lock.tscn" id="20_22o04"]
 [ext_resource type="PackedScene" uid="uid://cvf8jfwsd6m4t" path="res://resources/models/phase1/hammer.tscn" id="21_iw7sw"]
+[ext_resource type="PackedScene" uid="uid://bof6f6q6tfq7g" path="res://resources/models/phase2/grand_clock.tscn" id="21_x4bpc"]
 [ext_resource type="Script" uid="uid://gdx1msx8ssyi" path="res://scripts/interact/interactables/pickup_item.gd" id="22_vrtms"]
 [ext_resource type="PackedScene" uid="uid://ctjk83r6mhda5" path="res://resources/models/phase1/key.tscn" id="23_gmevc"]
 [ext_resource type="Texture2D" uid="uid://bcfepyxiv6k6u" path="res://resources/sprites/tree.png" id="24_147fn"]
@@ -1107,6 +1108,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.383516, -1.9073486e-06, -
 [node name="Tree14" parent="Levels/Scene12/Scenario" unique_id=2060433127 instance=ExtResource("3_147fn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.079035, -1.9073486e-06, -15.276096)
 
+[node name="GrandClock" parent="Levels/Scene12/Scenario" unique_id=1593380876 instance=ExtResource("21_x4bpc")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -10.663044, 0, -9.58826)
+
+[node name="BigPointer" parent="Levels/Scene12/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="0" unique_id=177566143]
+transform = Transform3D(1, 0, 0, 0, -1, 4.371139e-07, 0, -8.742278e-08, -5, 0, 0, 0)
+
+[node name="Pointer" parent="Levels/Scene12/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="1" unique_id=1519642052]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 1.1920929e-06, 0, -1.7881393e-07, 6.25, 0, 0, 0)
+
+[node name="SmallPointer" parent="Levels/Scene12/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="2" unique_id=1442474372]
+transform = Transform3D(1.25, 0, 0, 0, -5.9604645e-08, 6.250001, 0, -1.25, -4.7683716e-07, 0, 0, 0)
+
 [node name="Scene13" type="Node3D" parent="Levels" unique_id=815115559 node_paths=PackedStringArray("camera")]
 transform = Transform3D(-0.9004215, 0, 0.43501872, 0, 1, 0, -0.43501872, 0, -0.9004215, 20.061281, 0, 31.709553)
 script = ExtResource("1_r0mlc")
@@ -1450,7 +1463,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.083906, -2.861023e-06, -1
 [node name="Tree13" parent="Levels/Scene16/Scenario/Trees" unique_id=1860324305 instance=ExtResource("3_147fn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.727334, -2.861023e-06, 0.99108505)
 
-[node name="Key" parent="Levels/Scene16/Scenario" unique_id=1887049370 instance=ExtResource("23_gmevc")]
+[node name="Key" parent="Levels/Scene16/Scenario" unique_id=427210515 instance=ExtResource("23_gmevc")]
 transform = Transform3D(-0.43301275, 0.3224846, -0.8417266, -0.25000006, 0.8542113, 0.4558763, 0.8660254, 0.40783194, -0.28926316, -6.303914, 0.65094143, -3.9462557)
 
 [node name="Area3D" type="Area3D" parent="Levels/Scene16/Scenario/Key" unique_id=1222432745 node_paths=PackedStringArray("remove_node")]
@@ -1528,6 +1541,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30222178, 1.9907675, -0.022
 [editable path="Levels/Scene10/CameraStand"]
 [editable path="Levels/Scene11/CameraStand"]
 [editable path="Levels/Scene12/CameraStand"]
+[editable path="Levels/Scene12/Scenario/GrandClock"]
+[editable path="Levels/Scene12/Scenario/GrandClock/GrandClockClock/Pointers/BigPointer"]
+[editable path="Levels/Scene12/Scenario/GrandClock/GrandClockClock/Pointers/Pointer"]
+[editable path="Levels/Scene12/Scenario/GrandClock/GrandClockClock/Pointers/SmallPointer"]
 [editable path="Levels/Scene13/CameraStand"]
 [editable path="Levels/Scene13/ChestScene/CameraStand"]
 [editable path="Levels/Scene13/ChestScene/Chest"]
