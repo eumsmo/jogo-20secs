@@ -70,14 +70,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_iidyj")
 
-[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_g4v7s"]
-size = Vector3(1, 2.5, 1)
-
 [node name="Tree" type="Node3D" unique_id=1205772040]
 
 [node name="Tree" type="MeshInstance3D" parent="." unique_id=942409480]
+visibility_range_end = 15.0
 mesh = SubResource("ArrayMesh_6ptu8")
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=606596720]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.353209, 0)
-occluder = SubResource("BoxOccluder3D_g4v7s")

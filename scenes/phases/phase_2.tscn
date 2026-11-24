@@ -56,8 +56,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_rm0al"]
 size = Vector3(2, 2, 2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
-size = Vector3(5, 5, 0.1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_6vo26"]
+size = Vector3(4.059082, 4.195801, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_33x8s"]
 size = Vector3(0.1, 4.554, 4)
@@ -123,6 +123,9 @@ shading_mode = 0
 material = SubResource("StandardMaterial3D_yf5fn")
 size = Vector2(5, 5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(5, 5, 0.1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_57qmd"]
 material = ExtResource("22_kgud7")
 size = Vector3(0.3, 0.6, 3)
@@ -153,7 +156,7 @@ metadata/_custom_type_script = "uid://cxjw1pb2uilr5"
 transform = Transform3D(-0.35406104, 0, 0.93522245, 0, 1, 0, -0.93522245, 0, -0.35406104, -9.185517, 0, 15.090654)
 script = ExtResource("1_t1g63")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("NextChapter"), NodePath("NextArea2")]
+on_scene_only = [NodePath("Gate"), NodePath("NextArea2")]
 
 [node name="NextArea2" type="Area3D" parent="Levels/Scene3" unique_id=780996731 node_paths=PackedStringArray("scene")]
 transform = Transform3D(0.9378889, 0, -0.34693566, 0, 1, 0, 0.34693566, 0, 0.9378889, -0.9486001, 0.6485361, -0.12754585)
@@ -176,7 +179,7 @@ scene = NodePath("../../../../Scene1")
 [node name="Scenario" type="Node3D" parent="Levels/Scene3" unique_id=630866649]
 
 [node name="NextChapter" type="Area3D" parent="Levels/Scene3" unique_id=1466961763]
-transform = Transform3D(0.3540609, 0, 0.9352224, 0, 1, 0, -0.9352224, 0, 0.3540609, -0.26040268, 2.0000005, -8.754093)
+transform = Transform3D(0.3540609, 0, 0.9352224, 0, 1, 0, -0.9352224, 0, 0.3540609, 0.40502423, 2.0000005, -8.502172)
 input_ray_pickable = false
 script = ExtResource("4_hn4vf")
 level = ExtResource("6_6vo26")
@@ -184,7 +187,8 @@ progress_marker = ExtResource("7_ypc7x")
 metadata/_custom_type_script = "uid://dacaijey35bqu"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene3/NextChapter" unique_id=1990620327]
-shape = SubResource("BoxShape3D_g4v7s")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012451172, -0.014892578, 0)
+shape = SubResource("BoxShape3D_6vo26")
 
 [node name="Gate" type="Area3D" parent="Levels/Scene3" unique_id=1722864110 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(0.93991417, 0, -0.3414108, 0, 1, 0, 0.3414108, 0, 0.93991417, 1.2306614, 0, -8.133516)

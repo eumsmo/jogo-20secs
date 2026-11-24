@@ -32,8 +32,12 @@
 [ext_resource type="PackedScene" uid="uid://bn3ssnj765x3e" path="res://resources/models/phase2/pointer.tscn" id="36_6slnm"]
 [ext_resource type="Material" uid="uid://iuxm21dlfxvs" path="res://resources/materials/Black.tres" id="37_n63xb"]
 [ext_resource type="Script" uid="uid://gdx1msx8ssyi" path="res://scripts/interact/interactables/pickup_item.gd" id="38_4eayc"]
+[ext_resource type="Texture2D" uid="uid://dbavr532jn2v5" path="res://resources/sprites/circle_outline.png" id="38_cqdr0"]
+[ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="39_cqdr0"]
 [ext_resource type="Resource" uid="uid://bo0ogvlnrqf3d" path="res://resources/itens/pointer.tres" id="39_twv0u"]
 [ext_resource type="PackedScene" uid="uid://bvf8q1kb4xvxr" path="res://resources/models/phase3/paper_1.tscn" id="40_vgims"]
+[ext_resource type="Texture2D" uid="uid://cyvbdnet6e2sm" path="res://resources/sprites/map/start_map.png" id="41_0evo8"]
+[ext_resource type="Texture2D" uid="uid://bngmsemmt6mk5" path="res://resources/sprites/itens/fishing.png" id="43_0evo8"]
 [ext_resource type="Texture2D" uid="uid://bgyywk6y58kt3" path="res://resources/sprites/arrow.png" id="45_du2hy"]
 [ext_resource type="PackedScene" uid="uid://cc3wngp2a3sod" path="res://resources/models/phase3/paper_2.tscn" id="47_pm5dk"]
 [ext_resource type="PackedScene" uid="uid://cqi3f8nch3tq5" path="res://resources/models/phase3/stove.tscn" id="49_v7w1d"]
@@ -730,11 +734,50 @@ scene = NodePath("../../../../Oven")
 [node name="Paper2" parent="Levels/Kitchen/InternalScenes/Book" unique_id=1702852817 instance=ExtResource("47_pm5dk")]
 transform = Transform3D(0.1740935, 0, 0.98472893, 0, 1, 0, -0.98472893, 0, 0.1740935, -3.8285348, 1.1998711, 0.32364464)
 
+[node name="Label3D" type="Label3D" parent="Levels/Kitchen/InternalScenes/Book/Paper2" unique_id=487238185]
+transform = Transform3D(1, -8.742278e-08, 8.742277e-08, -8.742278e-08, 4.3711395e-08, 1, -8.7422784e-08, -1, 4.371139e-08, -2.44137e-08, 0.010429395, -0.2470772)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "learned"
+font = ExtResource("39_cqdr0")
+font_size = 24
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Kitchen/InternalScenes/Book/Paper2" unique_id=1851342455]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, 6.938894e-18, 0.009284978, 0.10765081)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("38_cqdr0")
+
 [node name="Paper3" parent="Levels/Kitchen/InternalScenes/Book" unique_id=2054346809 instance=ExtResource("60_mwhpp")]
 transform = Transform3D(0.33813837, 0, -0.9410962, 0, 1, 0, 0.9410962, 0, 0.33813837, -3.864712, 1.214962, 1.544806)
 
+[node name="Label3D" type="Label3D" parent="Levels/Kitchen/InternalScenes/Book/Paper3" unique_id=1410138138]
+transform = Transform3D(-1, 0, 8.742278e-08, 8.742278e-08, -4.371139e-08, 1, 3.821371e-15, 1, 4.371139e-08, 8.362346e-09, 0.010429372, 0.27124268)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "cycles"
+font = ExtResource("39_cqdr0")
+font_size = 24
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Kitchen/InternalScenes/Book/Paper3" unique_id=242350]
+transform = Transform3D(-0.7497335, 0.019990932, 8.7383134e-10, 0, -3.278354e-08, 0.75, 0.019990932, 0.7497335, 3.2771894e-08, -3.7252903e-09, 0.009284969, -0.07545445)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("41_0evo8")
+
 [node name="Paper1" parent="Levels/Kitchen/InternalScenes/Book" unique_id=1023382641 instance=ExtResource("40_vgims")]
 transform = Transform3D(-0.57296526, 0, -0.81957924, 0, 1, 0, 0.81957924, 0, -0.57296526, -3.7474988, 1.1988907, 0.91693544)
+
+[node name="Label3D" type="Label3D" parent="Levels/Kitchen/InternalScenes/Book/Paper1" unique_id=1614193155]
+transform = Transform3D(-1, 0, 8.742278e-08, 8.742278e-08, -4.371139e-08, 1, 3.821371e-15, 1, 4.371139e-08, 9.117657e-10, 0.010429375, 0.21042627)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "out"
+font = ExtResource("39_cqdr0")
+font_size = 24
+
+[node name="Sprite3D" type="Sprite3D" parent="Levels/Kitchen/InternalScenes/Book/Paper1" unique_id=509096950]
+transform = Transform3D(-0.5302411, 0.5304191, 2.3185354e-08, 0, -3.278354e-08, 0.75, 0.5304191, 0.5302411, 2.3177574e-08, -3.7252903e-09, 0.009284969, -0.07545445)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("43_0evo8")
 
 [node name="Pantry" type="Node3D" parent="Levels" unique_id=1622995380 node_paths=PackedStringArray("camera", "on_scene_only")]
 transform = Transform3D(-0.58117485, 0, -0.8137787, 0, 1, 0, 0.8137787, 0, -0.58117485, -5.2545733, 0, 3.3583531)

@@ -164,6 +164,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.996424, -2.861023e-06, 3.0
 [node name="Tree3" parent="Scenario/Trees" unique_id=1937214577 instance=ExtResource("5_xf5no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8212986, -1.9073486e-06, -3.9108782)
 
+[node name="Tree" parent="Scenario/Trees/Tree3" index="0" unique_id=942409480]
+visibility_range_end = 0.0
+
 [node name="Tree4" parent="Scenario/Trees" unique_id=336930096 instance=ExtResource("5_xf5no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.487194, -2.861023e-06, 3.905219)
 
@@ -173,14 +176,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.809561, -2.861023e-06, 5.8
 [node name="Tree6" parent="Scenario/Trees" unique_id=191599406 instance=ExtResource("5_xf5no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0329514, -1.9073486e-06, 3.8979788)
 
+[node name="Tree" parent="Scenario/Trees/Tree6" index="0" unique_id=942409480]
+visibility_range_end = 0.0
+
 [node name="Tree7" parent="Scenario/Trees" unique_id=1828634564 instance=ExtResource("5_xf5no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77005, -2.861023e-06, 3.6880484)
 
 [node name="Tree8" parent="Scenario/Trees" unique_id=683774685 instance=ExtResource("5_xf5no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1557827, -1.9073486e-06, -5.24199)
 
+[node name="Tree" parent="Scenario/Trees/Tree8" index="0" unique_id=942409480]
+visibility_range_end = 0.0
+
 [node name="Tree9" parent="Scenario/Trees" unique_id=1520113433 instance=ExtResource("5_xf5no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.14319, -3.8146973e-06, 5.158473)
+
+[node name="Tree" parent="Scenario/Trees/Tree9" index="0" unique_id=942409480]
+visibility_range_end = 0.0
 
 [node name="Tree11" parent="Scenario/Trees" unique_id=1124101130 instance=ExtResource("5_xf5no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.035084, -2.861023e-06, 4.7585974)
@@ -194,11 +206,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.33808, -2.861023e-06, 1.27
 [node name="Tree14" parent="Scenario/Trees" unique_id=1833912470 instance=ExtResource("5_xf5no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.996418, -2.861023e-06, 3.3202734)
 
+[node name="Tree" parent="Scenario/Trees/Tree14" index="0" unique_id=942409480]
+visibility_range_end = 0.0
+
 [node name="Tree15" parent="Scenario/Trees" unique_id=751492235 instance=ExtResource("5_xf5no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4863987, -1.9073486e-06, -4.0338144)
 
+[node name="Tree" parent="Scenario/Trees/Tree15" index="0" unique_id=942409480]
+visibility_range_end = 0.0
+
 [node name="Tree17" parent="Scenario/Trees" unique_id=253928399 instance=ExtResource("5_xf5no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25723267, -9.536743e-07, 5.8048315)
+
+[node name="Tree" parent="Scenario/Trees/Tree17" index="0" unique_id=942409480]
+visibility_range_end = 0.0
 
 [node name="BathroomLightHolder" parent="Scenario" unique_id=8687540 instance=ExtResource("6_cedub")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.1168556, 2.023354, -0.033594012)
@@ -1236,8 +1257,8 @@ mesh = SubResource("BoxMesh_g4v7s")
 [connection signal="on_target" from="Levels/Scene4/GrandClock/Counter" to="Levels/Scene4/GrandClock/ClosedDoor" method="set_visible" binds= [false]]
 [connection signal="on_target" from="Levels/Scene4/GrandClock/Counter" to="Levels/Scene4/GrandClock/OpenDoor" method="set_visible" binds= [true]]
 [connection signal="on_target" from="Levels/Scene4/GrandClock/Counter" to="Levels/Scene4/GrandClock/Key" method="set_visible" binds= [true]]
-[connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/GoToArea" method="enable_interactable"]
 [connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/Open/Marker" method="progress"]
+[connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/GoToArea" method="enable_interactable"]
 [connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/chest/AnimationPlayer" method="play" binds= ["OpenLid_001"]]
 [connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/OnTop" method="set_visible" binds= [true]]
 [connection signal="item_used" from="Levels/Scene5/UseItemInteractable" to="Levels/Scene5/Chest/Open" method="enable_interactable"]
@@ -1255,6 +1276,13 @@ mesh = SubResource("BoxMesh_g4v7s")
 [connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen3/Patterned" to="Levels/Scene6/SmallBoxOpen3/ClosedLid" method="set_visible" binds= [false]]
 [connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen3/Patterned" to="Levels/Scene6/SmallBoxOpen3/OpenLid" method="set_visible" binds= [true]]
 
+[editable path="Scenario/Trees/Tree3"]
+[editable path="Scenario/Trees/Tree6"]
+[editable path="Scenario/Trees/Tree8"]
+[editable path="Scenario/Trees/Tree9"]
+[editable path="Scenario/Trees/Tree14"]
+[editable path="Scenario/Trees/Tree15"]
+[editable path="Scenario/Trees/Tree17"]
 [editable path="Scenario/BathroomLightHolder"]
 [editable path="Scenario/BathroomLightHolder/LightBulb"]
 [editable path="Levels/Scene1/CameraStand"]
