@@ -2,7 +2,7 @@ class_name ProgressManager
 extends Node
 
 static var progress_markers: Array[ProgressMarker]
-static var showing_progress: bool = true
+static var showing_progress: bool = false
 
 static var unlocked_chapters: Array[LevelInfo]
 static var ordered_unlocked_chapters: Array[LevelInfo]:

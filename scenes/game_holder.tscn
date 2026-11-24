@@ -25,9 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cqsgx0ii5wjbs" path="res://resources/sprites/circleish.png" id="18_yh8me"]
 [ext_resource type="Script" uid="uid://bkvypxuckxda3" path="res://scripts/ui/chapter_listing.gd" id="19_cei74"]
 [ext_resource type="Texture2D" uid="uid://b2vh4tx306dlt" path="res://resources/sprites/arrow_ui.png" id="19_j7bs0"]
-[ext_resource type="Texture2D" uid="uid://c806x075t6ufi" path="res://resources/sprites/egg.png" id="25_cgdp6"]
-[ext_resource type="Script" uid="uid://cuhii717svn2j" path="res://scripts/only_if_marker.gd" id="26_vjgx8"]
-[ext_resource type="Resource" uid="uid://dop2sdlsuhnrw" path="res://resources/progress/phase1/got_the_egg.tres" id="27_c7cwp"]
+[ext_resource type="Texture2D" uid="uid://dq82l0icg64rp" path="res://resources/sprites/click.png" id="24_cgdp6"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ljqmr"]
 blend_mode = 3
@@ -62,10 +60,6 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_j7bs0"]
 font = ExtResource("6_xj5ry")
 font_size = 38
-
-[sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
-font = ExtResource("6_xj5ry")
-font_size = 32
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jdsl7"]
 shader = ExtResource("5_ljqmr")
@@ -146,7 +140,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Intro" type="Control" parent="SubViewportContainer/SubViewport" unique_id=19263796 node_paths=PackedStringArray("label", "chapter_label", "arrows_holder", "intro_blocker", "intro_fade", "game", "timer", "pattern_listener")]
+[node name="Intro" type="Control" parent="SubViewportContainer/SubViewport" unique_id=19263796 node_paths=PackedStringArray("label", "chapter_label", "arrows_holder", "intro_blocker", "intro_fade", "click_show", "game", "timer", "pattern_listener")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -161,6 +155,7 @@ chapter_label = NodePath("Label/Label")
 arrows_holder = NodePath("HBoxContainer")
 intro_blocker = NodePath("ColorRect")
 intro_fade = NodePath("../Fade/ColorRect")
+click_show = NodePath("ColorRect/TextureRect")
 game = NodePath("../Game")
 timer = NodePath("../../../GrandTimer")
 pattern_listener = NodePath("SimplePatternListener")
@@ -472,35 +467,6 @@ texture = ExtResource("18_yh8me")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Egg" type="TextureRect" parent="SubViewportContainer/SubViewport/Intro" unique_id=252113229]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -130.0
-offset_top = 6.0
-offset_right = -80.0
-offset_bottom = 71.0
-grow_horizontal = 0
-mouse_filter = 2
-texture = ExtResource("25_cgdp6")
-
-[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Intro/Egg" unique_id=502103544]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 13.0
-offset_top = -21.5
-offset_right = 71.0
-offset_bottom = 26.5
-grow_horizontal = 0
-grow_vertical = 2
-text = "Egg"
-label_settings = SubResource("LabelSettings_57qmd")
-
 [node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/Intro" unique_id=1797031567]
 material = SubResource("ShaderMaterial_jdsl7")
 layout_mode = 1
@@ -517,6 +483,16 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport/Intro/ColorRect" unique_id=319273347]
+layout_mode = 0
+offset_left = 1027.0
+offset_top = 766.0
+offset_right = 1127.0
+offset_bottom = 866.0
+mouse_filter = 2
+texture = ExtResource("24_cgdp6")
+expand_mode = 1
+
 [node name="SimplePatternListener" type="Node" parent="SubViewportContainer/SubViewport/Intro" unique_id=1109038905 node_paths=PackedStringArray("clear_timer")]
 process_mode = 3
 script = ExtResource("13_8x14w")
@@ -525,11 +501,6 @@ metadata/_custom_type_script = "uid://bsgq3bdgo1dx8"
 
 [node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/Intro/SimplePatternListener" unique_id=457169656]
 wait_time = 0.75
-
-[node name="ShowOnly" type="Node" parent="SubViewportContainer/SubViewport/Intro" unique_id=1869358431 node_paths=PackedStringArray("what")]
-script = ExtResource("26_vjgx8")
-marker = ExtResource("27_c7cwp")
-what = NodePath("../Egg")
 
 [node name="GrandTimer" type="Node" parent="." unique_id=492224829 node_paths=PackedStringArray("timer")]
 script = ExtResource("5_yatpk")

@@ -7,6 +7,7 @@ extends Control
 @export var arrows_holder: Control
 @export var intro_blocker: ColorRect
 @export var intro_fade: ColorRect
+@export var click_show: Control
 
 @export_group("Other Refs")
 @export var game: Game
@@ -108,6 +109,7 @@ func _on_intro_block_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MouseButton.MOUSE_BUTTON_LEFT and event.is_pressed():
 			transition_circle(intro_blocker.material, false)
+			click_show.visible = false
 			intro_blocker.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			pattern_listener.process_mode = Node.PROCESS_MODE_INHERIT
 
