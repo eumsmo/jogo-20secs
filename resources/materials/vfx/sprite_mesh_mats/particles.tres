@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://doji83x23mdty"]
+
+[ext_resource type="Texture2D" uid="uid://bka73mhdtn6be" path="res://resources/sprites/map/end_map.png" id="1_v50ht"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = ExtResource("1_v50ht")

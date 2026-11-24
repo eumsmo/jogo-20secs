@@ -196,7 +196,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.9604645e-
 
 [node name="FancyDoorFrame" parent="Scenes/Scene1/Scenario/Door/FancyDoorFrame" parent_id_path=PackedInt32Array(1542209821, 465612966) index="0" unique_id=1064917078]
 layers = 32
-material_override = ExtResource("5_d01p1")
 
 [node name="FancyDoor" parent="Scenes/Scene1/Scenario/Door/FancyDoor" parent_id_path=PackedInt32Array(1542209821, 173200455) index="0" unique_id=196420203]
 layers = 32
@@ -534,7 +533,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.9604645e-
 
 [node name="FancyDoorFrame" parent="Scenes/Scene2/Scenario/Door/FancyDoorFrame" parent_id_path=PackedInt32Array(1036882501, 465612966) index="0" unique_id=1064917078]
 layers = 32
-material_override = ExtResource("5_d01p1")
 
 [node name="FancyDoor" parent="Scenes/Scene2/Scenario/Door/FancyDoor" parent_id_path=PackedInt32Array(1036882501, 173200455) index="0" unique_id=196420203]
 layers = 32
@@ -975,7 +973,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.9604645e-
 
 [node name="FancyDoorFrame" parent="Scenes/Scene3/Scenario/Door/FancyDoorFrame" parent_id_path=PackedInt32Array(1599589054, 465612966) index="0" unique_id=1064917078]
 layers = 32
-material_override = ExtResource("5_d01p1")
 
 [node name="FancyDoor" parent="Scenes/Scene3/Scenario/Door/FancyDoor" parent_id_path=PackedInt32Array(1599589054, 173200455) index="0" unique_id=196420203]
 layers = 32

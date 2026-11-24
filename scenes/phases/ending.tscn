@@ -42,7 +42,8 @@ visible = false
 
 [node name="Label3D" type="Label3D" parent="Levels/Text1" unique_id=1201662839]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
-text = "Well, this is the end."
+text = "Yes, you have finally
+learned it all."
 font = ExtResource("5_q2uiq")
 
 [node name="Text2" type="Node3D" parent="Levels" unique_id=244282009 node_paths=PackedStringArray("camera")]
@@ -68,8 +69,8 @@ visible = false
 
 [node name="Label3D" type="Label3D" parent="Levels/Text2" unique_id=1434250553]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
-text = "Thank you for
-taking your lessons."
+text = "The patterns,
+the lessons."
 font = ExtResource("5_q2uiq")
 
 [node name="Text3" type="Node3D" parent="Levels" unique_id=1305731859 node_paths=PackedStringArray("camera")]
@@ -122,7 +123,8 @@ visible = false
 
 [node name="Label3D" type="Label3D" parent="Levels/Text4" unique_id=1956845845]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
-text = "The cycle has ended."
+text = "But now, its time
+to lock it all again"
 font = ExtResource("5_q2uiq")
 
 [node name="Text5" type="Node3D" parent="Levels" unique_id=659240266 node_paths=PackedStringArray("camera")]
@@ -133,7 +135,7 @@ camera = NodePath("CameraStand/Camera3D")
 [node name="NextArea" type="Area3D" parent="Levels/Text5" unique_id=2133513245 node_paths=PackedStringArray("scene")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
 script = ExtResource("3_3x4l7")
-scene = NodePath("../../Text6")
+scene = NodePath("../../Text7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Text5/NextArea" unique_id=2130241535]
 transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
@@ -148,11 +150,12 @@ visible = false
 
 [node name="Label3D" type="Label3D" parent="Levels/Text5" unique_id=123692301]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
-text = "Goodbye."
+text = "And leave this place
+one last time."
 font = ExtResource("5_q2uiq")
 
 [node name="Text6" type="Node3D" parent="Levels" unique_id=999662791 node_paths=PackedStringArray("camera")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.000002, 0, 4)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.000002, 0, 12)
 script = ExtResource("2_xa0t2")
 camera = NodePath("CameraStand/Camera3D")
 
@@ -175,7 +178,60 @@ visible = false
 
 [node name="Label3D" type="Label3D" parent="Levels/Text6" unique_id=761442676]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
-text = "The end."
+text = "Goodbye."
+font = ExtResource("5_q2uiq")
+
+[node name="Text7" type="Node3D" parent="Levels" unique_id=1517240322 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.000002, 0, 4)
+script = ExtResource("2_xa0t2")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Levels/Text7" unique_id=864530470 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("3_3x4l7")
+scene = NodePath("../../Text8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Text7/NextArea" unique_id=254804283]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Levels/Text7" unique_id=557568239 instance=ExtResource("4_npcky")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Levels/Text7/CameraStand/Camera3D" parent_id_path=PackedInt32Array(557568239, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Levels/Text7" unique_id=117238144]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
+text = "Leaving it all behind,
+but the lessons."
+font = ExtResource("5_q2uiq")
+
+[node name="Text8" type="Node3D" parent="Levels" unique_id=315514224 node_paths=PackedStringArray("camera")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.000002, 0, 8)
+script = ExtResource("2_xa0t2")
+camera = NodePath("CameraStand/Camera3D")
+
+[node name="NextArea" type="Area3D" parent="Levels/Text8" unique_id=1707143787 node_paths=PackedStringArray("scene")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
+script = ExtResource("3_3x4l7")
+scene = NodePath("../../Text6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Text8/NextArea" unique_id=1077048152]
+transform = Transform3D(1, 0, -2.3448255e-13, 0, 1, 0, 2.3448255e-13, 0, 1, -0.07299803, 1.6438255, 0)
+shape = SubResource("BoxShape3D_v2yb1")
+
+[node name="CameraStand" parent="Levels/Text8" unique_id=1029066426 instance=ExtResource("4_npcky")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.2029991, 0)
+
+[node name="ChangeSceneInteractable" parent="Levels/Text8/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1029066426, 1331824599) index="0" unique_id=452113428]
+process_mode = 4
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Levels/Text8" unique_id=603890611]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1889992, 1.5798721, 5.1972734e-08)
+text = "Thank you."
 font = ExtResource("5_q2uiq")
 
 [editable path="Levels/Text1/CameraStand"]
@@ -184,3 +240,5 @@ font = ExtResource("5_q2uiq")
 [editable path="Levels/Text4/CameraStand"]
 [editable path="Levels/Text5/CameraStand"]
 [editable path="Levels/Text6/CameraStand"]
+[editable path="Levels/Text7/CameraStand"]
+[editable path="Levels/Text8/CameraStand"]

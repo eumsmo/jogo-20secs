@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cen6d6t1rfq3x"]
 
 [ext_resource type="Script" uid="uid://cxjw1pb2uilr5" path="res://scripts/phase.gd" id="1_c8q0l"]
+[ext_resource type="Material" uid="uid://dcp258ghdupuw" path="res://resources/materials/Brown.tres" id="2_df0be"]
+[ext_resource type="Material" uid="uid://doji83x23mdty" path="res://resources/materials/vfx/sprite_mesh_mats/particles.tres" id="2_uelb7"]
 [ext_resource type="Script" uid="uid://ypfbu7sipw7r" path="res://scripts/scene.gd" id="2_xfm4r"]
 [ext_resource type="PackedScene" uid="uid://dybkw4ji7oj7w" path="res://scenes/components/camera_stand.tscn" id="3_5empd"]
 [ext_resource type="PackedScene" uid="uid://pqjqg772sf46" path="res://scenes/components/door.tscn" id="4_t0hsu"]
@@ -13,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ifathsn32gv" path="res://scenes/components/wall_portrait.tscn" id="11_2gqqc"]
 [ext_resource type="Material" uid="uid://iuxm21dlfxvs" path="res://resources/materials/Black.tres" id="11_xfm4r"]
 [ext_resource type="Texture2D" uid="uid://bxfjw58nnv1xy" path="res://resources/sprites/flower_indicator.png" id="12_mojsp"]
+[ext_resource type="Material" uid="uid://b07ie0elceat5" path="res://resources/materials/Black_ending.tres" id="15_lilfm"]
 [ext_resource type="PackedScene" uid="uid://bt8828jobikwb" path="res://resources/models/phase3/bathroom_light_holder.tscn" id="15_ww1n3"]
 [ext_resource type="Material" uid="uid://bifsq3mutsleb" path="res://resources/materials/vfx/phase6_wall_light_glow.tres" id="16_7njrg"]
 [ext_resource type="Material" uid="uid://cdj1opmtoccxq" path="res://resources/materials/Grey.tres" id="17_qt6k5"]
@@ -38,6 +41,34 @@
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
 size = Vector2(40, 8)
+
+[sub_resource type="Curve" id="Curve_uelb7"]
+_data = [Vector2(0, 0), 0.0, 4.7524753, 0, 0, Vector2(0.14705881, 1), 0.0, 0.0, 0, 0, Vector2(0.48529413, 0.91089106), 0.0, 0.0, 0, 0, Vector2(0.79044116, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -8.88712, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_uelb7"]
+curve = SubResource("Curve_uelb7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g4v7s"]
+lifetime_randomness = 0.1
+emission_shape = 3
+emission_box_extents = Vector3(10, 1, 5)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+use_rotation_velocity_3d = true
+rotation_velocity_3d_min = Vector3(-45, 0, 0)
+rotation_velocity_3d_max = Vector3(45, 0, 0)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_uelb7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_d0u6y"]
+material = ExtResource("2_uelb7")
+size = Vector2(0.25, 0.25)
+orientation = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pf7vy"]
 size = Vector3(1.5, 2.526, 0.1)
@@ -71,15 +102,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -79, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario" unique_id=1987091007]
 layers = 32
+material_override = ExtResource("2_df0be")
 mesh = SubResource("PlaneMesh_g4v7s")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Scenario" unique_id=1289500173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.375605, -1.1107635, 0)
+amount = 16
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_g4v7s")
+draw_pass_1 = SubResource("QuadMesh_d0u6y")
 
 [node name="Scenes" type="Node3D" parent="." unique_id=588214431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -79, 0)
 
-[node name="Scene1" type="Node3D" parent="Scenes" unique_id=1579835317 node_paths=PackedStringArray("camera")]
+[node name="Scene1" type="Node3D" parent="Scenes" unique_id=1579835317 node_paths=PackedStringArray("camera", "on_scene_only")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.51235, 0, 0)
 script = ExtResource("2_xfm4r")
 camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("Scenario/OmniLight3D")]
 
 [node name="CameraStand" parent="Scenes/Scene1" unique_id=72479423 instance=ExtResource("3_5empd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.033262, 1, -8.944498e-08)
@@ -96,7 +136,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.9604645e-
 
 [node name="FancyDoorFrame" parent="Scenes/Scene1/Scenario/Door/FancyDoorFrame" parent_id_path=PackedInt32Array(1542209821, 465612966) index="0" unique_id=1064917078]
 layers = 32
-material_override = ExtResource("5_hovrn")
 
 [node name="FancyDoor" parent="Scenes/Scene1/Scenario/Door/FancyDoor" parent_id_path=PackedInt32Array(1542209821, 173200455) index="0" unique_id=196420203]
 layers = 32
@@ -183,7 +222,7 @@ shape = SubResource("BoxShape3D_ms3bu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1468811, -0.09381485, 0)
 
 [node name="YourOwnDoorWall" parent="Scenes/Scene1/Scenario/Door/YourOwnDoorWall" index="0" unique_id=642736182]
-material_override = ExtResource("11_xfm4r")
+material_override = ExtResource("15_lilfm")
 
 [node name="ClickBlocker" type="Area3D" parent="Scenes/Scene1/Scenario/Door/YourOwnDoorWall" unique_id=2085111927]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.4301567, 0, 0)
@@ -194,7 +233,7 @@ shape = SubResource("BoxShape3D_57qmd")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Scenes/Scene1/Scenario" unique_id=1941064243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9342537, 2.330843, 0)
-visible = false
+light_energy = 0.3
 omni_range = 10.0
 
 [node name="PortraitPuzzle" type="Node3D" parent="Scenes/Scene1/Scenario" unique_id=315501413]
@@ -219,9 +258,9 @@ script = ExtResource("17_rkp3g")
 mat = ExtResource("16_7njrg")
 lights = [NodePath("../LightBulb/SinkLight")]
 on_color = Color(1, 1, 1, 1)
-off_color = Color(0.73333335, 0.73333335, 0.73333335, 1)
-on_light_attenuation = 1.0
-off_light_attenuation = 0.5
+off_color = Color(0.5171842, 0.5171846, 0.5171842, 1)
+on_light_attenuation = 0.5
+off_light_attenuation = 1.0
 start_on = false
 
 [node name="LightPuzzle" type="Node" parent="Scenes/Scene1/Scenario/BathroomLightHolder" unique_id=1255256473 node_paths=PackedStringArray("patterned", "light_pattern", "indicator")]
@@ -263,7 +302,7 @@ pattern_blinks_right = Dictionary[int, int]({
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51235, 0, 0)
 script = ExtResource("2_xfm4r")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Scenario/OmniLight3D")]
 
 [node name="CameraStand" parent="Scenes/Scene2" unique_id=1602582381 instance=ExtResource("3_5empd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.033262, 1, -8.944498e-08)
@@ -281,7 +320,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.9604645e-
 
 [node name="FancyDoorFrame" parent="Scenes/Scene2/Scenario/Door/FancyDoorFrame" parent_id_path=PackedInt32Array(654782657, 465612966) index="0" unique_id=1064917078]
 layers = 32
-material_override = ExtResource("5_hovrn")
 
 [node name="FancyDoor" parent="Scenes/Scene2/Scenario/Door/FancyDoor" parent_id_path=PackedInt32Array(654782657, 173200455) index="0" unique_id=196420203]
 layers = 32
@@ -335,6 +373,7 @@ shape = SubResource("BoxShape3D_ms3bu")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Scenes/Scene2/Scenario" unique_id=175068776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9342537, 2.330843, 0)
+visible = false
 omni_range = 10.0
 
 [node name="PortraitPuzzle" type="Node3D" parent="Scenes/Scene2/Scenario" unique_id=1098446977]
@@ -596,7 +635,7 @@ end_node = NodePath("../EndMarker")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48764992, 0, 0)
 script = ExtResource("2_xfm4r")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Scenario/OmniLight3D")]
 
 [node name="CameraStand" parent="Scenes/Scene3" unique_id=534132941 instance=ExtResource("3_5empd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.033262, 1, -8.944498e-08)
@@ -614,7 +653,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.9604645e-
 
 [node name="FancyDoorFrame" parent="Scenes/Scene3/Scenario/Door/FancyDoorFrame" parent_id_path=PackedInt32Array(98824720, 465612966) index="0" unique_id=1064917078]
 layers = 32
-material_override = ExtResource("5_hovrn")
 
 [node name="FancyDoor" parent="Scenes/Scene3/Scenario/Door/FancyDoor" parent_id_path=PackedInt32Array(98824720, 173200455) index="0" unique_id=196420203]
 layers = 32
@@ -668,6 +706,7 @@ shape = SubResource("BoxShape3D_ms3bu")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Scenes/Scene3/Scenario" unique_id=549845902]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9342537, 2.330843, 0)
+visible = false
 omni_range = 10.0
 
 [node name="WallPortrait" parent="Scenes/Scene3/Scenario" unique_id=472917611 instance=ExtResource("18_j1j6p")]

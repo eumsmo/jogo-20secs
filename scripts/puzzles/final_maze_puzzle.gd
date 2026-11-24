@@ -32,10 +32,13 @@ func generate_pattern():
 		var row = col.get_child(pos.y)
 		row.visible = true
 	
-	var starting_node: Node3D = maze_nodes.get_child(start.x).get_child(start.y)
+	var start_pos = path[0]
+	var ending_pos = path[-1]
+	
+	var starting_node: Node3D = maze_nodes.get_child(start_pos.x).get_child(start_pos.y)
 	starter_node.global_position = starting_node.global_position
 	
-	var ending_node: Node3D = maze_nodes.get_child(end.x).get_child(end.y)
+	var ending_node: Node3D = maze_nodes.get_child(ending_pos.x).get_child(ending_pos.y)
 	end_node.global_position = ending_node.global_position
 
 

@@ -6,3 +6,4 @@ extends Node3D
 func set_disabled():
 	visible = false
 	process_mode = Node.PROCESS_MODE_DISABLED
+	queue_free()
