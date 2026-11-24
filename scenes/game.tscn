@@ -17,6 +17,7 @@
 [ext_resource type="Resource" uid="uid://b2uis0cnr0ivr" path="res://resources/levels/level7.tres" id="9_js0lu"]
 [ext_resource type="PackedScene" uid="uid://cfltysogfkth2" path="res://scenes/phases/phase_3.tscn" id="10_bt5mj"]
 [ext_resource type="Resource" uid="uid://dd5fon0b44ev0" path="res://resources/levels/ending.tres" id="10_twgab"]
+[ext_resource type="Resource" uid="uid://efl4oxp65gw2" path="res://resources/levels/nowhere.tres" id="11_nepv3"]
 [ext_resource type="PackedScene" uid="uid://orv7mf5mjxhm" path="res://resources/models/phase3/house_inside.tscn" id="12_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://dpvnorxwhpu65" path="res://scenes/phases/phase_4.tscn" id="13_e1j6l"]
 [ext_resource type="Script" uid="uid://b25o0snifepw3" path="res://scripts/scenes_controller.gd" id="14_trtic"]
@@ -216,7 +217,8 @@ ExtResource("6_bhx41"): NodePath("Scenario/PhaseHolder/Man"),
 ExtResource("7_yd4ix"): NodePath("Scenario/PhaseHolder/Phase6"),
 ExtResource("8_i4re6"): NodePath("Scenario/PhaseHolder/Phase5"),
 ExtResource("9_js0lu"): NodePath("Scenario/PhaseHolder/Phase7"),
-ExtResource("10_twgab"): NodePath("Scenario/PhaseHolder/Ending")
+ExtResource("10_twgab"): NodePath("Scenario/PhaseHolder/Ending"),
+ExtResource("11_nepv3"): NodePath("Scenario/PhaseHolder/Nowhere")
 }
 scenes = NodePath("Controllers/ScenesController")
 pattern = NodePath("Controllers/PatternListener")

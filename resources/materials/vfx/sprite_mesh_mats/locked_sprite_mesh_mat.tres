@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://brcgsmls5gnle"]
 
-[ext_resource type="Texture2D" uid="uid://dxrx8atqe6cl2" path="res://resources/sprites/temp_outoforder.png" id="1_wjhpy"]
+[ext_resource type="Texture2D" uid="uid://coa4wp778xhir" path="res://resources/sprites/palettes/fishing.png" id="1_wjhpy"]
 
 [resource]
 transparency = 1
