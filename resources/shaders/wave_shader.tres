@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c6vda67pjt0gq"]
+
+[ext_resource type="Shader" uid="uid://ctlk168vvgs8d" path="res://resources/shaders/click_shader.gdshader" id="1_jbcpy"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_jbcpy")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/radius = 0.52400002489
+shader_parameter/tickness = 0.10000000475

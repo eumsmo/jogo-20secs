@@ -35,8 +35,12 @@ func deactivate():
 
 func check_pattern(pattern: Array[Game.Direction]) -> bool:
 	var got_it: ScenePattern = null
+	var one_is_null = false
 	
 	for patterns in scene_patterns:
+		if patterns == null:
+			one_is_null = true
+			continue
 		if patterns.check_pattern(pattern):
 			got_it = patterns
 			break
@@ -44,5 +48,8 @@ func check_pattern(pattern: Array[Game.Direction]) -> bool:
 	if got_it != null:
 		if got_it.only_once:
 			scene_patterns.erase(got_it)
+	
+	if one_is_null:
+		scene_patterns.erase(null)
 	
 	return got_it != null

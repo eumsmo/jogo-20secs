@@ -1,6 +1,8 @@
 [gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://chx7cb6ef57pc"]
 
+[ext_resource type="PackedScene" uid="uid://gfbgmmpl3qxt" path="res://scenes/phases/man.tscn" id="1_amcf2"]
 [ext_resource type="Texture2D" uid="uid://w5aom46j1l02" path="res://resources/sprites/palettes/man.png" id="1_ln3t4"]
+[ext_resource type="Script" uid="uid://bx5am22m0deaw" path="res://scripts/progress/progress_marker.gd" id="2_amcf2"]
 [ext_resource type="Script" uid="uid://gps7yv5j2dm7" path="res://scripts/level_info.gd" id="2_trey0"]
 
 [resource]
@@ -11,4 +13,6 @@ name = "???"
 pattern = Array[int]([0, 0, 0, 0, 0, 0])
 palette = ExtResource("1_ln3t4")
 show_in_list = false
+has_interactable_marker = false
+packed_scene = ExtResource("1_amcf2")
 metadata/_custom_type_script = "uid://gps7yv5j2dm7"

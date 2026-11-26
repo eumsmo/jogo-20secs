@@ -2,6 +2,8 @@ extends Node
 
 
 @export var patterned: Patterned
+@export var scene_pattern: ScenePattern
+
 @export var maze: MazeLayout
 
 @export var maze_nodes: Node3D
@@ -21,7 +23,8 @@ func generate_pattern():
 	var pattern: Array[Game.Direction] = get_pattern_from_point_path(path)
 	
 	patterned.pattern = pattern
-	print("MAZE: ", pattern.map(func(x): return Game.Direction.find_key(x)))
+	scene_pattern.pattern = pattern
+	#print("MAZE: ", pattern.map(func(x): return Game.Direction.find_key(x)))
 	
 	for collumn in maze_nodes.get_children():
 		for row in collumn.get_children():

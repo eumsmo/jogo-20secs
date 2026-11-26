@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://efl4oxp65gw2"]
 
+[ext_resource type="PackedScene" uid="uid://bgumthxbj5lo6" path="res://scenes/phases/nowhere.tscn" id="1_cygxd"]
 [ext_resource type="Texture2D" uid="uid://w5aom46j1l02" path="res://resources/sprites/palettes/man.png" id="1_iv3wl"]
 [ext_resource type="Script" uid="uid://bx5am22m0deaw" path="res://scripts/progress/progress_marker.gd" id="2_cygxd"]
 [ext_resource type="Script" uid="uid://gps7yv5j2dm7" path="res://scripts/level_info.gd" id="3_sb88y"]
@@ -12,4 +13,6 @@ name = "Nowhere"
 pattern = Array[int]([2, 2, 2])
 palette = ExtResource("1_iv3wl")
 show_in_list = false
+has_interactable_marker = false
+packed_scene = ExtResource("1_cygxd")
 metadata/_custom_type_script = "uid://gps7yv5j2dm7"

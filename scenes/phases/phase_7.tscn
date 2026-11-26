@@ -16,8 +16,10 @@
 [ext_resource type="Material" uid="uid://iuxm21dlfxvs" path="res://resources/materials/Black.tres" id="11_xfm4r"]
 [ext_resource type="Texture2D" uid="uid://bxfjw58nnv1xy" path="res://resources/sprites/flower_indicator.png" id="12_mojsp"]
 [ext_resource type="Material" uid="uid://b07ie0elceat5" path="res://resources/materials/Black_ending.tres" id="15_lilfm"]
+[ext_resource type="Script" uid="uid://tfmgoftaw40j" path="res://scripts/enabler_only_on_scene.gd" id="15_qt6k5"]
 [ext_resource type="PackedScene" uid="uid://bt8828jobikwb" path="res://resources/models/phase3/bathroom_light_holder.tscn" id="15_ww1n3"]
 [ext_resource type="Material" uid="uid://bifsq3mutsleb" path="res://resources/materials/vfx/phase6_wall_light_glow.tres" id="16_7njrg"]
+[ext_resource type="Script" uid="uid://irap3h13rsfh" path="res://scripts/pattern/scene_pattern.gd" id="16_j1j6p"]
 [ext_resource type="Material" uid="uid://cdj1opmtoccxq" path="res://resources/materials/Grey.tres" id="17_qt6k5"]
 [ext_resource type="Script" uid="uid://cc47stsmi2lmq" path="res://scripts/pattern/light_pattern.gd" id="17_rkp3g"]
 [ext_resource type="Script" uid="uid://5m1p284lpfh1" path="res://scripts/puzzles/final_light_puzzle.gd" id="18_7njrg"]
@@ -38,6 +40,7 @@
 [ext_resource type="Script" uid="uid://cahki8kabd553" path="res://scripts/interact/interactables/go_to_chapter.gd" id="33_2gqqc"]
 [ext_resource type="Resource" uid="uid://dd5fon0b44ev0" path="res://resources/levels/ending.tres" id="34_2gqqc"]
 [ext_resource type="Resource" uid="uid://c6786piq1x01u" path="res://resources/progress/phase7/got_ending.tres" id="35_mojsp"]
+[ext_resource type="Texture2D" uid="uid://bka73mhdtn6be" path="res://resources/sprites/map/end_map.png" id="38_7pjis"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
 size = Vector2(40, 8)
@@ -115,11 +118,12 @@ draw_pass_1 = SubResource("QuadMesh_d0u6y")
 [node name="Scenes" type="Node3D" parent="." unique_id=588214431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -79, 0)
 
-[node name="Scene1" type="Node3D" parent="Scenes" unique_id=1579835317 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="Scene1" type="Node3D" parent="Scenes" unique_id=1579835317 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.51235, 0, 0)
 script = ExtResource("2_xfm4r")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("Scenario/OmniLight3D")]
+on_scene_only = [NodePath("Scenario/OmniLight3D"), NodePath("Scenario/Door/Patterned")]
+scene_patterns = [NodePath("Scenario/Door/ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene1" unique_id=72479423 instance=ExtResource("3_5empd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.033262, 1, -8.944498e-08)
@@ -206,6 +210,7 @@ shape = SubResource("BoxShape3D_pf7vy")
 
 [node name="Patterned" type="Area3D" parent="Scenes/Scene1/Scenario/Door" unique_id=1649009000 node_paths=PackedStringArray("mesh", "active_on_selected")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.069302574, 0.6120987, -0.0056619677)
+input_ray_pickable = false
 script = ExtResource("22_pwq8n")
 mesh = NodePath("../FancyDoorFrame/FancyDoorFrame")
 selected_material = ExtResource("23_1tjq7")
@@ -230,6 +235,16 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.4301567,
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene1/Scenario/Door/YourOwnDoorWall/ClickBlocker" unique_id=1657335839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9222717, 0)
 shape = SubResource("BoxShape3D_57qmd")
+
+[node name="NextSceneEnabler" type="Node" parent="Scenes/Scene1/Scenario/Door" unique_id=456725735 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("15_qt6k5")
+scene = NodePath("../../..")
+interactables = [NodePath("../NextScene")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Scenes/Scene1/Scenario/Door" unique_id=1093256651]
+script = ExtResource("16_j1j6p")
+metadata/_custom_type_script = "uid://irap3h13rsfh"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Scenes/Scene1/Scenario" unique_id=1941064243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9342537, 2.330843, 0)
@@ -263,9 +278,10 @@ on_light_attenuation = 0.5
 off_light_attenuation = 1.0
 start_on = false
 
-[node name="LightPuzzle" type="Node" parent="Scenes/Scene1/Scenario/BathroomLightHolder" unique_id=1255256473 node_paths=PackedStringArray("patterned", "light_pattern", "indicator")]
+[node name="LightPuzzle" type="Node" parent="Scenes/Scene1/Scenario/BathroomLightHolder" unique_id=1255256473 node_paths=PackedStringArray("patterned", "scene_pattern", "light_pattern", "indicator")]
 script = ExtResource("18_7njrg")
 patterned = NodePath("../../Door/Patterned")
+scene_pattern = NodePath("../../Door/ScenePattern")
 light_pattern = NodePath("../LightPattern")
 indicator = {
 0: NodePath("../../Door/FancyDoor/Sprite3D/Up"),
@@ -298,11 +314,12 @@ pattern_blinks_right = Dictionary[int, int]({
 3: 1
 })
 
-[node name="Scene2" type="Node3D" parent="Scenes" unique_id=23869056 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="Scene2" type="Node3D" parent="Scenes" unique_id=23869056 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51235, 0, 0)
 script = ExtResource("2_xfm4r")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Scenario/OmniLight3D")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Scenario/OmniLight3D"), NodePath("Scenario/Door/Patterned")]
+scene_patterns = [NodePath("Scenario/ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene2" unique_id=1602582381 instance=ExtResource("3_5empd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.033262, 1, -8.944498e-08)
@@ -360,6 +377,7 @@ material_override = ExtResource("11_xfm4r")
 
 [node name="Patterned" type="Area3D" parent="Scenes/Scene2/Scenario/Door" unique_id=1087490254 node_paths=PackedStringArray("mesh", "active_on_selected")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.069302574, 0.6120987, -0.0056619677)
+input_ray_pickable = false
 script = ExtResource("22_pwq8n")
 mesh = NodePath("../FancyDoorFrame/FancyDoorFrame")
 selected_material = ExtResource("23_1tjq7")
@@ -370,6 +388,12 @@ metadata/_custom_type_script = "uid://dbinv34xc0tpr"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene2/Scenario/Door/Patterned" unique_id=1349157021]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
 shape = SubResource("BoxShape3D_ms3bu")
+
+[node name="NextSceneEnabler" type="Node" parent="Scenes/Scene2/Scenario/Door" unique_id=1281904888 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("15_qt6k5")
+scene = NodePath("../../..")
+interactables = [NodePath("../NextScene")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Scenes/Scene2/Scenario" unique_id=175068776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9342537, 2.330843, 0)
@@ -623,19 +647,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0776749, 8.616193)
 [node name="MapEndMarker" parent="Scenes/Scene2/Scenario/EndMarker" unique_id=44120882 instance=ExtResource("24_2gqqc")]
 transform = Transform3D(-3.059797e-07, 7, 0, -7, -3.059797e-07, 0, 0, 0, 7, 0, 0, 0)
 
-[node name="MazePuzzle" type="Node" parent="Scenes/Scene2/Scenario" unique_id=2039929170 node_paths=PackedStringArray("patterned", "maze_nodes", "starter_node", "end_node")]
+[node name="MazePuzzle" type="Node" parent="Scenes/Scene2/Scenario" unique_id=2039929170 node_paths=PackedStringArray("patterned", "scene_pattern", "maze_nodes", "starter_node", "end_node")]
 script = ExtResource("25_mojsp")
 patterned = NodePath("../Door/Patterned")
+scene_pattern = NodePath("../ScenePattern")
 maze = ExtResource("25_uelb7")
 maze_nodes = NodePath("../Maze")
 starter_node = NodePath("../StarterMarker")
 end_node = NodePath("../EndMarker")
 
-[node name="Scene3" type="Node3D" parent="Scenes" unique_id=1155060301 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="ScenePattern" type="Node" parent="Scenes/Scene2/Scenario" unique_id=1772037215]
+script = ExtResource("16_j1j6p")
+metadata/_custom_type_script = "uid://irap3h13rsfh"
+
+[node name="Scene3" type="Node3D" parent="Scenes" unique_id=1155060301 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48764992, 0, 0)
 script = ExtResource("2_xfm4r")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Scenario/OmniLight3D")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Scenario/OmniLight3D"), NodePath("Scenario/Door/Patterned")]
+scene_patterns = [NodePath("Scenario/Door/ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene3" unique_id=534132941 instance=ExtResource("3_5empd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.033262, 1, -8.944498e-08)
@@ -693,6 +723,7 @@ material_override = ExtResource("11_xfm4r")
 
 [node name="Patterned" type="Area3D" parent="Scenes/Scene3/Scenario/Door" unique_id=1812098866 node_paths=PackedStringArray("mesh", "active_on_selected")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.069302574, 0.6120987, -0.0056619677)
+input_ray_pickable = false
 script = ExtResource("22_pwq8n")
 mesh = NodePath("../FancyDoorFrame/FancyDoorFrame")
 selected_material = ExtResource("23_1tjq7")
@@ -703,6 +734,16 @@ metadata/_custom_type_script = "uid://dbinv34xc0tpr"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene3/Scenario/Door/Patterned" unique_id=1756624463]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
 shape = SubResource("BoxShape3D_ms3bu")
+
+[node name="NextSceneEnabler" type="Node" parent="Scenes/Scene3/Scenario/Door" unique_id=234728636 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("15_qt6k5")
+scene = NodePath("../../..")
+interactables = [NodePath("../NextScene")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Scenes/Scene3/Scenario/Door" unique_id=310978276]
+script = ExtResource("16_j1j6p")
+metadata/_custom_type_script = "uid://irap3h13rsfh"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Scenes/Scene3/Scenario" unique_id=549845902]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9342537, 2.330843, 0)
@@ -765,9 +806,10 @@ transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08
 [node name="WallPortrait6" parent="Scenes/Scene3/Scenario/PortraitPuzzle" unique_id=574962300 instance=ExtResource("11_2gqqc")]
 transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, 0, 1.468755, -1.512)
 
-[node name="QuantityPuzzle" type="Node" parent="Scenes/Scene3/Scenario" unique_id=492991122 node_paths=PackedStringArray("patterned", "portraits")]
+[node name="QuantityPuzzle" type="Node" parent="Scenes/Scene3/Scenario" unique_id=492991122 node_paths=PackedStringArray("patterned", "scene_pattern", "portraits")]
 script = ExtResource("29_7njrg")
 patterned = NodePath("../Door/Patterned")
+scene_pattern = NodePath("../Door/ScenePattern")
 portraits = [NodePath("../../../Scene1/Scenario/PortraitPuzzle/WallPortrait"), NodePath("../../../Scene1/Scenario/PortraitPuzzle/WallPortrait2"), NodePath("../../../Scene2/Scenario/PortraitPuzzle/WallPortrait3"), NodePath("../../../Scene2/Scenario/PortraitPuzzle/WallPortrait4"), NodePath("../PortraitPuzzle/WallPortrait"), NodePath("../PortraitPuzzle/WallPortrait2"), NodePath("../PortraitPuzzle/WallPortrait3"), NodePath("../PortraitPuzzle/WallPortrait4"), NodePath("../PortraitPuzzle/WallPortrait5"), NodePath("../PortraitPuzzle/WallPortrait6")]
 convertion = Dictionary[int, String]({
 0: "A",
@@ -812,11 +854,12 @@ modulate = Color(0, 0, 0, 1)
 texture_filter = 0
 texture = ExtResource("20_b731u")
 
-[node name="Scene4" type="Node3D" parent="Scenes" unique_id=1554396847 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="Scene4" type="Node3D" parent="Scenes" unique_id=1554396847 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.48765, 0, 0)
 script = ExtResource("2_xfm4r")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Scenario/SeeClock")]
+scene_patterns = [NodePath("Scenario/GrandClock/ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene4" unique_id=189629416 instance=ExtResource("3_5empd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.033262, 1, -8.944498e-08)
@@ -838,6 +881,7 @@ transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0.24738061, 0
 
 [node name="Patterned" type="Area3D" parent="Scenes/Scene4/Scenario/GrandClock" unique_id=1437963790 node_paths=PackedStringArray("mesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26330376, 1.8194065, 0.0017328262)
+input_ray_pickable = false
 script = ExtResource("22_pwq8n")
 pattern = Array[int]([0, 0, 0])
 mesh = NodePath("../GrandClockClock/GrandClockClock")
@@ -849,9 +893,10 @@ metadata/_custom_type_script = "uid://dbinv34xc0tpr"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene4/Scenario/GrandClock/Patterned" unique_id=1620203663]
 shape = SubResource("BoxShape3D_yf5fn")
 
-[node name="ClockPuzzle" type="Node" parent="Scenes/Scene4/Scenario/GrandClock" unique_id=1410962260 node_paths=PackedStringArray("patterned", "pointers")]
+[node name="ClockPuzzle" type="Node" parent="Scenes/Scene4/Scenario/GrandClock" unique_id=1410962260 node_paths=PackedStringArray("patterned", "scene_pattern", "pointers")]
 script = ExtResource("32_rkp3g")
 patterned = NodePath("../Patterned")
+scene_pattern = NodePath("../ScenePattern")
 pointers = [NodePath("../GrandClockClock/Pointers/SmallPointer"), NodePath("../GrandClockClock/Pointers/Pointer"), NodePath("../GrandClockClock/Pointers/BigPointer")]
 rotation_relation = Dictionary[int, int]({
 0: 0,
@@ -875,16 +920,31 @@ metadata/_custom_type_script = "uid://dacaijey35bqu"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene4/Scenario/GrandClock/NextChapter" unique_id=748168994]
 shape = SubResource("BoxShape3D_uelb7")
 
+[node name="Sprite3D" type="Sprite3D" parent="Scenes/Scene4/Scenario/GrandClock" unique_id=1772003821]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0.07776309, 1.8333435, 3.3991323e-09)
+texture = ExtResource("38_7pjis")
+
+[node name="NextChapterEnabler" type="Node" parent="Scenes/Scene4/Scenario/GrandClock" unique_id=878386094 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("15_qt6k5")
+scene = NodePath("../../LookAtClock")
+interactables = [NodePath("../NextChapter")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Scenes/Scene4/Scenario/GrandClock" unique_id=1545980046]
+script = ExtResource("16_j1j6p")
+metadata/_custom_type_script = "uid://irap3h13rsfh"
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Scenes/Scene4/Scenario" unique_id=1686176483]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 8.742278e-08, 2, 0)
 material_override = ExtResource("11_xfm4r")
 mesh = SubResource("PlaneMesh_yf5fn")
 
-[node name="LookAtClock" type="Node3D" parent="Scenes/Scene4/Scenario" unique_id=1027969616 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="LookAtClock" type="Node3D" parent="Scenes/Scene4/Scenario" unique_id=1027969616 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 script = ExtResource("2_xfm4r")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("../GrandClock/Patterned")]
+scene_patterns = [NodePath("../GrandClock/ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene4/Scenario/LookAtClock" unique_id=484035956 instance=ExtResource("3_5empd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.37128484, 1.3032036, -0.06872661)
@@ -900,29 +960,38 @@ material_override = ExtResource("24_66eaf")
 
 [node name="SeeClock" type="Area3D" parent="Scenes/Scene4/Scenario" unique_id=295737201 node_paths=PackedStringArray("scene")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4831946, 0, 0)
+input_ray_pickable = false
 script = ExtResource("7_ww1n3")
 scene = NodePath("../LookAtClock")
 metadata/_custom_type_script = "uid://bnjfxriyseeds"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene4/Scenario/SeeClock" unique_id=758936282]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1054554, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7073154, 0)
 shape = SubResource("BoxShape3D_mojsp")
 
-[connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/Door/Patterned" to="Scenes/Scene1/Scenario/Door/NextScene" method="enable_interactable"]
 [connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/Door/Patterned" to="Scenes/Scene1/Scenario/Door/Patterned" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/Door/Patterned" to="Scenes/Scene1/Scenario/Door/NextSceneEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/Door/Patterned" to="Scenes/Scene1/Scenario/Door/ScenePattern" method="queue_free"]
 [connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/Door/Patterned" to="Scenes/Scene1/Scenario/Door/FancyDoor" method="set_visible" binds= [false]]
 [connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/Door/Patterned" to="Scenes/Scene1/Scenario/Door/FancyDoorOpened" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/Door/ScenePattern" to="Scenes/Scene1/Scenario/Door/Patterned" method="activate_pattern"]
 [connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/Door/Patterned" to="Scenes/Scene2/Scenario/Door/FancyDoor" method="queue_free"]
-[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/Door/Patterned" to="Scenes/Scene2/Scenario/Door/NextScene" method="enable_interactable"]
 [connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/Door/Patterned" to="Scenes/Scene2/Scenario/Door/Patterned" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/Door/Patterned" to="Scenes/Scene2/Scenario/Door/NextSceneEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/Door/Patterned" to="Scenes/Scene2/Scenario/ScenePattern" method="queue_free"]
 [connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/Door/Patterned" to="Scenes/Scene2/Scenario/Door/FancyDoorOpened" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/ScenePattern" to="Scenes/Scene2/Scenario/Door/Patterned" method="activate_pattern"]
 [connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/Door/Patterned" to="Scenes/Scene3/Scenario/Door/FancyDoor" method="queue_free"]
-[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/Door/Patterned" to="Scenes/Scene3/Scenario/Door/NextScene" method="enable_interactable"]
 [connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/Door/Patterned" to="Scenes/Scene3/Scenario/Door/Patterned" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/Door/Patterned" to="Scenes/Scene3/Scenario/Door/NextSceneEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/Door/Patterned" to="Scenes/Scene3/Scenario/Door/ScenePattern" method="queue_free"]
 [connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/Door/Patterned" to="Scenes/Scene3/Scenario/Door/FancyDoorOpened" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/Door/ScenePattern" to="Scenes/Scene3/Scenario/Door/Patterned" method="activate_pattern"]
 [connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/Patterned" to="Scenes/Scene4/Scenario/GrandClock/GrandClockClock" method="queue_free"]
-[connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/Patterned" to="Scenes/Scene4/Scenario/GrandClock/Patterned" method="disable_interactable"]
-[connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/Patterned" to="Scenes/Scene4/Scenario/GrandClock/NextChapter" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/Patterned" to="Scenes/Scene4/Scenario/GrandClock/Patterned" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/Patterned" to="Scenes/Scene4/Scenario/GrandClock/NextChapterEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/Patterned" to="Scenes/Scene4/Scenario/GrandClock/ScenePattern" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/ScenePattern" to="Scenes/Scene4/Scenario/GrandClock/Patterned" method="activate_pattern"]
 
 [editable path="Scenes/Scene1/CameraStand"]
 [editable path="Scenes/Scene1/Scenario/Door"]

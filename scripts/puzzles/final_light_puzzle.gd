@@ -2,6 +2,7 @@ extends Node
 
 
 @export var patterned: Patterned
+@export var scene_pattern: ScenePattern
 @export var light_pattern: LightPattern
 
 @export var indicator: Dictionary[Game.Direction, Node3D]
@@ -23,7 +24,8 @@ func generate_pattern():
 	pattern = pattern.slice(0, 3)
 	
 	patterned.pattern = pattern
-	print("LIGHT: ", pattern.map(func(x): return Game.Direction.find_key(x)))
+	scene_pattern.pattern = pattern
+	#print("LIGHT: ", pattern.map(func(x): return Game.Direction.find_key(x)))
 	
 	var distribution: Array[String]
 	

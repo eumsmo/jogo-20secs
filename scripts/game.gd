@@ -8,6 +8,7 @@ static var current_level: LevelInfo
 
 @export var first_level: LevelInfo
 @export var level_scene_relation: Dictionary[LevelInfo, Phase]
+var current_level_scene: Phase
 
 @export_group("Controllers")
 @export var scenes: ScenesController
@@ -15,6 +16,8 @@ static var current_level: LevelInfo
 @export var inventory: Inventory
 
 enum Direction { UP, LEFT, DOWN, RIGHT, UP_LEFT, UP_RIGHT, DOWN_LEFT, DOWN_RIGHT }
+
+signal on_game_started
 
 func _init() -> void:
 	instance = self
@@ -27,9 +30,19 @@ func game_actually_started():
 	for key in level_scene_relation.keys():
 		if key != current_level:
 			level_scene_relation[key].set_disabled()
+		else:
+			current_level_scene = level_scene_relation[key]
+	
+	on_game_started.emit()
 
 func change_chapter(level: LevelInfo):
 	previous_level = current_level
 	current_level = level
 	
 	UIManager.instance.intro.bring_back_intro()
+
+func get_chapter_by_id(idx: int) -> LevelInfo:
+	for level: LevelInfo in level_scene_relation.keys():
+		if level.idx == idx:
+			return level
+	return null

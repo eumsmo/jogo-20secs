@@ -6,8 +6,7 @@
 [ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/interactables/change_scene_interactable.gd" id="4_3q5q3"]
 [ext_resource type="PackedScene" uid="uid://dybkw4ji7oj7w" path="res://scenes/components/camera_stand.tscn" id="5_ksx3l"]
 [ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="6_qwtln"]
-[ext_resource type="Script" uid="uid://cahki8kabd553" path="res://scripts/interact/interactables/go_to_chapter.gd" id="7_m7eum"]
-[ext_resource type="Resource" uid="uid://c0dfpalx2y01p" path="res://resources/levels/level1.tres" id="8_m67gd"]
+[ext_resource type="Script" uid="uid://dubnb3clkwc88" path="res://scripts/interact/interactables/return_to_chapter.gd" id="7_1t20u"]
 [ext_resource type="Resource" uid="uid://dop2sdlsuhnrw" path="res://resources/progress/phase1/got_the_egg.tres" id="9_nyh2r"]
 [ext_resource type="Texture2D" uid="uid://c806x075t6ufi" path="res://resources/sprites/egg.png" id="9_pbm4v"]
 
@@ -321,8 +320,8 @@ camera = NodePath("CameraStand/Camera3D")
 
 [node name="Ending" type="Area3D" parent="Text3" unique_id=1183246321]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
-script = ExtResource("7_m7eum")
-level = ExtResource("8_m67gd")
+script = ExtResource("7_1t20u")
+chapter_id = 1
 progress_marker = ExtResource("9_nyh2r")
 metadata/_custom_type_script = "uid://dacaijey35bqu"
 

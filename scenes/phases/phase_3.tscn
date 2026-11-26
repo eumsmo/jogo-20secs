@@ -16,8 +16,10 @@
 [ext_resource type="Material" uid="uid://dcp258ghdupuw" path="res://resources/materials/Brown.tres" id="11_kqo7x"]
 [ext_resource type="Script" uid="uid://ypfbu7sipw7r" path="res://scripts/scene.gd" id="12_av7uq"]
 [ext_resource type="Material" uid="uid://cdj1opmtoccxq" path="res://resources/materials/Grey.tres" id="12_fq1ua"]
+[ext_resource type="Script" uid="uid://tfmgoftaw40j" path="res://scripts/enabler_only_on_scene.gd" id="12_hwwor"]
 [ext_resource type="Script" uid="uid://c3g0o3cunkyuj" path="res://scripts/interact/interactables/use_item_interactable.gd" id="13_5sliu"]
 [ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/interactables/change_scene_interactable.gd" id="13_46pcy"]
+[ext_resource type="Script" uid="uid://irap3h13rsfh" path="res://scripts/pattern/scene_pattern.gd" id="13_biysl"]
 [ext_resource type="PackedScene" uid="uid://bkcavx5bvtdnb" path="res://resources/models/phase3/bath_tub.tscn" id="13_ly5n8"]
 [ext_resource type="Resource" uid="uid://b2ji5vy7bsh32" path="res://resources/levels/level4.tres" id="13_tulss"]
 [ext_resource type="PackedScene" uid="uid://cf28yci5qmoth" path="res://resources/models/phase3/bath_faucet.tscn" id="14_fshl6"]
@@ -317,6 +319,7 @@ layers = 32
 layers = 32
 
 [node name="Patterned" type="Area3D" parent="BaseAmbient/Doors/Door" unique_id=319696667 node_paths=PackedStringArray("mesh")]
+input_ray_pickable = false
 script = ExtResource("5_6hhkj")
 pattern = Array[int]([1, 0, 3])
 mesh = NodePath("../FancyDoorFrame/FancyDoorFrame")
@@ -338,6 +341,17 @@ metadata/_custom_type_script = "uid://bnjfxriyseeds"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BaseAmbient/Doors/Door/NextScene" unique_id=1725422565]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
 shape = SubResource("BoxShape3D_qr730")
+
+[node name="EnablerOnlyOnScene" type="Node" parent="BaseAmbient/Doors/Door" unique_id=2044862130 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("12_hwwor")
+scene = NodePath("../../../../Levels/Hallway/InternalScenes/DoorScene")
+interactables = [NodePath("../NextScene")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="BaseAmbient/Doors/Door" unique_id=2116421373]
+script = ExtResource("13_biysl")
+pattern = Array[int]([1, 0, 3])
+metadata/_custom_type_script = "uid://irap3h13rsfh"
 
 [node name="Door2" parent="BaseAmbient/Doors" unique_id=2022432079 instance=ExtResource("2_fwj52")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7843122, -0.0008125305, 9.143403)
@@ -409,6 +423,7 @@ mesh = SubResource("CylinderMesh_tv733")
 
 [node name="HammerUse" type="Area3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood" unique_id=545576641 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+input_ray_pickable = false
 script = ExtResource("13_5sliu")
 item = ExtResource("35_1q704")
 remove_item = false
@@ -447,6 +462,7 @@ mesh = SubResource("CylinderMesh_tv733")
 
 [node name="HammerUse" type="Area3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood2" unique_id=757615812 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+input_ray_pickable = false
 script = ExtResource("13_5sliu")
 item = ExtResource("35_1q704")
 remove_item = false
@@ -485,6 +501,7 @@ mesh = SubResource("CylinderMesh_tv733")
 
 [node name="HammerUse" type="Area3D" parent="BaseAmbient/Doors/Door2/DoorWoods/Wood3" unique_id=1562745381 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+input_ray_pickable = false
 script = ExtResource("13_5sliu")
 item = ExtResource("35_1q704")
 remove_item = false
@@ -535,81 +552,6 @@ shape = SubResource("BoxShape3D_qr730")
 [node name="Door5" parent="BaseAmbient/Doors" unique_id=372918242 instance=ExtResource("2_fwj52")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.3701537, -0.119636536, -1.2100595)
 
-[node name="FancyDoorFrame" parent="BaseAmbient/Doors/Door5/FancyDoorFrame" parent_id_path=PackedInt32Array(372918242, 465612966) index="0" unique_id=1064917078]
-layers = 32
-material_override = ExtResource("3_l7uou")
-
-[node name="FancyDoor" parent="BaseAmbient/Doors/Door5/FancyDoor" parent_id_path=PackedInt32Array(372918242, 173200455) index="0" unique_id=196420203]
-layers = 32
-
-[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door5/FancyDoor/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(372918242, 2100792129) index="0" unique_id=1751405653]
-layers = 32
-
-[node name="FancyDoor" parent="BaseAmbient/Doors/Door5/FancyDoorOpened" parent_id_path=PackedInt32Array(372918242, 557807790) index="0" unique_id=196420203]
-layers = 32
-
-[node name="FancyDoorKnobKeyless" parent="BaseAmbient/Doors/Door5/FancyDoorOpened/FancyDoorKnobKeyless" parent_id_path=PackedInt32Array(372918242, 85017689) index="0" unique_id=1751405653]
-layers = 32
-
-[node name="DoorWoods" type="Node3D" parent="BaseAmbient/Doors/Door5" unique_id=310786052]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.9887551, -0.021274567, -3.636724e-08)
-
-[node name="Wood" type="Node3D" parent="BaseAmbient/Doors/Door5/DoorWoods" unique_id=796654363]
-transform = Transform3D(-4.3711374e-08, 0.09410831, -0.9955616, 0, 0.99556196, 0.094108276, 0.99999964, 4.113605e-09, -4.351738e-08, 0.013815926, 2.0868497, -1.0744361)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood" unique_id=1752104892]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
-material_override = ExtResource("11_kqo7x")
-mesh = SubResource("BoxMesh_uawrl")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood" unique_id=829848662]
-transform = Transform3D(-4.4703484e-08, -0.92144346, -0.3885128, 1.0000005, -2.9802322e-08, -1.4901161e-08, 0, -0.38851297, 0.92144364, 0.1741972, 0.11875963, -0.782022)
-material_override = ExtResource("12_fq1ua")
-mesh = SubResource("CylinderMesh_tv733")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood" unique_id=634443583]
-transform = Transform3D(-4.4703484e-08, -0.9956765, 0.09288955, 1.0000004, -4.377216e-08, 7.450581e-09, 0, 0.09288956, 0.99567676, 0.1628828, -0.12917614, -0.77454674)
-material_override = ExtResource("12_fq1ua")
-mesh = SubResource("CylinderMesh_tv733")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood" unique_id=927548384]
-transform = Transform3D(0.12510802, -0.9921432, 1.4901161e-08, 0.9921437, 0.12510808, 7.450581e-09, 1.4901161e-08, 9.313226e-10, 1.0000006, 0.16043472, 0.11216378, 0.77537113)
-material_override = ExtResource("12_fq1ua")
-mesh = SubResource("CylinderMesh_tv733")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood" unique_id=1274368216]
-transform = Transform3D(-0.110740155, -0.98910147, 0.09703215, 0.99379104, -0.11126521, 7.450581e-09, 0.010796301, 0.096429646, 0.9952816, 0.16043472, -0.12802958, 0.74984056)
-material_override = ExtResource("12_fq1ua")
-mesh = SubResource("CylinderMesh_tv733")
-
-[node name="Wood2" type="Node3D" parent="BaseAmbient/Doors/Door5/DoorWoods" unique_id=2010117011]
-transform = Transform3D(-4.371136e-08, -0.1604749, -0.98703957, 3.1086245e-15, 0.9870398, -0.1604748, 0.9999995, -7.014579e-09, -4.314486e-08, 0.06772615, 1.3760502, -1.0744305)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood2" unique_id=1036926043]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
-material_override = ExtResource("11_kqo7x")
-mesh = SubResource("BoxMesh_uawrl")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood2" unique_id=2123604653]
-transform = Transform3D(-0.05938763, -0.98396736, -0.16817077, 0.91556275, -0.12082036, 0.38359916, -0.3977676, -0.13118988, 0.9080589, 0.17420292, 0.13109231, -0.82076126)
-material_override = ExtResource("12_fq1ua")
-mesh = SubResource("CylinderMesh_tv733")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood2" unique_id=1251138531]
-transform = Transform3D(-0.024204357, -0.9981147, -0.056404028, 0.99970573, -0.02426802, 0.0004441142, -0.0018121153, -0.05637661, 0.9984082, 0.16288662, -0.11499405, -0.8123782)
-material_override = ExtResource("12_fq1ua")
-mesh = SubResource("CylinderMesh_tv733")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood2" unique_id=1067138942]
-transform = Transform3D(0.12510802, -0.9921432, 1.4901161e-08, 0.9921437, 0.12510808, 1.4901161e-08, 1.4901161e-08, -1.8626451e-09, 1.0000006, 0.16043568, 0.11476922, 0.79139614)
-material_override = ExtResource("12_fq1ua")
-mesh = SubResource("CylinderMesh_tv733")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="BaseAmbient/Doors/Door5/DoorWoods/Wood2" unique_id=1072435113]
-transform = Transform3D(-0.10048467, -0.98279727, 0.1549598, 0.9947942, -0.101899974, -0.0011967868, 0.016966596, 0.15403278, 0.9879203, 0.16043663, -0.11520457, 0.8287216)
-material_override = ExtResource("12_fq1ua")
-mesh = SubResource("CylinderMesh_tv733")
-
 [node name="Static" type="Node3D" parent="BaseAmbient" unique_id=290911926]
 
 [node name="Toilet" parent="BaseAmbient/Static" unique_id=671017704 instance=ExtResource("4_os2ap")]
@@ -646,10 +588,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35.548447, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.15349, 0, -1.0361676)
 script = ExtResource("12_av7uq")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CloseLight"), NodePath("DistantLight")]
+on_scene_only = [NodePath("CloseLight"), NodePath("DistantLight"), NodePath("NextArea"), NodePath("NextArea2")]
 
 [node name="NextArea" type="Area3D" parent="Levels/Hallway" unique_id=2076215658 node_paths=PackedStringArray("scene")]
 transform = Transform3D(0.40620264, 0, 0.91378295, 0, 1, 0, -0.91378295, 0, 0.40620264, -2.9384391, 1.7177658, -1.8111165)
+input_ray_pickable = false
 script = ExtResource("13_46pcy")
 scene = NodePath("../InternalScenes/DoorScene")
 
@@ -659,6 +602,7 @@ shape = SubResource("BoxShape3D_av7uq")
 
 [node name="NextArea2" type="Area3D" parent="Levels/Hallway" unique_id=1368997603 node_paths=PackedStringArray("scene")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3375454, 1.4541473, 1.8773155)
+input_ray_pickable = false
 script = ExtResource("13_46pcy")
 scene = NodePath("../../LivingRoom")
 
@@ -686,11 +630,12 @@ omni_range = 7.166872
 
 [node name="InternalScenes" type="Node3D" parent="Levels/Hallway" unique_id=1323118218]
 
-[node name="DoorScene" type="Node3D" parent="Levels/Hallway/InternalScenes" unique_id=560464070 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="DoorScene" type="Node3D" parent="Levels/Hallway/InternalScenes" unique_id=560464070 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5482965, 0, -0.30404067)
 script = ExtResource("12_av7uq")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("DoorLight"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("DoorLight"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("../../../../BaseAmbient/Doors/Door/Patterned")]
+scene_patterns = [NodePath("../../../../BaseAmbient/Doors/Door/ScenePattern")]
 metadata/_custom_type_script = "uid://ypfbu7sipw7r"
 
 [node name="CameraStand" parent="Levels/Hallway/InternalScenes/DoorScene" unique_id=1803911997 instance=ExtResource("14_kyx3d")]
@@ -698,6 +643,7 @@ transform = Transform3D(0.9828045, -0.0077109835, 0.18448825, -4.656613e-10, 0.9
 
 [node name="ChangeSceneInteractable" parent="Levels/Hallway/InternalScenes/DoorScene/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1803911997, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
 transform = Transform3D(0.9987074, 0.00087845477, -0.05081965, -0.00088222, 0.99999976, -5.1675706e-05, 0.05081959, 9.6443575e-05, 0.99870783, -0.033305913, -0.4730417, -0.66054887)
+input_ray_pickable = false
 scene = NodePath("../../../../..")
 
 [node name="DoorLight" type="OmniLight3D" parent="Levels/Hallway/InternalScenes/DoorScene" unique_id=1565596812]
@@ -710,10 +656,11 @@ omni_range = 10.0
 transform = Transform3D(0.7588419, 0, 0.6512749, 0, 1, 0, -0.6512749, 0, 0.7588419, 8.799813, 0, 6.8635745)
 script = ExtResource("12_av7uq")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("OmniLight3D"), NodePath("OmniLight3D2"), NodePath("SpotLight3D")]
+on_scene_only = [NodePath("OmniLight3D"), NodePath("OmniLight3D2"), NodePath("SpotLight3D"), NodePath("NextArea"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("../../BaseAmbient/Doors/Door2/DoorWoods/Wood/HammerUse"), NodePath("../../BaseAmbient/Doors/Door2/DoorWoods/Wood2/HammerUse"), NodePath("../../BaseAmbient/Doors/Door2/DoorWoods/Wood3/HammerUse")]
 
 [node name="NextArea" type="Area3D" parent="Levels/LivingRoom" unique_id=184793682 node_paths=PackedStringArray("scene")]
 transform = Transform3D(0.75927126, 0, -0.6507742, 0, 1, 0, 0.6507742, 0, 0.75927126, -2.4726412, 0.519176, 0.16245632)
+input_ray_pickable = false
 script = ExtResource("13_46pcy")
 scene = NodePath("../InternalScenes/TableScene")
 
@@ -726,6 +673,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.41
 
 [node name="ChangeSceneInteractable" parent="Levels/LivingRoom/CameraStand/Camera3D" parent_id_path=PackedInt32Array(967050185, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.398681, -0.3768747, -0.54202175)
+input_ray_pickable = false
 scene = NodePath("../../../../Hallway")
 
 [node name="Scenario" type="Node3D" parent="Levels/LivingRoom" unique_id=1403459706]
@@ -812,6 +760,17 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/LivingRoom/Scenario/SmallBoxOpen/KeyPickup/PickupItem" unique_id=853287783]
 transform = Transform3D(0.49999997, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("BoxShape3D_tulss")
+
+[node name="KeyEnabler" type="Node" parent="Levels/LivingRoom/Scenario/SmallBoxOpen" unique_id=1777742864 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("12_hwwor")
+scene = NodePath("../../../InternalScenes/TableScene")
+interactables = [NodePath("../KeyPickup/PickupItem")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Levels/LivingRoom/Scenario/SmallBoxOpen" unique_id=1983674686]
+script = ExtResource("13_biysl")
+pattern = Array[int]([3, 0, 3, 2, 3, 0, 1])
+metadata/_custom_type_script = "uid://irap3h13rsfh"
 
 [node name="Paper1" parent="Levels/LivingRoom/Scenario" unique_id=884619473 instance=ExtResource("26_yk2uw")]
 transform = Transform3D(0.9398807, 0, -0.3415029, 0, 1, 0, 0.3415029, 0, 0.9398807, -1.9602227, 0.88209915, 0.73378277)
@@ -1071,8 +1030,11 @@ transform = Transform3D(0.45343357, 0, 0.89129007, 0, 1, 0, -0.89129007, 0, 0.45
 [node name="GrandClock" parent="Levels/LivingRoom/Scenario/GrandClock" index="0" unique_id=1529472642]
 layers = 32
 
+[node name="GrandClockClock" parent="Levels/LivingRoom/Scenario/GrandClock/GrandClockClock" parent_id_path=PackedInt32Array(1593380876, 776482872) index="0" unique_id=1488146955]
+material_override = ExtResource("27_frsad")
+
 [node name="Pointer" parent="Levels/LivingRoom/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="1" unique_id=1519642052]
-transform = Transform3D(1.25, 0, 0, 0, -0.8838836, 4.419417, 0, -0.88388336, -4.4194183, 0, 0, 0)
+transform = Transform3D(1.25, 0, 0, 0, -0.70710695, 4.4194164, 0, -0.7071066, -4.4194183, 0, 0, 0)
 
 [node name="SmallPointer" parent="Levels/LivingRoom/Scenario/GrandClock/GrandClockClock/Pointers" parent_id_path=PackedInt32Array(1593380876, 1920085468) index="2" unique_id=1442474372]
 transform = Transform3D(1.25, 0, 0, 0, -0.8838835, -4.4194183, 0, 0.8838835, -4.4194174, 0, 0, 0)
@@ -1100,10 +1062,11 @@ spot_angle = 31.775599
 
 [node name="InternalScenes" type="Node3D" parent="Levels/LivingRoom" unique_id=1456699710]
 
-[node name="TableScene" type="Node3D" parent="Levels/LivingRoom/InternalScenes" unique_id=42251406 node_paths=PackedStringArray("camera", "on_scene_only", "child_of")]
+[node name="TableScene" type="Node3D" parent="Levels/LivingRoom/InternalScenes" unique_id=42251406 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns", "child_of")]
 script = ExtResource("12_av7uq")
 camera = NodePath("CameraStand/Camera3D")
 on_scene_only = [NodePath("../../Scenario/SmallBoxOpen/Patterned"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+scene_patterns = [NodePath("../../Scenario/SmallBoxOpen/ScenePattern")]
 child_of = NodePath("../..")
 metadata/_custom_type_script = "uid://ypfbu7sipw7r"
 
@@ -1112,16 +1075,19 @@ transform = Transform3D(-0.6378622, -0.70564866, 0.30853134, 0.020356346, 0.3850
 
 [node name="ChangeSceneInteractable" parent="Levels/LivingRoom/InternalScenes/TableScene/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1704840289, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
 transform = Transform3D(0.9913066, 2.9802322e-08, 0.13157219, 0.11995862, 0.41078556, -0.903806, -0.054047972, 0.9117321, 0.4072144, 0.18586215, -0.444936, -0.60863763)
+input_ray_pickable = false
 scene = NodePath("../../../../..")
 
-[node name="Bathroom" type="Node3D" parent="Levels" unique_id=233155056 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="Bathroom" type="Node3D" parent="Levels" unique_id=233155056 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.300255, 0, -4.4390073)
 script = ExtResource("12_av7uq")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("DeepBathroomLight")]
+on_scene_only = [NodePath("DeepBathroomLight"), NodePath("NextArea"), NodePath("NextArea2"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+scene_patterns = [NodePath("Scenario/BathroomMirror/ScenePattern")]
 
 [node name="NextArea" type="Area3D" parent="Levels/Bathroom" unique_id=1034253787 node_paths=PackedStringArray("scene")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8000126, 2.0175323, -3.2301998)
+input_ray_pickable = false
 script = ExtResource("13_46pcy")
 scene = NodePath("../InternalScenes/MirrorSinkScene")
 
@@ -1131,6 +1097,7 @@ shape = SubResource("BoxShape3D_wmmqu")
 
 [node name="NextArea2" type="Area3D" parent="Levels/Bathroom" unique_id=1054560390 node_paths=PackedStringArray("scene")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.450241, 1.1040535, -2.5598898)
+input_ray_pickable = false
 script = ExtResource("13_46pcy")
 scene = NodePath("../InternalScenes/BathScene")
 
@@ -1142,6 +1109,7 @@ shape = SubResource("BoxShape3D_6hhkj")
 transform = Transform3D(0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071068, 0.17924118, 1.2028122, -2.1397233)
 
 [node name="ChangeSceneInteractable" parent="Levels/Bathroom/CameraStand/Camera3D" parent_id_path=PackedInt32Array(2145240657, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
+input_ray_pickable = false
 scene = NodePath("../../../../Hallway")
 
 [node name="Scenario" type="Node3D" parent="Levels/Bathroom" unique_id=54430598]
@@ -1276,6 +1244,7 @@ modulate = Color(0, 0, 0, 1)
 texture = ExtResource("32_qr730")
 
 [node name="Patterned" type="Area3D" parent="Levels/Bathroom/Scenario/BathroomMirror" unique_id=1924283381 node_paths=PackedStringArray("mesh")]
+input_ray_pickable = false
 script = ExtResource("5_6hhkj")
 pattern = Array[int]([1, 0, 0, 1, 3])
 mesh = NodePath("../BathroomMirrorDoor/BathroomMirrorDoor")
@@ -1309,6 +1278,18 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 transform = Transform3D(1, 0, 0, 0, 1, 2.9802337e-08, 0, -2.9802337e-08, 1, 4.172325e-07, 0.41882515, 0.013792992)
 shape = SubResource("BoxShape3D_2t6pw")
 
+[node name="HammerEnabler" type="Node" parent="Levels/Bathroom/Scenario/BathroomMirror" unique_id=53652981 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("12_hwwor")
+scene = NodePath("../../../InternalScenes/MirrorSinkScene")
+interactables = [NodePath("../HammerPick/PickupItem")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Levels/Bathroom/Scenario/BathroomMirror" unique_id=737299724]
+script = ExtResource("13_biysl")
+pattern = Array[int]([1, 0, 0, 1, 3])
+only_in_order = false
+metadata/_custom_type_script = "uid://irap3h13rsfh"
+
 [node name="LightPattern" type="Node" parent="Levels/Bathroom/Scenario" unique_id=362316004 node_paths=PackedStringArray("lights")]
 script = ExtResource("30_46pcy")
 mat = ExtResource("29_kyx3d")
@@ -1333,10 +1314,12 @@ omni_range = 3.382672
 
 [node name="InternalScenes" type="Node3D" parent="Levels/Bathroom" unique_id=727479928]
 
-[node name="MirrorSinkScene" type="Node3D" parent="Levels/Bathroom/InternalScenes" unique_id=131312140 node_paths=PackedStringArray("camera")]
+[node name="MirrorSinkScene" type="Node3D" parent="Levels/Bathroom/InternalScenes" unique_id=131312140 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, -7.450581e-09, 0, 7.450581e-09, 1, 0.82864666, -0.27308273, -3.171636)
 script = ExtResource("12_av7uq")
 camera = NodePath("CameraStand/Camera3D")
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("../../Scenario/BathroomMirror/Patterned")]
+scene_patterns = [NodePath("../../Scenario/BathroomMirror/ScenePattern")]
 metadata/_custom_type_script = "uid://ypfbu7sipw7r"
 
 [node name="CameraStand" parent="Levels/Bathroom/InternalScenes/MirrorSinkScene" unique_id=1080157643 instance=ExtResource("14_kyx3d")]
@@ -1344,13 +1327,14 @@ transform = Transform3D(0.9999999, 0, 5.960464e-08, -5.1111058e-09, 0.99631685, 
 
 [node name="ChangeSceneInteractable" parent="Levels/Bathroom/InternalScenes/MirrorSinkScene/CameraStand/Camera3D" parent_id_path=PackedInt32Array(1080157643, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
 transform = Transform3D(1.0000001, -1.7009905e-08, 2.4786608e-09, 1.7009903e-08, 0.9584152, -0.28537855, 2.478668e-09, 0.28537875, 0.95841444, -0.01750803, -0.44369888, -0.6051769)
+input_ray_pickable = false
 scene = NodePath("../../../../..")
 
 [node name="BathScene" type="Node3D" parent="Levels/Bathroom/InternalScenes" unique_id=1175219669 node_paths=PackedStringArray("camera", "on_scene_only", "child_of")]
 transform = Transform3D(1, 0, 0, 0, 1, -7.450581e-09, 0, 7.450581e-09, 1, 3.485179, -0.27308273, -2.9370728)
 script = ExtResource("12_av7uq")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("InnerBathLight")]
+on_scene_only = [NodePath("InnerBathLight"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Interactable")]
 child_of = NodePath("../..")
 metadata/_custom_type_script = "uid://ypfbu7sipw7r"
 
@@ -1359,6 +1343,7 @@ transform = Transform3D(0.49999997, 0.07426183, -0.86283565, 1.3412866e-09, 0.99
 
 [node name="ChangeSceneInteractable" parent="Levels/Bathroom/InternalScenes/BathScene/CameraStand/Camera3D" parent_id_path=PackedInt32Array(210957545, 1331824599) index="0" unique_id=452113428 node_paths=PackedStringArray("scene")]
 transform = Transform3D(-4.4703484e-08, 0.902586, -0.43051106, -1.0000006, -4.8428774e-08, -9.778887e-09, -7.450581e-09, 0.43051144, 0.902585, -0.7906132, -0.2664795, -0.6269579)
+input_ray_pickable = false
 scene = NodePath("../../../../..")
 
 [node name="InnerBathLight" type="OmniLight3D" parent="Levels/Bathroom/InternalScenes/BathScene" unique_id=843944441]
@@ -1369,6 +1354,7 @@ omni_range = 3.382672
 
 [node name="Interactable" type="Area3D" parent="Levels/Bathroom/InternalScenes/BathScene" unique_id=1134756277]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8057165, 1.5536938, -1.8058205)
+input_ray_pickable = false
 script = ExtResource("41_5rpng")
 metadata/_custom_type_script = "uid://dacaijey35bqu"
 
@@ -1386,6 +1372,12 @@ metadata/_custom_type_script = "uid://dacaijey35bqu"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Bathroom/InternalScenes/BathScene/GoReading" unique_id=487982472]
 transform = Transform3D(1.0000026, -3.874302e-07, 2.0861626e-07, 0, 1.0000002, -7.4505806e-08, -1.4305115e-06, -1.5199184e-06, 1.0000002, -5.722046e-06, -0.018154144, 0.030031681)
 shape = SubResource("BoxShape3D_57qmd")
+
+[node name="EnablerOnlyOnScene" type="Node" parent="Levels/Bathroom/InternalScenes/BathScene" unique_id=972194751 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("12_hwwor")
+scene = NodePath("..")
+interactables = [NodePath("../GoReading")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
 
 [node name="ReadingScene" type="Node3D" parent="Levels/Bathroom/InternalScenes" unique_id=1076212476 node_paths=PackedStringArray("camera", "on_scene_only", "child_of")]
 transform = Transform3D(1, 0, 0, 0, 1, -7.450581e-09, 0, 7.450581e-09, 1, 3.485179, -0.27308273, -2.9370728)
@@ -1413,9 +1405,12 @@ material_override = SubResource("StandardMaterial3D_weeiq")
 mesh = SubResource("BoxMesh_d0u6y")
 
 [connection signal="on_pattern_made" from="BaseAmbient/Doors/Door/Patterned" to="BaseAmbient/Doors/Door/Patterned" method="disable_interactable"]
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door/Patterned" to="BaseAmbient/Doors/Door/Patterned" method="queue_free"]
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door/Patterned" to="BaseAmbient/Doors/Door/EnablerOnlyOnScene" method="enable_interactable"]
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door/Patterned" to="BaseAmbient/Doors/Door/ScenePattern" method="queue_free"]
 [connection signal="on_pattern_made" from="BaseAmbient/Doors/Door/Patterned" to="BaseAmbient/Doors/Door/FancyDoor" method="set_visible" binds= [false]]
 [connection signal="on_pattern_made" from="BaseAmbient/Doors/Door/Patterned" to="BaseAmbient/Doors/Door/FancyDoorOpened" method="set_visible" binds= [true]]
-[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door/Patterned" to="BaseAmbient/Doors/Door/NextScene" method="set_ray_pickable" binds= [true]]
+[connection signal="on_pattern_made" from="BaseAmbient/Doors/Door/ScenePattern" to="BaseAmbient/Doors/Door/Patterned" method="activate_pattern"]
 [connection signal="on_target" from="BaseAmbient/Doors/Door2/DoorWoods/Counter" to="BaseAmbient/Doors/Door2/ClickBlock" method="enable_interactable"]
 [connection signal="item_used" from="BaseAmbient/Doors/Door2/DoorWoods/Wood/HammerUse" to="BaseAmbient/Doors/Door2/DoorWoods/Counter" method="increment_one"]
 [connection signal="item_used" from="BaseAmbient/Doors/Door2/DoorWoods/Wood/HammerUse" to="BaseAmbient/Doors/Door2/DoorWoods/WoodFallen" method="set_visible" binds= [true]]
@@ -1428,16 +1423,21 @@ mesh = SubResource("BoxMesh_d0u6y")
 [connection signal="on_clicked" from="BaseAmbient/Doors/Door2/ClickBlock" to="BaseAmbient/Doors/Door2/FancyDoorOpened" method="set_visible" binds= [true]]
 [connection signal="on_clicked" from="Levels/LivingRoom/NextArea" to="Levels/LivingRoom/NextArea" method="disable_interactable"]
 [connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" method="queue_free"]
-[connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/KeyPickup/PickupItem" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/KeyEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/ScenePattern" method="queue_free"]
 [connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/ClosedLid" method="set_visible" binds= [false]]
 [connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" to="Levels/LivingRoom/Scenario/SmallBoxOpen/OpenLid" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Levels/LivingRoom/Scenario/SmallBoxOpen/ScenePattern" to="Levels/LivingRoom/Scenario/SmallBoxOpen/Patterned" method="activate_pattern"]
 [connection signal="on_clicked" from="Levels/LivingRoom/InternalScenes/TableScene/CameraStand/Camera3D/ChangeSceneInteractable" to="Levels/LivingRoom/NextArea" method="enable_interactable"]
 [connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/Patterned" method="disable_interactable"]
+[connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/Patterned" method="queue_free"]
+[connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/HammerEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/ScenePattern" method="queue_free"]
 [connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/BathroomMirrorDoor" method="set_visible" binds= [false]]
 [connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/OpenMirrorDoor" method="set_visible" binds= [true]]
-[connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/Patterned" to="Levels/Bathroom/Scenario/BathroomMirror/HammerPick/PickupItem" method="set_ray_pickable" binds= [true]]
-[connection signal="on_clicked" from="Levels/Bathroom/InternalScenes/BathScene/Interactable" to="Levels/Bathroom/InternalScenes/BathScene/Interactable" method="disable_interactable"]
-[connection signal="on_clicked" from="Levels/Bathroom/InternalScenes/BathScene/Interactable" to="Levels/Bathroom/InternalScenes/BathScene/GoReading" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Levels/Bathroom/Scenario/BathroomMirror/ScenePattern" to="Levels/Bathroom/Scenario/BathroomMirror/Patterned" method="activate_pattern"]
+[connection signal="on_clicked" from="Levels/Bathroom/InternalScenes/BathScene/Interactable" to="Levels/Bathroom/InternalScenes/BathScene/Interactable" method="queue_free"]
+[connection signal="on_clicked" from="Levels/Bathroom/InternalScenes/BathScene/Interactable" to="Levels/Bathroom/InternalScenes/BathScene/EnablerOnlyOnScene" method="enable_interactable"]
 [connection signal="on_clicked" from="Levels/Bathroom/InternalScenes/BathScene/Interactable" to="Levels/Bathroom/Scenario/BathTub/Water" method="set_visible" binds= [true]]
 
 [editable path="BaseAmbient/Doors/Door"]
@@ -1452,12 +1452,6 @@ mesh = SubResource("BoxMesh_d0u6y")
 [editable path="BaseAmbient/Doors/Door2/FancyDoor/FancyDoorKnobKeyless"]
 [editable path="BaseAmbient/Doors/Door2/FancyDoorOpened"]
 [editable path="BaseAmbient/Doors/Door2/FancyDoorOpened/FancyDoorKnobKeyless"]
-[editable path="BaseAmbient/Doors/Door5"]
-[editable path="BaseAmbient/Doors/Door5/FancyDoorFrame"]
-[editable path="BaseAmbient/Doors/Door5/FancyDoor"]
-[editable path="BaseAmbient/Doors/Door5/FancyDoor/FancyDoorKnobKeyless"]
-[editable path="BaseAmbient/Doors/Door5/FancyDoorOpened"]
-[editable path="BaseAmbient/Doors/Door5/FancyDoorOpened/FancyDoorKnobKeyless"]
 [editable path="BaseAmbient/Static/SmallTable"]
 [editable path="Levels/Hallway/CameraStand"]
 [editable path="Levels/Hallway/InternalScenes/DoorScene/CameraStand"]
@@ -1467,6 +1461,7 @@ mesh = SubResource("BoxMesh_d0u6y")
 [editable path="Levels/LivingRoom/Scenario/Paper1"]
 [editable path="Levels/LivingRoom/Scenario/Paper2"]
 [editable path="Levels/LivingRoom/Scenario/GrandClock"]
+[editable path="Levels/LivingRoom/Scenario/GrandClock/GrandClockClock"]
 [editable path="Levels/LivingRoom/Scenario/GrandClock/GrandClockClock/Pointers/BigPointer"]
 [editable path="Levels/LivingRoom/Scenario/GrandClock/GrandClockClock/Pointers/Pointer"]
 [editable path="Levels/LivingRoom/Scenario/GrandClock/GrandClockClock/Pointers/SmallPointer"]

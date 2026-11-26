@@ -63,6 +63,8 @@ mesh = SubResource("CylinderMesh_g4v7s")
 mesh = SubResource("ArrayMesh_bfc88")
 
 [node name="CogArea" type="Area3D" parent="." unique_id=1285239570 node_paths=PackedStringArray("to_rotate")]
+monitoring = false
+monitorable = false
 script = ExtResource("1_krpcv")
 to_rotate = NodePath("..")
 rotate_by = 1.5707963267948966

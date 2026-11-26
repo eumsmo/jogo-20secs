@@ -6,7 +6,18 @@ extends Node
 @export var only_once := true
 signal on_pattern_made
 
+@export var is_enabled: bool = true
+
+func disable_interactable():
+	is_enabled = false
+
+func enable_interactable():
+	is_enabled = true
+
 func check_pattern(pattern_to_check: Array[Game.Direction]) -> bool:
+	if not is_enabled:
+		return false
+	
 	if only_in_order:
 		if not PatternListener.compare_pattern(pattern_to_check, pattern):
 			return false

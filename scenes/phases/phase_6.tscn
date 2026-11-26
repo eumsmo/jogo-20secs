@@ -25,6 +25,7 @@
 [ext_resource type="Material" uid="uid://cdj1opmtoccxq" path="res://resources/materials/Grey.tres" id="23_htlh0"]
 [ext_resource type="Script" uid="uid://c3g0o3cunkyuj" path="res://scripts/interact/interactables/use_item_interactable.gd" id="24_ho8iw"]
 [ext_resource type="Script" uid="uid://dacaijey35bqu" path="res://scripts/interact/interactable.gd" id="25_87vcm"]
+[ext_resource type="Script" uid="uid://tfmgoftaw40j" path="res://scripts/enabler_only_on_scene.gd" id="26_bs2qq"]
 [ext_resource type="PackedScene" uid="uid://bof6f6q6tfq7g" path="res://resources/models/phase2/grand_clock.tscn" id="26_rpi7a"]
 [ext_resource type="Script" uid="uid://1hpvwn6n1g6h" path="res://scripts/interact/interactables/multiple_interactables.gd" id="27_w2q71"]
 [ext_resource type="Resource" uid="uid://f2shrknh5bpl" path="res://resources/itens/small_pointer.tres" id="28_m0pbo"]
@@ -58,6 +59,7 @@
 [ext_resource type="Material" uid="uid://dlgx6v3h2xhf0" path="res://resources/materials/vfx/highlighted.tres" id="47_dypof"]
 [ext_resource type="Texture2D" uid="uid://d1ceppnseojbe" path="res://resources/sprites/itens/big_pointer.png" id="48_je4iw"]
 [ext_resource type="Material" uid="uid://kb2catetgn4p" path="res://resources/materials/vfx/locked.tres" id="48_mnt4t"]
+[ext_resource type="Script" uid="uid://irap3h13rsfh" path="res://scripts/pattern/scene_pattern.gd" id="60_7lcnv"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
 size = Vector2(4.5, 4.5)
@@ -124,14 +126,14 @@ height = 4.7252502
 radial_segments = 8
 rings = 1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_57qmd"]
-size = Vector3(0.2, 2, 0.2)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(10, 0.2, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1yg85"]
 size = Vector3(0.8, 0.3, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_57qmd"]
+size = Vector3(0.2, 2, 0.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
 size = Vector3(0.2, 0.1, 0.1)
@@ -271,7 +273,7 @@ process_mode = 4
 visible = false
 
 [node name="NextArea" type="Area3D" parent="Levels/Scene1" unique_id=1897711137 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.9343503, 0, 0.356356, 0, 1, 0, -0.356356, 0, 0.9343503, -0.5287428, 2.6065588, -2.9024777)
+transform = Transform3D(0.9343503, 0, 0.356356, 0, 1, 0, -0.356356, 0, 0.9343503, -0.5287428, 1.8877263, -2.9024777)
 input_ray_pickable = false
 script = ExtResource("13_7lcnv")
 scene = NodePath("../../Scene2")
@@ -283,7 +285,7 @@ shape = SubResource("BoxShape3D_twgab")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.351719, 0.6663456, -7.074379)
 script = ExtResource("11_yijns")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("SpotLight3D"), NodePath("NextArea"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("OmniLight3D"), NodePath("BlockClicks")]
+on_scene_only = [NodePath("SpotLight3D"), NodePath("NextArea"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("OmniLight3D"), NodePath("BlockClicks"), NodePath("Rock3/HammerPick/PickupItem")]
 metadata/_custom_type_script = "uid://ypfbu7sipw7r"
 
 [node name="CameraStand" parent="Levels/Scene2" unique_id=495878336 instance=ExtResource("12_bs2qq")]
@@ -296,7 +298,7 @@ input_ray_pickable = false
 scene = NodePath("../../../../Scene1")
 
 [node name="NextArea" type="Area3D" parent="Levels/Scene2" unique_id=1179616004 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.97173595, 0, 0.23607081, 0, 1, 0, -0.23607081, 0, 0.97173595, 0.16520417, 2.6065588, -3.1671453)
+transform = Transform3D(0.97173595, 0, 0.23607081, 0, 1, 0, -0.23607081, 0, 0.97173595, 0.16520417, 1.0244513, -3.1671453)
 input_ray_pickable = false
 script = ExtResource("13_7lcnv")
 scene = NodePath("../../Scene3")
@@ -324,6 +326,7 @@ transform = Transform3D(1, 1.4901161e-08, -3.7252903e-09, 0, 0.99999994, -1.4901
 surface_material_override/0 = SubResource("StandardMaterial3D_0rmfi")
 
 [node name="PickupItem" type="Area3D" parent="Levels/Scene2/Rock3/HammerPick" unique_id=1317586095 node_paths=PackedStringArray("remove_node")]
+input_ray_pickable = false
 script = ExtResource("16_lpl56")
 item = ExtResource("17_jm77s")
 remove_node = NodePath("..")
@@ -364,7 +367,7 @@ input_ray_pickable = false
 scene = NodePath("../../../../Scene2")
 
 [node name="NextArea" type="Area3D" parent="Levels/Scene3" unique_id=372564356 node_paths=PackedStringArray("scene")]
-transform = Transform3D(0.8745157, 0, 0.48499727, 0, 1, 0, -0.48499727, 0, 0.8745157, -1.593448, 0.6510129, -4.182267)
+transform = Transform3D(0.8745157, 0, 0.48499727, 0, 1, 0, -0.48499727, 0, 0.8745157, -1.593448, 0.1977756, -4.182267)
 input_ray_pickable = false
 script = ExtResource("13_7lcnv")
 scene = NodePath("../../Scene4")
@@ -381,7 +384,7 @@ omni_range = 5.163767
 transform = Transform3D(0.67509454, 0, 0.7377312, 0, 1, 0, -0.7377312, 0, 0.67509454, -14.776318, 0.022750854, -19.689682)
 script = ExtResource("11_yijns")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("OmniLight3D"), NodePath("Tree10"), NodePath("Tree16"), NodePath("NextArea"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("OmniLight3D"), NodePath("Tree10"), NodePath("Tree16"), NodePath("NextArea"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Door/DoorWoods/Wood/HammerUse"), NodePath("Door/DoorWoods/Wood2/HammerUse"), NodePath("Door/DoorWoods/Wood3/HammerUse")]
 metadata/_custom_type_script = "uid://ypfbu7sipw7r"
 
 [node name="CameraStand" parent="Levels/Scene4" unique_id=1313174641 instance=ExtResource("12_bs2qq")]
@@ -428,7 +431,7 @@ visible = false
 texture = ExtResource("20_mwdqj")
 
 [node name="FancyDoorOpened" parent="Levels/Scene4/Door" index="2" unique_id=557807790]
-transform = Transform3D(0.67687595, 0, -0.7360971, 0, 1, 0, 0.7360971, 0, 0.67687595, 0.58584857, -4.7683716e-07, 0.30215144)
+transform = Transform3D(-0.53582674, 0, -0.8443279, 0, 1, 0, 0.8443279, 0, -0.53582674, 0.6358104, -4.7683716e-07, 0.9527496)
 
 [node name="FancyDoor" parent="Levels/Scene4/Door/FancyDoorOpened" index="0" unique_id=196420203]
 layers = 32
@@ -486,6 +489,7 @@ mesh = SubResource("CylinderMesh_3hbvx")
 
 [node name="HammerUse" type="Area3D" parent="Levels/Scene4/Door/DoorWoods/Wood" unique_id=289023302 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+input_ray_pickable = false
 script = ExtResource("24_ho8iw")
 item = ExtResource("17_jm77s")
 remove_item = false
@@ -524,6 +528,7 @@ mesh = SubResource("CylinderMesh_3hbvx")
 
 [node name="HammerUse" type="Area3D" parent="Levels/Scene4/Door/DoorWoods/Wood2" unique_id=1234379434 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+input_ray_pickable = false
 script = ExtResource("24_ho8iw")
 item = ExtResource("17_jm77s")
 remove_item = false
@@ -562,6 +567,7 @@ mesh = SubResource("CylinderMesh_3hbvx")
 
 [node name="HammerUse" type="Area3D" parent="Levels/Scene4/Door/DoorWoods/Wood3" unique_id=1701920170 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+input_ray_pickable = false
 script = ExtResource("24_ho8iw")
 item = ExtResource("17_jm77s")
 remove_item = false
@@ -606,6 +612,18 @@ metadata/_custom_type_script = "uid://dacaijey35bqu"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene4/Door/ClickBlock" unique_id=1769294552]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
 shape = SubResource("BoxShape3D_ms3bu")
+
+[node name="NextSceneEnabler" type="Node" parent="Levels/Scene4/Door" unique_id=1125431045 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("26_bs2qq")
+scene = NodePath("../..")
+interactables = [NodePath("../NextScene")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ClickBlockEnabler" type="Node" parent="Levels/Scene4/Door" unique_id=1162819350 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("26_bs2qq")
+scene = NodePath("../..")
+interactables = [NodePath("../ClickBlock")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
 
 [node name="Tree10" parent="Levels/Scene4" unique_id=2008550765 instance=ExtResource("5_xf5no")]
 transform = Transform3D(0.67509454, 0, -0.7377312, 0, 1, 0, 0.7377312, 0, 0.67509454, -2.6528187, -0.02275467, 2.0806274)
@@ -675,11 +693,17 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02941085, -9.313226e-10, 0.022182465)
 shape = SubResource("BoxShape3D_bk1p3")
 
+[node name="KeyEnabler" type="Node" parent="Levels/Scene4/GrandClock" unique_id=631683605 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("26_bs2qq")
+scene = NodePath("../..")
+interactables = [NodePath("../Key/PickupItem")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
 [node name="Scene5" type="Node3D" parent="Levels" unique_id=69026868 node_paths=PackedStringArray("camera", "on_scene_only")]
 transform = Transform3D(-0.8371939, 0, 0.5469061, 0, 1, 0, -0.5469061, 0, -0.8371939, -20.14484, 0.022750854, -11.96645)
 script = ExtResource("11_yijns")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("OmniLight3D"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("OmniLight3D"), NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("UseItemInteractable")]
 metadata/_custom_type_script = "uid://ypfbu7sipw7r"
 
 [node name="CameraStand" parent="Levels/Scene5" unique_id=1569878264 instance=ExtResource("12_bs2qq")]
@@ -754,16 +778,6 @@ mesh = SubResource("CylinderMesh_2iuns")
 transform = Transform3D(0.8947992, 0.44646806, 8.940697e-07, -0.17695086, 0.35464072, 0.918107, 0.4099047, -0.82152116, 0.39633474, -1.0703888, 0.38161469, 1.9325256)
 material_override = ExtResource("22_wemal")
 mesh = SubResource("CylinderMesh_753oq")
-
-[node name="PickupItem" type="Area3D" parent="Levels/Scene5/Chest/FishingRod" unique_id=2025846452 node_paths=PackedStringArray("remove_node")]
-script = ExtResource("16_lpl56")
-item = ExtResource("42_jgthb")
-remove_node = NodePath("..")
-metadata/_custom_type_script = "uid://gdx1msx8ssyi"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene5/Chest/FishingRod/PickupItem" unique_id=1040409474]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20264053, 0)
-shape = SubResource("BoxShape3D_57qmd")
 
 [node name="ChestInsides" type="Node3D" parent="Levels/Scene5/Chest" unique_id=165494224]
 
@@ -1010,6 +1024,18 @@ texture = ExtResource("48_je4iw")
 transform = Transform3D(-1.8874475e-08, 0.5, -3.774895e-08, 0.25, 3.774895e-08, -1.6653345e-15, 1.1846321e-15, -7.54979e-08, -0.25, -0.44505298, 0.0037063728, -0.046267513)
 texture = ExtResource("44_xf5no")
 
+[node name="ChestOpenEnabler" type="Node" parent="Levels/Scene5/Chest" unique_id=1155345881 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("26_bs2qq")
+scene = NodePath("../..")
+interactables = [NodePath("../Open")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="GoToAreaEnabler" type="Node" parent="Levels/Scene5/Chest" unique_id=1021604912 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("26_bs2qq")
+scene = NodePath("../..")
+interactables = [NodePath("../GoToArea")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
 [node name="ChestAnalyse" type="Node3D" parent="Levels/Scene5" unique_id=1138002601 node_paths=PackedStringArray("camera", "on_scene_only", "child_of")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("11_yijns")
@@ -1035,6 +1061,7 @@ material_override = ExtResource("41_hqshd")
 
 [node name="UseItemInteractable" type="Area3D" parent="Levels/Scene5" unique_id=994616941 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(0.78533787, 0, 0.6190674, 0, 1, 0, -0.6190674, 0, 0.78533787, -1.8737692, -0.24633944, -3.2213593)
+input_ray_pickable = false
 script = ExtResource("24_ho8iw")
 item = ExtResource("42_jgthb")
 delete_nodes = [NodePath(".")]
@@ -1043,11 +1070,12 @@ metadata/_custom_type_script = "uid://c3g0o3cunkyuj"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene5/UseItemInteractable" unique_id=1064198172]
 shape = SubResource("BoxShape3D_g4v7s")
 
-[node name="Scene6" type="Node3D" parent="Levels" unique_id=2072928213 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="Scene6" type="Node3D" parent="Levels" unique_id=2072928213 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.528137, 0, -20.158693)
 script = ExtResource("11_yijns")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("FishingRod/PickupItem"), NodePath("SmallBoxOpen/Patterned"), NodePath("SmallBoxOpen2/Patterned"), NodePath("SmallBoxOpen3/Patterned")]
+scene_patterns = [NodePath("SmallBoxOpen/ScenePattern"), NodePath("SmallBoxOpen3/ScenePattern"), NodePath("SmallBoxOpen2/ScenePattern")]
 metadata/_custom_type_script = "uid://ypfbu7sipw7r"
 
 [node name="CameraStand" parent="Levels/Scene6" unique_id=442486459 instance=ExtResource("12_bs2qq")]
@@ -1120,6 +1148,9 @@ transform = Transform3D(0.8870526, 0, -0.46166834, 0, 1, 0, 0.46166834, 0, 0.887
 transform = Transform3D(1, 0, 0, 0, 0.91557175, 0.40215474, 0, -0.40215474, 0.91557175, -9.313226e-10, -0.07789119, 0.03300875)
 
 [node name="Patterned" type="Area3D" parent="Levels/Scene6/SmallBoxOpen" unique_id=1379820933 node_paths=PackedStringArray("mesh")]
+input_ray_pickable = false
+monitoring = false
+monitorable = false
 script = ExtResource("46_niwne")
 pattern = Array[int]([3, 3, 2, 1, 1])
 mesh = NodePath("../SmallBoxOpen")
@@ -1141,6 +1172,18 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene6/SmallBoxOpen/PointerPickup" unique_id=1838713660]
 shape = SubResource("BoxShape3D_1yg85")
 
+[node name="PointerEnabler" type="Node" parent="Levels/Scene6/SmallBoxOpen" unique_id=1072071018 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("26_bs2qq")
+scene = NodePath("../..")
+interactables = [NodePath("../PointerPickup")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Levels/Scene6/SmallBoxOpen" unique_id=1957360033]
+script = ExtResource("60_7lcnv")
+pattern = Array[int]([3, 3, 2, 1, 1])
+only_in_order = false
+metadata/_custom_type_script = "uid://irap3h13rsfh"
+
 [node name="SmallBoxOpen2" parent="Levels/Scene6" unique_id=835894857 instance=ExtResource("45_ay5n5")]
 transform = Transform3D(-0.21635124, 0, -0.9763156, 0, 1, 0, 0.9763156, 0, -0.21635124, -1.0771523, 0.2086057, -0.4475937)
 
@@ -1148,6 +1191,9 @@ transform = Transform3D(-0.21635124, 0, -0.9763156, 0, 1, 0, 0.9763156, 0, -0.21
 transform = Transform3D(1, 0, 0, 0, 0.91557175, 0.40215474, 0, -0.40215474, 0.91557175, -9.313226e-10, -0.07789119, 0.03300875)
 
 [node name="Patterned" type="Area3D" parent="Levels/Scene6/SmallBoxOpen2" unique_id=649400657 node_paths=PackedStringArray("mesh")]
+input_ray_pickable = false
+monitoring = false
+monitorable = false
 script = ExtResource("46_niwne")
 pattern = Array[int]([2, 2, 1, 0, 0])
 mesh = NodePath("../SmallBoxOpen")
@@ -1169,6 +1215,18 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene6/SmallBoxOpen2/PointerPickup" unique_id=1273157120]
 shape = SubResource("BoxShape3D_1yg85")
 
+[node name="PointerEnabler" type="Node" parent="Levels/Scene6/SmallBoxOpen2" unique_id=645227297 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("26_bs2qq")
+scene = NodePath("../..")
+interactables = [NodePath("../PointerPickup")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Levels/Scene6/SmallBoxOpen2" unique_id=1917970458]
+script = ExtResource("60_7lcnv")
+pattern = Array[int]([2, 2, 1, 0, 0])
+only_in_order = false
+metadata/_custom_type_script = "uid://irap3h13rsfh"
+
 [node name="SmallBoxOpen3" parent="Levels/Scene6" unique_id=422141357 instance=ExtResource("45_ay5n5")]
 transform = Transform3D(-0.932339, 0, -0.3615854, 0, 1, 0, 0.3615854, 0, -0.932339, -0.3513869, 0.89629555, -2.0851138)
 
@@ -1176,6 +1234,9 @@ transform = Transform3D(-0.932339, 0, -0.3615854, 0, 1, 0, 0.3615854, 0, -0.9323
 transform = Transform3D(1, 0, 0, 0, 0.91557175, 0.40215474, 0, -0.40215474, 0.91557175, -9.313226e-10, -0.07789119, 0.03300875)
 
 [node name="Patterned" type="Area3D" parent="Levels/Scene6/SmallBoxOpen3" unique_id=555700452 node_paths=PackedStringArray("mesh")]
+input_ray_pickable = false
+monitoring = false
+monitorable = false
 script = ExtResource("46_niwne")
 pattern = Array[int]([1, 1, 0, 3, 3])
 mesh = NodePath("../SmallBoxOpen")
@@ -1197,6 +1258,18 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Scene6/SmallBoxOpen3/PointerPickup" unique_id=869616652]
 shape = SubResource("BoxShape3D_1yg85")
 
+[node name="PointerEnabler" type="Node" parent="Levels/Scene6/SmallBoxOpen3" unique_id=2145469397 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("26_bs2qq")
+scene = NodePath("../..")
+interactables = [NodePath("../PointerPickup")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Levels/Scene6/SmallBoxOpen3" unique_id=1116371773]
+script = ExtResource("60_7lcnv")
+pattern = Array[int]([1, 1, 0, 3, 3])
+only_in_order = false
+metadata/_custom_type_script = "uid://irap3h13rsfh"
+
 [node name="FishingRod" type="Node3D" parent="Levels/Scene6" unique_id=994170142]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.5733833, 2.5390306, -0.6041832)
 
@@ -1216,6 +1289,7 @@ material_override = ExtResource("22_wemal")
 mesh = SubResource("CylinderMesh_2iuns")
 
 [node name="PickupItem" type="Area3D" parent="Levels/Scene6/FishingRod" unique_id=932076468 node_paths=PackedStringArray("remove_node")]
+input_ray_pickable = false
 script = ExtResource("16_lpl56")
 item = ExtResource("42_jgthb")
 remove_node = NodePath("..")
@@ -1235,7 +1309,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6109123, 2.499679, 0.03206
 material_override = ExtResource("40_iriko")
 mesh = SubResource("BoxMesh_g4v7s")
 
-[connection signal="on_target" from="Levels/Scene4/Door/DoorWoods/Counter" to="Levels/Scene4/Door/ClickBlock" method="enable_interactable"]
+[connection signal="on_target" from="Levels/Scene4/Door/DoorWoods/Counter" to="Levels/Scene4/Door/ClickBlockEnabler" method="enable_interactable"]
 [connection signal="item_used" from="Levels/Scene4/Door/DoorWoods/Wood/HammerUse" to="Levels/Scene4/Door/DoorWoods/Counter" method="increment_one"]
 [connection signal="item_used" from="Levels/Scene4/Door/DoorWoods/Wood/HammerUse" to="Levels/Scene4/Door/DoorWoods/WoodFallen" method="set_visible" binds= [true]]
 [connection signal="item_used" from="Levels/Scene4/Door/DoorWoods/Wood2/HammerUse" to="Levels/Scene4/Door/DoorWoods/Counter" method="increment_one"]
@@ -1243,8 +1317,8 @@ mesh = SubResource("BoxMesh_g4v7s")
 [connection signal="item_used" from="Levels/Scene4/Door/DoorWoods/Wood3/HammerUse" to="Levels/Scene4/Door/DoorWoods/Counter" method="increment_one"]
 [connection signal="item_used" from="Levels/Scene4/Door/DoorWoods/Wood3/HammerUse" to="Levels/Scene4/Door/DoorWoods/WoodFallen3" method="set_visible" binds= [true]]
 [connection signal="on_clicked" from="Levels/Scene4/Door/ClickBlock" to="Levels/Scene4/Door/FancyDoor" method="queue_free"]
-[connection signal="on_clicked" from="Levels/Scene4/Door/ClickBlock" to="Levels/Scene4/Door/NextScene" method="enable_interactable"]
 [connection signal="on_clicked" from="Levels/Scene4/Door/ClickBlock" to="Levels/Scene4/Door/ClickBlock" method="queue_free"]
+[connection signal="on_clicked" from="Levels/Scene4/Door/ClickBlock" to="Levels/Scene4/Door/NextSceneEnabler" method="enable_interactable"]
 [connection signal="on_clicked" from="Levels/Scene4/Door/ClickBlock" to="Levels/Scene4/Door/FancyDoorOpened" method="set_visible" binds= [true]]
 [connection signal="item_used" from="Levels/Scene4/GrandClock/UseItem/UseSmall" to="Levels/Scene4/GrandClock/Counter" method="increment_one"]
 [connection signal="item_used" from="Levels/Scene4/GrandClock/UseItem/UseSmall" to="Levels/Scene4/GrandClock/GrandClockClock/Pointers/SmallPointer" method="set_visible" binds= [true]]
@@ -1252,29 +1326,35 @@ mesh = SubResource("BoxMesh_g4v7s")
 [connection signal="item_used" from="Levels/Scene4/GrandClock/UseItem/UseNormal" to="Levels/Scene4/GrandClock/GrandClockClock/Pointers/Pointer" method="set_visible" binds= [true]]
 [connection signal="item_used" from="Levels/Scene4/GrandClock/UseItem/UseBig" to="Levels/Scene4/GrandClock/Counter" method="increment_one"]
 [connection signal="item_used" from="Levels/Scene4/GrandClock/UseItem/UseBig" to="Levels/Scene4/GrandClock/GrandClockClock/Pointers/BigPointer" method="set_visible" binds= [true]]
-[connection signal="on_target" from="Levels/Scene4/GrandClock/Counter" to="Levels/Scene4/GrandClock/UseItem" method="disable_interactable"]
-[connection signal="on_target" from="Levels/Scene4/GrandClock/Counter" to="Levels/Scene4/GrandClock/Key/PickupItem" method="enable_interactable"]
+[connection signal="on_target" from="Levels/Scene4/GrandClock/Counter" to="Levels/Scene4/GrandClock/UseItem" method="queue_free"]
+[connection signal="on_target" from="Levels/Scene4/GrandClock/Counter" to="Levels/Scene4/GrandClock/KeyEnabler" method="enable_interactable"]
 [connection signal="on_target" from="Levels/Scene4/GrandClock/Counter" to="Levels/Scene4/GrandClock/ClosedDoor" method="set_visible" binds= [false]]
 [connection signal="on_target" from="Levels/Scene4/GrandClock/Counter" to="Levels/Scene4/GrandClock/OpenDoor" method="set_visible" binds= [true]]
 [connection signal="on_target" from="Levels/Scene4/GrandClock/Counter" to="Levels/Scene4/GrandClock/Key" method="set_visible" binds= [true]]
 [connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/Open/Marker" method="progress"]
-[connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/GoToArea" method="enable_interactable"]
+[connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/GoToAreaEnabler" method="enable_interactable"]
 [connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/chest/AnimationPlayer" method="play" binds= ["OpenLid_001"]]
 [connection signal="item_used" from="Levels/Scene5/Chest/Open" to="Levels/Scene5/Chest/OnTop" method="set_visible" binds= [true]]
-[connection signal="item_used" from="Levels/Scene5/UseItemInteractable" to="Levels/Scene5/Chest/Open" method="enable_interactable"]
+[connection signal="item_used" from="Levels/Scene5/UseItemInteractable" to="Levels/Scene5/Chest/ChestOpenEnabler" method="enable_interactable"]
 [connection signal="item_used" from="Levels/Scene5/UseItemInteractable" to="Levels/Scene5/Chest" method="set_visible" binds= [true]]
 [connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen/Patterned" to="Levels/Scene6/SmallBoxOpen/Patterned" method="queue_free"]
-[connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen/Patterned" to="Levels/Scene6/SmallBoxOpen/PointerPickup" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen/Patterned" to="Levels/Scene6/SmallBoxOpen/PointerEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen/Patterned" to="Levels/Scene6/SmallBoxOpen/ScenePattern" method="queue_free"]
 [connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen/Patterned" to="Levels/Scene6/SmallBoxOpen/ClosedLid" method="set_visible" binds= [false]]
 [connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen/Patterned" to="Levels/Scene6/SmallBoxOpen/OpenLid" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen/ScenePattern" to="Levels/Scene6/SmallBoxOpen/Patterned" method="activate_pattern"]
 [connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen2/Patterned" to="Levels/Scene6/SmallBoxOpen2/Patterned" method="queue_free"]
-[connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen2/Patterned" to="Levels/Scene6/SmallBoxOpen2/PointerPickup" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen2/Patterned" to="Levels/Scene6/SmallBoxOpen2/PointerEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen2/Patterned" to="Levels/Scene6/SmallBoxOpen2/ScenePattern" method="queue_free"]
 [connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen2/Patterned" to="Levels/Scene6/SmallBoxOpen2/ClosedLid" method="set_visible" binds= [false]]
 [connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen2/Patterned" to="Levels/Scene6/SmallBoxOpen2/OpenLid" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen2/ScenePattern" to="Levels/Scene6/SmallBoxOpen2/Patterned" method="activate_pattern"]
 [connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen3/Patterned" to="Levels/Scene6/SmallBoxOpen3/Patterned" method="queue_free"]
-[connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen3/Patterned" to="Levels/Scene6/SmallBoxOpen3/PointerPickup" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen3/Patterned" to="Levels/Scene6/SmallBoxOpen3/PointerEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen3/Patterned" to="Levels/Scene6/SmallBoxOpen3/ScenePattern" method="queue_free"]
 [connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen3/Patterned" to="Levels/Scene6/SmallBoxOpen3/ClosedLid" method="set_visible" binds= [false]]
 [connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen3/Patterned" to="Levels/Scene6/SmallBoxOpen3/OpenLid" method="set_visible" binds= [true]]
+[connection signal="on_pattern_made" from="Levels/Scene6/SmallBoxOpen3/ScenePattern" to="Levels/Scene6/SmallBoxOpen3/Patterned" method="activate_pattern"]
 
 [editable path="Scenario/Trees/Tree3"]
 [editable path="Scenario/Trees/Tree6"]

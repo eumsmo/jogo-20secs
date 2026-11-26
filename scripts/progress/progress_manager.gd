@@ -32,3 +32,13 @@ static func count_markers_achieved(level: LevelInfo) -> int:
 			c += 1
 	
 	return c
+
+static func percentage() -> int:
+	var markers: Array[ProgressMarker]
+	for level: LevelInfo in Game.instance.level_scene_relation.keys():
+		markers.append_array(level.progress)
+	
+	var count = len(markers)
+	var having = ProgressManager.progress_markers.filter(func(m): return markers.has(m)).size()
+	
+	return (floori(100 * having / count))

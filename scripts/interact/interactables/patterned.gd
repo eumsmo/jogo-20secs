@@ -40,6 +40,9 @@ func unhovered():
 	super()
 
 func on_target():
+	if mesh == null:
+		return
+	
 	if selected_material != null:
 		for idx in material_idx:
 			mesh.set_surface_override_material(idx, selected_material if not locked else locked_material)
@@ -49,6 +52,9 @@ func on_target():
 		obj.visible = true
 
 func on_untarget():
+	if mesh == null:
+		return
+	
 	for idx in material_idx:
 		mesh.set_surface_override_material(idx, null)
 	#mesh.material_override = null

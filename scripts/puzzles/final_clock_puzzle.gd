@@ -2,6 +2,7 @@ extends Node
 
 
 @export var patterned: Patterned
+@export var scene_pattern: ScenePattern
 
 @export var pointers: Array[Node3D]
 
@@ -19,7 +20,8 @@ func generate_pattern():
 	pattern = pattern.slice(0, 3)
 	
 	patterned.pattern = pattern
-	print("CLOCK: ", pattern.map(func(x): return Game.Direction.find_key(x)))
+	scene_pattern.pattern = pattern
+	#print("CLOCK: ", pattern.map(func(x): return Game.Direction.find_key(x)))
 	
 	for i in range(0, len(pattern)):
 		var rot = rotation_relation[pattern[i]]

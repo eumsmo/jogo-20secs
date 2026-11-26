@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dy7vf0dy6hqde" path="res://scripts/pattern/cog_pattern.gd" id="3_qs5d5"]
 [ext_resource type="Script" uid="uid://gdx1msx8ssyi" path="res://scripts/interact/interactables/pickup_item.gd" id="4_pw8ga"]
 [ext_resource type="Resource" uid="uid://f2shrknh5bpl" path="res://resources/itens/small_pointer.tres" id="5_b8ra3"]
+[ext_resource type="Script" uid="uid://tfmgoftaw40j" path="res://scripts/enabler_only_on_scene.gd" id="9_m1hw4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ghs4e"]
 resource_name = "Ceil"
@@ -141,6 +142,16 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OpenStoveDoor/SmallBoxOpen/PointerPickup" unique_id=2073747543]
 shape = SubResource("BoxShape3D_f56nd")
 
+[node name="PointerEnabler" type="Node" parent="OpenStoveDoor/SmallBoxOpen" unique_id=1913942272 node_paths=PackedStringArray("interactables")]
+script = ExtResource("9_m1hw4")
+interactables = [NodePath("../PointerPickup")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="BoxEnabler" type="Node" parent="OpenStoveDoor/SmallBoxOpen" unique_id=1519945272 node_paths=PackedStringArray("interactables")]
+script = ExtResource("9_m1hw4")
+interactables = [NodePath("../Interactable")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
 [node name="StoveDoor" parent="." unique_id=1385467779 instance=ExtResource("1_5ayd3")]
 
 [node name="Sprite3D" type="Sprite3D" parent="StoveDoor" unique_id=584725258]
@@ -157,11 +168,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.45017368)
 [node name="StoveButton" parent="Buttons/StoveButton" index="0" unique_id=1719292476]
 surface_material_override/1 = null
 
+[node name="CogArea" parent="Buttons/StoveButton" index="1" unique_id=1776073949]
+input_ray_pickable = false
+
 [node name="StoveButton2" parent="Buttons" unique_id=1402694960 instance=ExtResource("2_23ufw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.225)
 
 [node name="StoveButton" parent="Buttons/StoveButton2" index="0" unique_id=1719292476]
 surface_material_override/1 = null
+
+[node name="CogArea" parent="Buttons/StoveButton2" index="1" unique_id=1776073949]
+input_ray_pickable = false
 
 [node name="StoveButton3" parent="Buttons" unique_id=1561394687 instance=ExtResource("2_23ufw")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
@@ -169,11 +186,17 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 [node name="StoveButton" parent="Buttons/StoveButton3" index="0" unique_id=1719292476]
 surface_material_override/1 = null
 
+[node name="CogArea" parent="Buttons/StoveButton3" index="1" unique_id=1776073949]
+input_ray_pickable = false
+
 [node name="StoveButton4" parent="Buttons" unique_id=246796337 instance=ExtResource("2_23ufw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.225)
 
 [node name="StoveButton" parent="Buttons/StoveButton4" index="0" unique_id=1719292476]
 surface_material_override/1 = null
+
+[node name="CogArea" parent="Buttons/StoveButton4" index="1" unique_id=1776073949]
+input_ray_pickable = false
 
 [node name="StoveButton5" parent="Buttons" unique_id=569575618 instance=ExtResource("2_23ufw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45)
@@ -181,17 +204,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45)
 [node name="StoveButton" parent="Buttons/StoveButton5" index="0" unique_id=1719292476]
 surface_material_override/1 = null
 
+[node name="CogArea" parent="Buttons/StoveButton5" index="1" unique_id=1776073949]
+input_ray_pickable = false
+
 [node name="CogPattern" type="Node" parent="." unique_id=889071870 node_paths=PackedStringArray("cogs")]
 script = ExtResource("3_qs5d5")
 pattern = Array[int]([3, 0, 2, 1, 2])
 cogs = [NodePath("../Buttons/StoveButton/CogArea"), NodePath("../Buttons/StoveButton2/CogArea"), NodePath("../Buttons/StoveButton3/CogArea"), NodePath("../Buttons/StoveButton4/CogArea"), NodePath("../Buttons/StoveButton5/CogArea")]
 
+[node name="ButtonEnabler" type="Node" parent="." unique_id=1198309722 node_paths=PackedStringArray("interactables")]
+script = ExtResource("9_m1hw4")
+is_enabled = true
+interactables = [NodePath("../Buttons/StoveButton/CogArea"), NodePath("../Buttons/StoveButton2/CogArea"), NodePath("../Buttons/StoveButton3/CogArea"), NodePath("../Buttons/StoveButton4/CogArea"), NodePath("../Buttons/StoveButton5/CogArea")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
 [connection signal="on_clicked" from="OpenStoveDoor/SmallBoxOpen/Interactable" to="OpenStoveDoor/SmallBoxOpen/Interactable" method="queue_free"]
-[connection signal="on_clicked" from="OpenStoveDoor/SmallBoxOpen/Interactable" to="OpenStoveDoor/SmallBoxOpen/PointerPickup" method="enable_interactable"]
+[connection signal="on_clicked" from="OpenStoveDoor/SmallBoxOpen/Interactable" to="OpenStoveDoor/SmallBoxOpen/PointerEnabler" method="enable_interactable"]
 [connection signal="on_clicked" from="OpenStoveDoor/SmallBoxOpen/Interactable" to="OpenStoveDoor/SmallBoxOpen/ClosedLid" method="set_visible" binds= [false]]
 [connection signal="on_clicked" from="OpenStoveDoor/SmallBoxOpen/Interactable" to="OpenStoveDoor/SmallBoxOpen/OpenLid" method="set_visible" binds= [true]]
+[connection signal="on_pattern_reached" from="CogPattern" to="OpenStoveDoor/SmallBoxOpen/BoxEnabler" method="enable_interactable"]
 [connection signal="on_pattern_reached" from="CogPattern" to="OpenStoveDoor" method="set_visible" binds= [true]]
-[connection signal="on_pattern_reached" from="CogPattern" to="OpenStoveDoor/SmallBoxOpen/Interactable" method="set_ray_pickable" binds= [true]]
 [connection signal="on_pattern_reached" from="CogPattern" to="StoveDoor" method="set_visible" binds= [false]]
 
 [editable path="OpenStoveDoor/SmallBoxOpen"]

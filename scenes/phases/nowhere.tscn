@@ -5,8 +5,7 @@
 [ext_resource type="Script" uid="uid://bnjfxriyseeds" path="res://scripts/interact/interactables/change_scene_interactable.gd" id="3_6yf7v"]
 [ext_resource type="PackedScene" uid="uid://dybkw4ji7oj7w" path="res://scenes/components/camera_stand.tscn" id="4_gvwfd"]
 [ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="5_c6apj"]
-[ext_resource type="Script" uid="uid://cahki8kabd553" path="res://scripts/interact/interactables/go_to_chapter.gd" id="6_s1p7x"]
-[ext_resource type="Resource" uid="uid://buhgr8f3cvu4b" path="res://resources/levels/level2.tres" id="7_ymn7a"]
+[ext_resource type="Script" uid="uid://dubnb3clkwc88" path="res://scripts/interact/interactables/return_to_chapter.gd" id="6_u5sir"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v2yb1"]
 size = Vector3(1.9399414, 3.1285934, 0.1)
@@ -215,8 +214,8 @@ camera = NodePath("CameraStand/Camera3D")
 
 [node name="NextChapter" type="Area3D" parent="Levels/Text10" unique_id=1364938851]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.9999999, 0, 0)
-script = ExtResource("6_s1p7x")
-level = ExtResource("7_ymn7a")
+script = ExtResource("6_u5sir")
+chapter_id = 2
 metadata/_custom_type_script = "uid://dacaijey35bqu"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Text10/NextChapter" unique_id=1366856991]

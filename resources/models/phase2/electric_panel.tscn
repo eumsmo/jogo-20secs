@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://q3oekbg5lkne" path="res://resources/sprites/bigger_line.png" id="13_rjk2q"]
 [ext_resource type="Texture2D" uid="uid://cyvbdnet6e2sm" path="res://resources/sprites/map/start_map.png" id="14_tx5cs"]
 [ext_resource type="Texture2D" uid="uid://bka73mhdtn6be" path="res://resources/sprites/map/end_map.png" id="15_t3bvy"]
+[ext_resource type="Script" uid="uid://tfmgoftaw40j" path="res://scripts/enabler_only_on_scene.gd" id="25_2er0s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpcx1"]
 resource_name = "Brown"
@@ -147,6 +148,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62893593, -0.71999335, 0.7
 
 [node name="CloseElectricPanel" type="Area3D" parent="OpenDoor" unique_id=1485327300]
 transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -0.6407776, 0.021425843, -0.036542892)
+input_ray_pickable = false
 script = ExtResource("2_u0xnv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OpenDoor/CloseElectricPanel" unique_id=536190793]
@@ -314,6 +316,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3391398, 1.0342247, -0.5539
 [node name="Cog" parent="Puzzle/CogHolder" unique_id=1772246213 instance=ExtResource("4_175s6")]
 transform = Transform3D(1.3113416e-07, 1, 0, -1, 1.3113416e-07, 0, 0, 0, 1, 0, 0, 0)
 
+[node name="CogArea" parent="Puzzle/CogHolder/Cog" index="2" unique_id=1285239570]
+input_ray_pickable = false
+
 [node name="SmallPointer" parent="Puzzle/CogHolder/Cog" index="3" unique_id=1442474372]
 transform = Transform3D(-1.3113416e-08, -0.3, 8.335761e-08, 0, -1.3113417e-08, -1.907, 0.3, -1.3113417e-08, 0, 5.642246e-10, 0, -0.03444718)
 
@@ -331,6 +336,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16281839, 0.8553204, -0.553
 
 [node name="Cog" parent="Puzzle/CogHolder2" unique_id=671518437 instance=ExtResource("4_175s6")]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CogArea" parent="Puzzle/CogHolder2/Cog" index="2" unique_id=1285239570]
+input_ray_pickable = false
 
 [node name="SmallPointer" parent="Puzzle/CogHolder2/Cog" index="3" unique_id=1442474372]
 transform = Transform3D(-1.3113416e-08, -0.3, 8.335761e-08, 0, -1.3113417e-08, -1.907, 0.3, -1.3113417e-08, 0, 5.642246e-10, 0, -0.03444718)
@@ -365,6 +373,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34010553, 0.6751628, -0.553
 [node name="Cog" parent="Puzzle/CogHolder3" unique_id=1961169320 instance=ExtResource("4_175s6")]
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
 
+[node name="CogArea" parent="Puzzle/CogHolder3/Cog" index="2" unique_id=1285239570]
+input_ray_pickable = false
+
 [node name="SmallPointer" parent="Puzzle/CogHolder3/Cog" index="3" unique_id=1442474372]
 transform = Transform3D(-1.3113417e-08, -2.6226834e-08, 1.907, 0, -0.3, -1.6671522e-07, 0.3, -1.1464113e-15, 8.335761e-08, 5.642246e-10, 0, -0.03444718)
 
@@ -385,6 +396,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34010553, 0.4276297, -0.553
 
 [node name="Cog" parent="Puzzle/CogHolder4" unique_id=152098101 instance=ExtResource("4_175s6")]
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CogArea" parent="Puzzle/CogHolder4/Cog" index="2" unique_id=1285239570]
+input_ray_pickable = false
 
 [node name="SmallPointer" parent="Puzzle/CogHolder4/Cog" index="3" unique_id=1442474372]
 transform = Transform3D(-1.3113417e-08, -2.6226834e-08, 1.907, 0, -0.3, -1.6671522e-07, 0.3, -1.1464113e-15, 8.335761e-08, 5.642246e-10, 0, -0.03444718)
@@ -407,6 +421,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08795184, 0.4297936, -0.553
 [node name="Cog" parent="Puzzle/CogHolder5" unique_id=269123041 instance=ExtResource("4_175s6")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 
+[node name="CogArea" parent="Puzzle/CogHolder5/Cog" index="2" unique_id=1285239570]
+input_ray_pickable = false
+
 [node name="SmallPointer" parent="Puzzle/CogHolder5/Cog" index="3" unique_id=1442474372]
 transform = Transform3D(-1.3113416e-08, 0.3, 8.335761e-08, 0, -1.3113417e-08, 1.907, 0.3, 1.3113417e-08, 0, 5.642246e-10, 0, -0.03444718)
 
@@ -428,6 +445,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.091526985, 0.6042417, -0.5
 [node name="Cog" parent="Puzzle/CogHolder6" unique_id=322321685 instance=ExtResource("4_175s6")]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 
+[node name="CogArea" parent="Puzzle/CogHolder6/Cog" index="2" unique_id=1285239570]
+input_ray_pickable = false
+
 [node name="SmallPointer" parent="Puzzle/CogHolder6/Cog" index="3" unique_id=1442474372]
 transform = Transform3D(-1.3113416e-08, -0.3, 8.335761e-08, 0, -1.3113417e-08, -1.907, 0.3, -1.3113417e-08, 0, 5.642246e-10, 0, -0.03444718)
 
@@ -447,6 +467,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06338692, 0, -0.0146484375)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.091526985, 0.85569626, -0.55391395)
 
 [node name="Cog" parent="Puzzle/CogHolder7" unique_id=1202714408 instance=ExtResource("4_175s6")]
+
+[node name="CogArea" parent="Puzzle/CogHolder7/Cog" index="2" unique_id=1285239570]
+input_ray_pickable = false
 
 [node name="WireHolder" type="Node3D" parent="Puzzle/CogHolder7/Cog" unique_id=1175079047]
 transform = Transform3D(0.99999994, -1.589326e-08, 0, 1.589326e-08, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
@@ -514,14 +537,21 @@ pattern_blinks = Dictionary[int, int]({
 3: 4
 })
 
+[node name="CogEnabled" type="Node" parent="." unique_id=335506830 node_paths=PackedStringArray("interactables")]
+script = ExtResource("25_2er0s")
+interactables = [NodePath("../Puzzle/CogHolder/Cog/CogArea"), NodePath("../Puzzle/CogHolder2/Cog/CogArea"), NodePath("../Puzzle/CogHolder3/Cog/CogArea"), NodePath("../Puzzle/CogHolder4/Cog/CogArea"), NodePath("../Puzzle/CogHolder5/Cog/CogArea"), NodePath("../Puzzle/CogHolder6/Cog/CogArea"), NodePath("../Puzzle/CogHolder7/Cog/CogArea")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[connection signal="on_clicked" from="OpenDoor/CloseElectricPanel" to="OpenDoor/CloseElectricPanel" method="disable_interactable"]
+[connection signal="on_clicked" from="OpenDoor/CloseElectricPanel" to="ClosedDoor/OpenElectricPanel" method="enable_interactable"]
+[connection signal="on_clicked" from="OpenDoor/CloseElectricPanel" to="CogEnabled" method="disable_interactable"]
 [connection signal="on_clicked" from="OpenDoor/CloseElectricPanel" to="OpenDoor" method="set_visible" binds= [false]]
-[connection signal="on_clicked" from="OpenDoor/CloseElectricPanel" to="OpenDoor/CloseElectricPanel" method="set_physics_process" binds= [false]]
 [connection signal="on_clicked" from="OpenDoor/CloseElectricPanel" to="ClosedDoor" method="set_visible" binds= [true]]
-[connection signal="on_clicked" from="OpenDoor/CloseElectricPanel" to="ClosedDoor/OpenElectricPanel" method="set_physics_process" binds= [true]]
+[connection signal="on_clicked" from="ClosedDoor/OpenElectricPanel" to="OpenDoor/CloseElectricPanel" method="enable_interactable"]
+[connection signal="on_clicked" from="ClosedDoor/OpenElectricPanel" to="ClosedDoor/OpenElectricPanel" method="disable_interactable"]
+[connection signal="on_clicked" from="ClosedDoor/OpenElectricPanel" to="CogEnabled" method="enable_interactable"]
 [connection signal="on_clicked" from="ClosedDoor/OpenElectricPanel" to="OpenDoor" method="set_visible" binds= [true]]
-[connection signal="on_clicked" from="ClosedDoor/OpenElectricPanel" to="OpenDoor/CloseElectricPanel" method="set_physics_process" binds= [true]]
 [connection signal="on_clicked" from="ClosedDoor/OpenElectricPanel" to="ClosedDoor" method="set_visible" binds= [false]]
-[connection signal="on_clicked" from="ClosedDoor/OpenElectricPanel" to="ClosedDoor/OpenElectricPanel" method="set_physics_process" binds= [false]]
 [connection signal="on_clicked" from="Puzzle/CogHolder/Cog/CogArea" to="Puzzle/WireTransmitor" method="call_to_reset"]
 [connection signal="on_clicked" from="Puzzle/CogHolder2/Cog/CogArea" to="Puzzle/WireTransmitor" method="call_to_reset"]
 [connection signal="on_clicked" from="Puzzle/CogHolder3/Cog/CogArea" to="Puzzle/WireTransmitor" method="call_to_reset"]

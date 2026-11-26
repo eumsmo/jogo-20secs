@@ -1,6 +1,8 @@
 extends Node
 
 @export var patterned: Patterned
+@export var scene_pattern: ScenePattern
+
 @export var portraits: Array[PortraitPuzzle]
 
 @export var convertion: Dictionary[Game.Direction, String]
@@ -13,7 +15,8 @@ func generate_pattern():
 	pattern.shuffle()
 	
 	patterned.pattern = pattern
-	print("QUANTITY: ", pattern.map(func(x): return Game.Direction.find_key(x)))
+	scene_pattern.pattern = pattern
+	#print("QUANTITY: ", pattern.map(func(x): return Game.Direction.find_key(x)))
 	
 	var distribution: Array[String]
 	

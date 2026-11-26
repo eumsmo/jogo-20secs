@@ -9,7 +9,9 @@ extends Resource
 @export var palette: CompressedTexture2D
 
 @export var show_in_list: bool = true
+@export var has_interactable_marker: bool = true
 
+@export var packed_scene: PackedScene
 @export var progress: Array[ProgressMarker]
 var achieved_progress_count: int:
 	get:

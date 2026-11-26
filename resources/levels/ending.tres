@@ -1,15 +1,18 @@
 [gd_resource type="Resource" script_class="LevelInfo" format=3 uid="uid://dd5fon0b44ev0"]
 
 [ext_resource type="Texture2D" uid="uid://c71n7wde5gocs" path="res://resources/sprites/palettes/palette_hollow.png" id="1_b540j"]
+[ext_resource type="PackedScene" uid="uid://bjpnf4gmo0y4x" path="res://scenes/phases/ending.tscn" id="1_i78is"]
 [ext_resource type="Script" uid="uid://bx5am22m0deaw" path="res://scripts/progress/progress_marker.gd" id="2_3orlt"]
 [ext_resource type="Script" uid="uid://gps7yv5j2dm7" path="res://scripts/level_info.gd" id="5_0dxmj"]
 
 [resource]
 script = ExtResource("5_0dxmj")
-idx = 8
+idx = -8
 chapter = "8"
 name = "The End"
 pattern = Array[int]([0])
 palette = ExtResource("1_b540j")
 show_in_list = false
+has_interactable_marker = false
+packed_scene = ExtResource("1_i78is")
 metadata/_custom_type_script = "uid://gps7yv5j2dm7"

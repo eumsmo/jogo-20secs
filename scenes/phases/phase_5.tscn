@@ -16,7 +16,9 @@
 [ext_resource type="Material" uid="uid://4fiib57bwe0v" path="res://resources/materials/vfx/CompleteBlackish.tres" id="14_18s0k"]
 [ext_resource type="PackedScene" uid="uid://ctjk83r6mhda5" path="res://resources/models/phase1/key.tscn" id="15_wsdn1"]
 [ext_resource type="Script" uid="uid://gdx1msx8ssyi" path="res://scripts/interact/interactables/pickup_item.gd" id="16_bp3ei"]
+[ext_resource type="Script" uid="uid://tfmgoftaw40j" path="res://scripts/enabler_only_on_scene.gd" id="16_d3mub"]
 [ext_resource type="PackedScene" uid="uid://b5djxodymkseb" path="res://resources/models/phase3/wall_portrait.tscn" id="17_5k23c"]
+[ext_resource type="Script" uid="uid://irap3h13rsfh" path="res://scripts/pattern/scene_pattern.gd" id="17_d3mub"]
 [ext_resource type="Material" uid="uid://cdj1opmtoccxq" path="res://resources/materials/Grey.tres" id="18_8t5cv"]
 [ext_resource type="FontFile" uid="uid://bfnesbu0hvrb8" path="res://outside_resources/YatraOne-Regular.ttf" id="19_3safw"]
 [ext_resource type="Texture2D" uid="uid://bgyywk6y58kt3" path="res://resources/sprites/arrow.png" id="20_e816o"]
@@ -27,7 +29,6 @@
 [ext_resource type="Script" uid="uid://ccup386pslxg0" path="res://scripts/counter.gd" id="24_tn7k8"]
 [ext_resource type="Resource" uid="uid://dc8c2m2dwvehx" path="res://resources/itens/hammer.tres" id="25_6tsuq"]
 [ext_resource type="Material" uid="uid://dcp258ghdupuw" path="res://resources/materials/Brown.tres" id="26_cfone"]
-[ext_resource type="Script" uid="uid://dacaijey35bqu" path="res://scripts/interact/interactable.gd" id="27_rnr3p"]
 [ext_resource type="PackedScene" uid="uid://cvf8jfwsd6m4t" path="res://resources/models/phase1/hammer.tscn" id="28_q41cl"]
 [ext_resource type="Texture2D" uid="uid://duyvhh5ak3cy5" path="res://resources/sprites/lightbulb.png" id="30_m7hif"]
 [ext_resource type="Texture2D" uid="uid://d1nxyuojm3ude" path="res://resources/sprites/frame.png" id="30_pdti8"]
@@ -175,11 +176,12 @@ mesh = SubResource("PlaneMesh_g4v7s")
 [node name="Scenes" type="Node3D" parent="." unique_id=1546189109]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -21, 0)
 
-[node name="Scene1" type="Node3D" parent="Scenes" unique_id=1284489027 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="Scene1" type="Node3D" parent="Scenes" unique_id=1284489027 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.51235, 0, 0)
 script = ExtResource("2_m0600")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("SeeClock"), NodePath("SeePortrait")]
+on_scene_only = [NodePath("SeeClock"), NodePath("SeePortrait"), NodePath("Scenario/Door/ClickBlock")]
+scene_patterns = [NodePath("Scenario/GrandClock/ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene1" unique_id=72479423 instance=ExtResource("3_pdti8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.033262, 1, -8.944498e-08)
@@ -242,6 +244,7 @@ shape = SubResource("BoxShape3D_pf7vy")
 
 [node name="ClickBlock" type="Area3D" parent="Scenes/Scene1/Scenario/Door" unique_id=1771902822 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.069302574, 0.6120987, -0.0056619677)
+input_ray_pickable = false
 script = ExtResource("8_m7hif")
 item = ExtResource("9_wgsmv")
 delete_nodes = [NodePath("."), NodePath("../../../SeePortrait")]
@@ -273,6 +276,7 @@ visible = false
 
 [node name="Patterned" type="Area3D" parent="Scenes/Scene1/Scenario/GrandClock" unique_id=1004661098 node_paths=PackedStringArray("mesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26330376, 1.8194065, 0.0017328262)
+input_ray_pickable = false
 script = ExtResource("12_12aqx")
 pattern = Array[int]([5, 6, 0])
 mesh = NodePath("../GrandClockClock/GrandClockClock")
@@ -299,6 +303,17 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene1/Scenario/GrandClock/Key/PickupItem" unique_id=493691385]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02941085, -9.313226e-10, 0.022182465)
 shape = SubResource("BoxShape3D_yd4ix")
+
+[node name="KeyEnabler" type="Node" parent="Scenes/Scene1/Scenario/GrandClock" unique_id=710676684 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("16_d3mub")
+scene = NodePath("../../../LookAtClock")
+interactables = [NodePath("../Key/PickupItem")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Scenes/Scene1/Scenario/GrandClock" unique_id=691052120]
+script = ExtResource("17_d3mub")
+pattern = Array[int]([5, 6, 0])
+metadata/_custom_type_script = "uid://irap3h13rsfh"
 
 [node name="WallPortrait" parent="Scenes/Scene1/Scenario" unique_id=472917611 instance=ExtResource("17_5k23c")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 0.074884415, 1.5202713, 1.6571751)
@@ -458,11 +473,12 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("20_e816o")
 
-[node name="LookAtClock" type="Node3D" parent="Scenes/Scene1" unique_id=989111834 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="LookAtClock" type="Node3D" parent="Scenes/Scene1" unique_id=989111834 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2604656, 0, -1.6154199)
 script = ExtResource("2_m0600")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("../Scenario/GrandClock/Patterned")]
+scene_patterns = [NodePath("../Scenario/GrandClock/ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene1/LookAtClock" unique_id=1079244447 instance=ExtResource("3_pdti8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.2530842, 1, 2.506374e-07)
@@ -511,11 +527,12 @@ metadata/_custom_type_script = "uid://bnjfxriyseeds"
 transform = Transform3D(0.9999991, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.9999991, 0.14621544, 1.5339756, 0.058556557)
 shape = SubResource("BoxShape3D_rm0al")
 
-[node name="Scene2" type="Node3D" parent="Scenes" unique_id=1464541520 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="Scene2" type="Node3D" parent="Scenes" unique_id=1464541520 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51235, 0, 0)
 script = ExtResource("2_m0600")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Scenario/GrandClock2/SeeClock"), NodePath("Scenario/GrandClock/SeeClock")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Scenario/GrandClock2/SeeClock"), NodePath("Scenario/GrandClock/SeeClock"), NodePath("Scenario/Door/DoorWoods/Wood/HammerUse"), NodePath("Scenario/Door/DoorWoods/Wood2/HammerUse"), NodePath("Scenario/Door/DoorWoods/Wood3/HammerUse")]
+scene_patterns = [NodePath("Scenario/GrandClock2/ScenePattern"), NodePath("Scenario/GrandClock/ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene2" unique_id=1774374154 instance=ExtResource("3_pdti8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.033262, 1, -8.944498e-08)
@@ -620,6 +637,7 @@ mesh = SubResource("CylinderMesh_3hbvx")
 
 [node name="HammerUse" type="Area3D" parent="Scenes/Scene2/Scenario/Door/DoorWoods/Wood" unique_id=1370548191 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+input_ray_pickable = false
 script = ExtResource("8_m7hif")
 item = ExtResource("25_6tsuq")
 remove_item = false
@@ -658,6 +676,7 @@ mesh = SubResource("CylinderMesh_3hbvx")
 
 [node name="HammerUse" type="Area3D" parent="Scenes/Scene2/Scenario/Door/DoorWoods/Wood2" unique_id=13293357 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+input_ray_pickable = false
 script = ExtResource("8_m7hif")
 item = ExtResource("25_6tsuq")
 remove_item = false
@@ -696,6 +715,7 @@ mesh = SubResource("CylinderMesh_3hbvx")
 
 [node name="HammerUse" type="Area3D" parent="Scenes/Scene2/Scenario/Door/DoorWoods/Wood3" unique_id=36743505 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+input_ray_pickable = false
 script = ExtResource("8_m7hif")
 item = ExtResource("25_6tsuq")
 remove_item = false
@@ -731,13 +751,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
 material_override = ExtResource("26_cfone")
 mesh = SubResource("BoxMesh_o8ni1")
 
-[node name="ClickBlock" type="Area3D" parent="Scenes/Scene2/Scenario/Door" unique_id=995650789]
+[node name="UseKey" type="Area3D" parent="Scenes/Scene2/Scenario/Door" unique_id=995650789 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.069302574, 0.6120987, -0.0056619677)
 input_ray_pickable = false
-script = ExtResource("27_rnr3p")
+script = ExtResource("8_m7hif")
+item = ExtResource("9_wgsmv")
+delete_nodes = [NodePath(".")]
 metadata/_custom_type_script = "uid://dacaijey35bqu"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene2/Scenario/Door/ClickBlock" unique_id=1800721171]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene2/Scenario/Door/UseKey" unique_id=1800721171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6802368, 0)
 shape = SubResource("BoxShape3D_ms3bu")
 
@@ -750,6 +772,18 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.4301567,
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene2/Scenario/Door/ClickBlocker" unique_id=1841291957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9222717, 0)
 shape = SubResource("BoxShape3D_57qmd")
+
+[node name="UseKeyEnabler" type="Node" parent="Scenes/Scene2/Scenario/Door" unique_id=1246223889 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("16_d3mub")
+scene = NodePath("../../..")
+interactables = [NodePath("../UseKey")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="NextSceneEnabler" type="Node" parent="Scenes/Scene2/Scenario/Door" unique_id=468926933 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("16_d3mub")
+scene = NodePath("../../..")
+interactables = [NodePath("../NextScene")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Scenes/Scene2/Scenario" unique_id=1097200325]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9342537, 2.330843, 0)
@@ -777,6 +811,7 @@ visible = false
 
 [node name="Patterned" type="Area3D" parent="Scenes/Scene2/Scenario/GrandClock2" unique_id=956765293 node_paths=PackedStringArray("mesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26330376, 1.8194065, 0.0017328262)
+input_ray_pickable = false
 script = ExtResource("12_12aqx")
 pattern = Array[int]([3, 0, 2])
 mesh = NodePath("../GrandClockClock/GrandClockClock")
@@ -804,11 +839,12 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02941085, -9.313226e-10, 0.022182465)
 shape = SubResource("BoxShape3D_yd4ix")
 
-[node name="LookAtClock" type="Node3D" parent="Scenes/Scene2/Scenario/GrandClock2" unique_id=161511466 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="LookAtClock" type="Node3D" parent="Scenes/Scene2/Scenario/GrandClock2" unique_id=161511466 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(0.9907993, 0, 0.13533928, 0, 1, 0, -0.13533928, 0, 0.9907993, 0.07090092, 0, -0.079885244)
 script = ExtResource("2_m0600")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("../Patterned")]
+scene_patterns = [NodePath("../ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene2/Scenario/GrandClock2/LookAtClock" unique_id=1349113668 instance=ExtResource("3_pdti8")]
 transform = Transform3D(0.87501204, -0.06847606, 0.47923356, 0.0044097733, 0.9910318, 0.13355352, -0.48408094, -0.11474765, 0.8674667, 0.73669314, 1.4796581, 0.57989407)
@@ -821,6 +857,7 @@ scene = NodePath("../../../../../..")
 
 [node name="SeeClock" type="Area3D" parent="Scenes/Scene2/Scenario/GrandClock2" unique_id=1608102852 node_paths=PackedStringArray("scene")]
 transform = Transform3D(0.9992691, 0, -0.03822866, 0, 1, 0, 0.03822866, 0, 0.9992691, -0.04458517, 0, 0.026469514)
+input_ray_pickable = false
 script = ExtResource("7_6xrpw")
 scene = NodePath("../LookAtClock")
 metadata/_custom_type_script = "uid://bnjfxriyseeds"
@@ -828,6 +865,17 @@ metadata/_custom_type_script = "uid://bnjfxriyseeds"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene2/Scenario/GrandClock2/SeeClock" unique_id=475562972]
 transform = Transform3D(0.9999991, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.9999991, 0, 1.1632442, 0)
 shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="KeyEnabler" type="Node" parent="Scenes/Scene2/Scenario/GrandClock2" unique_id=774336491 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("16_d3mub")
+scene = NodePath("../LookAtClock")
+interactables = [NodePath("../Key/PickupItem")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Scenes/Scene2/Scenario/GrandClock2" unique_id=849623576]
+script = ExtResource("17_d3mub")
+pattern = Array[int]([3, 0, 2])
+metadata/_custom_type_script = "uid://irap3h13rsfh"
 
 [node name="GrandClock" parent="Scenes/Scene2/Scenario" unique_id=897497931 instance=ExtResource("11_d3mub")]
 transform = Transform3D(0.60490155, 0, -0.7963002, 0, 1, 0, 0.7963002, 0, 0.60490155, 0.47388077, 0, -3.3101804)
@@ -837,6 +885,7 @@ visible = false
 
 [node name="Patterned" type="Area3D" parent="Scenes/Scene2/Scenario/GrandClock" unique_id=1574918476 node_paths=PackedStringArray("mesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26330376, 1.8194065, 0.0017328262)
+input_ray_pickable = false
 script = ExtResource("12_12aqx")
 pattern = Array[int]([1, 2, 0])
 mesh = NodePath("../GrandClockClock/GrandClockClock")
@@ -866,11 +915,12 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02941085, -9.313226e-10, 0.022182465)
 shape = SubResource("BoxShape3D_yd4ix")
 
-[node name="LookAtClock" type="Node3D" parent="Scenes/Scene2/Scenario/GrandClock" unique_id=1327310341 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="LookAtClock" type="Node3D" parent="Scenes/Scene2/Scenario/GrandClock" unique_id=1327310341 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(0.9907993, 0, 0.13533928, 0, 1, 0, -0.13533928, 0, 0.9907993, 0.07090092, 0, -0.079885244)
 script = ExtResource("2_m0600")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("../Patterned")]
+scene_patterns = [NodePath("../ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene2/Scenario/GrandClock/LookAtClock" unique_id=621812895 instance=ExtResource("3_pdti8")]
 transform = Transform3D(-0.5792144, -0.16415982, 0.7984747, -0.010049246, 0.98087656, 0.19437036, -0.8151132, 0.10455807, -0.5697877, 1.1108059, 1.457291, 0.052412912)
@@ -882,6 +932,7 @@ scene = NodePath("../../../../../..")
 
 [node name="SeeClock" type="Area3D" parent="Scenes/Scene2/Scenario/GrandClock" unique_id=2055250050 node_paths=PackedStringArray("scene")]
 transform = Transform3D(0.9992691, 0, -0.03822866, 0, 1, 0, 0.03822866, 0, 0.9992691, -0.04458517, 0, 0.026469514)
+input_ray_pickable = false
 script = ExtResource("7_6xrpw")
 scene = NodePath("../LookAtClock")
 metadata/_custom_type_script = "uid://bnjfxriyseeds"
@@ -889,6 +940,17 @@ metadata/_custom_type_script = "uid://bnjfxriyseeds"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene2/Scenario/GrandClock/SeeClock" unique_id=1388316972]
 transform = Transform3D(0.9999991, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.9999991, 0, 1.1632442, 0)
 shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="HammerEnabler" type="Node" parent="Scenes/Scene2/Scenario/GrandClock" unique_id=324018913 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("16_d3mub")
+scene = NodePath("../LookAtClock")
+interactables = [NodePath("../Hammer/PickupItem")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Scenes/Scene2/Scenario/GrandClock" unique_id=1928031942]
+script = ExtResource("17_d3mub")
+pattern = Array[int]([1, 2, 0])
+metadata/_custom_type_script = "uid://irap3h13rsfh"
 
 [node name="WallPortrait2" parent="Scenes/Scene2/Scenario" unique_id=1528722346 instance=ExtResource("17_5k23c")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 0.07488422, 1.5202713, -2.1139781)
@@ -951,11 +1013,12 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("20_e816o")
 
-[node name="Scene3" type="Node3D" parent="Scenes" unique_id=810380687 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="Scene3" type="Node3D" parent="Scenes" unique_id=810380687 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48764992, 0, 0)
 script = ExtResource("2_m0600")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Scenario/GrandClock2/SeeClock"), NodePath("Scenario/GrandClock/SeeClock")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Scenario/GrandClock2/SeeClock"), NodePath("Scenario/GrandClock/SeeClock"), NodePath("Scenario/Door/DoorWoods/Wood/HammerUse"), NodePath("Scenario/Door/DoorWoods/Wood2/HammerUse"), NodePath("Scenario/Door/DoorWoods/Wood3/HammerUse")]
+scene_patterns = [NodePath("Scenario/GrandClock2/ScenePattern"), NodePath("Scenario/GrandClock/ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene3" unique_id=1180580678 instance=ExtResource("3_pdti8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.033262, 1, -8.944498e-08)
@@ -1060,6 +1123,7 @@ mesh = SubResource("CylinderMesh_3hbvx")
 
 [node name="HammerUse" type="Area3D" parent="Scenes/Scene3/Scenario/Door/DoorWoods/Wood" unique_id=392026525 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+input_ray_pickable = false
 script = ExtResource("8_m7hif")
 item = ExtResource("25_6tsuq")
 remove_item = false
@@ -1098,6 +1162,7 @@ mesh = SubResource("CylinderMesh_3hbvx")
 
 [node name="HammerUse" type="Area3D" parent="Scenes/Scene3/Scenario/Door/DoorWoods/Wood2" unique_id=608971379 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+input_ray_pickable = false
 script = ExtResource("8_m7hif")
 item = ExtResource("25_6tsuq")
 remove_item = false
@@ -1136,6 +1201,7 @@ mesh = SubResource("CylinderMesh_3hbvx")
 
 [node name="HammerUse" type="Area3D" parent="Scenes/Scene3/Scenario/Door/DoorWoods/Wood3" unique_id=902472317 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15477718, 0, -3.7252903e-09)
+input_ray_pickable = false
 script = ExtResource("8_m7hif")
 item = ExtResource("25_6tsuq")
 remove_item = false
@@ -1171,10 +1237,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14035988, 0, 0)
 material_override = ExtResource("26_cfone")
 mesh = SubResource("BoxMesh_o8ni1")
 
-[node name="ClickBlock" type="Area3D" parent="Scenes/Scene3/Scenario/Door" unique_id=372653994]
+[node name="ClickBlock" type="Area3D" parent="Scenes/Scene3/Scenario/Door" unique_id=372653994 node_paths=PackedStringArray("delete_nodes")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.069302574, 0.6120987, -0.0056619677)
 input_ray_pickable = false
-script = ExtResource("27_rnr3p")
+script = ExtResource("8_m7hif")
+item = ExtResource("9_wgsmv")
+delete_nodes = [NodePath(".")]
 metadata/_custom_type_script = "uid://dacaijey35bqu"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene3/Scenario/Door/ClickBlock" unique_id=1449520835]
@@ -1190,6 +1258,18 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.4301567,
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene3/Scenario/Door/ClickBlocker" unique_id=229726159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9222717, 0)
 shape = SubResource("BoxShape3D_57qmd")
+
+[node name="UseKeyEnabler" type="Node" parent="Scenes/Scene3/Scenario/Door" unique_id=1026021031 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("16_d3mub")
+scene = NodePath("../../..")
+interactables = [NodePath("../ClickBlock")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="NextSceneEnabler" type="Node" parent="Scenes/Scene3/Scenario/Door" unique_id=351017625 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("16_d3mub")
+scene = NodePath("../../..")
+interactables = [NodePath("../NextScene")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Scenes/Scene3/Scenario" unique_id=106843112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9342537, 2.330843, 0)
@@ -1250,11 +1330,12 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02941085, -9.313226e-10, 0.022182465)
 shape = SubResource("BoxShape3D_yd4ix")
 
-[node name="LookAtClock" type="Node3D" parent="Scenes/Scene3/Scenario/GrandClock2" unique_id=1804878639 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="LookAtClock" type="Node3D" parent="Scenes/Scene3/Scenario/GrandClock2" unique_id=1804878639 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(0.9907993, 0, 0.13533928, 0, 1, 0, -0.13533928, 0, 0.9907993, 0.07090092, 0, -0.079885244)
 script = ExtResource("2_m0600")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("../Patterned")]
+scene_patterns = [NodePath("../ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene3/Scenario/GrandClock2/LookAtClock" unique_id=951751237 instance=ExtResource("3_pdti8")]
 transform = Transform3D(-0.043619428, -0.19929798, 0.97896767, 0, 0.9799003, 0.19948785, -0.99904823, 0.008701545, -0.042742684, 1.9974174, 1.3329952, 0.8561354)
@@ -1267,6 +1348,7 @@ scene = NodePath("../../../../../..")
 
 [node name="SeeClock" type="Area3D" parent="Scenes/Scene3/Scenario/GrandClock2" unique_id=1557170002 node_paths=PackedStringArray("scene")]
 transform = Transform3D(0.9992691, 0, -0.03822866, 0, 1, 0, 0.03822866, 0, 0.9992691, -0.04458517, 0, 0.026469514)
+input_ray_pickable = false
 script = ExtResource("7_6xrpw")
 scene = NodePath("../LookAtClock")
 metadata/_custom_type_script = "uid://bnjfxriyseeds"
@@ -1277,6 +1359,7 @@ shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="Patterned" type="Area3D" parent="Scenes/Scene3/Scenario/GrandClock2" unique_id=937799756 node_paths=PackedStringArray("mesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26330376, 1.8194065, 0.0017328262)
+input_ray_pickable = false
 script = ExtResource("12_12aqx")
 pattern = Array[int]([6, 7, 0])
 mesh = NodePath("../GrandClockClock/GrandClockClock")
@@ -1288,6 +1371,17 @@ metadata/_custom_type_script = "uid://dbinv34xc0tpr"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene3/Scenario/GrandClock2/Patterned" unique_id=1809284200]
 shape = SubResource("BoxShape3D_yf5fn")
 
+[node name="KeyEnabler" type="Node" parent="Scenes/Scene3/Scenario/GrandClock2" unique_id=1396372178 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("16_d3mub")
+scene = NodePath("../LookAtClock")
+interactables = [NodePath("../Key/PickupItem")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Scenes/Scene3/Scenario/GrandClock2" unique_id=594427434]
+script = ExtResource("17_d3mub")
+pattern = Array[int]([6, 7, 0])
+metadata/_custom_type_script = "uid://irap3h13rsfh"
+
 [node name="GrandClock" parent="Scenes/Scene3/Scenario" unique_id=1438520129 instance=ExtResource("11_d3mub")]
 transform = Transform3D(0.60490155, 0, -0.7963002, 0, 1, 0, 0.7963002, 0, 0.60490155, 0.47388077, 0, -3.3101804)
 
@@ -1296,6 +1390,7 @@ visible = false
 
 [node name="Patterned" type="Area3D" parent="Scenes/Scene3/Scenario/GrandClock" unique_id=1783184219 node_paths=PackedStringArray("mesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26330376, 1.8194065, 0.0017328262)
+input_ray_pickable = false
 script = ExtResource("12_12aqx")
 pattern = Array[int]([4, 5, 2])
 mesh = NodePath("../GrandClockClock/GrandClockClock")
@@ -1325,11 +1420,12 @@ metadata/_custom_type_script = "uid://gdx1msx8ssyi"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02941085, -9.313226e-10, 0.022182465)
 shape = SubResource("BoxShape3D_yd4ix")
 
-[node name="LookAtClock" type="Node3D" parent="Scenes/Scene3/Scenario/GrandClock" unique_id=727287308 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="LookAtClock" type="Node3D" parent="Scenes/Scene3/Scenario/GrandClock" unique_id=727287308 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(0.9907993, 0, 0.13533928, 0, 1, 0, -0.13533928, 0, 0.9907993, 0.07090092, 0, -0.079885244)
 script = ExtResource("2_m0600")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("../Patterned")]
+scene_patterns = [NodePath("../ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene3/Scenario/GrandClock/LookAtClock" unique_id=372960053 instance=ExtResource("3_pdti8")]
 transform = Transform3D(0.27228022, -0.26037654, 0.9263191, 0, 0.96269155, 0.27060038, -0.9622178, -0.07367915, 0.26212192, 1.9386282, 1.4416834, -0.15947567)
@@ -1341,6 +1437,7 @@ scene = NodePath("../../../../../..")
 
 [node name="SeeClock" type="Area3D" parent="Scenes/Scene3/Scenario/GrandClock" unique_id=674989054 node_paths=PackedStringArray("scene")]
 transform = Transform3D(0.9992691, 0, -0.03822866, 0, 1, 0, 0.03822866, 0, 0.9992691, -0.04458517, 0, 0.026469514)
+input_ray_pickable = false
 script = ExtResource("7_6xrpw")
 scene = NodePath("../LookAtClock")
 metadata/_custom_type_script = "uid://bnjfxriyseeds"
@@ -1348,6 +1445,17 @@ metadata/_custom_type_script = "uid://bnjfxriyseeds"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene3/Scenario/GrandClock/SeeClock" unique_id=469266793]
 transform = Transform3D(0.9999991, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.9999991, 0, 1.1632442, 0)
 shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="HammerEnabler" type="Node" parent="Scenes/Scene3/Scenario/GrandClock" unique_id=1712349042 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("16_d3mub")
+scene = NodePath("../LookAtClock")
+interactables = [NodePath("../Hammer/PickupItem")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Scenes/Scene3/Scenario/GrandClock" unique_id=381791472]
+script = ExtResource("17_d3mub")
+pattern = Array[int]([4, 5, 2])
+metadata/_custom_type_script = "uid://irap3h13rsfh"
 
 [node name="WallPortrait2" parent="Scenes/Scene3/Scenario" unique_id=864895180 instance=ExtResource("17_5k23c")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.769, 1.8, -4.004)
@@ -1407,11 +1515,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.06550853)
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("20_e816o")
 
-[node name="Scene4" type="Node3D" parent="Scenes" unique_id=1600178254 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="Scene4" type="Node3D" parent="Scenes" unique_id=1600178254 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.48765, 0, 0)
 script = ExtResource("2_m0600")
 camera = NodePath("CameraStand/Camera3D")
 on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("Scenario/SeeClock")]
+scene_patterns = [NodePath("Scenario/GrandClock/ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene4" unique_id=1053009002 instance=ExtResource("3_pdti8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.033262, 1, -8.944498e-08)
@@ -1482,6 +1591,7 @@ transform = Transform3D(1.25, 0, 0, 0, -5.9604645e-08, 6.250001, 0, -1.25, -4.76
 
 [node name="ClickOpen" type="Area3D" parent="Scenes/Scene4/Scenario/GrandClock" unique_id=692845237 node_paths=PackedStringArray("mesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07032541, 1.0933094, 0.054259546)
+input_ray_pickable = false
 script = ExtResource("12_12aqx")
 pattern = Array[int]([3, 5, 2])
 mesh = NodePath("../GrandClockClock/GrandClockClock")
@@ -1496,6 +1606,8 @@ shape = SubResource("BoxShape3D_cjf2k")
 [node name="NextChapter" type="Area3D" parent="Scenes/Scene4/Scenario/GrandClock" unique_id=1523653083]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26330376, 1.8194065, 0.0017328262)
 input_ray_pickable = false
+monitoring = false
+monitorable = false
 script = ExtResource("31_cjf2k")
 level = ExtResource("32_d01p1")
 progress_marker = ExtResource("36_wgsmv")
@@ -1503,6 +1615,21 @@ metadata/_custom_type_script = "uid://dacaijey35bqu"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene4/Scenario/GrandClock/NextChapter" unique_id=836117111]
 shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="Sprite3D" type="Sprite3D" parent="Scenes/Scene4/Scenario/GrandClock" unique_id=1488455107]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0.07776309, 1.8333435, 3.3991323e-09)
+texture = ExtResource("31_wgsmv")
+
+[node name="NextEnabler" type="Node" parent="Scenes/Scene4/Scenario/GrandClock" unique_id=502989307 node_paths=PackedStringArray("scene", "interactables")]
+script = ExtResource("16_d3mub")
+scene = NodePath("../../LookAtClock")
+interactables = [NodePath("../NextChapter")]
+metadata/_custom_type_script = "uid://tfmgoftaw40j"
+
+[node name="ScenePattern" type="Node" parent="Scenes/Scene4/Scenario/GrandClock" unique_id=1614048654]
+script = ExtResource("17_d3mub")
+pattern = Array[int]([3, 5, 2])
+metadata/_custom_type_script = "uid://irap3h13rsfh"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Scenes/Scene4/Scenario" unique_id=1861432218]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 8.742278e-08, 2, 0)
@@ -1539,11 +1666,12 @@ transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("20_e816o")
 
-[node name="LookAtClock" type="Node3D" parent="Scenes/Scene4/Scenario" unique_id=1835421205 node_paths=PackedStringArray("camera", "on_scene_only")]
+[node name="LookAtClock" type="Node3D" parent="Scenes/Scene4/Scenario" unique_id=1835421205 node_paths=PackedStringArray("camera", "on_scene_only", "scene_patterns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 script = ExtResource("2_m0600")
 camera = NodePath("CameraStand/Camera3D")
-on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable")]
+on_scene_only = [NodePath("CameraStand/Camera3D/ChangeSceneInteractable"), NodePath("../GrandClock/ClickOpen")]
+scene_patterns = [NodePath("../GrandClock/ScenePattern")]
 
 [node name="CameraStand" parent="Scenes/Scene4/Scenario/LookAtClock" unique_id=352201661 instance=ExtResource("3_pdti8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.37128484, 1.3032036, 2.8918208e-07)
@@ -1556,12 +1684,13 @@ scene = NodePath("../../../../..")
 
 [node name="SeeClock" type="Area3D" parent="Scenes/Scene4/Scenario" unique_id=388762997 node_paths=PackedStringArray("scene")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4831946, 0, 0)
+input_ray_pickable = false
 script = ExtResource("7_6xrpw")
 scene = NodePath("../LookAtClock")
 metadata/_custom_type_script = "uid://bnjfxriyseeds"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/Scene4/Scenario/SeeClock" unique_id=1815483973]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1054554, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5894012, 0)
 shape = SubResource("BoxShape3D_pdti8")
 
 [node name="ShowProgress" type="Node" parent="." unique_id=342459326]
@@ -1572,26 +1701,31 @@ script = ExtResource("37_0q801")
 [connection signal="item_used" from="Scenes/Scene1/Scenario/Door/ClickBlock" to="Scenes/Scene1/Scenario/Door/NextScene" method="enable_interactable"]
 [connection signal="item_used" from="Scenes/Scene1/Scenario/Door/ClickBlock" to="Scenes/Scene1/Scenario/Door/FancyDoorOpened" method="set_visible" binds= [true]]
 [connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/GrandClock/Patterned" to="Scenes/Scene1/Scenario/GrandClock/GrandClockClock" method="queue_free"]
-[connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/GrandClock/Patterned" to="Scenes/Scene1/Scenario/GrandClock/Patterned" method="disable_interactable"]
-[connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/GrandClock/Patterned" to="Scenes/Scene1/Scenario/GrandClock/Key/PickupItem" method="enable_interactable"]
-[connection signal="on_target" from="Scenes/Scene2/Scenario/Door/DoorWoods/Counter" to="Scenes/Scene2/Scenario/Door/ClickBlock" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/GrandClock/Patterned" to="Scenes/Scene1/Scenario/GrandClock/Patterned" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/GrandClock/Patterned" to="Scenes/Scene1/Scenario/GrandClock/KeyEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/GrandClock/Patterned" to="Scenes/Scene1/Scenario/GrandClock/ScenePattern" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene1/Scenario/GrandClock/ScenePattern" to="Scenes/Scene1/Scenario/GrandClock/Patterned" method="activate_pattern"]
+[connection signal="on_target" from="Scenes/Scene2/Scenario/Door/DoorWoods/Counter" to="Scenes/Scene2/Scenario/Door/UseKeyEnabler" method="enable_interactable"]
 [connection signal="item_used" from="Scenes/Scene2/Scenario/Door/DoorWoods/Wood/HammerUse" to="Scenes/Scene2/Scenario/Door/DoorWoods/Counter" method="increment_one"]
 [connection signal="item_used" from="Scenes/Scene2/Scenario/Door/DoorWoods/Wood/HammerUse" to="Scenes/Scene2/Scenario/Door/DoorWoods/WoodFallen" method="set_visible" binds= [true]]
 [connection signal="item_used" from="Scenes/Scene2/Scenario/Door/DoorWoods/Wood2/HammerUse" to="Scenes/Scene2/Scenario/Door/DoorWoods/Counter" method="increment_one"]
 [connection signal="item_used" from="Scenes/Scene2/Scenario/Door/DoorWoods/Wood2/HammerUse" to="Scenes/Scene2/Scenario/Door/DoorWoods/WoodFallen2" method="set_visible" binds= [true]]
 [connection signal="item_used" from="Scenes/Scene2/Scenario/Door/DoorWoods/Wood3/HammerUse" to="Scenes/Scene2/Scenario/Door/DoorWoods/Counter" method="increment_one"]
 [connection signal="item_used" from="Scenes/Scene2/Scenario/Door/DoorWoods/Wood3/HammerUse" to="Scenes/Scene2/Scenario/Door/DoorWoods/WoodFallen3" method="set_visible" binds= [true]]
-[connection signal="on_clicked" from="Scenes/Scene2/Scenario/Door/ClickBlock" to="Scenes/Scene2/Scenario/Door/FancyDoor" method="queue_free"]
-[connection signal="on_clicked" from="Scenes/Scene2/Scenario/Door/ClickBlock" to="Scenes/Scene2/Scenario/Door/NextScene" method="enable_interactable"]
-[connection signal="on_clicked" from="Scenes/Scene2/Scenario/Door/ClickBlock" to="Scenes/Scene2/Scenario/Door/ClickBlock" method="queue_free"]
-[connection signal="on_clicked" from="Scenes/Scene2/Scenario/Door/ClickBlock" to="Scenes/Scene2/Scenario/Door/FancyDoorOpened" method="set_visible" binds= [true]]
+[connection signal="on_clicked" from="Scenes/Scene2/Scenario/Door/UseKey" to="Scenes/Scene2/Scenario/Door/FancyDoor" method="queue_free"]
+[connection signal="on_clicked" from="Scenes/Scene2/Scenario/Door/UseKey" to="Scenes/Scene2/Scenario/Door/NextSceneEnabler" method="enable_interactable"]
+[connection signal="on_clicked" from="Scenes/Scene2/Scenario/Door/UseKey" to="Scenes/Scene2/Scenario/Door/FancyDoorOpened" method="set_visible" binds= [true]]
 [connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock2/Patterned" to="Scenes/Scene2/Scenario/GrandClock2/GrandClockClock" method="queue_free"]
-[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock2/Patterned" to="Scenes/Scene2/Scenario/GrandClock2/Patterned" method="disable_interactable"]
-[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock2/Patterned" to="Scenes/Scene2/Scenario/GrandClock2/Key/PickupItem" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock2/Patterned" to="Scenes/Scene2/Scenario/GrandClock2/Patterned" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock2/Patterned" to="Scenes/Scene2/Scenario/GrandClock2/KeyEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock2/Patterned" to="Scenes/Scene2/Scenario/GrandClock2/ScenePattern" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock2/ScenePattern" to="Scenes/Scene2/Scenario/GrandClock2/Patterned" method="activate_pattern"]
 [connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock/Patterned" to="Scenes/Scene2/Scenario/GrandClock/GrandClockClock" method="queue_free"]
-[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock/Patterned" to="Scenes/Scene2/Scenario/GrandClock/Patterned" method="disable_interactable"]
-[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock/Patterned" to="Scenes/Scene2/Scenario/GrandClock/Hammer/PickupItem" method="enable_interactable"]
-[connection signal="on_target" from="Scenes/Scene3/Scenario/Door/DoorWoods/Counter" to="Scenes/Scene3/Scenario/Door/ClickBlock" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock/Patterned" to="Scenes/Scene2/Scenario/GrandClock/Patterned" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock/Patterned" to="Scenes/Scene2/Scenario/GrandClock/HammerEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock/Patterned" to="Scenes/Scene2/Scenario/GrandClock/ScenePattern" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene2/Scenario/GrandClock/ScenePattern" to="Scenes/Scene2/Scenario/GrandClock/Patterned" method="activate_pattern"]
+[connection signal="on_target" from="Scenes/Scene3/Scenario/Door/DoorWoods/Counter" to="Scenes/Scene3/Scenario/Door/UseKeyEnabler" method="enable_interactable"]
 [connection signal="item_used" from="Scenes/Scene3/Scenario/Door/DoorWoods/Wood/HammerUse" to="Scenes/Scene3/Scenario/Door/DoorWoods/Counter" method="increment_one"]
 [connection signal="item_used" from="Scenes/Scene3/Scenario/Door/DoorWoods/Wood/HammerUse" to="Scenes/Scene3/Scenario/Door/DoorWoods/WoodFallen" method="set_visible" binds= [true]]
 [connection signal="item_used" from="Scenes/Scene3/Scenario/Door/DoorWoods/Wood2/HammerUse" to="Scenes/Scene3/Scenario/Door/DoorWoods/Counter" method="increment_one"]
@@ -1599,18 +1733,23 @@ script = ExtResource("37_0q801")
 [connection signal="item_used" from="Scenes/Scene3/Scenario/Door/DoorWoods/Wood3/HammerUse" to="Scenes/Scene3/Scenario/Door/DoorWoods/Counter" method="increment_one"]
 [connection signal="item_used" from="Scenes/Scene3/Scenario/Door/DoorWoods/Wood3/HammerUse" to="Scenes/Scene3/Scenario/Door/DoorWoods/WoodFallen3" method="set_visible" binds= [true]]
 [connection signal="on_clicked" from="Scenes/Scene3/Scenario/Door/ClickBlock" to="Scenes/Scene3/Scenario/Door/FancyDoor" method="queue_free"]
-[connection signal="on_clicked" from="Scenes/Scene3/Scenario/Door/ClickBlock" to="Scenes/Scene3/Scenario/Door/NextScene" method="enable_interactable"]
-[connection signal="on_clicked" from="Scenes/Scene3/Scenario/Door/ClickBlock" to="Scenes/Scene3/Scenario/Door/ClickBlock" method="queue_free"]
+[connection signal="on_clicked" from="Scenes/Scene3/Scenario/Door/ClickBlock" to="Scenes/Scene3/Scenario/Door/NextSceneEnabler" method="enable_interactable"]
 [connection signal="on_clicked" from="Scenes/Scene3/Scenario/Door/ClickBlock" to="Scenes/Scene3/Scenario/Door/FancyDoorOpened" method="set_visible" binds= [true]]
 [connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock2/Patterned" to="Scenes/Scene3/Scenario/GrandClock2/GrandClockClock" method="queue_free"]
-[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock2/Patterned" to="Scenes/Scene3/Scenario/GrandClock2/Key/PickupItem" method="enable_interactable"]
-[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock2/Patterned" to="Scenes/Scene3/Scenario/GrandClock2/Patterned" method="disable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock2/Patterned" to="Scenes/Scene3/Scenario/GrandClock2/Patterned" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock2/Patterned" to="Scenes/Scene3/Scenario/GrandClock2/KeyEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock2/Patterned" to="Scenes/Scene3/Scenario/GrandClock2/ScenePattern" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock2/ScenePattern" to="Scenes/Scene3/Scenario/GrandClock2/Patterned" method="activate_pattern"]
 [connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock/Patterned" to="Scenes/Scene3/Scenario/GrandClock/GrandClockClock" method="queue_free"]
-[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock/Patterned" to="Scenes/Scene3/Scenario/GrandClock/Patterned" method="disable_interactable"]
-[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock/Patterned" to="Scenes/Scene3/Scenario/GrandClock/Hammer/PickupItem" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock/Patterned" to="Scenes/Scene3/Scenario/GrandClock/Patterned" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock/Patterned" to="Scenes/Scene3/Scenario/GrandClock/HammerEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock/Patterned" to="Scenes/Scene3/Scenario/GrandClock/ScenePattern" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene3/Scenario/GrandClock/ScenePattern" to="Scenes/Scene3/Scenario/GrandClock/Patterned" method="activate_pattern"]
 [connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/ClickOpen" to="Scenes/Scene4/Scenario/GrandClock/GrandClockClock" method="queue_free"]
-[connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/ClickOpen" to="Scenes/Scene4/Scenario/GrandClock/ClickOpen" method="disable_interactable"]
-[connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/ClickOpen" to="Scenes/Scene4/Scenario/GrandClock/NextChapter" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/ClickOpen" to="Scenes/Scene4/Scenario/GrandClock/ClickOpen" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/ClickOpen" to="Scenes/Scene4/Scenario/GrandClock/NextEnabler" method="enable_interactable"]
+[connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/ClickOpen" to="Scenes/Scene4/Scenario/GrandClock/ScenePattern" method="queue_free"]
+[connection signal="on_pattern_made" from="Scenes/Scene4/Scenario/GrandClock/ScenePattern" to="Scenes/Scene4/Scenario/GrandClock/ClickOpen" method="activate_pattern"]
 
 [editable path="Scenes/Scene1/CameraStand"]
 [editable path="Scenes/Scene1/Scenario/Door"]

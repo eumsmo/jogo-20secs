@@ -27,6 +27,8 @@ environment = SubResource("Environment_yf5fn")
 
 [node name="ChangeSceneInteractable" type="Area3D" parent="Camera3D" unique_id=452113428]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3408578e-08, -0.3768747, -0.53552586)
+monitoring = false
+monitorable = false
 script = ExtResource("1_ssqhk")
 metadata/_custom_type_script = "uid://bnjfxriyseeds"
 

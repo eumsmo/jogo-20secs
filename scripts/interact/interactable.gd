@@ -44,3 +44,6 @@ func disable_interactable():
 
 func enable_interactable():
 	input_ray_pickable = true
+
+func is_enabled() -> bool:
+	return input_ray_pickable and process_mode != PROCESS_MODE_DISABLED
